@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Terminal · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #007aff;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #0a84ff;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-top: 48px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  p { color: var(--fg); }
+  .meta {
+    color: var(--fg-dim);
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+  }
+  .lead {
+    background: var(--bg-soft);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    margin: 20px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 16px 0 24px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    font-weight: 600;
+    color: var(--fg-dim);
+    background: var(--bg-soft);
+  }
+  ul li { margin: 6px 0; }
+  ul.deny li::marker { content: "❌  "; }
+  code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85em;
+    background: var(--bg-soft);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch {
+    display: flex;
+    gap: 6px;
+    margin: 0 0 24px;
+    font-size: 0.85rem;
+  }
+  .lang-switch a {
+    padding: 6px 12px;
+    background: var(--bg-soft);
+    border-radius: 999px;
+  }
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--fg-dim);
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+  <a href="#tech">Technical</a>
+</div>
+
+<h1>Open Terminal — 隐私政策</h1>
+<p class="meta">最后更新 / Last updated: <strong>2026-06-07</strong></p>
+
+<!-- ────────── 中文 ────────── -->
+<section id="zh">
+  <h2>中文版</h2>
+
+  <div class="lead">
+    <strong>Open Terminal 不收集、不上传、不分享你的任何数据。</strong>
+    所有服务器配置、密码、命令历史、日志、偏好设置全部仅保存在你这台设备本地。
+    本 App 没有后端服务器,没有云同步,不内嵌任何第三方分析、追踪或广告 SDK。
+  </div>
+
+  <h3>我们存什么,存在哪</h3>
+  <table>
+    <thead>
+      <tr><th>数据</th><th>用途</th><th>存储位置</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>服务器配置(名称/主机/端口/用户名/标签/备注)</td><td>列表显示与建立 SSH 连接</td><td>设备本地 <code>UserDefaults</code></td></tr>
+      <tr><td>SSH 密码</td><td>连接服务器时使用</td><td>设备本地 <strong>Keychain</strong>(系统加密,仅本 App 可读)</td></tr>
+      <tr><td>终端会话输出</td><td>当前连接期间显示</td><td><strong>仅内存</strong>,断开连接后立即清空,不持久化</td></tr>
+      <tr><td>命令输入历史</td><td>输入框 ↑/↓ 翻历史</td><td><strong>仅内存</strong>,会话级,断开即丢</td></tr>
+      <tr><td>自定义命令(命令面板)</td><td>一键发送常用命令</td><td>设备本地 <code>UserDefaults</code></td></tr>
+      <tr><td>连接日志</td><td>查看连接情况</td><td>设备本地 <code>UserDefaults</code>,可在设置里随时清空</td></tr>
+      <tr><td>偏好设置(主题/字体/字号/触感/保活/超时等)</td><td>个性化</td><td>设备本地 <code>UserDefaults</code></td></tr>
+    </tbody>
+  </table>
+
+  <h3>我们 <em>不</em> 做的事</h3>
+  <ul class="deny">
+    <li>不向任何远端服务器上传你的数据</li>
+    <li>不接入广告网络</li>
+    <li>不接入分析平台(无 Google Analytics / Firebase / Mixpanel / 友盟 / 神策 / TalkingData / Sentry / 自建埋点)</li>
+    <li>不读取通讯录、相册、位置、麦克风、摄像头</li>
+    <li>不要求登录账号,不绑定手机号/邮箱</li>
+    <li>不在后台静默上传任何信息</li>
+  </ul>
+
+  <h3>网络通信</h3>
+  <p>本 App 仅在以下情况发起网络连接,且<strong>完全是你主动触发的</strong>:</p>
+  <ol>
+    <li><strong>SSH 连接</strong> — 你点击服务器卡片连接时,App 通过 SSH 协议(基于 Citadel + SwiftNIO SSH)直接连到<strong>你</strong>配置的目标主机。连接细节仅在你的设备与目标服务器之间传输,Open Terminal 的开发者无法看到。</li>
+    <li><strong>TCP 探测</strong> — 你在服务器列表点 "刷新"、或在编辑页点 "测试 TCP 连接" 时,App 用 <code>Network.framework</code> 向目标主机做一次 TCP 三次握手,不发送任何 SSH 凭证。</li>
+  </ol>
+  <p>除上述两种你主动触发的连接外,<strong>App 不与任何其他服务器通信</strong>。</p>
+
+  <h3>数据导出与备份</h3>
+  <p>设置 → 数据 → "导出备份" 会生成 JSON,<strong>仅包含</strong>服务器列表元数据和偏好设置。<strong>不包含密码</strong>,Keychain 不会被导出。</p>
+
+  <h3>数据删除</h3>
+  <ul>
+    <li><strong>单条删除</strong>:服务器卡片 "⋯" 菜单或编辑页底部删除,服务器配置 + Keychain 密码会被同步永久删除。</li>
+    <li><strong>全部清除</strong>:从 iOS 主屏幕长按图标 → 删除 App。系统会清除沙盒(包括 <code>UserDefaults</code>、Keychain 项),无残留。</li>
+  </ul>
+</section>
+
+<!-- ────────── English ────────── -->
+<section id="en">
+  <h2>English Version</h2>
+
+  <div class="lead">
+    <strong>Open Terminal collects no data, transmits nothing to remote services, and shares nothing with third parties.</strong>
+    All server profiles, passwords, command history, logs, and preferences are stored exclusively on your own device.
+    There is no backend server, no cloud sync, and no embedded analytics, tracking, or advertising SDK of any kind.
+  </div>
+
+  <h3>What we store and where</h3>
+  <table>
+    <thead>
+      <tr><th>Data</th><th>Purpose</th><th>Location</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Server profiles (name, host, port, username, tags, notes)</td><td>Display & SSH connection</td><td>Device-local <code>UserDefaults</code></td></tr>
+      <tr><td>SSH passwords</td><td>Authentication on connect</td><td>Device <strong>Keychain</strong> (system-encrypted, app-private)</td></tr>
+      <tr><td>Terminal session output</td><td>Live display</td><td><strong>In-memory only</strong> — wiped on disconnect</td></tr>
+      <tr><td>Command input history</td><td>Up/Down recall</td><td><strong>In-memory only</strong> — session-scoped</td></tr>
+      <tr><td>Saved commands</td><td>One-tap send</td><td>Device-local <code>UserDefaults</code></td></tr>
+      <tr><td>Connection log</td><td>Troubleshooting</td><td>Device-local <code>UserDefaults</code> — clearable anytime</td></tr>
+      <tr><td>Preferences</td><td>Personalization</td><td>Device-local <code>UserDefaults</code></td></tr>
+    </tbody>
+  </table>
+
+  <h3>What we do <em>not</em> do</h3>
+  <ul class="deny">
+    <li>No upload of any data to any remote server</li>
+    <li>No ad networks</li>
+    <li>No analytics SDKs (no Google Analytics / Firebase / Mixpanel / Sentry / custom telemetry)</li>
+    <li>No access to Contacts, Photos, Location, Microphone, or Camera</li>
+    <li>No account sign-up, no phone, no email</li>
+    <li>No background silent uploads</li>
+  </ul>
+
+  <h3>Network traffic</h3>
+  <p>The app initiates network traffic only in the following cases, <strong>all explicitly triggered by you</strong>:</p>
+  <ol>
+    <li><strong>SSH connection</strong> — When you tap a server, the app dials the host you configured over SSH (Citadel + SwiftNIO SSH). Traffic travels directly between your device and your server.</li>
+    <li><strong>TCP probe</strong> — "Refresh" / "Test TCP" performs a single handshake via <code>Network.framework</code>. No SSH credentials are sent.</li>
+  </ol>
+
+  <h3>Export & backup</h3>
+  <p>Settings → Data → "Export backup" produces JSON containing <strong>only</strong> server metadata and preferences. <strong>Passwords are never exported.</strong></p>
+
+  <h3>Data deletion</h3>
+  <ul>
+    <li><strong>Per-server</strong>: "⋯" menu on a server card or edit screen → Delete. Profile + Keychain password are removed atomically.</li>
+    <li><strong>Complete wipe</strong>: Long-press app icon → Delete App. iOS removes the entire app container, including Keychain entries.</li>
+  </ul>
+</section>
+
+<!-- ────────── Technical ────────── -->
+<section id="tech">
+  <h2>Technical Statement</h2>
+  <p>For App Store reviewers and security-conscious users:</p>
+  <ul>
+    <li><strong>Source</strong>: Built from public, auditable source. SSH transport uses <a href="https://github.com/apple/swift-nio-ssh">Apple SwiftNIO SSH</a> (Apache 2.0) via <a href="https://github.com/orlandos-nl/citadel">Citadel</a> (MIT).</li>
+    <li><strong>Permissions declared in Info.plist</strong>: only standard <code>NSAppTransportSecurity</code> defaults — no special hardware/location/contacts entitlements.</li>
+    <li><strong>Keychain access</strong>: service ID <code>com.openterminal.ssh</code> — entries protected with <code>kSecAttrAccessibleAfterFirstUnlock</code>, never synced to iCloud Keychain by default.</li>
+    <li><strong>No third-party SDK at runtime</strong>: dependency graph limited to Apple SwiftNIO / Swift Crypto / Swift ASN.1 / Swift Atomics / Swift Collections / Swift Log / Swift System / BigInt / Citadel — all open-source, none with telemetry.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2026 Open Terminal · MIT License</p>
+</footer>
+
+</body>
+</html>
