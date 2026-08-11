@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云图片 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #007aff;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #0a84ff;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 {
+    font-size: 1.4rem; font-weight: 600; letter-spacing: -0.01em;
+    margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border);
+  }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  p { color: var(--fg); }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead {
+    background: var(--bg-soft);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    margin: 20px 0;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  ul.deny li::marker { content: "❌  "; }
+  code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85em;
+    background: var(--bg-soft);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer {
+    margin-top: 64px; padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--fg-dim); font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+  <a href="#tech">Technical</a>
+</div>
+
+<h1>牧云图片 — 隐私政策</h1>
+<p class="meta">最后更新 / Last updated: <strong>2026-08-11</strong></p>
+
+<!-- ────────── 中文 ────────── -->
+<section id="zh">
+  <h2>中文版</h2>
+
+  <div class="lead">
+    <strong>牧云图片不收集、不上传、不分享你的任何数据。</strong>
+    你的图片、编辑记录、偏好设置全部只在你这台 Mac 本地处理和保存。
+    没有后端服务器，没有云同步，不内嵌任何第三方分析、追踪或广告 SDK。
+    所有图像处理——滤镜、调色、标注、马赛克、内容感知消除与 AI 消除——<strong>全部在你的设备上完成</strong>。
+  </div>
+
+  <h3>我们处理什么，在哪处理</h3>
+  <table>
+    <thead>
+      <tr><th>数据</th><th>用途</th><th>处理/存储位置</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>你打开的图片</td><td>显示与编辑</td><td><strong>仅内存</strong>，经 macOS 沙盒"用户选择文件"权限读取，保存时写回你指定位置</td></tr>
+      <tr><td>编辑内容（标注/滤镜/调整/消除区域）</td><td>当前编辑会话</td><td><strong>仅内存</strong>，随导出图片保存，不单独持久化</td></tr>
+      <tr><td>AI 消除模型（LaMa，约 200MB）</td><td>本地 AI 消除推理</td><td>设备本地 <code>Application Support/MuyunImage/Models/LaMa</code>，可随时删除</td></tr>
+      <tr><td>打印任务</td><td>你主动打印图片</td><td>macOS 系统打印服务，App 不留存副本</td></tr>
+    </tbody>
+  </table>
+
+  <h3>我们 <em>不</em> 做的事</h3>
+  <ul class="deny">
+    <li>不向任何远端服务器上传你的图片或任何数据</li>
+    <li>不接入广告网络</li>
+    <li>不接入分析平台（无 Google Analytics / Firebase / Mixpanel / 友盟 / 神策 / Sentry / 自建埋点）</li>
+    <li>不读取通讯录、位置、麦克风、摄像头</li>
+    <li>不要求登录账号，不绑定手机号/邮箱</li>
+    <li>不在后台静默上传任何信息</li>
+    <li>AI 消除<strong>不调用任何云端 API</strong>——模型下载到本地后，推理完全离线</li>
+  </ul>
+
+  <h3>网络通信</h3>
+  <p>本 App 仅在<strong>一种</strong>情况下发起网络连接，且完全由你主动触发：</p>
+  <ol>
+    <li><strong>下载 AI 消除模型</strong> — 当你在"消除"工具中选择"AI 智能消除"并点击下载时，App 通过 HTTPS 从 GitHub Releases（开源项目 <a href="https://github.com/xulihang/CoreMLaMa">CoreMLaMa</a> 的公开构建）下载 LaMa CoreML 模型；直连失败时会尝试公共 GitHub 镜像加速站。请求中<strong>不包含</strong>你的任何图片或个人信息。</li>
+  </ol>
+  <p>除此之外，<strong>App 不与任何服务器通信</strong>。若不使用 AI 消除（内容感知消除无需模型），App 可在完全断网环境下使用全部功能。</p>
+
+  <h3>文件访问</h3>
+  <p>牧云图片运行在 macOS App Sandbox 中，仅能访问<strong>你通过打开/保存对话框或拖拽主动授予</strong>的文件，无法扫描或读取磁盘上的其他内容。</p>
+
+  <h3>数据删除</h3>
+  <ul>
+    <li><strong>已下载的 AI 模型</strong>：在 App 的模型管理界面删除，或直接删除上述 Application Support 目录。</li>
+    <li><strong>全部清除</strong>：从"应用程序"删除 App，并移除 <code>~/Library/Containers/com.gezhipeng0201.MuyunImage</code>，无任何残留。</li>
+  </ul>
+</section>
+
+<!-- ────────── English ────────── -->
+<section id="en">
+  <h2>English Version</h2>
+
+  <div class="lead">
+    <strong>MuyunImage collects no data, transmits nothing to remote services, and shares nothing with third parties.</strong>
+    Your images, edits, and preferences are processed and stored exclusively on your own Mac.
+    There is no backend server, no cloud sync, and no embedded analytics, tracking, or advertising SDK.
+    All image processing — filters, color adjustment, annotations, mosaic, content-aware removal, and AI removal — happens <strong>entirely on your device</strong>.
+  </div>
+
+  <h3>What we process and where</h3>
+  <table>
+    <thead>
+      <tr><th>Data</th><th>Purpose</th><th>Location</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Images you open</td><td>Display & editing</td><td><strong>In-memory only</strong>, via macOS sandbox user-selected-file permission; saved back where you choose</td></tr>
+      <tr><td>Edits (annotations / filters / adjustments / masks)</td><td>Current session</td><td><strong>In-memory only</strong>, baked into exported images; never persisted separately</td></tr>
+      <tr><td>AI removal model (LaMa, ~200 MB)</td><td>On-device AI inpainting</td><td>Device-local <code>Application Support/MuyunImage/Models/LaMa</code>, removable anytime</td></tr>
+      <tr><td>Print jobs</td><td>Printing you initiate</td><td>macOS print system; the app keeps no copy</td></tr>
+    </tbody>
+  </table>
+
+  <h3>What we do <em>not</em> do</h3>
+  <ul class="deny">
+    <li>No upload of your images or any data to any remote server</li>
+    <li>No ad networks</li>
+    <li>No analytics SDKs (no Google Analytics / Firebase / Mixpanel / Sentry / custom telemetry)</li>
+    <li>No access to Contacts, Location, Microphone, or Camera</li>
+    <li>No account sign-up, no phone, no email</li>
+    <li>No background silent uploads</li>
+    <li>AI removal <strong>never calls any cloud API</strong> — once downloaded, inference is fully offline</li>
+  </ul>
+
+  <h3>Network traffic</h3>
+  <p>The app initiates network traffic in exactly <strong>one</strong> case, explicitly triggered by you:</p>
+  <ol>
+    <li><strong>AI model download</strong> — Choosing "AI Removal" and tapping download fetches the LaMa CoreML model over HTTPS from GitHub Releases (public build of the open-source <a href="https://github.com/xulihang/CoreMLaMa">CoreMLaMa</a> project), with public GitHub mirror CDNs as fallback. The request contains <strong>none</strong> of your images or personal information.</li>
+  </ol>
+  <p>Outside of that, <strong>the app talks to no servers at all</strong>. Without AI removal (the content-aware engine needs no model), the app works completely offline.</p>
+
+  <h3>File access</h3>
+  <p>MuyunImage runs inside the macOS App Sandbox and can only access files <strong>you explicitly grant</strong> via open/save dialogs or drag &amp; drop.</p>
+
+  <h3>Data deletion</h3>
+  <ul>
+    <li><strong>Downloaded AI model</strong>: delete from the in-app model manager, or remove the Application Support folder above.</li>
+    <li><strong>Complete wipe</strong>: delete the app from /Applications and remove <code>~/Library/Containers/com.gezhipeng0201.MuyunImage</code>.</li>
+  </ul>
+</section>
+
+<!-- ────────── Technical ────────── -->
+<section id="tech">
+  <h2>Technical Statement</h2>
+  <p>For App Store reviewers and security-conscious users:</p>
+  <ul>
+    <li><strong>Sandbox &amp; Hardened Runtime</strong>: sandboxed (<code>com.apple.security.app-sandbox</code>) with only the <code>user-selected files (read/write)</code> entitlement — no network server, no device hardware entitlements.</li>
+    <li><strong>On-device ML</strong>: AI removal runs a locally stored LaMa model via Apple CoreML (CPU+GPU). No image bytes are ever transmitted.</li>
+    <li><strong>Content-aware removal</strong>: a pure-CPU PatchMatch implementation compiled into the app; no model, no network.</li>
+    <li><strong>Only network endpoint</strong>: <code>github.com</code> releases (plus public mirrors) for the optional one-time model download over HTTPS.</li>
+    <li><strong>No third-party SDK at runtime</strong>: Apple system frameworks only (SwiftUI, CoreGraphics, CoreML, CoreImage).</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2026 牧云图片 (MuyunImage)</p>
+</footer>
+
+</body>
+</html>
