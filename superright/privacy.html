@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>右键大师 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #007aff;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #0a84ff;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 {
+    font-size: 1.4rem; font-weight: 600; letter-spacing: -0.01em;
+    margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border);
+  }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  p { color: var(--fg); }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead {
+    background: var(--bg-soft);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    margin: 20px 0;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  ul.deny li::marker { content: "❌  "; }
+  code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85em;
+    background: var(--bg-soft);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer {
+    margin-top: 64px; padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--fg-dim); font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+  <a href="#tech">Technical</a>
+</div>
+
+<h1>右键大师 · 隐私政策</h1>
+<p class="meta">SuperRight — Privacy Policy · 最后更新 / Last updated: 2026-08-11</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="lead">
+  <strong>右键大师不收集、不上传、不分享你的任何数据，也不发起任何网络请求。</strong>
+  所有功能——右键新建文件、拷贝路径、在终端打开——全部在你的 Mac 本地完成，断网状态下完全可用。
+</div>
+
+<h3>我们处理什么、在哪处理</h3>
+<table>
+  <tr><th>数据</th><th>用途</th><th>处理/存储位置</th></tr>
+  <tr>
+    <td>菜单配置与文件模板</td>
+    <td>决定右键菜单显示哪些功能与模板</td>
+    <td>本机 App Group 沙盒容器内的偏好设置</td>
+  </tr>
+  <tr>
+    <td>文件夹授权书签</td>
+    <td>记住你已授权“新建文件”的文件夹，避免重复弹窗</td>
+    <td>本机安全书签（Security-Scoped Bookmark），仅本机有效</td>
+  </tr>
+  <tr>
+    <td>你右键操作的文件/文件夹路径</td>
+    <td>执行你触发的动作</td>
+    <td><strong>仅内存</strong>，动作完成即释放；拷贝的路径仅进入本机剪贴板</td>
+  </tr>
+  <tr>
+    <td>新建的文件</td>
+    <td>按模板在你指定的文件夹创建</td>
+    <td>直接写入你右键的文件夹，App 不留存副本</td>
+  </tr>
+</table>
+
+<h3>我们 <em>不</em> 做的事</h3>
+<ul class="deny">
+  <li>不发起任何网络请求（App 中没有任何联网代码）</li>
+  <li>不向任何远端服务器上传你的文件或任何数据</li>
+  <li>不接入广告网络、分析平台或任何第三方 SDK</li>
+  <li>不扫描磁盘，不读取未经你授权的任何文件夹</li>
+  <li>不读取通讯录、位置、麦克风、摄像头</li>
+  <li>不要求登录账号，不申请“完全磁盘访问”权限</li>
+</ul>
+
+<h3>网络通信</h3>
+<p><strong>本 App 不与任何服务器通信。</strong>没有更新检查、没有遥测、没有任何下载。你可以在完全断网的环境下使用全部功能。</p>
+
+<h3>文件访问</h3>
+<p>右键大师运行在 macOS App Sandbox 中。访达扩展只在你主动点击菜单项时才操作对应的文件或文件夹；首次在某个文件夹“新建文件”时，系统会弹出标准授权面板请求你确认，确认后该文件夹此后不再询问。App 无法访问你未授权的任何位置。</p>
+
+<h3>数据删除</h3>
+<p>主 App「权限管理」页面可查看并撤销全部已授权文件夹。如需彻底清除：从「应用程序」文件夹删除 App，并移除 <code>~/Library/Group Containers</code> 下名为 <code>7252W54VUU.com.gezhipeng0201.SuperRight</code> 的容器目录，即无任何残留。</p>
+
+<h3>联系方式</h3>
+<p>如对本政策有疑问，请通过 App Store 联系页或本项目仓库的 Issue 提交。</p>
+
+<h2 id="en">English</h2>
+
+<div class="lead">
+  <strong>SuperRight collects no data, transmits nothing, shares nothing — and makes zero network requests.</strong>
+  Every feature (new file from the context menu, copy path, open in terminal) runs entirely on your Mac and works fully offline.
+</div>
+
+<h3>What we process and where</h3>
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
+  <tr>
+    <td>Menu settings &amp; file templates</td>
+    <td>Decide which actions and templates appear in the context menu</td>
+    <td>Preferences inside the local App Group sandbox container</td>
+  </tr>
+  <tr>
+    <td>Folder authorization bookmarks</td>
+    <td>Remember folders you've authorized for "New File"</td>
+    <td>Local Security-Scoped Bookmarks; valid only on this Mac</td>
+  </tr>
+  <tr>
+    <td>Paths of items you right-click</td>
+    <td>Perform the action you trigger</td>
+    <td><strong>In-memory only</strong>; copied paths go only to your local clipboard</td>
+  </tr>
+  <tr>
+    <td>Files you create</td>
+    <td>Created from a template in the folder you chose</td>
+    <td>Written directly into that folder; the app keeps no copy</td>
+  </tr>
+</table>
+
+<h3>What we do <em>not</em> do</h3>
+<ul class="deny">
+  <li>No network requests of any kind (there is no networking code in the app)</li>
+  <li>No upload of your files or any data to any remote server</li>
+  <li>No ad networks, analytics platforms, or third-party SDKs</li>
+  <li>No disk scanning; no access to folders you haven't authorized</li>
+  <li>No access to Contacts, Location, Microphone, or Camera</li>
+  <li>No account sign-up, no Full Disk Access request</li>
+</ul>
+
+<h3>Network traffic</h3>
+<p><strong>The app talks to no servers at all.</strong> No update checks, no telemetry, no downloads. Everything works completely offline.</p>
+
+<h3>File access</h3>
+<p>SuperRight runs inside the macOS App Sandbox. The Finder extension touches a file or folder only when you explicitly click a menu item. The first time you create a file in a folder, the standard system authorization panel asks for your confirmation; that folder is never asked about again. The app cannot access any location you haven't authorized.</p>
+
+<h3>Data deletion</h3>
+<p>Delete the app from /Applications and remove the container named <code>7252W54VUU.com.gezhipeng0201.SuperRight</code> under <code>~/Library/Group Containers</code>. Nothing else remains.</p>
+
+<h3>Contact</h3>
+<p>For questions about this policy, please use the App Store support page or open an issue on the project repository.</p>
+
+<h2 id="tech">技术声明 / Technical statement</h2>
+
+<p>For App Store reviewers and security-conscious users:</p>
+<ul>
+  <li><strong>Sandbox &amp; Hardened Runtime</strong>: both the main app and the Finder Sync extension are sandboxed (<code>com.apple.security.app-sandbox</code>) with Hardened Runtime enabled.</li>
+  <li><strong>Entitlements</strong>: <code>user-selected files (read/write)</code>, <code>security-scoped bookmarks (app-scope)</code>, and one App Group for sharing preferences between the app and its extension — no network entitlements, no device hardware entitlements, no Full Disk Access.</li>
+  <li><strong>Finder integration</strong>: implemented with Apple's public FinderSync extension point (<code>com.apple.FinderSync</code>); directory monitoring is used only to display menu items and grants no file access by itself.</li>
+  <li><strong>Folder writes</strong>: gated by user consent through the system NSOpenPanel; consent is persisted as per-folder security-scoped bookmarks stored locally and can be revoked anytime from the in-app Permissions page.</li>
+  <li><strong>Usage descriptions</strong>: purpose strings for Desktop, Documents, Downloads, removable volumes, and network volumes (<code>NS*UsageDescription</code>) are declared in both the app's and the extension's Info.plist.</li>
+  <li><strong>Zero network</strong>: the binary contains no networking code paths (no URLSession usage), and <code>ITSAppUsesNonExemptEncryption</code> is declared <code>NO</code>.</li>
+  <li><strong>No third-party SDK at runtime</strong>: the dependency graph is Apple system frameworks only (SwiftUI, AppKit, FinderSync).</li>
+</ul>
+
+<footer>
+  © 2026 右键大师 (SuperRight) · 你的文件，只属于你。 / Your files stay yours.
+</footer>
+
+</body>
+</html>
