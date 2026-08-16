@@ -173,26 +173,16 @@ photo,editor,remove,object,eraser,retouch,annotate,mosaic,filter,crop,watermark,
 
 ## 4️⃣ 技术支持网址 (Support URL) — **必填**
 
-> App Store 必填字段，缺失会拒审。需要是**真实可访问、含联系方式**的页面。
+> App Store 必填字段。**不要**填 GitHub 的 `blob/.../README.md`（审核会因无法提交问题而拒）。
+> 必须是用户能真正提问的页面。
 
-| 方案 | URL 示例 | 适合 |
-|---|---|---|
-| **GitHub Issues** | `https://github.com/<your-username>/muyunimage/issues` | 开源 / 半开源项目 |
-| **GitHub Pages** | `https://<your-username>.github.io/muyunimage/` | 免费托管，2 分钟上线 |
-| **Notion 公开页** | `https://<your-workspace>.notion.site/support-xxx` | 不想写代码 |
-
-### 最小可用的 Support 页需要包含
-
-1. App 名称 + 简短描述
-2. 联系方式（邮箱 **或** 提交问题入口）
-3. 常见问题（可选，但推荐）
-4. 隐私政策链接（指向托管后的 `privacy.html`）
-
-### 当前占位 — 替换后再提交
+**当前应填写：**
 
 ```
-https://<your-username>.github.io/muyunimage/
+https://github.com/zhipengge/apps/issues
 ```
+
+这是 GitHub Issues 列表，用户可直接 New Issue 提问。配套说明页见本目录 `support.html`。
 
 ---
 

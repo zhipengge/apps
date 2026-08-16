@@ -132,19 +132,15 @@ Open the app → drag in an image → pick the Removal tool
 
 ## 📬 反馈与支持 / Support
 
-遇到问题、有功能建议，选任意一种方式联系：
+遇到问题、有功能建议，请直接提交 GitHub Issue（这是官方支持渠道）：
 
 | 渠道 | 链接 | 适合 |
 |---|---|---|
-| 🐛 **GitHub Issues** | `https://github.com/<your-username>/muyunimage/issues` | Bug 报告、功能请求 |
-| ✉️ **邮件** | `<your-email>` | 私密反馈、商务合作 |
+| 🐛 **提交问题** | https://github.com/zhipengge/apps/issues/new?title=%5B%E7%89%A7%E4%BA%91%E5%9B%BE%E7%89%87%5D%20 | Bug、功能请求、使用疑问 |
+| 📋 **已有问题** | https://github.com/zhipengge/apps/issues | 查看进度与已有解答 |
+| 📄 **支持页** | [support.html](./support.html) | 支持说明与常见问题 |
 
-### 反馈 Bug 时请尽量包含
-
-1. **复现步骤**（例如 "打开 X 图 → 涂抹左上角 → 应用消除 → 出现色块"）
-2. **截图**（原图 + 结果图对比最有价值）
-3. App 版本号与 macOS 版本
-4. 图片尺寸与格式
+标题请以 `[牧云图片]` 开头。请尽量包含：复现步骤、截图、App 版本、macOS 版本、图片尺寸与格式。
 
 ---
 
