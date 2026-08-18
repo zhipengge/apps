@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云右键助手 · 帮助与支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #007aff;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #0a84ff;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 4px; }
+  h2 {
+    font-size: 1.35rem; font-weight: 600;
+    margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+  }
+  h3 { font-size: 1.05rem; font-weight: 600; margin-top: 24px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 24px; }
+  .lead {
+    background: var(--bg-soft);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    margin: 20px 0;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 8px; }
+  .btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #fff !important;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .btn.secondary {
+    background: var(--bg-soft);
+    color: var(--fg) !important;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul li { margin: 6px 0; }
+  code {
+    background: var(--bg-soft);
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+  footer {
+    margin-top: 56px; padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--fg-dim); font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>牧云右键助手 — 帮助与支持</h1>
+<p class="meta">MuyunRight Support · Last updated: 2026-08-18</p>
+
+<div class="lead">
+  遇到问题、功能建议或使用疑问，请通过下方入口提交。我们会阅读每一条反馈。
+  <br>
+  If you have questions, bug reports, or feature requests, please use the links below.
+</div>
+
+<div class="actions">
+  <a class="btn" href="https://github.com/zhipengge/apps/issues/new?title=%5B%E7%89%A7%E4%BA%91%E5%8F%B3%E9%94%AE%E5%8A%A9%E6%89%8B%5D%20">提交问题 / New Issue</a>
+  <a class="btn secondary" href="https://github.com/zhipengge/apps/issues">查看已有问题 / All Issues</a>
+  <a class="btn secondary" href="privacy.html">隐私政策 / Privacy</a>
+</div>
+
+<h2>如何获得帮助 / How to get support</h2>
+<ol>
+  <li>点击 <strong>提交问题</strong>，用中文或英文描述你的问题。</li>
+  <li>标题请以 <code>[牧云右键助手]</code> 开头，便于我们识别。</li>
+  <li>如能提供系统版本（macOS）、App 版本、复现步骤和截图，处理会更快。</li>
+</ol>
+<p>GitHub 无需付费。没有 GitHub 账号也可以先浏览已有解答；注册后即可发帖。</p>
+
+<h2>常见问题 / FAQ</h2>
+
+<h3>启用扩展后右键菜单没有出现？</h3>
+<p>依次确认三点：系统设置「通用 → 登录项与扩展 → 文件提供程序」中「牧云右键助手」已打开（不要去「Finder」那一项，那是快捷操作）；主 App「概览」页显示「访达扩展已启用」；仍未出现时在终端执行 <code>killall Finder</code> 重启访达，或注销后重新登录。</p>
+
+<h3>为什么新建文件、在终端打开时会弹出授权面板？</h3>
+<p>App 运行在 macOS 沙盒中，这是 App Store 的安全要求。<strong>每个文件夹只需授权一次</strong>，之后该文件夹及其子文件夹都不再询问。授权记录保存在本机，可在主 App「权限管理」中随时查看或撤销。</p>
+
+<h3>授权会让 App 读到我的所有文件吗？</h3>
+<p>不会。授权仅限你确认的那个文件夹，且只在你主动点击菜单项时才访问。App 不扫描磁盘、不联网，详见 <a href="privacy.html">隐私政策</a>。</p>
+
+<h3>右键菜单太长，能收起来吗？</h3>
+<p>可以。主 App「菜单设置 → 收纳进牧云右键助手子菜单」开启后全部功能收进一个子菜单；关闭则平铺在右键菜单第一级。每个功能也都能单独关掉。</p>
+
+<h3>「在终端中打开」支持哪些终端？</h3>
+<p>自动检测已安装的系统终端、iTerm2、Warp、Ghostty、kitty、Alacritty，在「菜单设置」中选择偏好项。所选终端若已卸载会自动回退到系统终端。</p>
+
+<h3>可以自定义新建文件的模板吗？</h3>
+<p>可以。主 App「新建文件模板 → 添加模板」，填写名称、扩展名和可选的初始内容。模板可开关、可排序、可删除。</p>
+
+<h3>启动后看不到主窗口？</h3>
+<p>这是预期行为：扩展已启用时默认静默后台运行，只显示菜单栏图标。点击菜单栏图标 →「打开牧云右键助手」即可，也可在「通用设置」中开启「启动时显示主窗口」。</p>
+
+<h3>卸载后会残留什么吗？</h3>
+<p>从「应用程序」删除 App，并移除 <code>~/Library/Group Containers</code> 下的 <code>7252W54VUU.com.gezhipeng0201.MuyunRight</code> 容器目录，即可清除全部配置与授权记录。</p>
+
+<h2>English</h2>
+<p>MuyunRight enhances the macOS Finder context menu — new file/folder from templates, copy path, open in Terminal, move/copy to favorites. Support is provided via <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a>.</p>
+<ul>
+  <li>Open a new issue with the title prefix <code>[牧云右键助手]</code> or <code>[MuyunRight]</code>.</li>
+  <li>Include macOS version, app version, steps to reproduce, and screenshots if possible.</li>
+  <li>If the menu does not appear, enable the Finder extension in System Settings › Login Items &amp; Extensions › Finder Extensions, then run <code>killall Finder</code>.</li>
+  <li>Privacy policy: <a href="privacy.html">privacy.html</a></li>
+</ul>
+
+<footer>
+  <p>© 2026 牧云右键助手 (MuyunRight) · <a href="https://github.com/zhipengge/apps/tree/main/muyunright">Project files</a></p>
+</footer>
+</body>
+</html>

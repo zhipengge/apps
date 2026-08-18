@@ -1,4 +1,4 @@
-# 右键大师 (SuperRight) — 隐私政策 / Privacy Policy
+# 牧云右键助手 (MuyunRight) — 隐私政策 / Privacy Policy
 
 **最后更新 / Last updated: 2026-08-11**
 
@@ -8,15 +8,16 @@
 
 ### 总览
 
-**右键大师不收集、不上传、不分享你的任何数据。** 你的文件、菜单配置、文件模板与文件夹授权信息全部只在你这台 Mac 本地处理和保存。本 App 没有后端服务器，没有云同步，不内嵌任何第三方分析、追踪或广告 SDK，**不发起任何网络请求**——右键菜单、新建文件、拷贝路径、打开终端等所有功能均在你的设备上完成，断网状态下完全可用。
+**牧云右键助手不收集、不上传、不分享你的任何数据。** 你的文件、菜单配置、文件模板与文件夹授权信息全部只在你这台 Mac 本地处理和保存。本 App 没有后端服务器，没有云同步，不内嵌任何第三方分析、追踪或广告 SDK，**不发起任何网络请求**——右键菜单、新建文件、拷贝路径、打开终端等所有功能均在你的设备上完成，断网状态下完全可用。
 
 ### 我们处理什么、在哪处理
 
 | 数据 | 用途 | 处理/存储位置 |
 |---|---|---|
 | 菜单配置与文件模板 | 决定右键菜单显示哪些功能与模板 | 本机 App Group 沙盒容器（`~/Library/Group Containers/...`）内的偏好设置 |
-| 文件夹授权书签 | 记住你已授权"新建文件"的文件夹，避免重复弹窗 | 本机 App Group 沙盒容器，系统安全书签（Security-Scoped Bookmark），仅本机有效 |
-| 你右键操作的文件/文件夹路径 | 执行你触发的动作（新建文件、拷贝路径、打开终端） | **仅内存**，动作完成即释放；拷贝的路径仅进入你本机的剪贴板 |
+| 文件夹授权书签 | 记住你已授权的文件夹（新建/移动/拷贝/在终端中打开等），避免重复弹窗 | 本机 App Group 沙盒容器，系统安全书签（Security-Scoped Bookmark），仅本机有效 |
+| 你右键操作的文件/文件夹路径 | 执行你触发的动作（新建、拷贝路径、打开终端、移动/拷贝到等） | **仅内存**，动作完成即释放；拷贝的路径仅进入你本机的剪贴板 |
+| 最近用过的归档位置（最多 5 条目录路径） | 在「移动到 / 拷贝到」子菜单里直接列出你常去的位置 | 本机 App Group 沙盒容器；可在「菜单设置」中关闭该功能或一键清除记录 |
 | 新建的文件 | 按模板在你指定的文件夹创建 | 直接写入你右键的文件夹，App 不留存副本 |
 
 ### 我们 *不* 做的事
@@ -36,15 +37,15 @@
 
 ### 文件访问
 
-右键大师运行在 macOS App Sandbox 中：
+牧云右键助手运行在 macOS App Sandbox 中：
 
 - **访达扩展**只在你主动点击菜单项时才操作对应的文件或文件夹；
-- 首次在某个文件夹"新建文件"时，系统会弹出标准授权面板（NSOpenPanel）请求你确认，确认后系统生成安全书签保存在本机，该文件夹此后不再询问；
+- 首次在某个文件夹执行新建、移动/拷贝、在终端中打开等操作时，系统会弹出标准授权面板（NSOpenPanel）请求你确认，确认后系统生成安全书签保存在本机，该文件夹此后不再询问；
 - App 无法访问你未授权的任何位置，也不会扫描或读取磁盘上的其他内容。
 
 ### 数据删除
 
-- **撤销文件夹授权**：主 App「权限管理」页面可查看全部已授权文件夹，支持单个撤销或全部撤销；也可直接删除 App Group 容器目录（`~/Library/Group Containers` 下以 `7252W54VUU.com.gezhipeng0201.SuperRight` 命名的文件夹）。
+- **撤销文件夹授权**：主 App「权限管理」页面可查看全部已授权文件夹，支持单个撤销或全部撤销；也可直接删除 App Group 容器目录（`~/Library/Group Containers` 下以 `7252W54VUU.com.gezhipeng0201.MuyunRight` 命名的文件夹）。
 - **全部清除**：从"应用程序"文件夹删除 App，并移除上述容器目录，即无任何残留。
 
 ### 联系方式
@@ -57,7 +58,7 @@
 
 ### Summary
 
-**SuperRight collects no data, transmits nothing to remote services, and shares nothing with third parties.** Your files, menu settings, file templates, and folder authorizations are processed and stored exclusively on your own Mac. There is no backend server, no cloud sync, no embedded analytics, tracking, or advertising SDK — and **the app makes zero network requests**. Every feature (context menu, new file, copy path, open in terminal) runs entirely on your device and works fully offline.
+**MuyunRight collects no data, transmits nothing to remote services, and shares nothing with third parties.** Your files, menu settings, file templates, and folder authorizations are processed and stored exclusively on your own Mac. There is no backend server, no cloud sync, no embedded analytics, tracking, or advertising SDK — and **the app makes zero network requests**. Every feature (context menu, new file, copy path, open in terminal) runs entirely on your device and works fully offline.
 
 ### What we process and where
 
@@ -85,7 +86,7 @@
 
 ### File access
 
-SuperRight runs inside the macOS App Sandbox:
+MuyunRight runs inside the macOS App Sandbox:
 
 - The Finder extension touches a file or folder only when you explicitly click a menu item;
 - The first time you create a file in a folder, the standard system authorization panel (NSOpenPanel) asks for your confirmation; the resulting security-scoped bookmark is stored locally, and that folder is never asked about again;
@@ -93,7 +94,7 @@ SuperRight runs inside the macOS App Sandbox:
 
 ### Data deletion
 
-- **Revoke folder authorizations**: the "Permissions" page in the main app lists every authorized folder and lets you revoke them individually or all at once; alternatively, remove the App Group container under `~/Library/Group Containers` named `7252W54VUU.com.gezhipeng0201.SuperRight`.
+- **Revoke folder authorizations**: the "Permissions" page in the main app lists every authorized folder and lets you revoke them individually or all at once; alternatively, remove the App Group container under `~/Library/Group Containers` named `7252W54VUU.com.gezhipeng0201.MuyunRight`.
 - **Complete wipe**: delete the app from /Applications and remove the container above. Nothing else remains.
 
 ### Contact

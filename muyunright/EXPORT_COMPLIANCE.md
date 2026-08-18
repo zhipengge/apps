@@ -16,7 +16,7 @@
 
 ## ✅ 已完成的修改
 
-在 `SuperRight.xcodeproj/project.pbxproj` 中，**主 App（SuperRight）与访达扩展（SuperRightFinder）两个 target** 的 Debug / Release 共四个 build configuration 各加了一行：
+在 `MuyunRight.xcodeproj/project.pbxproj` 中，**主 App（MuyunRight）与访达扩展（MuyunRightFinder）两个 target** 的 Debug / Release 共四个 build configuration 各加了一行：
 
 ```diff
 GENERATE_INFOPLIST_FILE = YES;
@@ -25,19 +25,19 @@ GENERATE_INFOPLIST_FILE = YES;
 
 > 项目使用 Xcode 的"自动生成 Info.plist"模式，
 > 通过 `INFOPLIST_KEY_` 前缀的 build setting 把 key 合并到生成的 Info.plist 中。
-> 扩展 target 额外通过 `INFOPLIST_FILE = Config/SuperRightFinderInfo.plist` 提供 `NSExtension` 声明，两者由 Xcode 自动合并。
+> 扩展 target 额外通过 `INFOPLIST_FILE = Config/MuyunRightFinderInfo.plist` 提供 `NSExtension` 声明，两者由 Xcode 自动合并。
 
 验证方式：
 ```bash
 # 构建后检查产物（主 App 与扩展各查一次）
-plutil -p "/path/to/右键大师.app/Contents/Info.plist" | grep ITSApp
-plutil -p "/path/to/右键大师.app/Contents/PlugIns/SuperRightFinder.appex/Contents/Info.plist" | grep ITSApp
+plutil -p "/Applications/MuyunRight.app/Contents/Info.plist" | grep ITSApp
+plutil -p "/Applications/MuyunRight.app/Contents/PlugIns/MuyunRightFinder.appex/Contents/Info.plist" | grep ITSApp
 # 应输出: "ITSAppUsesNonExemptEncryption" => false
 ```
 
 ---
 
-## 📜 为什么右键大师可以填 `NO`（豁免）
+## 📜 为什么牧云右键助手可以填 `NO`（豁免）
 
 ### 苹果官方判断标准
 
@@ -50,13 +50,13 @@ plutil -p "/path/to/右键大师.app/Contents/PlugIns/SuperRightFinder.appex/Con
    - (c) 通过苹果系统加密与服务器通信
    - (d) 使用标准开源加密协议（HTTPS / TLS / SSH / SSL）进行通信，且没有自创加密算法
 
-### 右键大师的实际加密用法
+### 牧云右键助手的实际加密用法
 
 | 加密类型 | 用途 | 落入哪一类豁免 |
 |---|---|---|
 | **无** | App 不发起任何网络请求，没有 HTTPS/TLS 调用，没有自研加密、没有 DRM、没有加密存储 | 直接满足条件 1「完全没有加密功能」 |
 
-**结论**：右键大师是纯本地工具——右键菜单、文件模板、路径拷贝、打开终端均不涉及任何加密 API 或网络通信 → 满足最宽松的豁免类别（条件 1，比牧云图片的 HTTPS 豁免场景更简单）→ 填 `NO`。
+**结论**：牧云右键助手是纯本地工具——右键菜单、文件模板、路径拷贝、打开终端均不涉及任何加密 API 或网络通信 → 满足最宽松的豁免类别（条件 1，比牧云图片的 HTTPS 豁免场景更简单）→ 填 `NO`。
 
 ### 法律依据
 - **EAR 5D002**（信息安全软件分类）— 本 App 不落入该分类
@@ -100,4 +100,4 @@ plutil -p "/path/to/右键大师.app/Contents/PlugIns/SuperRightFinder.appex/Con
 
 ---
 
-**右键大师当前状态：✅ 主 App 与访达扩展均已配置 ITSAppUsesNonExemptEncryption = false（豁免），提交自动通过。**
+**牧云右键助手当前状态：✅ 主 App 与访达扩展均已配置 ITSAppUsesNonExemptEncryption = false（豁免），提交自动通过。**
