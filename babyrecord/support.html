@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云宝宝记 · 帮助与支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #c45c6a;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #e08a96;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 4px; }
+  h2 {
+    font-size: 1.35rem; font-weight: 600;
+    margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+  }
+  h3 { font-size: 1.05rem; font-weight: 600; margin-top: 24px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 24px; }
+  .lead {
+    background: var(--bg-soft);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    margin: 20px 0;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul li, ol li { margin: 6px 0; }
+  footer {
+    margin-top: 56px; padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--fg-dim); font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>牧云宝宝记 — 帮助与支持</h1>
+<p class="meta">MuyunBaby · Support · 2026-08-19</p>
+
+<div class="lead">
+  牧云宝宝记是本地育儿手账：喂奶、排便、睡眠、辅食、身高、体重、体温都能记，也可以自己加类型和分级字段。
+  没有账号，不联网。图表可分类型或整合成长图分享。换机请先导出备份。
+</div>
+
+<h2>能做什么</h2>
+<ul>
+  <li>首页一键记下喂奶、排便、睡眠、辅食、体重、身高、体温；发生时间事后可改。</li>
+  <li>亲喂可记左右时长；奶量可手填，留空则按当天平均或日龄估算。</li>
+  <li>排便按种类分级展开，有便血再选程度；字段结构可改。</li>
+  <li>多位宝宝分开记；设置里左滑删除宝宝及其全部记录。</li>
+  <li>图表可分类型或整合，横轴支持日期、月龄、出生天数；一键长图分享，水印可关。</li>
+  <li>自定义类型支持小数、整数、时长、文字、是否、枚举、分组；枚举选项可再挂子字段。</li>
+</ul>
+
+<h2>怎么记一条</h2>
+<ol>
+  <li>首次打开会有示例宝宝「安心」。也可以在设置里添加自己的宝宝（名字和出生日期必填）。</li>
+  <li>在「记录」页点对应类型。首页也能看到上次喂奶和上次排便。</li>
+  <li>发生时间默认为现在。若事后补记，改成真实时间再保存（不能超过当前 24 小时的未来）。</li>
+</ol>
+
+<h2>亲喂奶量</h2>
+<p>亲喂可以手填奶量，也可以留空。留空时：</p>
+<ul>
+  <li>优先用<strong>当天该宝宝其他已填奶量</strong>的平均值；</li>
+  <li>当天没有参考时，按日龄估算：出生第 1 天 10 ml，第 10 天 40 ml，第 30 天 80 ml，第 60 天 100 ml，第 90 天起最多 120 ml。</li>
+</ul>
+<p>编辑页会写明这次用的是手填、当天平均还是日龄默认。图表里未手填的亲喂会按同一规则估算。</p>
+
+<h2>排便为什么还有下一级</h2>
+<p>选「大便」后会出现便量、性状、便血等。「有便血」还会再出现「程度」（轻微 / 严重）。这是分级字段：枚举选项可以挂子字段。你可以在「设置 → 记录类型」里改这些字段，也可以把便量从「量大 / 量少」改成按克填写的小数。</p>
+
+<h2>图表与长图分享</h2>
+<ul>
+  <li>「分类型」：选一种记录和字段，看趋势、分布、每日次数。横轴可切日期、出生月龄（如 10M4）或出生天数。</li>
+  <li>「整合」：把当前范围内各类型曲线放在同一份长图里；同单位曲线会叠在一张图上（例如亲喂左侧 / 右侧时长）。</li>
+  <li>右上角「分享」生成长截图。默认带「宝宝记」水印，关掉开关后再分享则不含 App 名。</li>
+  <li>分享走系统面板（微信、文件、隔空投送等）。App 不申请相册权限，也不上传图片。</li>
+</ul>
+
+<h2>多个宝宝</h2>
+<p>设置里添加。首页左上角切换。记录和图表只显示当前宝宝。设置列表左滑，或进入编辑页，可删除宝宝及其全部记录。删除需确认，不会自动恢复。</p>
+
+<h2>换手机</h2>
+<ol>
+  <li>旧手机：设置 → 导入 / 导出 → 导出备份，把 JSON 存到「文件」或发到新手机。</li>
+  <li>新手机：安装 App 后，设置 → 导入 / 导出 → 方式选「整份替换」→ 从文件导入。</li>
+</ol>
+<p>合并模式会按编号并入，适合两台设备都记过、想合在一起的情况。换机请用整份替换。</p>
+
+<h2>常见问题</h2>
+<h3>示例宝宝「安心」从哪来的？删了还会回来吗？</h3>
+<p>首次安装会带这位示例宝宝和一段喂奶记录，方便先看图表。在设置里删掉后不会再出现。</p>
+<h3>删掉所有宝宝后再打开，会不会自动建一个？</h3>
+<p>不会。空列表会保持为空。需要时再添加，或导入备份。</p>
+<h3>内置的喂奶类型被我改乱了</h3>
+<p>设置 → 记录类型 → 可以补回缺失的内置类型，或重置全部内置类型。你自己新建的类型会保留。</p>
+<h3>为什么没有云同步？</h3>
+<p>为了把喂养和排便这类数据留在你的设备上。迁移请用导出备份。</p>
+<h3>这是医疗 App 吗？</h3>
+<p>不是。只做记录和统计，不提供诊断或用药建议。亲喂估算奶量仅供参考，不能代替称重或医嘱。</p>
+
+<h2>隐私</h2>
+<p>完整政策见 <a href="privacy.html">privacy.html</a>。</p>
+
+<h2>反馈</h2>
+<p>请通过 App Store 产品页的支持入口留言。</p>
+
+<footer>
+  © 2026 牧云宝宝记 (MuyunBaby)
+</footer>
+
+</body>
+</html>
