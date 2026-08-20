@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>即刻 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #007aff;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #0a84ff;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 {
+    font-size: 1.4rem; font-weight: 600;
+    margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border);
+  }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead {
+    background: var(--bg-soft);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    margin: 20px 0;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85em;
+    background: var(--bg-soft);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer {
+    margin-top: 64px; padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--fg-dim); font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+<h1>即刻 · 隐私政策</h1>
+<p class="meta">JiKe — Privacy Policy · 最后更新 / Last updated: 2026-08-20</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="lead">
+  <strong>即刻不收集、不上传、不分享你的任何数据。</strong>
+  配置、标签会话与终端输出全部只在你这台 Mac 本地处理和保存。没有后端、没有云同步、没有分析或广告 SDK。
+</div>
+
+<h3>我们处理什么、在哪处理</h3>
+<table>
+  <tr><th>数据</th><th>用途</th><th>处理/存储位置</th></tr>
+  <tr>
+    <td>外观与行为配置</td>
+    <td>记住热键、配色、窗口大小、自定义命令等</td>
+    <td>本机偏好设置（<code>~/Library/Preferences/com.gezhipeng0201.JiKe.plist</code>）</td>
+  </tr>
+  <tr>
+    <td>标签快照（标题、工作目录、分屏结构）</td>
+    <td>下次启动恢复标签</td>
+    <td>同上文件中的独立 key</td>
+  </tr>
+  <tr>
+    <td>伪终端里的命令与输出</td>
+    <td>运行你的登录 Shell</td>
+    <td>仅内存 / 本机 PTY；你另存为文件时才写入指定路径</td>
+  </tr>
+  <tr>
+    <td>你选中的文本</td>
+    <td>拷贝、Quick Open、在网页搜索</td>
+    <td>仅内存；拷贝进入本机剪贴板；搜索交给系统浏览器</td>
+  </tr>
+</table>
+
+<h3>我们不做的事</h3>
+<ul>
+  <li>不向任何远端服务器上传终端内容或配置</li>
+  <li>不接入广告网络或分析平台</li>
+  <li>不读取通讯录、位置、麦克风、摄像头</li>
+  <li>不要求登录账号，不申请「完全磁盘访问」</li>
+</ul>
+
+<p>你主动「在网页搜索」或打开链接时，系统会用默认浏览器打开。这是系统打开行为，不是即刻自己的联网代码。</p>
+
+<h3>文件与终端访问</h3>
+<p>即刻<strong>不启用 App 沙盒</strong>，以便登录 Shell 能像系统「终端」一样读写你的项目文件。权限边界就是你在这个终端里自己敲的命令。App 不会在后台扫描磁盘。</p>
+
+<h3>数据删除</h3>
+<p>从「应用程序」删除 App，并删除 <code>~/Library/Preferences/com.gezhipeng0201.JiKe.plist</code>，即无任何残留。</p>
+
+<h2 id="en">English</h2>
+
+<div class="lead">
+  <strong>JiKe collects no data, transmits nothing to remote services, and shares nothing with third parties.</strong>
+  Settings, tab sessions, and terminal output stay on your Mac. There is no backend, cloud sync, analytics, or advertising SDK.
+</div>
+
+<h3>What we process and where</h3>
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
+  <tr>
+    <td>Appearance and behavior settings</td>
+    <td>Remember hotkey, palette, window size, custom commands</td>
+    <td>Local preferences (<code>~/Library/Preferences/com.gezhipeng0201.JiKe.plist</code>)</td>
+  </tr>
+  <tr>
+    <td>Tab snapshots</td>
+    <td>Restore tabs on next launch</td>
+    <td>A separate key in the same preferences file</td>
+  </tr>
+  <tr>
+    <td>Commands and PTY output</td>
+    <td>Run your login shell</td>
+    <td>In-memory / local PTY; written to disk only if you export</td>
+  </tr>
+  <tr>
+    <td>Selected text</td>
+    <td>Copy, Quick Open, web search</td>
+    <td>In-memory; clipboard is local; search opens the system browser</td>
+  </tr>
+</table>
+
+<h3>What we do not do</h3>
+<ul>
+  <li>No upload of terminal contents or settings</li>
+  <li>No ad networks or analytics platforms</li>
+  <li>No Contacts, Location, Microphone, or Camera</li>
+  <li>No account sign-up, no Full Disk Access prompt</li>
+</ul>
+
+<p>JiKe is not App Sandboxed, so your login shell can read and write project files the same way Terminal and iTerm do. The app does not scan the disk in the background.</p>
+
+<p>Remove the app from Applications and delete <code>~/Library/Preferences/com.gezhipeng0201.JiKe.plist</code> to erase remaining data.</p>
+
+<footer>
+  <p>© 2026 即刻 (JiKe) · <a href="support.html">Support</a> · <a href="https://github.com/zhipengge/apps/tree/main/jike">Project files</a></p>
+</footer>
+</body>
+</html>

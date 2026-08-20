@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>即刻 · 帮助与支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #007aff;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #0a84ff;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 4px; }
+  h2 {
+    font-size: 1.35rem; font-weight: 600;
+    margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+  }
+  h3 { font-size: 1.05rem; font-weight: 600; margin-top: 24px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 24px; }
+  .lead {
+    background: var(--bg-soft);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    margin: 20px 0;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 8px; }
+  .btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #fff !important;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .btn.secondary {
+    background: var(--bg-soft);
+    color: var(--fg) !important;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul li { margin: 6px 0; }
+  code {
+    background: var(--bg-soft);
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+  footer {
+    margin-top: 56px; padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--fg-dim); font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>即刻 — 帮助与支持</h1>
+<p class="meta">JiKe Support · Last updated: 2026-08-20</p>
+
+<div class="lead">
+  遇到问题、功能建议或使用疑问，请通过下方入口提交。我们会阅读每一条反馈。
+  <br>
+  If you have questions, bug reports, or feature requests, please use the links below.
+</div>
+
+<div class="actions">
+  <a class="btn" href="https://github.com/zhipengge/apps/issues/new?title=%5B%E5%8D%B3%E5%88%BB%5D%20">提交问题 / New Issue</a>
+  <a class="btn secondary" href="https://github.com/zhipengge/apps/issues">查看已有问题 / All Issues</a>
+  <a class="btn secondary" href="privacy.html">隐私政策 / Privacy</a>
+</div>
+
+<h2>如何获得帮助 / How to get support</h2>
+<ol>
+  <li>点击 <strong>提交问题</strong>，用中文或英文描述你的问题。</li>
+  <li>标题请以 <code>[即刻]</code> 开头，便于我们识别。</li>
+  <li>如能提供系统版本（macOS）、App 版本、复现步骤和截图，处理会更快。</li>
+</ol>
+
+<h2>常见问题 / FAQ</h2>
+
+<h3>按 F12 没反应？</h3>
+<p>笔记本请按 <strong>Fn+F12</strong>。若仍无效，到「系统设置 → 键盘 → 键盘快捷键」检查 F12 是否被占用。</p>
+
+<h3>为什么快捷键是 Ctrl 不是 Cmd？</h3>
+<p>为了和 Linux 下的 Guake 一致。新建标签是 Ctrl+Shift+T，拷贝是 Ctrl+Shift+C。Command 对应 Guake 的 Super 键。</p>
+
+<h3>为什么没有进 Mac App Store？</h3>
+<p>下拉终端必须运行真实本地 Shell。App Store 要求沙盒，沙盒里伪终端几乎不能用。即刻与系统「终端」、iTerm 一样不启用沙盒，走公证分发。</p>
+
+<h3>标签标题从哪来？</h3>
+<p>自定义名称优先；否则读当前目录的 <code>.guake.yml</code> 或 <code>.jike.yml</code>（<code>title:</code> 字段）；再否则用终端标题或目录名。</p>
+
+<h3>怎么用 URL 控制窗口？</h3>
+<p>在终端或脚本里执行 <code>open 'jike://toggle'</code> 可呼出/收起。也支持 new-tab、execute、hide、show 等命令，详见产品 README。</p>
+
+<h3>卸载后会残留什么吗？</h3>
+<p>从「应用程序」删除 App，并移除 <code>~/Library/Preferences/com.gezhipeng0201.JiKe.plist</code> 即可。</p>
+
+<h2>English</h2>
+<p>JiKe is a Guake-style drop-down terminal for macOS. Support is provided via <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a>.</p>
+<ul>
+  <li>Open a new issue with the title prefix <code>[即刻]</code> or <code>[JiKe]</code>.</li>
+  <li>Include macOS version, app version, steps to reproduce, and screenshots if possible.</li>
+  <li>On a laptop the toggle hotkey is Fn+F12. If nothing happens, check Keyboard Shortcuts in System Settings for an F12 conflict.</li>
+  <li>Privacy policy: <a href="privacy.html">privacy.html</a></li>
+</ul>
+
+<footer>
+  <p>© 2026 即刻 (JiKe) · <a href="https://github.com/zhipengge/apps/tree/main/jike">Project files</a></p>
+</footer>
+</body>
+</html>
