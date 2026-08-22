@@ -2,9 +2,9 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
-  <title>速闻 · 2026年8月22日</title>
+  <title>速闻 · 2026年8月21日</title>
   <style>
     :root {
       --bg: #f6f5f2;
@@ -13,6 +13,7 @@
       --muted: #6e6e73;
       --line: rgba(28, 28, 30, 0.08);
       --accent: #1c1c1e;
+      --link: #0b57d0;
       --chip: #f3f1ec;
     }
     @media (prefers-color-scheme: dark) {
@@ -23,6 +24,7 @@
         --muted: #98989d;
         --line: rgba(255, 255, 255, 0.08);
         --accent: #f2f2f7;
+        --link: #8ab4ff;
         --chip: #2c2c2e;
       }
     }
@@ -35,12 +37,12 @@
       font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", sans-serif;
       font-size: 17px;
       line-height: 1.68;
-      -webkit-text-size-adjust: 100%;
+      overflow-x: clip;
     }
     .digest {
       max-width: 720px;
       margin: 0 auto;
-      padding: 8px 0 36px;
+      padding: 8px 0 calc(28px + env(safe-area-inset-bottom));
     }
     .hero, .media-card, .story, .colophon { padding: 20px 18px; }
     .kicker, .window {
@@ -81,6 +83,7 @@
       border: 1px solid var(--line);
       border-radius: 16px;
     }
+    .story { scroll-margin-top: 12px; }
     .story .tag {
       display: inline-block;
       margin-bottom: 8px;
@@ -100,7 +103,7 @@
       border-radius: 12px;
       background: var(--line);
     }
-    audio { margin: 8px 0 0; }
+    audio { margin: 8px 0 0; min-height: 44px; }
     figcaption, .hint, small, .byline {
       display: block;
       margin: 0 0 10px;
@@ -108,6 +111,11 @@
       color: var(--muted);
     }
     .byline { display: flex; flex-wrap: wrap; gap: 8px 12px; }
+    .byline a {
+      color: var(--link);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
     blockquote {
       margin: 14px 0;
       padding: 10px 0 10px 14px;
@@ -127,7 +135,8 @@
     }
     @media (prefers-color-scheme: dark) { pre { background: #000; } }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    a { color: var(--accent); }
+    a { color: var(--link); }
+    .chips a { color: var(--muted); }
     ul.points { margin: 0 0 12px; padding-left: 1.15em; }
     .tabset { position: relative; margin-top: 8px; }
     .tabset > input {
@@ -143,8 +152,12 @@
       gap: 8px;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      padding: 2px 0 12px;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      padding: 8px 0 12px;
       margin: 0 0 4px;
+      background: var(--card);
     }
     .tabs label { flex: 0 0 auto; background: var(--chip); }
     .pane { display: none; padding-top: 4px; }
@@ -194,8 +207,8 @@
   <article class="digest">
     <header class="hero">
       <p class="kicker">速闻 · 日报</p>
-      <h1>2026年8月22日</h1>
-      <p class="window">覆盖北京时间 8月21日 12:00 — 8月22日 12:00</p>
+      <h1>2026年8月21日</h1>
+      <p class="window">覆盖北京时间 8月20日 12:00 — 8月21日 12:00</p>
       <p class="lead">中印尼全面战略对话首次开会，财政部谈「十五五」逆周期调节；联训新闻扎堆，A股缩量、美股走弱，暑期档票房越过 110 亿。</p>
       <ul class="chips">
         <li><a href="#tech">科技</a></li>

@@ -1,8 +1,12 @@
 # 速闻 HTML 编辑规范
 
-本文给人工编辑和后续自动生成共用。目标是每天产出一份可被「速闻」iOS App 直接打开的 `index.html`：手机可读、图文结合，**五个新闻板块分开**，板块内用**标签页聚类多条**，并且**每条新闻注明来源**。
+本文给人工编辑、自动生成和 iOS App 共用。目标是每天产出一份可被「速闻」直接打开的 `index.html`：手机可读、图文结合，**五个新闻板块分开**，板块内用**标签页聚类多条**，并且**每条新闻注明来源**。
 
-App 会按日期读取：
+---
+
+## 0. App 怎么读这些文件
+
+用户打开 App 后，看到的是 WKWebView 里的当日 `index.html`。左右可以换期，点来源会留在 App 内用 Safari 视图打开，不会跳去系统浏览器。
 
 ```
 https://raw.githubusercontent.com/zhipengge/apps/main/speed/contents/YYYYMMDD/index.html
@@ -11,8 +15,32 @@ https://raw.githubusercontent.com/zhipengge/apps/main/speed/contents/YYYYMMDD/in
 对应仓库目录：
 
 ```
-apps/speed/contents/YYYYMMDD/index.html
+apps/speed/contents/
+├── catalog.json          ← 已发布期次清单，App 优先读这个
+├── 20260821/index.html
+└── 20260822/
+    ├── index.html
+    └── assets/
 ```
+
+| App 行为 | 对编辑的含义 |
+|---|---|
+| 默认打开「当前窗口」那一期 | 目录名 `YYYYMMDD` 覆盖 **前一日 12:00 至当日 12:00**（`Asia/Shanghai`）。中午 12:00 之后，用户默认看下一期 |
+| 先读 `catalog.json`，失败再扫 GitHub 目录 | 每新增或下架一期，必须改 `catalog.json`。不要把 `20260822_副本` 这类目录写进去 |
+| 先展示本地缓存，再静默回源 | 改完 HTML 推到 `main` 后，用户下次打开或点刷新就能看到；不必清缓存 |
+| 外链用页内 Safari | 来源必须是可打开的 `https://`（政府站可用 `http://`） |
+| 左右滑换期，WebView 禁止横向弹性 | **页面不得出现整页横向滚动**。代码块可以单独横滑 |
+| 顶栏有上一期 / 下一期 / 刷新 | HTML 里不要再做「换日期」控件 |
+| App 会注入 `<base href=".../YYYYMMDD/">` | 相对路径 `assets/briefing.m4a` 能工作；不要自己写 `<base>` |
+| 页内脚本不执行 | 标签页必须用纯 CSS，禁止 `script` |
+
+`catalog.json` 只放 8 位数字日期，升序：
+
+```json
+["20260821", "20260822"]
+```
+
+也接受 `{"dates":["20260821","20260822"]}`。App 会丢掉无法解析的名字。
 
 ---
 
@@ -20,44 +48,46 @@ apps/speed/contents/YYYYMMDD/index.html
 
 | 规则 | 要求 |
 |---|---|
-| 目录名 | 必须是 `YYYYMMDD`，例如 `20260822`，且为真实公历日期（时区按 `Asia/Shanghai`） |
+| 目录名 | 必须是 `YYYYMMDD`，真实公历日期，时区 `Asia/Shanghai` |
 | 入口文件 | 每个日期目录有且仅有一个入口：`index.html` |
+| 清单 | 根目录 `contents/catalog.json` 与实际期次同步 |
 | 编码 | UTF-8，无 BOM |
-| 文档类型 | 完整 HTML5 文档，必须包含 `<!DOCTYPE html>`、`<html lang="zh-CN">`、`<head>`、`<body>` |
+| 文档类型 | 完整 HTML5：`<!DOCTYPE html>`、`<html lang="zh-CN">`、`<head>`、`<body>` |
 | 体积 | `index.html` 建议 ≤ 150KB；单日全部本地资源建议 ≤ 8MB |
 | 脚本 | **禁止**外链脚本、内联脚本、`iframe` 广告、自动播放音视频 |
 | 推送 | 写入后提交到 `zhipengge/apps` 的 `main` 分支，App 才会拉到 |
+| 不要提交 | `.DS_Store`、`*_副本`、编辑器临时目录 |
 
-可选本地资源放在同目录：
+可选本地资源：
 
 ```
 contents/20260822/
 ├── index.html
 └── assets/
-    ├── cover.jpg
     ├── briefing.m4a
     ├── clip.mp4
     └── poster.jpg
 ```
 
-相对路径以 `index.html` 为基准，例如 `assets/briefing.m4a`。远程资源必须是 `https://`。
+相对路径以 `index.html` 为基准。远程资源必须是 `https://`。
 
 ---
 
 ## 2. 时间窗口（必守）
 
-每一期对应「发布日」当天的目录，但正文覆盖的是**滚动 24 小时**，不是自然日 0 点到 24 点。
+每一期对应「发布日」当天的目录，正文覆盖的是**滚动 24 小时**，不是自然日 0 点到 24 点。
 
 | 项目 | 要求 |
 |---|---|
 | 窗口 | `Asia/Shanghai` 下，**发布日前一日 12:00 至发布日 12:00** |
 | 示例 | `contents/20260822/` 覆盖 **2026-08-21 12:00 — 2026-08-22 12:00** |
 | 页眉 | hero 里必须写清窗口，例如「覆盖北京时间 8月21日 12:00 — 8月22日 12:00」 |
+| App 默认期 | 当前时刻落在哪一期的窗口，就默认打开哪一期；该期尚未入库则打开最近一期，并提示「今日速闻尚未发布」 |
 | 跨窗口事件 | 事件发生在窗口外、但窗口内仍是主跟进稿的，可以收录；必须同时写**事件时间**和**见报时间** |
 | 尚未发生 | 预告、将访、将上会、将开训可以写，但不得写成已经发生 |
 | 周末 / 休市 | 财经数字写到窗口内最后一个已收盘交易日，并注明日期 |
 
-不要把窗口外的旧闻、传闻和「今天可能会」写成当日新闻。
+不要把窗口外的旧闻、传闻和「今天可能会」写成当日新闻。目录名、`<title>`、`<h1>` 必须是同一天，禁止把 8 月 22 日的稿子放进 `20260821/` 却不改标题。
 
 ---
 
@@ -68,10 +98,10 @@ contents/20260822/
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   <title>速闻 · 2026年8月22日</title>
-  <style>/* 只写本页样式，见第 7 节 */</style>
+  <style>/* 只写本页样式，见第 8 节 */</style>
 </head>
 <body>
   <article class="digest">
@@ -96,7 +126,6 @@ contents/20260822/
       </audio>
     </section>
 
-    <!-- 下面 5 个板块必须都出现，顺序固定，板块之间不得混写 -->
     <section id="tech" class="story" data-category="科技">...</section>
     <section id="politics" class="story" data-category="政治">...</section>
     <section id="military" class="story" data-category="军事">...</section>
@@ -113,6 +142,8 @@ contents/20260822/
 
 `title` 格式固定为 `速闻 · YYYY年M月D日`。
 
+**不要**写 `maximum-scale=1`。用户需要放大正文；禁止缩放会伤害视力和动态字体。
+
 ---
 
 ## 4. 栏目要求
@@ -128,6 +159,8 @@ contents/20260822/
 | `entertainment` | 娱乐 | 影视综、音乐、体育文娱、文化活动 | 可用公开物料，避免八卦人身攻击 |
 
 每板块建议 2–4 个标签页，合计 300–800 字。整期阅读时长控制在 6–10 分钟。语音速览 30–90 秒，只读结论，不念来源链接。
+
+首屏 `lead` 必须能独立成立：用户 3 秒内知道今天看什么。不要把 lead 写成栏目目录。
 
 ---
 
@@ -190,8 +223,10 @@ App 的 WKWebView **不执行**页内脚本。标签切换必须用 CSS，推荐
 - **不要**用 `:target` 锚点做标签页（会把页面弹跳到半中腰）。
 - **不要**用 JavaScript 切换。
 - `input` 仅允许 `type="radio"`（或折叠用的 `checkbox`），**禁止**包在 `<form>` 里，禁止 `action`、联网提交。
+- `.tabs` 必须 `position: sticky; top: 0`，长文翻下去还能改标签。
+- `.story` 加 `scroll-margin-top`，顶栏 chips 跳转时标题不被挡住。
 
-对应 CSS 用兄弟选择器，不依赖脚本：
+对应 CSS 用兄弟选择器：
 
 ```css
 .tabset > input {
@@ -208,6 +243,12 @@ App 的 WKWebView **不执行**页内脚本。标签切换必须用 CSS，推荐
 #tabs-tech-1:checked ~ .tabs label[for="tabs-tech-1"] {
   background: var(--accent);
   color: var(--bg);
+}
+.tabs {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--card);
 }
 ```
 
@@ -237,8 +278,9 @@ App 的 WKWebView **不执行**页内脚本。标签切换必须用 CSS，推荐
 | 来源名 | 写媒体或机构名，不写「据悉」「网络流传」 |
 | 原文链接 | 绝对 `https://`（或官方 `http://` 政府站点），能点开核对 |
 | 时间 | 用 `<time datetime>`；能精确到时刻就写时刻 |
-| 多源核对 | 同一事实被两家报道，可并列两个来源，用顿号或第二个 `<a>` |
+| 多源核对 | 同一事实被两家报道，可并列两个来源 |
 | 转载链 | 若只能找到转载页，写成「新华社 / 人民网」，链接指向能打开的那一版 |
+| 外观 | 来源链接必须能看出来是链接：用 `--link` 色 + 下划线，不要做成和正文一样的黑字 |
 
 ### 6.2 可用与不可用的来源
 
@@ -309,7 +351,8 @@ App 的 WKWebView **不执行**页内脚本。标签切换必须用 CSS，推荐
 - 只做「点击播放」，禁止 `autoplay`。
 - 整期至少 1 段，放在目录后、正文前，时长 30–90 秒。
 - 口播按五个板块各一句，不念 URL，不荐股，不渲染冲突细节。
-- 正式期次用本地 `assets/`，不要再放恐龙吼、占位音效。
+- 正式期次用本地 `assets/`，不要再放占位音效。
+- `audio` 高度至少约 44px，方便点按。
 
 ### 7.4 视频
 
@@ -337,28 +380,32 @@ App 的 WKWebView **不执行**页内脚本。标签切换必须用 CSS，推荐
 }</code></pre>
 ```
 
-`class` 用 `language-swift` / `language-python` / `language-json` / `language-bash`。不要上高亮脚本，靠 CSS 等宽字体即可。
+`class` 用 `language-swift` / `language-python` / `language-json` / `language-bash`。不要上高亮脚本，靠 CSS 等宽字体即可。`pre` 自己横向滚动，不要让整页跟着横滑。
 
 ### 7.6 链接
 
-站外链接用绝对地址。App 会在系统浏览器打开，所以不要依赖页内跳转锚点以外的复杂交互。板块 chips 可以链到 `#tech` 等栏目 `id`。
+- 站外链接用绝对地址。App 会在页内 Safari 打开。
+- 板块 chips 可以链到 `#tech` 等栏目 `id`，这是页内锚点，不会被当成外链。
+- 不要依赖 hover。
+- 正文和外链用 `--link`；chips 保持中性色，避免满屏蓝字。
 
 ---
 
-## 8. 手机适配
+## 8. 手机适配（按 App 里的真机来）
 
-App 用 WKWebView 全屏展示，按 **375–430pt 宽** 设计。
+App 用 WKWebView 全屏展示，按 **375–430pt 宽** 设计。底部有 Home 条，导航栏会挡住锚点，所以安全区和 `scroll-margin` 不是装饰。
 
 | 项目 | 要求 |
 |---|---|
-| 视口 | 必须有 `width=device-width, initial-scale=1` |
+| 视口 | `width=device-width, initial-scale=1, viewport-fit=cover`。**禁止** `maximum-scale=1` |
 | 字号 | 正文 ≥ 16px，行高 1.6–1.7，优先系统字体 / PingFang SC |
-| 间距 | 左右留白 16–20px，段落之间可扫读 |
+| 间距 | 左右留白 16–20px；`.digest` 底部加 `env(safe-area-inset-bottom)` |
+| 溢出 | `html, body { overflow-x: clip; }` 防止整页横滑抢走「换日期」手势 |
 | 媒体 | `img, video, audio { max-width: 100%; height: auto; }` |
 | 代码 | `pre` 横向滚动，不要撑破屏幕 |
-| 标签页 | 标签栏可横向滑动；选中态在浅色 / 深色下都要能看清 |
-| 暗色 | 用 `prefers-color-scheme: dark` 或 `color-scheme: light dark` |
-| 点击 | 播放控件、链接、标签的可点区域足够大；不要依赖 hover |
+| 标签页 | sticky；选中态在浅色 / 深色下都要能看清 |
+| 暗色 | `prefers-color-scheme: dark` + `color-scheme: light dark` |
+| 点击 | 播放控件、链接、标签的可点区域足够大 |
 
 推荐 CSS 变量：
 
@@ -370,6 +417,7 @@ App 用 WKWebView 全屏展示，按 **375–430pt 宽** 设计。
   --muted: #6e6e73;
   --line: rgba(28, 28, 30, 0.08);
   --accent: #1c1c1e;
+  --link: #0b57d0;
   --chip: #f3f1ec;
 }
 @media (prefers-color-scheme: dark) {
@@ -380,6 +428,7 @@ App 用 WKWebView 全屏展示，按 **375–430pt 宽** 设计。
     --muted: #98989d;
     --line: rgba(255, 255, 255, 0.08);
     --accent: #f2f2f7;
+    --link: #8ab4ff;
     --chip: #2c2c2e;
   }
 }
@@ -404,17 +453,21 @@ App 用 WKWebView 全屏展示，按 **375–430pt 宽** 设计。
 生成或提交前全部勾上：
 
 - [ ] 路径为 `speed/contents/YYYYMMDD/index.html`，日期真实
+- [ ] `contents/catalog.json` 已写入该日期
+- [ ] 目录名、`title`、`h1` 是同一天，没有把别的日期稿子原样拷进来
 - [ ] hero 写明 **T-1 12:00 至 T 12:00**（北京时间）窗口
-- [ ] 完整 HTML5，含 charset、viewport、中文 `title`
+- [ ] 完整 HTML5，含 charset、viewport（无 `maximum-scale=1`）、中文 `title`
 - [ ] 五个板块都在，且 `id` / `data-category` 与第 4 节一致，顺序固定
-- [ ] 每个板块都有标签页，标签页内是聚类后的多条 `.item`
-- [ ] 每条新闻有来源名、可点开的原文链接、`<time>`
+- [ ] 每个板块都有标签页，标签栏 sticky，标签页内是聚类后的多条 `.item`
+- [ ] 每条新闻有来源名、可点开的原文链接、`<time>`；来源链接有下划线
 - [ ] 窗口外事件已标明事件时间，预告未写成已经发生
 - [ ] 至少 1 张图、1 段音频、1 段视频、1 个代码块
 - [ ] 图片有 `alt`，音视频无 `autoplay`，视频带 `playsinline`
 - [ ] 无 `script` / `iframe` / `form`；`input` 只用于标签页
-- [ ] 手机宽度下文字不溢出，代码块和标签栏可横向滚动
+- [ ] 整页不横滑；代码块和标签栏可单独横向滚动
+- [ ] 底部为 Home 条留了 `safe-area-inset-bottom`
 - [ ] 资源不是坏链；本地文件路径相对 `index.html` 正确
 - [ ] 没有热链未授权新闻图、电影预告或赛事转播
+- [ ] 没有提交 `.DS_Store` 或 `*_副本`
 
-满足以上条件，App 打开当日即可渲染；左右滑动只在存在该目录的有效日期之间切换。
+满足以上条件，App 打开即可渲染。左右切换只在 `catalog.json`（或 GitHub 目录）里的有效日期之间进行。
