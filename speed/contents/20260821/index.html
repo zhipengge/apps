@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>速闻 · 2026年8月22日</title>
+  <style>
+    :root {
+      --bg: #f6f5f2;
+      --card: #ffffff;
+      --text: #1c1c1e;
+      --muted: #6e6e73;
+      --line: rgba(28, 28, 30, 0.08);
+      --accent: #1c1c1e;
+      --chip: #f3f1ec;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f10;
+        --card: #1c1c1e;
+        --text: #f2f2f7;
+        --muted: #98989d;
+        --line: rgba(255, 255, 255, 0.08);
+        --accent: #f2f2f7;
+        --chip: #2c2c2e;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", sans-serif;
+      font-size: 17px;
+      line-height: 1.68;
+      -webkit-text-size-adjust: 100%;
+    }
+    .digest {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 8px 0 36px;
+    }
+    .hero, .media-card, .story, .colophon { padding: 20px 18px; }
+    .kicker, .window {
+      margin: 0 0 8px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+    h1 { margin: 0 0 10px; font-size: 28px; line-height: 1.25; }
+    h2 { margin: 0 0 10px; font-size: 22px; line-height: 1.3; }
+    h3 { margin: 0 0 8px; font-size: 17px; line-height: 1.35; }
+    .lead, p { margin: 0 0 12px; }
+    .lead { color: var(--muted); }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      margin: 16px 0 0;
+      list-style: none;
+    }
+    .chips a, .tabs label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .media-card, .story {
+      margin: 12px 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+    .story .tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+    figure { margin: 14px 0 16px; }
+    img, video, audio {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+    img, video {
+      border-radius: 12px;
+      background: var(--line);
+    }
+    audio { margin: 8px 0 0; }
+    figcaption, .hint, small, .byline {
+      display: block;
+      margin: 0 0 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .byline { display: flex; flex-wrap: wrap; gap: 8px 12px; }
+    blockquote {
+      margin: 14px 0;
+      padding: 10px 0 10px 14px;
+      border-left: 3px solid var(--accent);
+      color: var(--muted);
+    }
+    pre {
+      margin: 12px 0 16px;
+      padding: 12px 14px;
+      overflow-x: auto;
+      border-radius: 10px;
+      background: #111;
+      color: #f2f2f7;
+      font-size: 13px;
+      line-height: 1.55;
+      -webkit-overflow-scrolling: touch;
+    }
+    @media (prefers-color-scheme: dark) { pre { background: #000; } }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    a { color: var(--accent); }
+    ul.points { margin: 0 0 12px; padding-left: 1.15em; }
+    .tabset { position: relative; margin-top: 8px; }
+    .tabset > input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 2px 0 12px;
+      margin: 0 0 4px;
+    }
+    .tabs label { flex: 0 0 auto; background: var(--chip); }
+    .pane { display: none; padding-top: 4px; }
+    .item + .item {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+    #tabs-tech-1:checked ~ .tabs label[for="tabs-tech-1"],
+    #tabs-tech-2:checked ~ .tabs label[for="tabs-tech-2"],
+    #tabs-tech-3:checked ~ .tabs label[for="tabs-tech-3"],
+    #tabs-pol-1:checked ~ .tabs label[for="tabs-pol-1"],
+    #tabs-pol-2:checked ~ .tabs label[for="tabs-pol-2"],
+    #tabs-pol-3:checked ~ .tabs label[for="tabs-pol-3"],
+    #tabs-mil-1:checked ~ .tabs label[for="tabs-mil-1"],
+    #tabs-mil-2:checked ~ .tabs label[for="tabs-mil-2"],
+    #tabs-mil-3:checked ~ .tabs label[for="tabs-mil-3"],
+    #tabs-fin-1:checked ~ .tabs label[for="tabs-fin-1"],
+    #tabs-fin-2:checked ~ .tabs label[for="tabs-fin-2"],
+    #tabs-fin-3:checked ~ .tabs label[for="tabs-fin-3"],
+    #tabs-ent-1:checked ~ .tabs label[for="tabs-ent-1"],
+    #tabs-ent-2:checked ~ .tabs label[for="tabs-ent-2"],
+    #tabs-ent-3:checked ~ .tabs label[for="tabs-ent-3"] {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+    #tabs-tech-1:checked ~ .pane-1,
+    #tabs-tech-2:checked ~ .pane-2,
+    #tabs-tech-3:checked ~ .pane-3,
+    #tabs-pol-1:checked ~ .pane-1,
+    #tabs-pol-2:checked ~ .pane-2,
+    #tabs-pol-3:checked ~ .pane-3,
+    #tabs-mil-1:checked ~ .pane-1,
+    #tabs-mil-2:checked ~ .pane-2,
+    #tabs-mil-3:checked ~ .pane-3,
+    #tabs-fin-1:checked ~ .pane-1,
+    #tabs-fin-2:checked ~ .pane-2,
+    #tabs-fin-3:checked ~ .pane-3,
+    #tabs-ent-1:checked ~ .pane-1,
+    #tabs-ent-2:checked ~ .pane-2,
+    #tabs-ent-3:checked ~ .pane-3 { display: block; }
+    .colophon { text-align: center; color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <article class="digest">
+    <header class="hero">
+      <p class="kicker">速闻 · 日报</p>
+      <h1>2026年8月22日</h1>
+      <p class="window">覆盖北京时间 8月21日 12:00 — 8月22日 12:00</p>
+      <p class="lead">中印尼全面战略对话首次开会，财政部谈「十五五」逆周期调节；联训新闻扎堆，A股缩量、美股走弱，暑期档票房越过 110 亿。</p>
+      <ul class="chips">
+        <li><a href="#tech">科技</a></li>
+        <li><a href="#politics">政治</a></li>
+        <li><a href="#military">军事</a></li>
+        <li><a href="#finance">财经</a></li>
+        <li><a href="#entertainment">娱乐</a></li>
+      </ul>
+    </header>
+
+    <section class="media-card" aria-label="语音速览">
+      <h2>语音速览</h2>
+      <p>约 70 秒，按五个板块把窗口内要闻过一遍。可先听再往下翻标签页。</p>
+      <audio controls preload="none" src="assets/briefing.m4a">
+        当前环境不支持音频播放
+      </audio>
+      <small class="hint">本期导读音频，本地文件，点击播放。</small>
+    </section>
+
+    <section id="tech" class="story" data-category="科技">
+      <span class="tag">科技</span>
+      <h2>算力往下沉，火箭还在飞</h2>
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+          alt="电路板特写，象征芯片、算力与端侧计算"
+          width="1200"
+          height="750"
+          loading="lazy"
+          decoding="async">
+        <figcaption>图说：大模型公司开始把「抢卡」改成「造卡」。Unsplash</figcaption>
+      </figure>
+      <p>这一窗里，科技新闻不再是单一聊天机器人，而是芯片、发射场和牌照三件事同时动。</p>
+
+      <div class="tabset">
+        <input type="radio" name="tabs-tech" id="tabs-tech-1" checked>
+        <input type="radio" name="tabs-tech" id="tabs-tech-2">
+        <input type="radio" name="tabs-tech" id="tabs-tech-3">
+        <nav class="tabs" aria-label="科技子栏目">
+          <label for="tabs-tech-1">AI芯片</label>
+          <label for="tabs-tech-2">航天</label>
+          <label for="tabs-tech-3">产业</label>
+        </nav>
+
+        <section class="pane pane-1">
+          <article class="item">
+            <h3>Anthropic 挖来谷歌 TPU 创始人，自研芯片团队落地</h3>
+            <p class="byline">
+              <span>来源：<a href="https://www.163.com/dy/article/L4UETBR805198NMR.html">华尔街见闻</a></span>
+              <time datetime="2026-08-21">事件：8月21日（周五）</time>
+            </p>
+            <p>Claude 开发商周五宣布，聘请谷歌定制芯片业务创始人 Amir Salek 组建自主 AI 芯片设计团队。同一套公开报道还提到：公司继续向外部买算力，包括与英国芯片初创 Fractile 约 2.5 亿美元首批采购，并扩大与谷歌、博通合作，锁定 2027 年约 3.5GW 下一代 TPU 容量。</p>
+            <p>这和 OpenAI、谷歌、Meta 的路径一致：训练和推理成本太高，只绑一家 GPU 供应商风险过大。自研芯片从设计到量产通常要数年，短期内改变不了供货表，但说明「去单一供应商」已经从口号变成编制。</p>
+          </article>
+          <article class="item">
+            <h3>存储厂把光互连写进下一代路线图</h3>
+            <p class="byline">
+              <span>来源：<a href="https://finance.sina.com.cn/jjxw/2026-08-21/doc-ininzpqy1562312.shtml">新浪财经·财闻早知道</a></span>
+              <time datetime="2026-08-21">8月21日</time>
+            </p>
+            <p>SK 海力士联合弗吉尼亚大学等机构发布下一代 CPO 路线图，核心是把光互连从交换机再往内存接口推一层。美光同步宣布成立研究实验室，未来十年投入 100 亿美元，覆盖存储、先进计算架构、封装和制造，并写明这笔钱独立于此前超过 2500 亿美元的美国制造与研发承诺。</p>
+            <p>台积电一侧，A16（1.6nm 级）完成开发与验证，计划今年四季度量产，对标增强版 2nm：同等功耗下性能提升约 8%–10%，同等性能下功耗降 15%–20%。数字来自厂商口径，量产良率仍待四季度验证。</p>
+            <pre><code class="language-json">{
+  "interconnect": "CPO",
+  "target": "memory-interface",
+  "note": "光互连从交换芯片继续下沉到内存侧"
+}</code></pre>
+          </article>
+        </section>
+
+        <section class="pane pane-2">
+          <article class="item">
+            <h3>朱雀三号「腿着陆」仍是窗口内被跟进的主新闻</h3>
+            <p class="byline">
+              <span>来源：<a href="https://news.china.com/domestic/945/20260821/49689453.html">央视网 / 中华网转载</a>、<a href="http://jjckb.xinhuanet.com/20260820/4b7484ca753d41c982d26600745d8bde/c.html">经济参考报</a></span>
+              <time datetime="2026-08-19">发射：8月19日；窗口内持续报道</time>
+            </p>
+            <p>蓝箭航天朱雀三号遥二 8 月 19 日在东风商业航天创新试验区升空，一子级按程序在甘肃民勤回收场完成着陆腿陆地回收。这是我国首次以着陆支腿方式回收入轨火箭一子级。箭体长 66.1 米，一子级 9 台天鹊-12A 液氧甲烷发动机，推力可在 40%–110% 调节。</p>
+            <p>官方媒体在 21 日继续解释技术意义：蓝箭成为全球第四家实现轨道级一子级回收的企业；下一步是检测复飞，而不是把一次回收写成「已经可商业复用」。</p>
+          </article>
+          <article class="item">
+            <h3>星舰 Flight 14：地面试车完成，轨道首飞仍未发射</h3>
+            <p class="byline">
+              <span>来源：<a href="https://www.space.com/space-exploration/launches-spacecraft/spacex-fires-up-starship-ahead-of-megarockets-1st-orbital-flight-video">Space.com</a></span>
+              <time datetime="2026-08-21">8月21日报道</time>
+            </p>
+            <p>SpaceX 在得州对 Ship 41 完成单发（约 8 月 19 日）和六发（约 8 月 20 日）静态点火，用于演示离轨制动。Flight 14 若按计划进行，将是星舰首次尝试入轨，窗口大致指向 9 月上中旬。部分自媒体写成「V3 已首飞成功」，与上述报道不符，本期按试车而非发射处理。</p>
+          </article>
+        </section>
+
+        <section class="pane pane-3">
+          <article class="item">
+            <h3>第二张卫星物联网商用试验牌照落地</h3>
+            <p class="byline">
+              <span>来源：<a href="https://finance.sina.com.cn/jjxw/2026-08-21/doc-ininzpqy1562312.shtml">新浪财经·财闻早知道</a></span>
+              <time datetime="2026-08-21">8月21日</time>
+            </p>
+            <p>工信部批复浙江时空道宇科技开展为期两年的卫星物联网业务商用试验，可依托「吉利未来出行星座（一期）」提供广覆盖、低功耗连接。这是公开报道中的第二张同类商用试验牌照，意义在牌照和组网，不在一次性发射。</p>
+          </article>
+          <article class="item">
+            <h3>享界 G9 上市，华为同期亮相阔直板新机</h3>
+            <p class="byline">
+              <span>来源：<a href="https://finance.sina.com.cn/jjxw/2026-08-21/doc-ininzpqy1562312.shtml">新浪财经·财闻早知道</a></span>
+              <time datetime="2026-08-21">8月21日</time>
+            </p>
+            <p>鸿蒙智行首款大型硬派 SUV 享界 G9 发布，售价 42.98 万–54.98 万元，官方称采用 L3 级自动驾驶架构并已获 L3 道路测试牌照。华为同时发布阔直板手机 Pura X View，称将首发 HarmonyOS 7。测试牌照不等于量产车可在公开道路无人接管行驶，这两件事应分开读。</p>
+          </article>
+        </section>
+      </div>
+    </section>
+
+    <section id="politics" class="story" data-category="政治">
+      <span class="tag">政治</span>
+      <h2>周边机制开会，中东问题继续被问</h2>
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+          alt="会议厅座席与灯光，象征多边外交场合"
+          width="1200"
+          height="800"
+          loading="lazy"
+          decoding="async">
+        <figcaption>图说：这一窗的政治新闻，公开文本都落在机制和表态上。Unsplash</figcaption>
+      </figure>
+      <p>外交稿件密集，但读法仍旧简单：谁见了谁、建了什么机制、对单边制裁怎么说。</p>
+
+      <div class="tabset">
+        <input type="radio" name="tabs-pol" id="tabs-pol-1" checked>
+        <input type="radio" name="tabs-pol" id="tabs-pol-2">
+        <input type="radio" name="tabs-pol" id="tabs-pol-3">
+        <nav class="tabs" aria-label="政治子栏目">
+          <label for="tabs-pol-1">周边外交</label>
+          <label for="tabs-pol-2">中东表态</label>
+          <label for="tabs-pol-3">财政发布</label>
+        </nav>
+
+        <section class="pane pane-1">
+          <article class="item">
+            <h3>中印尼全面战略对话首次会议在雅加达举行</h3>
+            <p class="byline">
+              <span>来源：<a href="https://www.news.cn/politics/leaders/20260821/705d0962fb2a4bb18b82f073d0d4fb25/c.html">新华社</a></span>
+              <time datetime="2026-08-21T18:57:00+08:00">8月21日 18:57</time>
+            </p>
+            <p>王毅与印尼外长苏吉约诺共同主持中印尼全面战略对话机制首次会议。新华社报道，双方决定启动制定中印尼五年行动计划（2027–2031），全面推进「五大支柱」合作；同意深化能矿、粮农、减贫和卫生文教合作，并就重启渔业捕捞合作达成一致。</p>
+            <p>稿件还写明：双方致力于全面有效落实《南海各方行为宣言》，力争尽快达成「南海行为准则」；印尼支持中方办好亚太经合组织领导人非正式会议。双方同意明年在中国举行对话机制第二次会议。同日，双方还举行外长、防长「2+2」对话。</p>
+          </article>
+        </section>
+
+        <section class="pane pane-2">
+          <article class="item">
+            <h3>外交部：反对未经安理会授权的单边制裁</h3>
+            <p class="byline">
+              <span>来源：<a href="https://www.163.com/news/article/L4SNBCO400019B3E.html">外交部网站 / 网易转载</a>、<a href="https://www.163.com/dy/article/L4S95E950514R9OJ.html">环球网</a></span>
+              <time datetime="2026-08-21">8月21日例行记者会</time>
+            </p>
+            <p>林剑主持例行记者会。在回应美方威胁对伊朗实施更严厉经济措施、并喊话中方配合时，他重申：中方反对没有国际法依据、未经联合国安理会授权的非法单边制裁，呼吁通过政治外交途径解决问题。中方未在会上宣布对等制裁清单。</p>
+          </article>
+          <article class="item">
+            <h3>科威特外交大臣 23 日至 24 日访华</h3>
+            <p class="byline">
+              <span>来源：<a href="https://www.guancha.cn/internation/2026_08_21_828146.shtml">观察者网（外交部网站）</a></span>
+              <time datetime="2026-08-21">8月21日宣布</time>
+            </p>
+            <p>应王毅邀请，科威特外交大臣杰拉赫将于 8 月 23 日至 24 日访华。访问安排出现在中东局势和能源议题被高频提问的同一天，具体成果要等联合新闻稿，不在此预写。</p>
+          </article>
+        </section>
+
+        <section class="pane pane-3">
+          <article class="item">
+            <h3>国新办谈「十五五」财政：六个「进一步」</h3>
+            <p class="byline">
+              <span>来源：<a href="http://finance.people.com.cn/n1/2026/0821/c1004-40784088.html">新华社 / 人民网</a>、<a href="http://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/202608/t20260821_3995927.htm">财政部</a></span>
+              <time datetime="2026-08-21">发布会上午举行，窗口内持续见报</time>
+            </p>
+            <p>财政部副部长廖岷等在国新办「开局起步十五五」发布会上说，「十五五」要努力实现六个进一步：财政实力、支出结构、调控效能、财税改革、科学管理、重点领域风险化解。调控上，强调加大逆周期调节，构建「政策精准、工具多样、引导有力、协同高效」的机制。</p>
+            <p>下半年的可执行数字是：还有 2 万多亿元地方政府专项债券和超长期特别国债待发行使用；增量政策「根据宏观经济运行情况及时谋划」。政治栏目只记部署口径，市场读法放到财经板块。</p>
+          </article>
+        </section>
+      </div>
+    </section>
+
+    <section id="military" class="story" data-category="军事">
+      <span class="tag">军事</span>
+      <h2>联训收官、抵达和新安排挤在同一窗</h2>
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1559628233-100c798642d4?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+          alt="停在跑道上的军用飞机，象征防务与演训"
+          width="1200"
+          height="800"
+          loading="lazy"
+          decoding="async">
+        <figcaption>图说：公开演训信息通常只到科目、地点和性质。Unsplash</figcaption>
+      </figure>
+      <p>这一窗的防务新闻以官方通稿为主。读法是分清：已经结束、正在抵达，还是尚未开始。</p>
+
+      <div class="tabset">
+        <input type="radio" name="tabs-mil" id="tabs-mil-1" checked>
+        <input type="radio" name="tabs-mil" id="tabs-mil-2">
+        <input type="radio" name="tabs-mil" id="tabs-mil-3">
+        <nav class="tabs" aria-label="军事子栏目">
+          <label for="tabs-mil-1">联训收官</label>
+          <label for="tabs-mil-2">远程投送</label>
+          <label for="tabs-mil-3">新安排</label>
+        </nav>
+
+        <section class="pane pane-1">
+          <article class="item">
+            <h3>中泰「鹰击-2026」在乌隆基地闭幕</h3>
+            <p class="byline">
+              <span>来源：<a href="https://military.cctv.com/2026/08/21/ARTIa3AISYCBjMPNi2M7tLsZ260821.shtml">国防部发布 / 央视网</a>、<a href="https://www.zaobao.com.sg/news/china/story20260821-9553435">联合早报</a></span>
+              <time datetime="2026-08-21T12:33:00+08:00">8月21日 12:33 见报；闭幕为 20 日上午</time>
+            </p>
+            <p>20 日上午，中泰「鹰击-2026」空军联合训练闭幕式在泰国空军乌隆基地举行。中方出动歼击机、预警机、加油机、直升机及地导武器，与泰空军混合编组。课目包括联合防空、人道主义医疗救援，并围绕人才培养、无人机运用做座谈和现地参观。这是该系列第 9 次联训。</p>
+          </article>
+        </section>
+
+        <section class="pane pane-2">
+          <article class="item">
+            <h3>中埃「文明之鹰-2026」机队跨洲际抵达</h3>
+            <p class="byline">
+              <span>来源：<a href="https://military.cctv.com/2026/08/21/ARTIi9iBIWuzIuJBdtA8c47D260821.shtml">央视军事</a></span>
+              <time datetime="2026-08-21T16:45:00+08:00">8月21日 16:45</time>
+            </p>
+            <p>北京时间 21 日凌晨，参加中埃「文明之鹰-2026」的中国空军多型战机和官兵抵达埃及空军某基地。这是两国空军第二次该系列联训，中方派出歼击机、加油机、特种机、直升机成体系参训。转场中，运油-20A 为歼-16 空中加油；编队飞行近 9 小时，跨越 6000 多公里、两大洲四个国家。通稿把重点放在远程投送和敏捷部署，不展开对抗细节。</p>
+          </article>
+        </section>
+
+        <section class="pane pane-3">
+          <article class="item">
+            <h3>中阿「猎鹰盾牌-2026」将在新疆和田举行</h3>
+            <p class="byline">
+              <span>来源：<a href="https://flash.jin10.com/detail/20260821084915001800">国防部发布 / 金十数据</a></span>
+              <time datetime="2026-08-21">8月21日宣布</time>
+            </p>
+            <p>8 月下旬至 9 月中旬，中国与阿联酋空军将在新疆和田举行「猎鹰盾牌-2026」，课目包括指挥推演、飞行训练、实兵混编。这是该系列第 4 次。目前是预告，不是已经打响。</p>
+          </article>
+          <article class="item">
+            <h3>韩美「乙支自由护盾」21 日提前结束</h3>
+            <p class="byline">
+              <span>来源：<a href="https://global.hk01.com/%E5%8D%B3%E6%97%B6%E5%9B%BD%E9%99%85/60382196/%E7%BE%8E%E9%9F%A9%E5%86%9B%E6%BC%94%E7%BD%95%E8%A7%81%E8%A7%84%E6%A8%A1%E7%BC%A9%E5%8D%8A%E5%8F%96%E6%B6%88%E5%8F%8D%E5%87%BB%E6%BC%94%E4%B9%A0-8%E6%9C%8821%E6%97%A5%E6%8F%90%E5%89%8D%E7%BB%93%E6%9D%9F">香港01（韩联社）</a></span>
+              <time datetime="2026-08-21">8月21日</time>
+            </p>
+            <p>韩联社报道，今年「乙支自由护盾」原定 8 月 17 日至 27 日、分防御和反击两阶段。美国总统特朗普要求缩减后，演练缩短为约 5 天，只进行第一阶段，野外机动训练同步压缩。战区级韩美联演在进行中缩短时长并缩减规模，报道称为首次。分析多指向为对话创造气氛，官方并未宣布新的会晤日期。</p>
+          </article>
+        </section>
+      </div>
+    </section>
+
+    <section id="finance" class="story" data-category="财经">
+      <span class="tag">财经</span>
+      <h2>政策给方向，盘面给温度</h2>
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+          alt="屏幕上的K线走势，象征资本市场"
+          width="1200"
+          height="800"
+          loading="lazy"
+          decoding="async">
+        <figcaption>图说：周五 A 股缩量，贵金属和算力比指数更热闹。Unsplash</figcaption>
+      </figure>
+      <p>8 月 22 日是周六，本窗能敲定的盘面数字停在 21 日收盘。下面只记已经公开的价格和政策，不提供买卖建议。</p>
+
+      <div class="tabset">
+        <input type="radio" name="tabs-fin" id="tabs-fin-1" checked>
+        <input type="radio" name="tabs-fin" id="tabs-fin-2">
+        <input type="radio" name="tabs-fin" id="tabs-fin-3">
+        <nav class="tabs" aria-label="财经子栏目">
+          <label for="tabs-fin-1">宏观</label>
+          <label for="tabs-fin-2">市场</label>
+          <label for="tabs-fin-3">公司</label>
+        </nav>
+
+        <section class="pane pane-1">
+          <article class="item">
+            <h3>下半年还有 2 万多亿元债券要发出去</h3>
+            <p class="byline">
+              <span>来源：<a href="http://finance.people.com.cn/n1/2026/0821/c1004-40784088.html">新华社 / 人民网</a></span>
+              <time datetime="2026-08-21T22:03:00+08:00">8月21日 22:03</time>
+            </p>
+            <p>廖岷说，下半年财政政策继续在加快资金使用、加力扩大内需、加强财政改革管理上发力。「下半年，还有 2 万多亿元地方政府专项债券和超长期特别国债待发行使用。」财政部将指导地方组织发行、推动项目开工。增量政策「根据宏观经济运行情况及时谋划」，发布会没有给出新的赤字率或降准降息时间表。</p>
+          </article>
+          <article class="item">
+            <h3>上海出台阶段性「以旧换新」购房补贴</h3>
+            <p class="byline">
+              <span>来源：<a href="https://finance.sina.com.cn/jjxw/2026-08-21/doc-ininzpqy1562312.shtml">新浪财经·财闻早知道</a></span>
+              <time datetime="2026-08-21">8月21日汇总</time>
+            </p>
+            <p>上海对在外环外购买新建商品住房、并在网签前后一年内出售本市二手住房的家庭，按新房贷款总额 1% 补贴，单套最高 5 万元，总金额 2 亿元、用完即止；另保留外环内二手换外环外新房补贴 3 万元。政策执行至 2027 年 3 月 31 日。这是地方稳楼市工具，不是全国统一新政。</p>
+          </article>
+        </section>
+
+        <section class="pane pane-2">
+          <article class="item">
+            <h3>A 股缩量收涨，算力和贵金属更强</h3>
+            <p class="byline">
+              <span>来源：<a href="https://c.m.163.com/news/a/L4S95QIT0512B07B.html">每日经济新闻</a></span>
+              <time datetime="2026-08-21T15:50:00+08:00">8月21日 15:50 收评</time>
+            </p>
+            <p>8 月 21 日，沪指涨 0.04%，深成指涨 0.87%，创业板指涨 1.43%。两市成交 1.88 万亿元，较前一交易日缩量 2001 亿元，超 2800 只个股下跌。贵金属、算力硬件、锂矿偏强，前期农业板块集体退潮。指数稳、个股散，是当天更准确的画面。</p>
+          </article>
+          <article class="item">
+            <h3>美股重挫，油金走强，长债回购效应回吐</h3>
+            <p class="byline">
+              <span>来源：<a href="https://finance.sina.com.cn/jjxw/2026-08-21/doc-ininzpqy1562312.shtml">新浪财经</a>、<a href="https://finance.sina.com.cn/wm/2026-08-21/doc-ininztwz1599792.shtml">市场资讯</a>、<a href="https://money.udn.com/money/story/5599/9707403">经济日报</a></span>
+              <time datetime="2026-08-21">隔夜市场，8月21–22日见报</time>
+            </p>
+            <p>美国三大指数全线收跌：道指跌 1.32% 报 52759.21 点，标普 500 跌 0.87% 报 7641.16 点，纳指跌 1% 报 26067.17 点。沃尔玛跌超 9%，存储股逆势：SK 海力士涨超 4%，美光涨近 4%。美油收 86.21 美元/桶，涨 2.16%；布油 93.24 美元/桶，涨 1.77%。COMEX 黄金 4575.10 美元/盎司，涨 0.66%；白银涨 3.50%。</p>
+            <p>美国财政部把部分长债回购上限从 20 亿美元提高至至少 40 亿美元后，30 年期美债收益率很快回到约 5.28%。财长贝森特称目的是改善流动性，不是操控曲线。市场把这件事读成「工具箱还在，但一次回购撼不动债务总量」。</p>
+          </article>
+        </section>
+
+        <section class="pane pane-3">
+          <article class="item">
+            <h3>阿里、网易、泡泡玛特：增长还在，指引更紧</h3>
+            <p class="byline">
+              <span>来源：<a href="https://finance.sina.com.cn/jjxw/2026-08-21/doc-ininzpqy1562312.shtml">新浪财经·财闻早知道</a></span>
+              <time datetime="2026-08-21">8月21日汇总</time>
+            </p>
+            <p>阿里巴巴 2027 财年第一季度营收 2689.5 亿元，同比增长 9%，接近预估；调整后净利润 207.2 亿元，低于预估 255.8 亿元。网易第二季度归属于公司股东净利润 70 亿元，低于上一季 107 亿元和去年同期 86 亿元。泡泡玛特上半年营收 171.7 亿元，同比增长 23.8%；创始人王宁在业绩会上说，今年大概率完不成年初 20% 的业绩目标，并把 2026 年定位为经营调整年。</p>
+          </article>
+          <article class="item">
+            <h3>中金吸并东兴、信达，8 月 27 日上会</h3>
+            <p class="byline">
+              <span>来源：<a href="https://finance.sina.com.cn/jjxw/2026-08-21/doc-ininzpqy1562312.shtml">公司公告 / 新浪财经</a></span>
+              <time datetime="2026-08-21">8月21日</time>
+            </p>
+            <p>中金公司拟换股吸收合并东兴证券、信达证券，上交所并购重组委定于 8 月 27 日审核。这是券商供给侧的存量整合，结果以审核意见为准。</p>
+          </article>
+        </section>
+      </div>
+    </section>
+
+    <section id="entertainment" class="story" data-category="娱乐">
+      <span class="tag">娱乐</span>
+      <h2>暑期档过 110 亿，天津先把球网支起来</h2>
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+          alt="电影院座椅与银幕光亮"
+          width="1200"
+          height="800"
+          loading="lazy"
+          decoding="async">
+        <figcaption>图说：票房总盘在涨，新片冷热差仍很大。Unsplash</figcaption>
+      </figure>
+      <p>电影看总盘和新片分裂，体育看天津亚锦赛揭幕。版权预告片不外链，下面用一段可公开引用的排球教学动画打通播放。</p>
+
+      <div class="tabset">
+        <input type="radio" name="tabs-ent" id="tabs-ent-1" checked>
+        <input type="radio" name="tabs-ent" id="tabs-ent-2">
+        <input type="radio" name="tabs-ent" id="tabs-ent-3">
+        <nav class="tabs" aria-label="娱乐子栏目">
+          <label for="tabs-ent-1">暑期档</label>
+          <label for="tabs-ent-2">新片</label>
+          <label for="tabs-ent-3">体育</label>
+        </nav>
+
+        <section class="pane pane-1">
+          <article class="item">
+            <h3>2026 暑期档票房（含预售）突破 110 亿元</h3>
+            <p class="byline">
+              <span>来源：<a href="https://www.163.com/dy/article/L4SJP4KB055040N3.html">上观新闻</a></span>
+              <time datetime="2026-08-21T18:55:00+08:00">8月21日 18:55</time>
+            </p>
+            <p>上观新闻援引档期数据：暑期档票房含预售超过 110 亿元。《功夫女足》《八仙！》《蜘蛛侠：崭新之日》暂列前三，分别约 23 亿、16 亿、14 亿。《欢迎来龙餐馆》8 月 11 日上映 11 天，总票房已超 13 亿元，升至档期第 4。中国首部喜剧探案动画《大唐妖探》定于 8 月 22 日上映。总盘回暖，不等于每部新片都能分到场次。</p>
+          </article>
+        </section>
+
+        <section class="pane pane-2">
+          <article class="item">
+            <h3>《大秦文公》全国上映，首映礼在北京举行</h3>
+            <p class="byline">
+              <span>来源：<a href="https://www.163.com/dy/article/L4SJAERS0517F5C3.html">Yes娱乐</a></span>
+              <time datetime="2026-08-21T18:52:00+08:00">8月21日 18:52</time>
+            </p>
+            <p>历史片《大秦文公》8 月 21 日登陆院线，首映在北京中影国际影城举行。影片以春秋初年秦文公东迁立国为主线。同日还有多部新片扎堆，档期拥挤本身就是新闻。</p>
+          </article>
+          <article class="item">
+            <h3>动画《牛来》从数千元票房爬到 3000 万</h3>
+            <p class="byline">
+              <span>来源：<a href="https://finance.sina.com.cn/stock/marketresearch/2026-08-21/doc-inipaens1379763.shtml">新浪财经</a></span>
+              <time datetime="2026-08-21T12:28:00+08:00">8月21日 12:28</time>
+            </p>
+            <p>《牛来》8 月 5 日上映，前 9 天票房约 7169 元，最低单日 188 元，排片一度只剩 4 家影院。网络讨论起来后，票房在窗口内被报道突破 3000 万元，猫眼当时预测最终票房约 5993 万元。这是发行冷启动后的话题反转，不是大制作按计划走量。</p>
+          </article>
+        </section>
+
+        <section class="pane pane-3">
+          <article class="item">
+            <h3>女排亚锦赛天津揭幕，中国队首日轮空</h3>
+            <p class="byline">
+              <span>来源：<a href="https://www.sport.org.cn/shouye/jjty/2026/0821/705619.html">中国体育报 / 中华全国体育总会</a></span>
+              <time datetime="2026-08-21">8月21日开幕</time>
+            </p>
+            <p>2026 年女排亚锦赛 8 月 21 日至 30 日在天津举行。冠军直接获得 2028 年洛杉矶奥运会门票，前三名获 2027 年世锦赛资格。中国队 14 人名单由接应龚翔宇领衔，主攻吴梦洁伤愈归队；小组赛全部排在 19:30，8 月 22 日对伊拉克、24 日对伊朗、26 日对中华台北。21 日三场揭幕赛，东道主在场边看对手。</p>
+            <video controls playsinline webkit-playsinline preload="none" poster="assets/poster.jpg">
+              <source src="assets/clip.mp4" type="video/mp4">
+              当前环境不支持视频播放
+            </video>
+            <small class="hint">Wikimedia Commons《漂浮发球》3D 演示，CC BY-SA 3.0，Sandra Carrasco。约 9 秒，仅作公开教学素材，不是赛事转播。</small>
+          </article>
+        </section>
+      </div>
+    </section>
+
+    <footer class="colophon">
+      <p>速闻编辑部整理 · 窗口 8月21日 12:00–8月22日 12:00（北京时间）</p>
+      <p>只做公开报道的压缩阅读，不构成投资、观影或观赛建议。</p>
+      <p>体例见仓库 <code>speed/HTML编辑规范.md</code></p>
+    </footer>
+  </article>
+</body>
+</html>
