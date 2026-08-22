@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>速闻 · 2026年8月22日</title>
+  <style>
+    :root {
+      --bg: #f6f5f2;
+      --card: #ffffff;
+      --text: #1c1c1e;
+      --muted: #6e6e73;
+      --line: rgba(28, 28, 30, 0.08);
+      --accent: #1c1c1e;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f10;
+        --card: #1c1c1e;
+        --text: #f2f2f7;
+        --muted: #98989d;
+        --line: rgba(255, 255, 255, 0.08);
+        --accent: #f2f2f7;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", sans-serif;
+      font-size: 17px;
+      line-height: 1.68;
+      -webkit-text-size-adjust: 100%;
+    }
+    .digest {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 8px 0 36px;
+    }
+    .hero, .media-card, .story, .colophon {
+      padding: 20px 18px;
+    }
+    .kicker {
+      margin: 0 0 8px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: none;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 16px;
+    }
+    .lead, p { margin: 0 0 12px; }
+    .lead { color: var(--muted); }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      margin: 16px 0 0;
+      list-style: none;
+    }
+    .chips li {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .media-card, .story {
+      margin: 12px 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+    .story .tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+    figure {
+      margin: 14px 0 16px;
+    }
+    img, video, audio {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+    img, video {
+      border-radius: 12px;
+      background: var(--line);
+    }
+    audio { margin: 8px 0 0; }
+    figcaption, .hint, small {
+      display: block;
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    blockquote {
+      margin: 14px 0;
+      padding: 10px 0 10px 14px;
+      border-left: 3px solid var(--accent);
+      color: var(--muted);
+    }
+    pre {
+      margin: 12px 0 16px;
+      padding: 12px 14px;
+      overflow-x: auto;
+      border-radius: 10px;
+      background: #111;
+      color: #f2f2f7;
+      font-size: 13px;
+      line-height: 1.55;
+      -webkit-overflow-scrolling: touch;
+    }
+    @media (prefers-color-scheme: dark) {
+      pre { background: #000; }
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    a { color: var(--accent); }
+    ul.points {
+      margin: 0 0 12px;
+      padding-left: 1.15em;
+    }
+    .colophon {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <article class="digest">
+    <header class="hero">
+      <p class="kicker">速闻 · 日报</p>
+      <h1>2026年8月22日</h1>
+      <p class="lead">创刊号。用一期把图文、语音、视频和代码都跑通：科技、政治、军事、财经、娱乐五个栏目都在，手机里左右滑就能换日期。</p>
+      <ul class="chips">
+        <li>科技</li>
+        <li>政治</li>
+        <li>军事</li>
+        <li>财经</li>
+        <li>娱乐</li>
+      </ul>
+    </header>
+
+    <section class="media-card" aria-label="语音速览">
+      <h2>语音速览</h2>
+      <p>先听 3 秒，确认 App 内音频控件可用。后续正式期次会换成当日导读。</p>
+      <audio controls preload="none" src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">
+        当前环境不支持音频播放
+      </audio>
+      <small class="hint">CC0 示例音频，仅用于打通播放链路。</small>
+    </section>
+
+    <section id="tech" class="story" data-category="科技">
+      <span class="tag">科技</span>
+      <h2>端侧模型开始按「默认可离线」来做</h2>
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+          alt="电路板特写，象征芯片与端侧计算"
+          width="1200"
+          height="750"
+          loading="lazy"
+          decoding="async">
+        <figcaption>图说：端侧推理把延迟和隐私留在设备上。Unsplash</figcaption>
+      </figure>
+      <p>手机和 PC 新系统都在把小参数量模型做成系统能力：输入法、相册检索、离线摘要不再强依赖云端。对用户来说，变化不是「又多了一个聊天窗口」，而是飞行模式里仍能完成一批轻任务。</p>
+      <p>开发侧更实际的变化是接口变短了。以前要拼鉴权、超时和重试，现在不少系统 API 只要求本地资源路径和一条提示词。下面这段是速闻后续拉稿会用到的形态，方便自动生成时对照：</p>
+      <pre><code class="language-swift">let url = URL(string:
+  "https://raw.githubusercontent.com/zhipengge/apps/main/speed/contents/20260822/index.html"
+)!
+let (data, _) = try await URLSession.shared.data(from: url)
+let html = String(decoding: data, as: UTF8.self)</code></pre>
+      <p>值得盯的不是参数量竞赛，而是系统能不能在发热和电量之间，把「默认可离线」守住。</p>
+    </section>
+
+    <section id="politics" class="story" data-category="政治">
+      <span class="tag">政治</span>
+      <h2>多边场合更挤，声明却更短</h2>
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1200&q=80"
+          alt="会议厅座席与灯光，象征多边政治场合"
+          width="1200"
+          height="800"
+          loading="lazy"
+          decoding="async">
+        <figcaption>图说：议程变密之后，公开文本反而更克制。Unsplash</figcaption>
+      </figure>
+      <p>夏季是传统的多边会议窗口。和前几年相比，公开稿更常出现「原则共识」「技术性磋商」这类短句，细节放到双边工作层。对普通读者，真正有用的不是会标，而是三件事有没有被写进文本：人员往来、行业标准、应急沟通渠道。</p>
+      <ul class="points">
+        <li>看联合声明有没有可执行的时间表，而不是只重复立场。</li>
+        <li>看是否新增热线或工作组，这往往比形容词更重要。</li>
+        <li>国内政策解读优先对照原文条款，不拿社交媒体截图当依据。</li>
+      </ul>
+      <blockquote>速闻立场：只摘已经公开的安排，不补充未证实的幕后博弈。</blockquote>
+    </section>
+
+    <section id="military" class="story" data-category="军事">
+      <span class="tag">军事</span>
+      <h2>演习新闻变多，阅读时应先分清科目</h2>
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1559628233-100c798642d4?auto=format&fit=crop&w=1200&q=80"
+          alt="停在跑道上的军用飞机，象征防务与演训"
+          width="1200"
+          height="800"
+          loading="lazy"
+          decoding="async">
+        <figcaption>图说：公开演训信息通常只到科目与海域，不会到战术细节。Unsplash</figcaption>
+      </figure>
+      <p>防务公开信息这几年更勤：联合巡航、搜救、后勤保障都会发通稿。读这类稿件，先分清是例行安排、双边合作，还是针对特定局势的展示。后一类才需要放到当天国际新闻里对照。</p>
+      <p>装备报道同样要降噪。新型号亮相常见于航展和开放日，不等于已经形成战斗力。速闻只保留「谁公布、在哪公布、官方怎么定性」，不写操作流程，也不还原假想对抗。</p>
+    </section>
+
+    <section id="finance" class="story" data-category="财经">
+      <span class="tag">财经</span>
+      <h2>淡季交易偏薄，数字要比情绪更耐看</h2>
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80"
+          alt="屏幕上的K线走势，象征资本市场"
+          width="1200"
+          height="800"
+          loading="lazy"
+          decoding="async">
+        <figcaption>图说：成交清淡时，单日涨跌更容易被放大。Unsplash</figcaption>
+      </figure>
+      <p>8 月后半段机构和零售都偏少，指数一天的起伏常常大于基本面变化。读盘时优先看成交额、汇率和国债收益率有没有一起动；只有价格在动、量能没有跟上，多半是淡季噪声。</p>
+      <p>公司层面，中报季接近尾声，更值得记的是管理层对下半年资本开支的表述，而不是单季利润是否「好于预期」。速闻不提供买卖建议，以下只作为阅读框架：</p>
+      <ul class="points">
+        <li>宏观：利率、通胀、就业是否同向。</li>
+        <li>产业：库存和资本开支，比单日股价更稳。</li>
+        <li>汇率：进出口企业和海外收入占比较高的公司更敏感。</li>
+      </ul>
+    </section>
+
+    <section id="entertainment" class="story" data-category="娱乐">
+      <span class="tag">娱乐</span>
+      <h2>晚夏档比的是「能不能在手机上把预告看完」</h2>
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80"
+          alt="电影院座椅与银幕光亮"
+          width="1200"
+          height="800"
+          loading="lazy"
+          decoding="async">
+        <figcaption>图说：短视频预告在决定周末排片讨论度。Unsplash</figcaption>
+      </figure>
+      <p>电影和综 N 代都把物料切成 20 秒内的竖屏和横屏两套。对速闻来说，娱乐栏目标准是：哪部作品在谈、它的公开物料能不能在 App 里直接播，而不是搬运评论区争吵。</p>
+      <p>下面这段短视频用来验证 WKWebView 的行内播放。正式期次会换成当日公开预告或现场片段。</p>
+      <video controls playsinline webkit-playsinline preload="none" poster="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80">
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+        当前环境不支持视频播放
+      </video>
+      <small class="hint">CC0 示例视频，仅用于打通播放链路。</small>
+    </section>
+
+    <footer class="colophon">
+      <p>速闻编辑部整理 · 创刊号 · 仅供快速浏览</p>
+      <p>栏目模板见仓库 <code>speed/HTML编辑规范.md</code></p>
+    </footer>
+  </article>
+</body>
+</html>
