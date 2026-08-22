@@ -35,16 +35,16 @@ App Store 的 **App Name 全店唯一**。本类目里「右键大师 / 超级�
 ### 🇨🇳 简体中文（版本 v1.0 首发）
 
 ```
-首发：访达右键新建文件/文件夹、拷贝路径、在终端打开、移动到常用文件夹。菜单栏静默后台，原生 SwiftUI，零联网零追踪。
+首发：右键新建文件/文件夹、拷贝路径、在终端打开、移动到常用文件夹。菜单栏静默后台，原生 SwiftUI，零联网零追踪。
 ```
-**字符数：62 / 170 ✅**
+**字符数：60 / 170 ✅**
 
 ### 🇺🇸 English (v1.0 launch)
 
 ```
-New file/folder, copy path, open in Terminal, move/copy to favorites — right in Finder. Menu-bar quiet mode. Native SwiftUI, zero network, zero tracking.
+New file/folder, copy path, open in Terminal, move/copy to favorites from the context menu. Menu-bar quiet mode. Native SwiftUI, zero network, zero tracking.
 ```
-**字符数：148 / 170 ✅**
+**字符数：157 / 170 ✅**
 
 ---
 
@@ -55,7 +55,7 @@ New file/folder, copy path, open in Terminal, move/copy to favorites — right i
 ### 🇨🇳 简体中文
 
 ```
-牧云右键助手为 Mac 访达补上最常用的右键功能，使用 SwiftUI 原生构建。它把「快、稳、隐私」放在第一位：完全本地运行，不发起任何网络请求。
+牧云右键助手为日常文件整理补上最常用的右键功能，使用 SwiftUI 原生构建。它把「快、稳、隐私」放在第一位：完全本地运行，不发起任何网络请求。
 
 【右键新建文件】
 - 在任意文件夹右键即可新建文件，告别「先开 App 再另存为」
@@ -108,7 +108,7 @@ New file/folder, copy path, open in Terminal, move/copy to favorites — right i
 ### 🇺🇸 English
 
 ```
-MuyunRight adds the context-menu actions Finder always should have had, built natively with SwiftUI. Speed, stability, and privacy come first: everything runs locally, and the app makes zero network requests.
+MuyunRight adds the context-menu actions you use every day, built natively with SwiftUI. Speed, stability, and privacy come first: everything runs locally, and the app makes zero network requests.
 
 [New File, Right There]
 - Create a file in any folder straight from the right-click menu. No more "open an app, then Save As"
@@ -165,20 +165,20 @@ Suggestions or issues? Use the App Support link below. Every message gets read.
 > **上限 100 字符**（含分隔符，中英分开计算）。
 > ⚠️ 不要重复 App 名称、不要堆砌、不要出现竞品名（避免被拒）。
 
-### 🇨🇳 简体中文（约 92 / 100 字符）
+### 🇨🇳 简体中文（46 / 100 字符）
 
 ```
-右键,新建文件,访达,右键菜单,拷贝路径,终端,效率,文件管理,模板,快捷,菜单,工具,扩展
+右键,新建文件,右键菜单,拷贝路径,终端,效率,文件管理,模板,快捷,菜单,工具,扩展,归档
 ```
 
-### 🇺🇸 English (约 97 / 100 字符)
+### 🇺🇸 English (90 / 100 字符)
 
 ```
-finder,menu,new,file,context,right,click,copy,path,terminal,template,extension,productivity
+menu,new,file,context,right,click,copy,path,terminal,template,extension,productivity,files
 ```
 
 ### 🔁 关键词选取依据
-- **高搜索量**：`右键` / `新建文件` / `finder` / `new file`（品类核心词）
+- **高搜索量**：`右键` / `新建文件` / `new file`（品类核心词；不要用访达 / Finder / Mac，5.2.5 易拒）
 - **场景词**：`拷贝路径` / `终端` / `copy path` / `terminal`（开发者搜索习惯）
 - **功能词**：`模板` / `右键菜单` / `context menu` / `extension`
 - **避开**：不出现 "超级右键" / "iRightMouse" / "New File Menu" 等其他 App 名
@@ -231,9 +231,9 @@ App Store Connect → App 隐私 → 数据收集：选择 **"不收集数据 / 
 ```
 [ ] 1. App 名称        中文「牧云右键助手」/ 英文「MuyunRight」（已定稿，见第 0 节）
 [ ] 2. 副标题          见下方建议
-[ ] 3. 推广文本        中文 57 / 英文 153  (≤170)
+[ ] 3. 推广文本        中文 60 / 英文 157  (≤170)
 [ ] 4. 描述            中文 ~850 / 英文 ~2100  (≤4000)
-[ ] 5. 关键词          中文 ~92 / 英文 ~97  (≤100)
+[ ] 5. 关键词          中文 46 / 英文 90  (≤100；不要含访达/Finder/Mac)
 [ ] 6. 支持 URL        必填，替换占位
 [ ] 7. 营销 URL        建议填，替换占位
 [ ] 8. 隐私政策 URL    托管 privacy.html 后填入，必填
@@ -293,10 +293,12 @@ Bundle ID 与 SKU 都是全新值，**这两条已不可能是冲突源**。因�
 
 **商店名与设备显示名可以不同。** 工程里的 `CFBundleDisplayName`（Dock、右键菜单、关于页）保持「牧云右键助手」即可，不必跟着商店名改。名称在**提交审核前可随时修改**——若急于推进证书 / TestFlight，先用任一能过的名字建好 Record，之后再改回首选。
 
-### 副标题建议（30 字符内，显示在 App 名下方）
+### 副标题（30 字符内，显示在 App 名下方）
 
-🇨🇳 中文：`访达右键新建文件 · 拷贝路径 · 开终端` （18 字符）
-🇺🇸 English：`New file & more in Finder` （25 字符）
+> **2026-08-21 审核 Guideline 5.2.5：** 副标题里不能出现 Mac / macOS / 访达 / Finder 等 Apple 产品名，哪怕只是「for Mac」。下面两行已按此改过，请原样贴进 Connect。
+
+🇨🇳 中文：`新建文件、拷贝路径、开终端` （13 字符）
+🇺🇸 English：`New file, copy path, archive` （28 字符）
 
 ---
 
@@ -320,3 +322,23 @@ Bundle ID 与 SKU 都是全新值，**这两条已不可能是冲突源**。因�
 > 3. 描述里**不要**出现其他 App 名称（超级右键等），会被拒。
 > 4. 描述/关键词不要用"无限"、"最强"、"最好"等绝对化表述。
 > 5. App 完全无联网，App 隐私问卷务必选"不收集数据"，与描述保持一致。
+> 6. **副标题、关键词不要出现 Mac / macOS / 访达 / Finder**（Guideline 5.2.5，1.0 (2) 已因此被拒）。
+
+---
+
+## 🔁 1.0 (3) 回复审核（可直接粘贴到 App Store Connect 回复）
+
+```
+Thank you for the review.
+
+1) Guideline 5.2.5
+We removed Apple product terms from the subtitle and keywords. The subtitle is now a list of features only, with no Mac, macOS, Finder, or equivalent wording.
+
+Chinese subtitle: 新建文件、拷贝路径、开终端
+English subtitle: New file, copy path, archive
+
+2) Guideline 4
+Version 1.0 (3) adds a Window menu item that reopens the main window after it is closed (also available from the app menu as 打开主窗口, and from the menu bar extra). Closing the window still keeps the Finder extension running in the background, which is required for the context-menu features.
+
+Please take another look at this build.
+```

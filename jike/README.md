@@ -7,6 +7,18 @@
 
 ## 快速开始 / Quick Start
 
+### 下载 / Download
+
+完整版从 GitHub Releases 安装（**不进 Mac App Store**）：
+
+1. 打开 [JiKe Releases](https://github.com/zhipengge/JiKe/releases/latest)
+2. 下载 `JiKe-x.y.z.zip`，解压后拖进「应用程序」
+3. 首次若被拦截：**右键 → 打开**
+
+营销页与隐私仍在本目录 Pages；安装包只放在 `zhipengge/JiKe` 的 Releases。
+
+### 使用 / Use
+
 1. 打开「即刻」
 2. 按 **Fn+F12**（外接键盘可直接按 F12）
 3. 终端从屏幕上方滑下，输入命令即可
