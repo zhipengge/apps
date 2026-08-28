@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云电视 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #dc3340;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #e85a64;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 {
+    font-size: 1.4rem; font-weight: 600;
+    margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border);
+  }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead {
+    background: var(--bg-soft);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    margin: 20px 0;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  ul.deny li::marker { content: "❌  "; }
+  code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85em;
+    background: var(--bg-soft);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+  a { color: var(--accent); }
+  footer {
+    margin-top: 56px; padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--fg-dim); font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>牧云电视 · 隐私政策</h1>
+<p class="meta">Muyun TV — Privacy Policy · 最后更新 / Last updated: 2026-08-28</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="lead">
+  <strong>牧云电视不收集、不上传、不把频道列表发到任何自有服务器。</strong>
+  频道、收藏和界面偏好只保存在这台 iPhone 或 iPad。没有账号、没有后端、没有广告和分析。
+  本应用是播放工具，不提供或托管任何第三方电视内容。
+</div>
+
+<h3>我们处理什么、在哪处理</h3>
+<table>
+  <thead><tr><th>数据</th><th>用途</th><th>处理/存储位置</th></tr></thead>
+  <tbody>
+    <tr><td>频道名称、地址、分组、台标地址</td><td>列表、搜索、播放</td><td>本机 UserDefaults</td></tr>
+    <tr><td>收藏与上次播放地址</td><td>收藏分组、列表高亮</td><td>同上</td></tr>
+    <tr><td>语言、主题</td><td>界面</td><td>同上</td></tr>
+    <tr><td>你导出的 JSON 播放列表</td><td>备份或换机</td><td>经系统分享面板送出；App 不上传</td></tr>
+    <tr><td>你导入的文件或网址</td><td>解析频道</td><td>文件只读一次；请求只发往你粘贴的地址</td></tr>
+    <tr><td>一键导入的公开测试列表</td><td>确认播放器能工作</td><td>向 GitHub Pages 上的 public_channels.m3u 发一次 GET，在本机解析</td></tr>
+  </tbody>
+</table>
+
+<h3>我们不做的事</h3>
+<ul class="deny">
+  <li>不把频道列表上传到开发者服务器</li>
+  <li>不接入广告或分析</li>
+  <li>不读取通讯录、位置、麦克风、摄像头、相册</li>
+  <li>不要求登录</li>
+  <li>不追踪你</li>
+  <li>不内置电视节目列表</li>
+</ul>
+
+<h3>网络通信</h3>
+<p>联网只在你主动操作时发生：</p>
+<ol>
+  <li>导入播放列表网址：向你粘贴的 http 或 https 地址发请求，在本机解析。</li>
+  <li>一键导入：向 GitHub Pages 上的 public_channels.m3u 发一次 GET，下载公开测试流列表并在本机解析。不是电视节目。</li>
+  <li>播放直播源：向该频道地址请求音视频。许多源使用明文 HTTP，因此 App 允许非 HTTPS 连接。流量去源站，不经过开发者服务器。</li>
+  <li>若播放列表带台标网址，列表可能向该地址请求图片。</li>
+</ol>
+<p>关于页里的隐私政策与支持页由系统浏览器打开。</p>
+
+<h3>数据删除</h3>
+<ul>
+  <li>列表左滑删除单个频道；设置里可清空全部。清空后不会自动填回。</li>
+  <li>从主屏幕删除 App，本机数据一并消失。换机前请先导出播放列表。</li>
+</ul>
+
+<h3>联系</h3>
+<p>疑问请通过 <a href="support.html">支持页</a> 反馈。</p>
+
+<h2 id="en">English</h2>
+
+<div class="lead">
+  <strong>Muyun TV does not collect, upload, or send your channel list to any server we operate.</strong>
+  Channels, favorites, and UI preferences stay on this iPhone or iPad. No account, backend, ads, or analytics.
+  This is a playback tool. It does not provide or host third-party TV.
+</div>
+
+<h3>What we process and where</h3>
+<table>
+  <thead><tr><th>Data</th><th>Purpose</th><th>Where</th></tr></thead>
+  <tbody>
+    <tr><td>Channel name, URL, group, logo URL</td><td>List, search, playback</td><td>On-device UserDefaults</td></tr>
+    <tr><td>Favorites and last played URL</td><td>Favorites group, highlight</td><td>Same</td></tr>
+    <tr><td>Language and theme</td><td>UI</td><td>Same</td></tr>
+    <tr><td>JSON playlist you export</td><td>Backup</td><td>System share sheet; not uploaded</td></tr>
+    <tr><td>Playlist file or URL you import</td><td>Parse channels</td><td>File read once; request goes only to the URL you pasted</td></tr>
+    <tr><td>Public test playlist from Quick Import</td><td>Verify playback</td><td>One GET to public_channels.m3u on GitHub Pages, parsed on device</td></tr>
+  </tbody>
+</table>
+
+<h3>What we do not do</h3>
+<ul class="deny">
+  <li>No upload of your channel list to developer servers</li>
+  <li>No ads or analytics</li>
+  <li>No contacts, location, microphone, camera, or photos</li>
+  <li>No account</li>
+  <li>No tracking</li>
+  <li>No built-in TV program list</li>
+</ul>
+
+<h3>Network</h3>
+<ol>
+  <li>Import playlist URL: request the address you paste, parse on device.</li>
+  <li>Quick import: one GET to public_channels.m3u on GitHub Pages for public test streams, parsed on device. Not TV programs.</li>
+  <li>Play a stream: request media from that channel URL. Many sources use plain HTTP, so non-HTTPS is allowed. Traffic goes to the source, not through our servers.</li>
+  <li>Logo URLs in a playlist may be fetched for the list.</li>
+</ol>
+
+<h3>Deletion</h3>
+<p>Swipe to delete one channel; Settings can clear all. A cleared list is not restored. Deleting the app removes sandbox data.</p>
+
+<footer>
+  © 2026 牧云电视 (Muyun TV)
+</footer>
+
+</body>
+</html>

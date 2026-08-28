@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云电视 · 帮助与支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #dc3340;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #e85a64;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 4px; }
+  h2 {
+    font-size: 1.35rem; font-weight: 600;
+    margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+  }
+  h3 { font-size: 1.05rem; font-weight: 600; margin-top: 24px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 24px; }
+  .lead {
+    background: var(--bg-soft);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    margin: 20px 0;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul li, ol li { margin: 6px 0; }
+  footer {
+    margin-top: 56px; padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--fg-dim); font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>牧云电视 — 帮助与支持</h1>
+<p class="meta">Muyun TV · Support · 2026-08-28</p>
+
+<div class="lead">
+  牧云电视是直播流播放工具。导入你自己的 M3U、JSON 或 TXT 播放列表，或手动添加地址后播放。
+  本应用不提供、不托管任何电视节目。源的合法性由你负责。
+</div>
+
+<h2>能做什么</h2>
+<ul>
+  <li>从文件或网址导入 M3U / M3U8 / JSON / TXT 播放列表。</li>
+  <li>手动添加单条直播源；按分组浏览、搜索、收藏、编辑、删除。</li>
+  <li>全屏播放 HLS 和常见 HTTP 视频流；支持画中画和 AirPlay。</li>
+  <li>中文 / English；深色、浅色或跟随系统。</li>
+  <li>导出 JSON 备份。清空列表后不会自动填回。</li>
+</ul>
+
+<h2>怎么开始</h2>
+<ol>
+  <li>打开 App。首次是空列表，这是正常的。</li>
+  <li>点右上角加号，进入「导入直播源」。</li>
+  <li>可点「一键导入源」，从本页同目录的 <a href="public_channels.m3u">public_channels.m3u</a> 拉取公开测试流（苹果 / Mux / Akamai 等测试地址，不是电视节目）。</li>
+  <li>也可以粘贴播放列表网址，或从「文件」选择 M3U / JSON / TXT。还可以只填名称和地址添加一条。</li>
+  <li>在列表里点频道即可播放。左滑编辑或删除，右滑收藏。</li>
+</ol>
+<p>空状态里的「一键导入测试源」与导入页的一键导入是同一份列表。</p>
+
+<h2>导入格式</h2>
+<ul>
+  <li>M3U：标准 <code>#EXTINF</code> 行，可带 <code>group-title</code> 和 <code>tvg-logo</code>。</li>
+  <li>JSON：对象数组，字段为 <code>name</code>、<code>url</code>，可选 <code>group</code>、<code>logo</code>。</li>
+  <li>TXT：每行 <code>名称,地址</code>，也可用竖线或制表符分隔。</li>
+</ul>
+<p>默认合并导入，按地址去重，不覆盖已有频道的名称。打开「覆盖现有列表」则会整份替换。</p>
+
+<h2>常见问题</h2>
+<h3>为什么打开是空的？</h3>
+<p>本应用不内置频道。需要先导入播放列表或手动添加源。</p>
+<h3>清空后再打开，会不会自动恢复示例？</h3>
+<p>不会。空列表会保持为空。</p>
+<h3>某个源无法播放</h3>
+<p>常见原因：地址失效、源站限制客户端、当前网络访问不到、或格式不受系统播放器支持。请检查地址，或换一条源。</p>
+<h3>为什么允许非 HTTPS？</h3>
+<p>不少直播源仍使用明文 HTTP。流量发往你添加的源站，不经过我们的服务器。详见 <a href="privacy.html">隐私政策</a>。</p>
+<h3>这是 IPTV 运营或节目提供方吗？</h3>
+<p>不是。只是播放工具。请只导入你有权使用的源。侵权或违规可通过 App 内关于页举报。</p>
+
+<h2>隐私</h2>
+<p>完整政策见 <a href="privacy.html">privacy.html</a>。</p>
+
+<h2>反馈</h2>
+<p>请通过 App Store 产品页的支持入口留言。</p>
+
+<footer>
+  © 2026 牧云电视 (Muyun TV)
+</footer>
+
+</body>
+</html>

@@ -227,7 +227,7 @@ sips -z 800 1280 screenshot.png
 | `attribute already in use` / 名称已被使用 | 不一定是店名；SKU、Bundle ID 同样会套这句 | 见第 2 节，三个属性都换新再定性 |
 | 上传后「缺少出口合规证明」 | 只写了主 App，扩展 target 漏了 | 每个 native target 都加 `ITSAppUsesNonExemptEncryption` |
 | Guideline 5.2.5 副标题含 Mac | 副标题写了 for Mac / 访达 / Finder | 副标题和关键词去掉所有 Apple 产品名，只写功能 |
-| Guideline 4 关窗后打不开 | 关主窗口后「窗口」菜单没有重开项 | 菜单栏「窗口」列出主窗口；或关窗即退出。菜单栏图标不算数 |
+| Guideline 4 关窗后打不开 | 关主窗口后「窗口」菜单没有重开项；菜单栏图标不算数 | 默认关窗即退出；若要驻留，Window 菜单和 ⌘0 必须在窗口关掉后仍在 |
 
 改了 Info.plist 或扩展配置必须 **Product → Archive 新建一份**。对旧 Archive 再点 Distribute，校验的还是旧包。
 

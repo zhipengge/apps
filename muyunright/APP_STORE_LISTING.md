@@ -85,7 +85,7 @@ New file/folder, copy path, open in Terminal, move/copy to favorites from the co
 - 可选收纳进子菜单（名称可自定义），或平铺在右键菜单第一级
 - 设置页内置实时菜单预览，改完立刻知道访达里长什么样
 - 访达工具栏按钮：不右键也能触达全部功能
-- 默认菜单栏静默后台运行，关窗驻留，支持开机自启；Dock 与菜单栏图标都可按需隐藏
+- 默认关闭窗口即退出；也可改为关窗后菜单栏驻留。Dock 与菜单栏图标都可按需隐藏
 - 设置可导出为文件，换机或重装后一键导入
 
 【安全与隐私】
@@ -138,7 +138,7 @@ MuyunRight adds the context-menu actions you use every day, built natively with 
 - Group everything under a single submenu (rename it if you like), or lay items flat at the top level
 - A live preview in Settings shows exactly what the Finder menu will look like
 - Finder toolbar button gives one-click access to every action
-- Runs quietly in the menu bar by default; stays after you close the window; optional launch at login; both the Dock and menu bar icons can be hidden
+- Closing the main window quits the app by default. You can keep a menu bar icon instead. Dock and menu bar icons can be hidden.
 - Export your settings to a file and import them on another Mac
 
 [Security and Privacy]
@@ -293,12 +293,14 @@ Bundle ID 与 SKU 都是全新值，**这两条已不可能是冲突源**。因�
 
 **商店名与设备显示名可以不同。** 工程里的 `CFBundleDisplayName`（Dock、右键菜单、关于页）保持「牧云右键助手」即可，不必跟着商店名改。名称在**提交审核前可随时修改**——若急于推进证书 / TestFlight，先用任一能过的名字建好 Record，之后再改回首选。
 
-### 副标题（30 字符内，显示在 App 名下方）
+### 副标题（30 字符内）— 必须在 App Store Connect 网页改，换包不会改这个字段
 
-> **2026-08-21 审核 Guideline 5.2.5：** 副标题里不能出现 Mac / macOS / 访达 / Finder 等 Apple 产品名，哪怕只是「for Mac」。下面两行已按此改过，请原样贴进 Connect。
+> **1.0 (2) 和 1.0 (3) 都被 Guideline 5.2.5 以「副标题含 Mac」拒。** 上传新构建**不会**改副标题。请打开 Connect → 牧云右键助手 → 版本 → **App 信息 / 本地化**，**简体中文和 English (U.S.) 各改一次**，保存后再提交。不要只改中文。
+>
+> 不要用：Mac、macOS、访达、Finder、终端、Terminal、Apple、Safari。
 
-🇨🇳 中文：`新建文件、拷贝路径、开终端` （13 字符）
-🇺🇸 English：`New file, copy path, archive` （28 字符）
+🇨🇳 中文（请原样粘贴）：`右键新建与文件整理`
+🇺🇸 English（请原样粘贴）：`Create files from right-click`
 
 ---
 
@@ -322,23 +324,23 @@ Bundle ID 与 SKU 都是全新值，**这两条已不可能是冲突源**。因�
 > 3. 描述里**不要**出现其他 App 名称（超级右键等），会被拒。
 > 4. 描述/关键词不要用"无限"、"最强"、"最好"等绝对化表述。
 > 5. App 完全无联网，App 隐私问卷务必选"不收集数据"，与描述保持一致。
-> 6. **副标题、关键词不要出现 Mac / macOS / 访达 / Finder**（Guideline 5.2.5，1.0 (2) 已因此被拒）。
+> 6. **副标题、关键词不要出现 Mac / macOS / 访达 / Finder / 终端**（Guideline 5.2.5）。**换包不会改副标题**，必须在 Connect 里中英两个本地化都改。
 
 ---
 
-## 🔁 1.0 (3) 回复审核（可直接粘贴到 App Store Connect 回复）
+## 🔁 1.0 (4) 回复审核（可直接粘贴）
 
 ```
-Thank you for the review.
+Thank you for looking at this again.
 
 1) Guideline 5.2.5
-We removed Apple product terms from the subtitle and keywords. The subtitle is now a list of features only, with no Mac, macOS, Finder, or equivalent wording.
+The previous resubmission only updated the binary. We have now updated the App Store subtitle in both Simplified Chinese and English (U.S.). There are no Apple product terms (Mac, macOS, Finder, Terminal, or equivalents) in the subtitle.
 
-Chinese subtitle: 新建文件、拷贝路径、开终端
-English subtitle: New file, copy path, archive
+Chinese subtitle: 右键新建与文件整理
+English subtitle: Create files from right-click
 
 2) Guideline 4
-Version 1.0 (3) adds a Window menu item that reopens the main window after it is closed (also available from the app menu as 打开主窗口, and from the menu bar extra). Closing the window still keeps the Finder extension running in the background, which is required for the context-menu features.
+Version 1.0 (4) follows the alternative you suggested for a single-window app: closing the main window quits the app (the Finder extension continues to provide the context menu). The Window menu also includes an item to reopen the main window, and Command-0 / Settings reopen it if the user chooses to keep the app running in the background.
 
 Please take another look at this build.
 ```

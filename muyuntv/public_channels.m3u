@@ -1,0 +1,26 @@
+#EXTM3U
+# 牧云电视公开测试源 / Muyun TV public test playlist
+# 只含厂商与开源项目提供的测试流，用来确认播放器能工作。不是电视节目，不托管任何第三方直播内容。
+# One-click import URL:
+# https://zhipengge.github.io/apps/muyuntv/public_channels.m3u
+
+#EXTINF:-1 group-title="Demo",Apple HLS Demo (fMP4)
+https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8
+#EXTINF:-1 group-title="Demo",Apple Bipbop 16:9
+https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8
+#EXTINF:-1 group-title="Demo",Apple Bipbop 4:3
+https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8
+#EXTINF:-1 group-title="Demo",Apple HLS Demo (TS)
+https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8
+#EXTINF:-1 group-title="Demo",Mux Big Buck Bunny
+https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
+#EXTINF:-1 group-title="Demo",Tears of Steel (Unified Streaming)
+https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8
+#EXTINF:-1 group-title="Demo",Shaka Angel One
+https://storage.googleapis.com/shaka-demo-assets/angel-one-hls/hls.m3u8
+#EXTINF:-1 group-title="Live Test",Akamai Live Test
+https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8
+#EXTINF:-1 group-title="Live Test",Akamai Live Eight
+https://moctobpltc-i.akamaihd.net/hls/live/571329/eight/playlist.m3u8
+#EXTINF:-1 group-title="Live Test",Unified Streaming Low Latency
+https://demo.unified-streaming.com/k8s/low-latency/stable/channel1/channel1.isml/.m3u8
