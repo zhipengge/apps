@@ -83,11 +83,14 @@
   <thead><tr><th>数据</th><th>用途</th><th>处理/存储位置</th></tr></thead>
   <tbody>
     <tr><td>频道名称、地址、分组、台标地址</td><td>列表、搜索、播放</td><td>本机 UserDefaults</td></tr>
-    <tr><td>收藏与上次播放地址</td><td>收藏分组、列表高亮</td><td>同上</td></tr>
+    <tr><td>收藏、上次播放、最近观看地址</td><td>收藏、继续播放、最近分组</td><td>同上</td></tr>
+    <tr><td>监控墙钉选（最多 4 路）</td><td>分屏同时播放你钉的源</td><td>同上</td></tr>
+    <tr><td>播放时长统计</td><td>设置里查看今日/累计</td><td>同上</td></tr>
+    <tr><td>常亮、重连、静音、铺满、低延迟开关</td><td>播放偏好</td><td>同上</td></tr>
     <tr><td>语言、主题</td><td>界面</td><td>同上</td></tr>
     <tr><td>你导出的 JSON 播放列表</td><td>备份或换机</td><td>经系统分享面板送出；App 不上传</td></tr>
     <tr><td>你导入的文件或网址</td><td>解析频道</td><td>文件只读一次；请求只发往你粘贴的地址</td></tr>
-    <tr><td>一键导入的公开测试列表</td><td>确认播放器能工作</td><td>向 GitHub Pages 上的 public_channels.m3u 发一次 GET，在本机解析</td></tr>
+    <tr><td>一键导入的公开列表</td><td>测试播放，以及播出方公开的国际频道</td><td>向 GitHub raw 上的 public_channels.m3u 发一次 GET，在本机解析</td></tr>
   </tbody>
 </table>
 
@@ -96,6 +99,7 @@
   <li>不把频道列表上传到开发者服务器</li>
   <li>不接入广告或分析</li>
   <li>不读取通讯录、位置、麦克风、摄像头、相册</li>
+  <li>不录像、不识别人脸、不把监控墙画面传到任何服务器</li>
   <li>不要求登录</li>
   <li>不追踪你</li>
   <li>不内置电视节目列表</li>
@@ -105,7 +109,7 @@
 <p>联网只在你主动操作时发生：</p>
 <ol>
   <li>导入播放列表网址：向你粘贴的 http 或 https 地址发请求，在本机解析。</li>
-  <li>一键导入：向 GitHub Pages 上的 public_channels.m3u 发一次 GET，下载公开测试流列表并在本机解析。不是电视节目。</li>
+  <li>一键导入：向 GitHub raw 上的 public_channels.m3u 发一次 GET，下载公开列表并在本机解析。含厂商测试流和播出方公开的国际频道 HLS，不是盗链 IPTV。</li>
   <li>播放直播源：向该频道地址请求音视频。许多源使用明文 HTTP，因此 App 允许非 HTTPS 连接。流量去源站，不经过开发者服务器。</li>
   <li>若播放列表带台标网址，列表可能向该地址请求图片。</li>
 </ol>
@@ -133,11 +137,14 @@
   <thead><tr><th>Data</th><th>Purpose</th><th>Where</th></tr></thead>
   <tbody>
     <tr><td>Channel name, URL, group, logo URL</td><td>List, search, playback</td><td>On-device UserDefaults</td></tr>
-    <tr><td>Favorites and last played URL</td><td>Favorites group, highlight</td><td>Same</td></tr>
+    <tr><td>Favorites, last played, recents</td><td>Favorites, resume, Recents</td><td>Same</td></tr>
+    <tr><td>Monitor wall pins (up to 4)</td><td>Multi-view of feeds you pin</td><td>Same</td></tr>
+    <tr><td>Playback duration stats</td><td>Today / total in Settings</td><td>Same</td></tr>
+    <tr><td>Keep-awake, reconnect, mute, fill, low latency</td><td>Playback preferences</td><td>Same</td></tr>
     <tr><td>Language and theme</td><td>UI</td><td>Same</td></tr>
     <tr><td>JSON playlist you export</td><td>Backup</td><td>System share sheet; not uploaded</td></tr>
     <tr><td>Playlist file or URL you import</td><td>Parse channels</td><td>File read once; request goes only to the URL you pasted</td></tr>
-    <tr><td>Public test playlist from Quick Import</td><td>Verify playback</td><td>One GET to public_channels.m3u on GitHub Pages, parsed on device</td></tr>
+    <tr><td>Public playlist from Quick Import</td><td>Verify playback and official international channels</td><td>One GET to public_channels.m3u on GitHub raw, parsed on device</td></tr>
   </tbody>
 </table>
 
@@ -146,6 +153,7 @@
   <li>No upload of your channel list to developer servers</li>
   <li>No ads or analytics</li>
   <li>No contacts, location, microphone, camera, or photos</li>
+  <li>No recording, face detection, or upload of monitor-wall video</li>
   <li>No account</li>
   <li>No tracking</li>
   <li>No built-in TV program list</li>
@@ -154,7 +162,7 @@
 <h3>Network</h3>
 <ol>
   <li>Import playlist URL: request the address you paste, parse on device.</li>
-  <li>Quick import: one GET to public_channels.m3u on GitHub Pages for public test streams, parsed on device. Not TV programs.</li>
+  <li>Quick import: one GET to public_channels.m3u on GitHub raw for vendor test streams and official international HLS, parsed on device. Not pirate IPTV.</li>
   <li>Play a stream: request media from that channel URL. Many sources use plain HTTP, so non-HTTPS is allowed. Traffic goes to the source, not through our servers.</li>
   <li>Logo URLs in a playlist may be fetched for the list.</li>
 </ol>

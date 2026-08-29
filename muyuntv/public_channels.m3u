@@ -1,8 +1,48 @@
 #EXTM3U
-# 牧云电视公开测试源 / Muyun TV public test playlist
-# 只含厂商与开源项目提供的测试流，用来确认播放器能工作。不是电视节目，不托管任何第三方直播内容。
+# 牧云电视公开列表 / Muyun TV public playlist
+# 含两类源：
+# 1) 厂商与开源项目的测试流，用来确认播放器能工作
+# 2) 播出方自己公开的国际频道 HLS（CGTN / France 24 / DW / Al Jazeera 等）
+# 不是盗链 IPTV，本仓库不托管视频。源由播出方提供，可能随时失效或按地区限制。
 # One-click import URL:
-# https://zhipengge.github.io/apps/muyuntv/public_channels.m3u
+# https://raw.githubusercontent.com/zhipengge/apps/main/muyuntv/public_channels.m3u
+
+#EXTINF:-1 group-title="国际新闻",CGTN English
+https://english-livebkali.cgtn.com/live/encgtn.m3u8
+#EXTINF:-1 group-title="国际新闻",CGTN Documentary
+https://english-livetx.cgtn.com/hls/yypdjlctzb_hd.m3u8
+#EXTINF:-1 group-title="国际新闻",CGTN Français
+https://news.cgtn.com/resource/live/french/cgtn-f.m3u8
+#EXTINF:-1 group-title="国际新闻",CGTN Español
+https://news.cgtn.com/resource/live/espanol/cgtn-e.m3u8
+#EXTINF:-1 group-title="国际新闻",CGTN Русский
+https://news.cgtn.com/resource/live/russian/cgtn-r.m3u8
+#EXTINF:-1 group-title="国际新闻",CGTN العربية
+https://news.cgtn.com/resource/live/arabic/cgtn-a.m3u8
+#EXTINF:-1 group-title="国际新闻",France 24 English
+https://static.france24.com/live/F24_EN_HI_HLS/live_tv.m3u8
+#EXTINF:-1 group-title="国际新闻",France 24 Français
+https://static.france24.com/live/F24_FR_HI_HLS/live_tv.m3u8
+#EXTINF:-1 group-title="国际新闻",France 24 Arabic
+https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8
+#EXTINF:-1 group-title="国际新闻",France 24 Español
+https://static.france24.com/live/F24_ES_HI_HLS/live_tv.m3u8
+#EXTINF:-1 group-title="国际新闻",DW English
+https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8
+#EXTINF:-1 group-title="国际新闻",DW Deutsch
+https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/index.m3u8
+#EXTINF:-1 group-title="国际新闻",Al Jazeera English
+https://live-hls-web-aje-fa.getaj.net/AJE/index.m3u8
+#EXTINF:-1 group-title="国际新闻",Al Jazeera Arabic
+https://live-hls-web-aja-fa.getaj.net/AJA/index.m3u8
+#EXTINF:-1 group-title="国际新闻",CNA
+https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8
+#EXTINF:-1 group-title="国际新闻",Bloomberg US
+https://www.bloomberg.com/media-manifest/streams/us.m3u8
+#EXTINF:-1 group-title="国际新闻",Arirang
+https://amdlive-ch01-ctnd-com.akamaized.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8
+#EXTINF:-1 group-title="国际新闻",NASA TV
+https://ntv1.akamaized.net/hls/live/2014075/NASA-NTV1-HLS/master.m3u8
 
 #EXTINF:-1 group-title="Demo",Apple HLS Demo (fMP4)
 https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8

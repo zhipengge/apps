@@ -35,18 +35,18 @@
 ### 简体中文
 
 ```
-导入你自己的 M3U、JSON 或 TXT 播放列表，或手动添加直播地址即可播放。按分组浏览、收藏和搜索。中英文与深浅色可切换。不内置电视节目，源由你自己负责。
+导入你自己的播放列表或直播地址即可播放。最多四路监控墙分屏，断线重连、常亮、定时关闭。不内置电视节目，源由你自己负责。
 ```
 
-**字符数：80 / 170**
+**字符数：59 / 170**
 
 ### English
 
 ```
-Import your M3U, JSON, or TXT list, or add a stream URL. Group, search, favorite. Chinese and English. Light, dark, or system. No built-in TV. You choose sources.
+Import your list or a stream URL. Pin up to four camera feeds on a wall. Reconnect, keep-awake, sleep timer. No built-in TV. You choose sources.
 ```
 
-**字符数：162 / 170**
+**字符数：144 / 170**
 
 ---
 
@@ -71,11 +71,18 @@ Import your M3U, JSON, or TXT list, or add a stream URL. Group, search, favorite
 - 使用系统播放器播放 HLS 和常见 HTTP 视频流
 - 全屏观看，可切换上一个 / 下一个频道
 - 支持画中画和 AirPlay
-- 加载失败时可重试
+- 加载失败时可重试，断线可自动重连
+- 播放时可保持屏幕常亮，可定时关闭
+
+【监控墙】
+- 把摄像头或其他源钉到监控墙，最多同时看 4 路
+- 默认静音，长按格子可单独开声
+- 绿 / 橙 / 红表示在线、重连、离线；离线时本机震动
+- 不录像、不识别人、不把画面传到服务器
 
 【整理】
 - 按播放列表里的分组浏览
-- 收藏、搜索、编辑、删除
+- 收藏、最近观看、搜索、编辑、删除
 - 清空全部频道后不会自动填回
 
 【语言与外观】
@@ -105,11 +112,18 @@ Muyun TV is a live-stream player. Add your own playlist or stream URL and play i
 - System player for HLS and common HTTP video streams
 - Full screen, previous / next channel
 - Picture in Picture and AirPlay
-- Retry when a source fails
+- Retry when a source fails; optional auto reconnect
+- Keep the screen awake; optional sleep timer
+
+[Monitor wall]
+- Pin camera or other feeds, up to four at once
+- Muted by default; unmute one tile from the menu
+- Green, orange, and red show live, reconnecting, and offline; the device vibrates when a live feed drops
+- No recording, no face detection, no upload of the video
 
 [Organize]
 - Browse by playlist groups
-- Favorites, search, edit, delete
+- Favorites, recents, search, edit, delete
 - Clearing the list does not restore samples
 
 [Language and theme]
@@ -131,18 +145,18 @@ This is a tool, not a streaming service, and it ships with no channels. Import o
 ### 简体中文
 
 ```
-导入直播源，播放视频流
+导入直播源，分屏盯画面
 ```
 
-**字符数：12 / 30**
+**字符数：11 / 30**
 
 ### English
 
 ```
-Play your live stream lists
+Play streams and camera walls
 ```
 
-**字符数：27 / 30**
+**字符数：29 / 30**
 
 ---
 
@@ -153,18 +167,18 @@ Play your live stream lists
 ### 简体中文
 
 ```
-直播,播放器,播放列表,视频流,频道,收藏,导入,分组,hls
+直播,播放器,播放列表,视频流,频道,收藏,导入,分组,hls,监控墙,摄像头,分屏
 ```
 
-**字符数：32 / 100**
+**字符数：42 / 100**
 
 ### English
 
 ```
-live,player,playlist,stream,channel,hls,import,favorite,group
+live,player,playlist,stream,channel,hls,import,favorite,group,camera,monitor
 ```
 
-**字符数：61 / 100**
+**字符数：76 / 100**
 
 ---
 
@@ -194,4 +208,4 @@ live,player,playlist,stream,channel,hls,import,favorite,group
 
 ## 7️⃣ 截图
 
-iPhone 6.7 寸和 iPad 12.9 寸各 3-10 张真实界面。至少包含：空状态导入引导、频道列表、播放页、导入页、设置/关于（免责声明可见）。
+iPhone 6.7 寸和 iPad 12.9 寸各 3-10 张真实界面。至少包含：空状态导入引导、频道列表、播放页、监控墙分屏、导入页、设置/关于（免责声明可见）。
