@@ -187,9 +187,9 @@ ssh,terminal,server,console,remote,linux,devops,shell,vim,tmux,nord,monokai,unix
 
 | 方案 | URL 示例 | 适合 |
 |---|---|---|
-| **GitHub Issues** | `https://github.com/<your-username>/open-terminal/issues` | 开源 / 半开源项目,门槛低,社区透明 |
+| **GitHub Issues** | `https://github.com/zhipengge/apps/issues` | 开源 / 半开源项目,门槛低,社区透明 |
 | **静态 Support 页** | `https://openterminal.app/support` | 有自己域名,显得正式 |
-| **GitHub Pages** | `https://<your-username>.github.io/open-terminal/support` | 免费托管,2 分钟上线 |
+| **GitHub Pages** | `https://zhipengge.github.io/apps/openterminal/support.html` | 免费托管,2 分钟上线 |
 | **Notion 公开页** | `https://<your-workspace>.notion.site/support-xxx` | 不想写代码,Notion 一键发布 |
 | **TestFlight Feedback** | TestFlight 链接 | 早期内测临时用 |
 
@@ -220,7 +220,7 @@ https://openterminal.app/support
 | 方案 | URL 示例 | 投入 |
 |---|---|---|
 | **官网首页** | `https://openterminal.app` | 中等(需做 landing page) |
-| **GitHub README 渲染页** | `https://github.com/<your-username>/open-terminal` | 极低(README.md 就够) |
+| **GitHub README 渲染页** | `https://zhipengge.github.io/apps/openterminal/` | 极低(README.md 就够) |
 | **Vercel/Netlify 落地页** | `https://open-terminal.vercel.app` | 低(模板秒搭) |
 
 ### 当前占位 — 替换后再提交

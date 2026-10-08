@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>野球场分拨助手 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #FF9500;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #FFB340;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>野球场分拨助手 · 支持</h1>
+<p class="meta">SpinCourt — Support · 最后更新 / Last updated: 2026-10-08</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>怎么用？</strong>
+<p>设置总人数（2 到 25）和战队数量，点开始，转盘会把每个人随机分到战队里。每个战队有专属颜色和名字。</p>
+
+<strong>分组结果不公平？</strong>
+<p>分拨是纯随机。想让实力更均衡，可以多转几次，或者调整战队数量让每组人数更接近。</p>
+
+<strong>能保存分组结果吗？</strong>
+<p>应用不保存历史记录，每次分组都是独立的。可以截图保存结果。</p>
+
+<strong>需要联网吗？</strong>
+<p>不需要。全部功能离线可用，应用也不发起任何网络请求。</p>
+
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>How do I use it</strong>
+<p>Set the number of players (2 to 25) and the number of teams, then start. The wheel assigns everyone randomly. Each team gets its own colour and name.</p>
+
+<strong>The teams feel unbalanced</strong>
+<p>Assignment is purely random. Spin again for a different draw, or change the team count so the group sizes are closer.</p>
+
+<strong>Can I save past results</strong>
+<p>No history is kept; each draw is independent. Take a screenshot if you want to keep one.</p>
+
+<strong>Does it need a network connection</strong>
+<p>No. Everything works offline and the app makes no network requests.</p>
+
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a>.</p>
+</div>
+
+
+<footer>野球场分拨助手 SpinCourt · 随机分组工具</footer>
+</body>
+</html>

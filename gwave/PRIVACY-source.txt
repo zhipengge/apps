@@ -1,0 +1,84 @@
+隐私政策（Privacy Policy）
+
+最后更新日期：2026-01-01
+
+Gwave 非常重视用户的隐私。本应用是一款网络电台与音频播放工具，旨在为用户提供简单、纯粹的声音播放体验。
+
+一、我们收集的信息
+
+Gwave 不会收集、存储或共享任何可用于识别用户身份的个人信息。
+
+具体而言：
+
+无需注册或登录账号
+
+不收集姓名、邮箱、电话、位置等个人数据
+
+不收集用户的音频内容或播放记录
+
+应用仅会在系统层面处理必要的技术信息，以确保正常运行，例如由 iOS 系统自动提供的基础运行状态信息。
+
+二、音频播放与网络请求
+
+Gwave 支持播放内置电台以及用户自行添加的网络电台。
+所有音频内容均 直接从对应的网络音频源传输到用户设备，Gwave 不会对音频内容进行存储、分析或再分发。
+
+三、第三方服务
+
+Gwave 不使用任何第三方广告、分析、统计或跟踪服务，也不会将任何用户数据共享给第三方。
+
+四、儿童隐私
+
+Gwave 不会主动收集 13 岁以下儿童的任何个人信息。如您认为有儿童在使用本应用并提供了个人信息，请通过 App Store 联系我们，我们将及时处理。
+
+五、隐私政策的变更
+
+我们可能会根据功能调整或法律要求更新本隐私政策。
+任何变更都会在本页面中公布，并更新“最后更新日期”。
+
+六、联系我们
+
+如果您对本隐私政策有任何疑问或建议，可通过 App Store 中提供的开发者联系方式与我们取得联系。
+
+Privacy Policy (English Version)
+
+Last Updated: January 1, 2026
+
+Gwave respects your privacy. This app is designed as a simple internet radio and audio playback tool, providing users with a clean and focused listening experience.
+
+1. Information We Collect
+
+Gwave does not collect, store, or share any personally identifiable information.
+
+Specifically:
+
+No account registration or login is required
+
+No collection of names, email addresses, phone numbers, or location data
+
+No collection of audio content or listening history
+
+Only basic system-level technical information provided automatically by iOS may be processed to ensure normal app functionality.
+
+2. Audio Streaming and Network Access
+
+Gwave allows users to play built-in radio stations and user-added internet radio streams.
+All audio streams are delivered directly from the selected source to the user’s device. Gwave does not store, analyze, or redistribute audio content.
+
+3. Third-Party Services
+
+Gwave does not use third-party advertising, analytics, tracking, or data collection services, and does not share user data with any third parties.
+
+4. Children’s Privacy
+
+Gwave does not knowingly collect any personal information from children under the age of 13.
+If you believe that a child has provided personal information while using this app, please contact us through the App Store developer contact information.
+
+5. Changes to This Policy
+
+This Privacy Policy may be updated from time to time to reflect functional or legal changes.
+Any updates will be posted on this page with a revised “Last Updated” date.
+
+6. Contact Us
+
+If you have any questions about this Privacy Policy, please contact us using the developer contact details available on the App Store.

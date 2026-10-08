@@ -78,7 +78,7 @@ New file/folder, copy path, open in Terminal, move/copy to favorites from the co
 
 【用指定应用打开】
 - 把常用编辑器（如 VS Code、Sublime Text）加入右键菜单
-- 选中文件右键，即可「用 XXX 打开」，一键直达
+- 选中文件右键，即可用你指定的应用一键打开
 
 【灵活可配置，静默后台】
 - 每个菜单项可独立开关

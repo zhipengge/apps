@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阿福 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #0A84FF;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #64D2FF;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>阿福 · 支持</h1>
+<p class="meta">Afu — Support · 最后更新 / Last updated: 2026-10-08</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>第一次打开，模型列表是空的？</strong>
+<p>阿福本身不含模型。打开「模型」页选择一个适合你设备的模型下载即可。首次上手建议选 0.5B 到 2B 参数的小模型，下载快、占用低。</p>
+
+<strong>下载模型失败或很慢？</strong>
+<p>默认走 Hugging Face 官方源，国内直连可能较慢。可在设置里切换到镜像源；也可以稍后重试，已下载的部分会保留并从断点续传。</p>
+
+<strong>提示需要 Hugging Face Token？</strong>
+<p>部分模型需要授权才能下载。在 Hugging Face 官网注册后生成一个 Access Token（只读权限即可），填进阿福的设置页。Token 只保存在本机钥匙串，仅用于该次下载。</p>
+
+<strong>回复很慢 / 设备发烫？</strong>
+<p>参数量越大的模型越慢。0.5B 到 2B 的模型在最近的 iPhone 上通常流畅；4B 及以上会更慢、更耗电，且占用内存明显更多。可在设置里调低最大回复长度。</p>
+
+<strong>支持图片理解吗？</strong>
+<p>只有标注为「多模态」的模型支持。这类模型会多下载一个视觉投影文件，体积更大。</p>
+
+<strong>数据存在哪里？怎么删？</strong>
+<p>全部在本机。删除会话即可移除聊天记录；删除 App 会一并清除模型和设置。详见<a href="privacy.html">隐私政策</a>。</p>
+
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上设备型号、系统版本和复现步骤。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>The model list is empty on first launch</strong>
+<p>Afu ships without models. Open the Models tab and download one that fits your device. Start with a 0.5B to 2B model for a quick download and low memory use.</p>
+
+<strong>Download fails or is slow</strong>
+<p>The default source is Hugging Face. Try a mirror in Settings, or retry later. Partial downloads resume from where they stopped.</p>
+
+<strong>It asks for a Hugging Face token</strong>
+<p>Some models are gated. Create a read-only access token on huggingface.co and paste it into Settings. It is stored in the device keychain and used only for that download.</p>
+
+<strong>Replies are slow, or the device gets hot</strong>
+<p>Larger models are slower. 0.5B to 2B models run smoothly on recent iPhones; 4B and above use noticeably more memory and power. Lower the max reply length in Settings.</p>
+
+<strong>Does it understand images</strong>
+<p>Only models tagged Multimodal. They download an extra vision projector file and take more space.</p>
+
+<strong>Where is my data, and how do I delete it</strong>
+<p>All on-device. Delete a session to remove it; deleting the app clears models and settings too. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your device model, OS version, and steps to reproduce.</p>
+</div>
+
+
+<footer>阿福 Afu · 端侧本地大模型助手</footer>
+</body>
+</html>

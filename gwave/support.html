@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云电台 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #30B0C7;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #40C8E0;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>牧云电台 · 支持</h1>
+<p class="meta">Gwave — Support · 最后更新 / Last updated: 2026-10-08</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>怎么添加自己的电台？</strong>
+<p>三种方式：在应用内手动输入名称和地址；从文件导入 JSON 或文本列表；或者用 <code>gwave://</code> 链接直接添加。也支持用网址导入整份播放列表。</p>
+
+<strong>某个电台放不出来？</strong>
+<p>网络电台的可用性完全取决于源站。常见原因：源站已下线、临时故障、或该地区无法访问。可以换同一电台的其它线路，或稍后重试。</p>
+
+<strong>后台播放怎么用？</strong>
+<p>播放后按 Home 键或锁屏即可持续播放，锁屏界面和「正在播放」面板可以控制。若被系统中断，重新打开应用即可恢复。</p>
+
+<strong>iCloud 同步没生效？</strong>
+<p>确认系统「设置 → Apple 账户 → iCloud」里，本应用的开关是打开的。同步不是即时的，通常几十秒内完成；也可以手动下拉刷新。</p>
+
+<strong>白噪声是什么？</strong>
+<p>应用内置的雨声、海浪、粉红噪声等音效，在本机实时合成，不占存储、不需要网络。适合助眠或专注。</p>
+
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上电台地址、系统版本和现象。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>Adding your own station</strong>
+<p>Three ways: type a name and URL in the app, import a JSON or text list from a file, or open a <code>gwave://</code> link. You can also import a whole playlist from a URL.</p>
+
+<strong>A station will not play</strong>
+<p>Network radio availability depends entirely on the source. Common causes: the stream is down, temporarily failing, or blocked in your region. Try another stream for the same station, or retry later.</p>
+
+<strong>Background playback</strong>
+<p>Press Home or lock the screen; audio continues. Use the lock screen or Now Playing panel to control it. If the system interrupts playback, reopen the app to resume.</p>
+
+<strong>iCloud sync is not working</strong>
+<p>Check that the app is enabled under Settings, Apple Account, iCloud. Sync is not instant; it usually completes within a minute. Pull to refresh to force it.</p>
+
+<strong>What are the built-in sounds</strong>
+<p>Rain, waves, pink noise and others are synthesised on-device in real time. They take no storage and need no network. Useful for sleep or focus.</p>
+
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with the station URL, your OS version, and what happened.</p>
+</div>
+
+
+<footer>牧云电台 Gwave · 网络电台与白噪声播放器</footer>
+</body>
+</html>

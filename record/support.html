@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>效率打卡 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #34C759;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #30D158;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>效率打卡 · 支持</h1>
+<p class="meta">RecordBot — Support · 最后更新 / Last updated: 2026-10-08</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>提醒没有按时出现？</strong>
+<p>先确认系统「设置 → 通知 → 效率打卡」里的通知权限是打开的。另外，提醒由系统在本地调度，开启「低电量模式」或系统深度省电时可能延迟。</p>
+
+<strong>重复规则怎么设？</strong>
+<p>新建或编辑任务时可以设置重复：按天、按周、按自定义间隔。到期未打卡的记录会保留，方便补打卡。</p>
+
+<strong>怎么记录体重、身高等指标？</strong>
+<p>在「指标」页添加。可以给不同用户档案分别记录，图表按档案分开显示。</p>
+
+<strong>怎么备份或换手机？</strong>
+<p>用导出功能生成文件，在新设备上用导入功能恢复。数据不会自动上云，换机前记得先导出。</p>
+
+<strong>多个使用者怎么区分？</strong>
+<p>用「档案」功能。每个档案有独立的打卡记录和指标，互不干扰。</p>
+
+<strong>数据存在哪里？</strong>
+<p>只在这台设备上。详见<a href="privacy.html">隐私政策</a>。</p>
+
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上系统版本和复现步骤。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>Reminders do not fire on time</strong>
+<p>Check that notifications are allowed under Settings, Notifications, RecordBot. Reminders are scheduled locally by the system, so Low Power Mode or aggressive battery saving may delay them.</p>
+
+<strong>Setting repeat rules</strong>
+<p>When creating or editing a task you can set it to repeat daily, weekly, or at a custom interval. Missed days are kept so you can backfill.</p>
+
+<strong>Recording weight or height</strong>
+<p>Add them on the Metrics tab. Each profile tracks its own metrics, and charts are shown per profile.</p>
+
+<strong>Backing up or moving to a new phone</strong>
+<p>Export to a file, then import it on the new device. Nothing syncs to the cloud automatically, so export before you switch.</p>
+
+<strong>Multiple users</strong>
+<p>Use Profiles. Each profile keeps its own check-ins and metrics.</p>
+
+<strong>Where is my data</strong>
+<p>Only on this device. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your OS version and steps to reproduce.</p>
+</div>
+
+
+<footer>效率打卡 RecordBot · 本地优先的打卡与指标记录</footer>
+</body>
+</html>

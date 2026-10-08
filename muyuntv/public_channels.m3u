@@ -1,11 +1,56 @@
 #EXTM3U
 # 牧云电视公开列表 / Muyun TV public playlist
-# 含两类源：
-# 1) 厂商与开源项目的测试流，用来确认播放器能工作
-# 2) 播出方自己公开的国际频道 HLS（CGTN / France 24 / DW / Al Jazeera 等）
-# 不是盗链 IPTV，本仓库不托管视频。源由播出方提供，可能随时失效或按地区限制。
+# 含三类源：
+# 1) 央视网 VDN 自己公开的音频 HLS（无画面）。模板：
+#    https://piccpndali.v.myalicdn.com/audio/{epgid}_2.m3u8
+#    对应 tv.cctv.com/live 调度接口的 hls6，不是视频转播。
+# 2) 播出方自己公开的国际频道视频 HLS（CGTN / France 24 / DW / Al Jazeera 等）
+# 3) 厂商与开源项目的测试流，用来确认播放器能工作
+# 不是盗链 IPTV，本仓库不托管音视频。源由播出方提供，可能随时失效或按地区限制。
+# 不要往这里塞未授权的国内电视台视频转播。
 # One-click import URL:
 # https://raw.githubusercontent.com/zhipengge/apps/main/muyuntv/public_channels.m3u
+
+#EXTINF:-1 tvg-id="cctv1" group-title="央视音频",CCTV-1 综合（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv1_2.m3u8
+#EXTINF:-1 tvg-id="cctv2" group-title="央视音频",CCTV-2 财经（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv2_2.m3u8
+#EXTINF:-1 tvg-id="cctv3" group-title="央视音频",CCTV-3 综艺（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv3_2.m3u8
+#EXTINF:-1 tvg-id="cctv4" group-title="央视音频",CCTV-4 中文国际亚（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv4_2.m3u8
+#EXTINF:-1 tvg-id="cctv5" group-title="央视音频",CCTV-5 体育（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv5_2.m3u8
+#EXTINF:-1 tvg-id="cctv5plus" group-title="央视音频",CCTV-5+ 体育赛事（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv5plus_2.m3u8
+#EXTINF:-1 tvg-id="cctv6" group-title="央视音频",CCTV-6 电影（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv6_2.m3u8
+#EXTINF:-1 tvg-id="cctv7" group-title="央视音频",CCTV-7 国防军事（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv7_2.m3u8
+#EXTINF:-1 tvg-id="cctv8" group-title="央视音频",CCTV-8 电视剧（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv8_2.m3u8
+#EXTINF:-1 tvg-id="cctv9" group-title="央视音频",CCTV-9 纪录（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv9_2.m3u8
+#EXTINF:-1 tvg-id="cctv10" group-title="央视音频",CCTV-10 科教（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv10_2.m3u8
+#EXTINF:-1 tvg-id="cctv11" group-title="央视音频",CCTV-11 戏曲（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv11_2.m3u8
+#EXTINF:-1 tvg-id="cctv12" group-title="央视音频",CCTV-12 社会与法（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv12_2.m3u8
+#EXTINF:-1 tvg-id="cctv13" group-title="央视音频",CCTV-13 新闻（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv13_2.m3u8
+#EXTINF:-1 tvg-id="cctv14" group-title="央视音频",CCTV-14 少儿（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv14_2.m3u8
+#EXTINF:-1 tvg-id="cctv15" group-title="央视音频",CCTV-15 音乐（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv15_2.m3u8
+#EXTINF:-1 tvg-id="cctv16" group-title="央视音频",CCTV-16 奥林匹克（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv16_2.m3u8
+#EXTINF:-1 tvg-id="cctv17" group-title="央视音频",CCTV-17 农业农村（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv17_2.m3u8
+#EXTINF:-1 tvg-id="cctveurope" group-title="央视音频",CCTV-4 中文国际欧（音频）
+https://piccpndali.v.myalicdn.com/audio/cctveurope_2.m3u8
+#EXTINF:-1 tvg-id="cctvamerica" group-title="央视音频",CCTV-4 中文国际美（音频）
+https://piccpndali.v.myalicdn.com/audio/cctvamerica_2.m3u8
 
 #EXTINF:-1 group-title="国际新闻",CGTN English
 https://english-livebkali.cgtn.com/live/encgtn.m3u8

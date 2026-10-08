@@ -20,7 +20,7 @@
 ### 🇺🇸 English (v1.0 launch)
 
 ```
-Content-aware & on-device AI removal, filters, annotations, perspective fix, mosaic. Native SwiftUI, zero tracking — your photos never leave your Mac.
+Content-aware & on-device AI removal, filters, annotations, perspective fix, mosaic. Native SwiftUI, zero tracking. Your photos never leave your Mac.
 ```
 **字符数：150 / 170 ✅**
 
@@ -33,114 +33,88 @@ Content-aware & on-device AI removal, filters, annotations, perspective fix, mos
 ### 🇨🇳 简体中文
 
 ```
-牧云图片是一款为 Mac 打造的轻量图片编辑器，使用 SwiftUI 原生构建。它把"快、稳、隐私"放在第一位：所有处理都在本地完成，你的图片永远不会离开你的电脑。
+牧云图片是一款为 Mac 打造的轻量图片编辑器，使用 SwiftUI 原生构建。它把「快、稳、隐私」放在第一位：所有处理都在本地完成，你的图片永远不会离开你的电脑。
 
-━━━━━━━━━━━━━━━━━━━━━━
-✦ 智能消除
-━━━━━━━━━━━━━━━━━━━━━━
+【智能消除】
+- 内容感知消除：多尺度 PatchMatch 算法，涂抹即除，无需联网、无需下载任何模型
+- AI 智能消除：基于 LaMa 深度学习模型，一次下载、终身离线推理，大面积复杂背景也能自然填充
+- 笔刷涂抹或擦除可自由调整消除区域，支持撤销重做
+- 无缝融合：消除边界自动做色彩连续性校正，不留痕迹
 
-• 内容感知消除：多尺度 PatchMatch 算法，涂抹即除，无需联网、无需下载任何模型
-• AI 智能消除：基于 LaMa 深度学习模型，一次下载、终身离线推理，大面积复杂背景也能自然填充
-• 笔刷涂抹/擦除自由调整消除区域，支持撤销重做
-• 无缝融合：消除边界自动做色彩连续性校正，不留痕迹
+【编辑与标注】
+- 文字标注：字体、字号、颜色随心调
+- 形状工具：箭头、直线、矩形、圆角矩形、圆形、三角形，支持描边与填充
+- 自由画笔：手绘涂鸦与勾画重点
+- 选中即改：拖动、旋转、缩放任意标注，属性面板实时同步
+- 马赛克：涂抹打码，强度可调
 
-━━━━━━━━━━━━━━━━━━━━━━
-✦ 编辑与标注
-━━━━━━━━━━━━━━━━━━━━━━
+【调整与变换】
+- 滤镜：多种预设滤镜可叠加、可排序、可单独删除
+- 调色：亮度、对比度、饱和度精细滑杆
+- 裁剪：自由框选，所见即所得
+- 透视校正：四点拉伸，一键拉正文档、屏幕、招牌
+- 旋转与翻转：90 度旋转，水平或垂直镜像
 
-• 文字标注：字体、字号、颜色随心调
-• 形状工具：箭头、直线、矩形、圆角矩形、圆形、三角形，支持描边/填充
-• 自由画笔：手绘涂鸦与勾画重点
-• 选中即改：拖动、旋转、缩放任意标注，属性面板实时同步
-• 马赛克：涂抹打码，强度可调
+【安全与隐私】
+- 全部处理本地完成，图片从不上传
+- 零追踪、零分析 SDK、零广告、零账号
+- App Sandbox 加 Hardened Runtime，仅访问你主动选择的文件
+- 唯一网络行为：可选的 AI 模型下载（GitHub 开源构建），由你主动触发
+- 不下载模型也能使用全部功能（内容感知消除完全本地）
 
-━━━━━━━━━━━━━━━━━━━━━━
-✦ 调整与变换
-━━━━━━━━━━━━━━━━━━━━━━
+【适合谁】
+- 想快速去除照片路人、杂物、水印的日常用户
+- 需要给截图打码、加标注、画箭头的办公人群
+- 看重隐私、不愿把照片上传到任何云端服务的用户
 
-• 滤镜：多种预设滤镜可叠加、可排序、可单独删除
-• 调色：亮度 / 对比度 / 饱和度精细滑杆
-• 裁剪：自由框选，所见即所得
-• 透视校正：四点拉伸，一键拉正文档、屏幕、招牌
-• 旋转与翻转：90° 旋转、水平/垂直镜像
+【系统要求】
+需要 macOS 15.6 或更高版本。
 
-━━━━━━━━━━━━━━━━━━━━━━
-✦ 安全与隐私
-━━━━━━━━━━━━━━━━━━━━━━
-
-• 全部处理本地完成，图片从不上传
-• 零追踪、零分析 SDK、零广告、零账号
-• App Sandbox + Hardened Runtime，仅访问你主动选择的文件
-• 唯一网络行为：可选的 AI 模型下载（GitHub 开源构建），由你主动触发
-• 不下载模型也能使用全部功能（内容感知消除完全本地）
-
-━━━━━━━━━━━━━━━━━━━━━━
-✦ 适合谁
-━━━━━━━━━━━━━━━━━━━━━━
-
-• 想快速去除照片路人、杂物、水印的日常用户
-• 需要给截图打码、加标注、画箭头的办公人群
-• 看重隐私、不愿把照片上传到任何云端服务的用户
-
-系统要求：macOS 15.6 或更高版本。
-如有建议或问题，欢迎通过"App 支持"链接反馈，每一条意见都会被认真对待。
+如有建议或问题，欢迎通过「App 支持」链接反馈，每一条意见都会被认真对待。
 ```
-**字符数：约 850 / 4000 ✅**
+**字符数：约 2099 / 4000**
 
 ### 🇺🇸 English
 
 ```
-MuyunImage is a lightweight, native image editor for Mac, built entirely with SwiftUI. It puts speed, stability, and privacy first: every operation runs locally — your photos never leave your computer.
+MuyunImage is a lightweight, native image editor for Mac, built entirely with SwiftUI. It puts speed, stability, and privacy first: every operation runs locally, so your photos never leave your computer.
 
-━━━━━━━━━━━━━━━━━━━━━━
-✦ Smart Removal
-━━━━━━━━━━━━━━━━━━━━━━
+[Smart Removal]
+- Content-aware removal: multi-scale PatchMatch. Brush over anything to erase it, with no network and no model download
+- AI removal: powered by the LaMa deep-learning model. Download once, then run offline forever. Handles large areas and complex backgrounds
+- Brush to paint or erase the removal area, with full undo and redo
+- Seamless blending: boundary colour-continuity correction leaves no visible trace
 
-• Content-aware removal — multi-scale PatchMatch algorithm; brush over anything to erase it, no network or model download required
-• AI removal — powered by the LaMa deep-learning model: download once, run offline forever; handles large areas and complex backgrounds naturally
-• Brush paint/erase to refine the removal area, with full undo/redo
-• Seamless blending — boundary color-continuity correction leaves no visible traces
+[Edit and Annotate]
+- Text labels: font, size, and colour fully adjustable
+- Shapes: arrow, line, rectangle, rounded rectangle, circle, triangle, with stroke or fill
+- Freehand pen for sketches and highlights
+- Select and transform: drag, rotate, and scale any annotation, with a live property panel
+- Mosaic: brush to pixelate, with adjustable intensity
 
-━━━━━━━━━━━━━━━━━━━━━━
-✦ Edit & Annotate
-━━━━━━━━━━━━━━━━━━━━━━
+[Adjust and Transform]
+- Filters: stackable, reorderable preset filters
+- Colour: fine-grained brightness, contrast, and saturation sliders
+- Crop: free-form marquee, what you see is what you get
+- Perspective correction: four-point straighten for documents, screens, and signs
+- Rotate and flip: 90 degree rotation, horizontal or vertical mirror
 
-• Text labels — font, size, and color fully adjustable
-• Shapes — arrow, line, rectangle, rounded rectangle, circle, triangle; stroke or fill
-• Freehand pen for sketches and highlights
-• Select & transform — drag, rotate, and scale any annotation with a live property panel
-• Mosaic — brush to pixelate, adjustable intensity
+[Security and Privacy]
+- All processing on-device; images are never uploaded
+- Zero tracking, zero analytics SDKs, zero ads, zero accounts
+- App Sandbox plus Hardened Runtime; only files you explicitly choose are accessible
+- The only network activity is an optional, user-initiated AI model download (open-source GitHub build)
+- Fully functional without the model: content-aware removal is 100 percent local
 
-━━━━━━━━━━━━━━━━━━━━━━
-✦ Adjust & Transform
-━━━━━━━━━━━━━━━━━━━━━━
+[Who it is for]
+- Anyone removing passers-by, clutter, or watermarks from photos
+- Office users annotating screenshots with arrows, labels, and mosaic
+- Privacy-conscious users who refuse to upload photos to any cloud service
 
-• Filters — stackable, reorderable preset filters
-• Color — fine-grained brightness / contrast / saturation sliders
-• Crop — free-form marquee, WYSIWYG
-• Perspective correction — four-point straighten for documents, screens, and signs
-• Rotate & flip — 90° rotation, horizontal/vertical mirror
-
-━━━━━━━━━━━━━━━━━━━━━━
-✦ Security & Privacy
-━━━━━━━━━━━━━━━━━━━━━━
-
-• All processing on-device; images are never uploaded
-• Zero tracking, zero analytics SDKs, zero ads, zero accounts
-• App Sandbox + Hardened Runtime; only files you explicitly choose are accessible
-• The only network activity: an optional, user-initiated AI model download (open-source GitHub build)
-• Fully functional without the model — content-aware removal is 100% local
-
-━━━━━━━━━━━━━━━━━━━━━━
-✦ Who it's for
-━━━━━━━━━━━━━━━━━━━━━━
-
-• Anyone removing passers-by, clutter, or watermarks from photos
-• Office users annotating screenshots with arrows, labels, and mosaic
-• Privacy-conscious users who refuse to upload photos to any cloud service
-
+[Requirements]
 Requires macOS 15.6 or later.
-Suggestions or issues? Use the App Support link below — every message gets read.
+
+Suggestions or issues? Use the App Support link below. Every message gets read.
 ```
 **字符数：约 1900 / 4000 ✅**
 
@@ -191,7 +165,7 @@ https://github.com/zhipengge/apps/issues
 > 选填。不填也能上架，建议填一个提升专业度。
 
 ```
-https://<your-username>.github.io/muyunimage/
+https://zhipengge.github.io/apps/muyunimage/
 ```
 
 ---
@@ -201,7 +175,7 @@ https://<your-username>.github.io/muyunimage/
 > 把本目录的 `privacy.html` 托管到任意静态服务（GitHub Pages / Vercel / Netlify）后填入。
 
 ```
-https://<your-username>.github.io/muyunimage/privacy.html
+https://zhipengge.github.io/apps/muyunimage/privacy.html
 ```
 
 ### App 隐私「数据收集」问卷答案

@@ -1,0 +1,86 @@
+中国之声,http://ngcdn001.cnr.cn/live/zgzs/index.m3u8
+经济之声,http://ngcdn002.cnr.cn/live/jjzs/index.m3u8
+音乐之声,http://ngcdn001.cnr.cn/live/yyzs/index.m3u8
+经典音乐广播,http://ngcdn001.cnr.cn/live/dszs/index.m3u8
+台海之声,http://ngcdn001.cnr.cn/live/zhzs/index.m3u8
+神州之声,http://ngcdn001.cnr.cn/live/szzs/index.m3u8
+大湾区之声,https://ngcdn007.cnr.cn/live/hxzs/index.m3u8
+民族之声,https://ngcdn001.cnr.cn/live/mzzs/index.m3u8
+文艺之声,https://ngcdn001.cnr.cn/live/wyzs/index.m3u8
+香港之声,https://ngcdn001.cnr.cn/live/xgzs/index.m3u8
+中国交通广播,https://ngcdn016.cnr.cn/live/gsgljtgb/index.m3u8
+中国乡村之声,https://ngcdn001.cnr.cn/live/xczs/index.m3u8
+上海新闻广播,http://lhttp.qingting.fm/live/270/64k.mp3
+上海戏剧曲艺广播,http://lhttp.qingting.fm/live/4945/64k.mp3
+环球资讯广播,http://sk.cri.cn/905.m3u8
+中文环球广播,http://sk.cri.cn/hyhq.m3u8
+海峡飞虹,http://sk.cri.cn/hxfh.m3u8
+南海之声,http://sk.cri.cn/nhzs.m3u8
+英语资讯广播,https://sk.cri.cn/am846.m3u8
+北京新闻广播,http://ls.qingting.fm/live/339.m3u8
+北京音乐广播,http://live.xmcdn.com/live/95/64.m3u8
+北京交通广播,http://live.xmcdn.com/live/93/64.m3u8
+美国公共广播,https://npr-ice.streamguys1.com/live.mp3
+Z100 纽约流行电台,https://stream.revma.ihrhls.com/zc1469.mp3
+KIIS-FM 洛杉矶流行电台,https://stream.revma.ihrhls.com/zc185.mp3
+101.9 KISS FM 美国流行音乐,https://stream.revma.ihrhls.com/zc4864.mp3
+102.3 The Beat 美国流行音乐,https://stream.revma.ihrhls.com/zc2169.mp3
+102.5 WFMF 美国流行音乐,https://stream.revma.ihrhls.com/zc1005.mp3
+103.5 WKSC-FM 芝加哥流行音乐,https://stream.revma.ihrhls.com/zc849.mp3
+96.1 NOW FM 美国流行音乐,https://stream.revma.ihrhls.com/zc2357.mp3
+iHeart80s 美国80年代音乐,https://stream.revma.ihrhls.com/zc5060.mp3
+SomaFM Indie Pop Rocks!,https://ice.somafm.com/indiepop-128-mp3?.mp3
+Radio Swiss Pop 瑞士流行音乐,https://stream.srg-ssr.ch/m/rsp/mp3_128?.mp3
+STAR FM 80er Rock 德国80年代摇滚,https://stream.starfm.de/80srock/mp3-192/play.mp3
+RTL Deutschlands Hit-Radio 德国流行音乐,https://stream.rtlradio.de/rtl-de-national/mp3-128/play.mp3
+POP radio 国际流行广播,https://sluchaj.link:5443/popradio?.mp3
+CITY23 维也纳音乐台,https://live.stream.maxfive.com/max5-city23/stream/mp3?.mp3
+181.fm 80's Country,http://uplink.duplexfx.com:8134/
+181.fm 90's Country,http://uplink.duplexfx.com:8050/
+181.fm 90's Dance,http://relay.181.fm:8140/
+181.fm Acid Jazz,http://relay.181.fm:8178/
+181.fm Blues,http://relay.181.fm:8174/
+CBC Radio 1 Corner Brook,http://cbcmp3.ic.llnwd.net/stream/cbcmp3_cbc_r1_cor
+CBC Radio 1 Edmonton,http://cbcmp3.ic.llnwd.net/stream/cbcmp3_cbc_r1_edm
+UFM Just Music,http://addrad.io/4WRF98
+UFM Sounds,http://addrad.io/4WRFfg
+You FM,http://addrad.io/4WRFbP
+Hirschmilch Chillout,http://144.76.106.52:5000/chillout.aac
+Hit45s All Oldies,http://kastos.cdnstream.com:80/1345_320
+Dubai Now,http://n23a-eu.rcs.revma.com:80/69v2m2q5xhruv
+Fever FM Leeds,http://icecast.commedia.org.uk:8000/asianfever.mp3
+I Love KPop,http://streaming.radionomy.com/IloveKpop
+Hum FM Houston,https://ice10.securenetsystems.net/HUMFM
+Big Box Radio,https://stream.zenolive.com/nv45a2mw7eeuv.aac
+Bott Radio Network,http://ic1.christiannetcast.com/bottradio
+BYU Radio,http://cdn.byub.org/byuradio/byuradio_aac
+Hope 103.2 Sydney,http://stream1.cnmns.net:8000/hope
+Classic FM UK,http://lpm.streamguys.tv:80/lpm128-2
+100.1 KONN-LP Kansas City,https://19003.live.streamtheworld.com/SP_R2259235_SC
+107 Spark FM Sunderland,http://radio.canstream.co.uk:8101/live.mp3
+89.7 KMNR Rolla MO,http://boombox.kmnr.org:7000/webstream.mp3
+Pulse EDM Radio,http://naxos.cdnstream.com:80/1373_128
+Rinse FM London,http://206.189.117.157:8000/stream
+Pie Radio Manchester,http://streams.radio.co:80/sbaa068f97/listen
+Station 89.8 FM London,https://s5.radio.co/s9130ddaa1/listen
+Ujima 98 FM Bristol,http://radio.canstream.co.uk:8037/live.mp3
+Vibe 100.3 FM Bermuda,http://69.46.24.226:7099/mp3
+North Manchesters 106.6,http://icecast.commedia.org.uk:8000/manchesterfm.mp3
+NTS London,http://stream-relay-geo.ntslive.net/stream
+World FM New Zealand,http://www.worldfm.co.nz:8882/worldfm.aac
+World Music Radio,http://stream.wlmm.dk:8010/wmr
+WRTI Philadelphia All Classical,http://pubint.ic.llnwd.net/stream/pubint_wrti
+WRTI Philadelphia All Jazz,http://pubint.ic.llnwd.net/stream/pubint_wrti2
+WXPN 88.5 FM,http://wxpnhi.streamguys.com/xpnhi
+Yesterday USA Blue,http://streaming.radio.co:80/sa37b728bf/listen
+Z 88.3 Hot 95.9,https://ice.zradio.org/h/high.mp3
+Z 88.3 The Rock,https://ice.zradio.org/r/high.mp3
+Anison.FM Anime Radio,https://pool.anison.fm/AniSonFM(320)
+Radio Hyrule,http://listen.radiohyrule.com:8000/listen
+VGM Radio,http://radio.vgmradio.com:8040/stream
+WNQM 1300 AM Nashville,http://wwcr.gsradio.net:3663/
+WLIB 1190 AM New York,http://3143.live.streamtheworld.com:80/WLIBAM_SC
+CHVN 95.1 Winnipeg,http://daemondef.ic.llnwd.net/stream/daemondef_ddmp3_14
+Radio Danz,http://server1.radiodanz.com:8000/
+Release Radio,http://stream.releaseradio.net:80/stream
+Power 94.1 FM Bermuda,http://us3.internet-radio.com:8026/live

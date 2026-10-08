@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Terminal · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #007aff;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #0a84ff;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 32px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 22px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+<h1>Open Terminal · 支持</h1>
+<p class="meta">Open Terminal — Support · 最后更新 / Last updated: 2026-10-08</p>
+
+<h2 id="zh">中文</h2>
+
+<p class="lead">在 iPhone 和 iPad 上通过 SSH 连接你的服务器。服务器信息与密码保存在本机钥匙串，不上传任何服务器。</p>
+
+<h3>上手</h3>
+<ul>
+  <li>点右上角「+」新建服务器，填写主机、端口、用户名和认证方式</li>
+  <li>SSH 默认端口是 22；不少云主机改过端口，填之前先确认</li>
+  <li>支持密码与 SSH 密钥两种认证方式</li>
+  <li>连接后可直接使用终端，支持标签页同时连多台服务器</li>
+</ul>
+
+<h3>常见问题</h3>
+
+<div class="faq">
+<strong>连接失败，提示用户名或密码错误</strong>
+<p>先确认用户名与密码能在电脑上用同一台服务器登录成功。如果密码里有特殊字符，检查是否被输入法替换成了中文标点。使用密钥登录时，确认导入的是<strong>私钥</strong>而不是公钥。</p>
+
+<strong>连接超时</strong>
+<p>常见原因是服务器防火墙没有放行你的当前网络，或者主机地址填错。确认端口是否正确；部分云服务商默认只开放 22 端口给白名单 IP。</p>
+
+<strong>输入命令后没有任何反应</strong>
+<p>先按一次回车，看提示符是否回来。如果卡住，可能是上一条命令在等待输入（比如 <code>sudo</code> 的密码提示）。也可以断开重连。</p>
+
+<strong>中文显示乱码，或部分字符变成方块</strong>
+<p>多是服务器端的 locale 设置问题。在服务器上执行 <code>locale</code> 确认是否为 UTF-8。也可以在应用设置里切换等宽字体试试。</p>
+
+<strong>横竖屏切换后内容会消失吗</strong>
+<p>不会。会话在后台保持，旋转屏幕后会恢复完整的历史输出。</p>
+
+<strong>我的密码会上传到云端吗</strong>
+<p>不会。密码保存在本机钥匙串，只在你发起连接时用于该次 SSH 握手。我们没有服务器，也不收集任何数据。详见<a href="privacy.html">隐私政策</a>。</p>
+
+<strong>切换主题后旧的输出颜色没变</strong>
+<p>主题只影响之后的输出。已经渲染过的内容保留原配色，清屏或重连后统一。</p>
+
+<strong>支持密钥登录吗</strong>
+<p>支持。在新建或编辑服务器时选择「密钥」认证方式，导入私钥即可。</p>
+
+<strong>支持端口转发、SOCKS 代理或文件传输（SFTP）吗</strong>
+<p>当前版本聚焦于交互式终端，上述功能尚未提供。</p>
+
+<strong>iPad 上支持外接物理键盘吗</strong>
+<p>支持。蓝牙或妙控键盘连接后可直接输入。常用的组合键（如 Ctrl+C）会正确传递到远端。</p>
+
+<strong>启动后看到的示例服务器去哪了</strong>
+<p>示例仅用于演示界面，删除后不会自动恢复。</p>
+
+<strong>升级 App 会清空我的数据吗</strong>
+<p>不会。服务器列表和凭证保存在本机，升级应用不影响。建议重要服务器信息自行另外备份一份。</p>
+</div>
+
+<h3>反馈问题</h3>
+<p>请到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，并附上：iOS 版本、设备型号、服务器系统版本，以及问题的具体现象。请不要在 issue 里粘贴真实的密码或私钥。</p>
+
+<h2 id="en">English</h2>
+
+<p class="lead">Connect to your servers over SSH from iPhone and iPad. Host details and passwords stay in the device keychain. Nothing is uploaded to us.</p>
+
+<h3>Getting started</h3>
+<ul>
+  <li>Tap + to add a server: host, port, username, and authentication method</li>
+  <li>The default SSH port is 22. Many cloud hosts use a different one, so check first</li>
+  <li>Password and SSH key authentication are both supported</li>
+  <li>Tabs let you keep several sessions open at once</li>
+</ul>
+
+<h3>FAQ</h3>
+
+<div class="faq">
+<strong>Connection fails with a wrong username or password error</strong>
+<p>First confirm the same credentials work from a computer. If the password contains special characters, check that the keyboard did not substitute full-width punctuation. For key authentication, make sure you imported the <strong>private</strong> key, not the public one.</p>
+
+<strong>Connection times out</strong>
+<p>Usually the server firewall is not allowing your current network, or the host is wrong. Verify the port. Many cloud providers only allow port 22 from whitelisted IPs by default.</p>
+
+<strong>Nothing happens after I type a command</strong>
+<p>Press Return once and see whether the prompt returns. If it hangs, the previous command may be waiting for input, such as a <code>sudo</code> password prompt. You can also disconnect and reconnect.</p>
+
+<strong>Chinese text is garbled or shows as boxes</strong>
+<p>Usually the server locale. Run <code>locale</code> on the server and confirm it is UTF-8. You can also try a different monospaced font in the app settings.</p>
+
+<strong>Does rotating the device lose my scrollback</strong>
+<p>No. The session is kept in the background and the full history is restored after rotation.</p>
+
+<strong>Are my passwords uploaded anywhere</strong>
+<p>No. They are stored in the device keychain and used only for that SSH handshake. We run no servers and collect no data. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<strong>Old output keeps its colours after I change the theme</strong>
+<p>The theme applies to new output. Already-rendered content keeps its original colours; clear the screen or reconnect to unify it.</p>
+
+<strong>Is key authentication supported</strong>
+<p>Yes. Choose the key method when adding or editing a server and import your private key.</p>
+
+<strong>Port forwarding, SOCKS proxy, or SFTP</strong>
+<p>The current version focuses on interactive terminal sessions. Those features are not available yet.</p>
+
+<strong>External keyboard on iPad</strong>
+<p>Supported. Bluetooth and Magic Keyboard input works directly, and key combinations such as Ctrl+C are passed through to the remote host.</p>
+
+<strong>Where did the sample servers go</strong>
+<p>They exist only to demonstrate the interface. Once deleted they are not restored.</p>
+
+<strong>Will updating the app erase my data</strong>
+<p>No. The server list and credentials live on your device and survive updates. We still recommend keeping your own record of important host details.</p>
+</div>
+
+<h3>Reporting a problem</h3>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your iOS version, device model, the server OS version, and what happened. Never paste real passwords or private keys into an issue.</p>
+
+<footer>Open Terminal · iPhone / iPad SSH 终端</footer>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文辑 · 帮助与支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #d97706;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #fbbf24;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 4px; }
+  h2 {
+    font-size: 1.35rem; font-weight: 600;
+    margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+  }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 24px; }
+  .lead {
+    background: var(--bg-soft);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    margin: 20px 0;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul li { margin: 6px 0; }
+  footer {
+    margin-top: 56px; padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--fg-dim); font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>文辑 — 帮助与支持</h1>
+<p class="meta">WeEdit Support</p>
+
+<p class="lead">一篇稿写给公众号、小红书、知乎、微博。复制适配稿，到对方网页编辑器里粘贴。文辑不登录这些平台，也不代发。</p>
+
+<h2>基本用法</h2>
+<ol>
+  <li>左边新建文稿，中间写文字、插图片 / 表格 / 音视频</li>
+  <li>顶上选要发的平台，看右侧提示</li>
+  <li>点「复制并打开后台」，在打开的页面里 Command+V</li>
+</ol>
+
+<h2>常见问题</h2>
+<p><strong>为什么不能一键发布？</strong> 这些平台没有给第三方 App 用的稳定发文接口。打开后台粘贴，才能把格式交到对方编辑器手里。</p>
+<p><strong>粘贴后图片或表格乱了？</strong> 请用工具栏的「复制适配稿」，不要只从纸张里手工选中再复制。公众号需要内联样式；小红书和微博会丢掉表格。</p>
+<p><strong>视频为什么只是一块说明？</strong> 公众号、知乎、微博都不接受随正文粘贴的视频文件，需要你在后台单独插入。文辑故意写成说明块，避免粘贴后出现裂图。</p>
+<p><strong>文稿丢了？</strong> 在本机沙盒容器里。不要清容器目录。删 App 会一起带走本地稿。</p>
+
+<h2>反馈</h2>
+<p>请到 GitHub Issues 说明系统版本、目标平台、以及是复制问题还是编辑器问题。</p>
+
+<footer>文辑 WeEdit</footer>
+</body>
+</html>
