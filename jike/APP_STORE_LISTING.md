@@ -136,12 +136,27 @@ English: `terminal,dropdown,shell,zsh,developer,hotkey,split,palette,guake`
 
 ---
 
-## 7️⃣ 截图
+## 7. 截图
 
-待补。macOS 常用 **1280×800**，3–10 张真实界面：下拉窗、设置-外观、设置-权限、分屏、菜单栏。
+成品在 `jike/screenshots/`，已按 App Store 规格导出，可直接上传。
 
----
+### macOS / 1280x800
 
-## 8️⃣ 内容评级
+共 7 张，顺序即展示顺序：
 
-无暴力、无色情、无用户生成内容审核负担。工具类，4+。
+- 01-terminal 按 F12，终端从屏幕边缘滑出
+- 02-appearance 透明度与模糊随时调
+- 03-palette 169 套配色方案
+- 04-general 开机自启，随叫随到
+- 05-keys 快捷键与 Guake 一致
+- 06-keys2 全套快捷键可自定义
+- 07-about 开源，可自行构建
+
+所有图都用真实界面截图加设备外框与标题，符合 Apple 对截图的真实性要求。
+
+重新生成：
+
+```bash
+cd ../            # 回到 apps 目录
+python3 tools/compose_all.py jike
+```

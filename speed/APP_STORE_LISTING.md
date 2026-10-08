@@ -195,4 +195,29 @@ news,daily,briefing,digest,read,bookmark,tech,finance,offline,summary
 
 ## 7. 截图
 
-iPhone 6.9 寸与 iPad 13 寸各 3-10 张真实界面。至少包含：今日首页（多板块）、新闻详情、收藏列表、分享文稿、设置页。
+成品在 `speed/screenshots/`，已按 App Store 规格导出，可直接上传。
+
+### iPhone 6.9 寸 / 1320x2868
+
+共 3 张，顺序即展示顺序：
+
+- 01-today 每天一期，值得看的几件事
+- 02-profile 收藏与备份
+- 03-favorites 收藏单条新闻
+
+### iPad 13 寸 / 2064x2752
+
+共 3 张，顺序即展示顺序：
+
+- 01-today 每天一期，值得看的几件事
+- 02-profile 收藏与备份
+- 03-favorites 收藏单条新闻
+
+所有图都用真实界面截图加设备外框与标题，符合 Apple 对截图的真实性要求。
+
+重新生成：
+
+```bash
+cd ../            # 回到 apps 目录
+python3 tools/compose_all.py speed
+```

@@ -304,43 +304,24 @@ Bundle ID 与 SKU 都是全新值，**这两条已不可能是冲突源**。因�
 
 ---
 
-## 💡 截图建议（也是审核常拒原因）
+## 7. 截图
 
-需要展示 App **真实功能**，不能纯文字大字宣传。建议：
+成品在 `muyunright/screenshots/`，已按 App Store 规格导出，可直接上传。
 
-1. **右键菜单全貌** — 访达中右键展开「牧云右键助手」子菜单，展示新建文件模板列表
-2. **新建文件效果** — 桌面右键新建 Markdown，配合刚生成的「未命名.md」文件
-3. **主 App 概览页** — 扩展已启用的绿色状态 + 功能一览
-4. **模板管理** — 「新建文件模板」页面，展示开关与自定义模板
-5. **终端选择** — 「菜单设置」中的终端 Picker（Terminal / iTerm2 等）
-6. **打开方式** — 添加了 VS Code 后的「用 Visual Studio Code 打开」菜单项
+### macOS / 1280x800
 
----
+共 4 张，顺序即展示顺序：
 
-> ⚠️ **首次上架重要提醒**
->
-> 1. FinderSync 扩展类 App 审核重点是**功能可发现性**：审核备注（App Review Information → Notes）里写明启用路径 **"系统设置 → 通用 → 登录项与扩展 → 文件提供程序 → 打开牧云右键助手"**，并说明主 App 首页有引导按钮，可显著降低"功能无法使用"式拒审。
-> 2. 说明文件夹授权机制：**"新建文件需用户通过系统 NSOpenPanel 逐文件夹授权，符合沙盒规范，无完全磁盘访问；桌面/文稿/下载等文件夹的用途说明（NS*UsageDescription）已在 Info.plist 声明；App 内提供权限管理页面，可查看与撤销授权"**。
-> 3. 描述里**不要**出现其他 App 名称（超级右键等），会被拒。
-> 4. 描述/关键词不要用"无限"、"最强"、"最好"等绝对化表述。
-> 5. App 完全无联网，App 隐私问卷务必选"不收集数据"，与描述保持一致。
-> 6. **副标题、关键词不要出现 Mac / macOS / 访达 / Finder / 终端**（Guideline 5.2.5）。**换包不会改副标题**，必须在 Connect 里中英两个本地化都改。
+- 01-overview 让访达右键更强大
+- 02-menu 每一项都能开关和改名
+- 03-general 常用文件夹与打开方式
+- 04-finder 右键即用，无需打开主程序
 
----
+所有图都用真实界面截图加设备外框与标题，符合 Apple 对截图的真实性要求。
 
-## 🔁 1.0 (4) 回复审核（可直接粘贴）
+重新生成：
 
-```
-Thank you for looking at this again.
-
-1) Guideline 5.2.5
-The previous resubmission only updated the binary. We have now updated the App Store subtitle in both Simplified Chinese and English (U.S.). There are no Apple product terms (Mac, macOS, Finder, Terminal, or equivalents) in the subtitle.
-
-Chinese subtitle: 右键新建与文件整理
-English subtitle: Create files from right-click
-
-2) Guideline 4
-Version 1.0 (4) follows the alternative you suggested for a single-window app: closing the main window quits the app (the Finder extension continues to provide the context menu). The Window menu also includes an item to reopen the main window, and Command-0 / Settings reopen it if the user chooses to keep the app running in the background.
-
-Please take another look at this build.
+```bash
+cd ../            # 回到 apps 目录
+python3 tools/compose_all.py muyunright
 ```

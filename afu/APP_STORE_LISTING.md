@@ -193,4 +193,30 @@ local,offline,llm,chat,vision,document,private,on-device,model,gguf
 
 ## 7. 截图
 
-iPhone 6.9 寸与 iPad 13 寸各 3-10 张真实界面。至少包含：模型列表（有多种模型可选）、对话中（含字数/速度）、图片理解、文件解析、设置页、隐私说明页。
+成品在 `afu/screenshots/`，已按 App Store 规格导出，可直接上传。
+
+### iPhone 6.9 寸 / 1320x2868
+
+共 4 张，顺序即展示顺序：
+
+- 01-home 把大模型装进手机
+- 02-models 多种模型随你选
+- 03-download 一键下载到本机
+- 04-detail 每款模型都说清代价
+
+### iPad 13 寸 / 2064x2752
+
+共 3 张，顺序即展示顺序：
+
+- 01-home 把大模型装进 iPad
+- 02-models 多种模型随你选
+- 03-download 一键下载到本机
+
+所有图都用真实界面截图加设备外框与标题，符合 Apple 对截图的真实性要求。
+
+重新生成：
+
+```bash
+cd ../            # 回到 apps 目录
+python3 tools/compose_all.py afu
+```

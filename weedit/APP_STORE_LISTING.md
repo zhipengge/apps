@@ -139,10 +139,21 @@ English: `wechat,xiaohongshu,zhihu,weibo,editor,paste,article,draft,table,note`
 
 ## 7. 截图
 
-待补。macOS 常用 **1280x800**，3-10 张真实界面：编辑器主界面、四个平台切换、右侧适配提示、设置-权限。
+成品在 `weedit/screenshots/`，已按 App Store 规格导出，可直接上传。
 
----
+### macOS / 1280x800
 
-## 8. 内容评级
+共 3 张，顺序即展示顺序：
 
-无暴力、无色情。工具类，4+。
+- 01-editor 一次写稿，四处粘贴
+- 02-table 表格并排图都能带走
+- 03-preview 先看粘贴后长什么样
+
+所有图都用真实界面截图加设备外框与标题，符合 Apple 对截图的真实性要求。
+
+重新生成：
+
+```bash
+cd ../            # 回到 apps 目录
+python3 tools/compose_all.py weedit
+```

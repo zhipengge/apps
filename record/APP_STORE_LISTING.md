@@ -193,4 +193,31 @@ habit,tracker,checkin,streak,metric,weight,reminder,offline,backup,log
 
 ## 7. 截图
 
-iPhone 6.9 寸与 iPad 13 寸各 3-10 张真实界面。至少包含：空状态、打卡列表、新建任务、指标趋势图、档案切换、导出页。
+成品在 `record/screenshots/`，已按 App Store 规格导出，可直接上传。
+
+### iPhone 6.9 寸 / 1320x2868
+
+共 4 张，顺序即展示顺序：
+
+- 01-overview 今天完成得怎么样
+- 02-checkin 建任务，设重复规则
+- 03-metrics 体重身高的趋势图
+- 04-settings 提醒与备份都在这里
+
+### iPad 13 寸 / 2064x2752
+
+共 4 张，顺序即展示顺序：
+
+- 01-overview 今天完成得怎么样
+- 02-checkin 建任务，设重复规则
+- 03-metrics 体重身高的趋势图
+- 04-settings 提醒与备份都在这里
+
+所有图都用真实界面截图加设备外框与标题，符合 Apple 对截图的真实性要求。
+
+重新生成：
+
+```bash
+cd ../            # 回到 apps 目录
+python3 tools/compose_all.py record
+```

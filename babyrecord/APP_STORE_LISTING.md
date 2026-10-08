@@ -252,32 +252,33 @@ App 隐私问卷：**不收集数据**。与隐私政策一致。分享长图不
 
 ---
 
-## 7️⃣ 截图
+## 7. 截图
 
-iPhone 6.7 寸等所需尺寸按 Connect 提示。3-10 张真实界面，不要海报。建议顺序：
+成品在 `babyrecord/screenshots/`，已按 App Store 规格导出，可直接上传。
 
-1. 记录首页（快捷按钮 + 当天时间线，可带示例宝宝安心）
-2. 喂奶编辑（亲喂奶量可手填，下方有估算提示）
-3. 排便分级字段（便血再分程度）
-4. 图表整合视图（多条曲线在同一份长图里）
-5. 分享长图页（带宝宝记水印开关）
-6. 设置里删除宝宝或导入导出
+### iPhone 6.9 寸 / 1320x2868
 
-macOS 仓库里其它产品用 1280x800；本产品是 iOS，按 iPhone 截图规格提交。
+共 4 张，顺序即展示顺序：
 
----
+- 01-record 记录宝宝的每一餐
+- 02-overview 喂养情况一眼看清
+- 03-trend 趋势变化自动成图
+- 04-settings 多个宝宝，自定义字段
 
-## 8️⃣ 审核备注（提交时填写）
+### iPad 13 寸 / 2064x2752
 
-```
-This iOS app is a fully offline baby care log: feeding, diapers, sleep, solids, weight, height, temperature, and custom nested fields. No account, no network, no Photos permission. All data stays in the app sandbox.
+共 4 张，顺序即展示顺序：
 
-First launch includes a sample baby named An Xin with sample feeding records so Charts has data immediately. Delete it in Settings; it will not return.
+- 01-record 记录宝宝的每一餐
+- 02-overview 喂养情况一眼看清
+- 03-trend 趋势变化自动成图
+- 04-settings 多个宝宝，自定义字段
 
-Walkthrough:
-1. Log tab: tap Feeding. Optionally change the occurrence time. For breastfeeding, leave milk volume empty to see the estimate hint, then save.
-2. Charts tab: Combined stacks every type. Share (top right) renders a long screenshot. The app-name watermark is on by default and can be turned off.
-3. Settings: swipe left on a baby to delete. Export/import is under Data. Nested enum fields are under record types (Diaper: stool, then blood, then severity).
+所有图都用真实界面截图加设备外框与标题，符合 Apple 对截图的真实性要求。
 
-Sharing uses the system share sheet only. The app does not read the photo library.
+重新生成：
+
+```bash
+cd ../            # 回到 apps 目录
+python3 tools/compose_all.py babyrecord
 ```

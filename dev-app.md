@@ -388,12 +388,49 @@ sips -z <高> <宽> screenshot.png                       # 再缩到目标尺寸
 
 ```
 apps/<app名>/screenshots/
-├── iphone/  1320x2868
+├── raw*/                 原始素材（模拟器抓的、真机截的），不进商店
+├── iphone/  1320x2868    成品
 ├── ipad/    2064x2752
 └── mac/     1280x800
 ```
 
 文件名用 `<序号>-<场景>.png`（如 `01-import.png`），顺序即展示顺序。
+
+### 7.5 生成流水线
+
+截图不是手工做的，跑脚本：
+
+```bash
+cd apps
+python3 tools/compose_all.py          # 全部重做
+python3 tools/compose_all.py afu      # 只做某个
+```
+
+脚本读 `tools/compose_all.py` 里的 `JOBS` 表，把 `screenshots/raw*` 的素材加设备外框、渐变背景和标题，导出成品。改标题就改那张表。
+
+**抓原始素材**：
+
+- **iOS**：`_tools/ScreenshotDriver/` 是一个 XCUITest 驱动。改 `scripts/<app>.json` 里的点击步骤，然后
+  `./run.sh scripts/<app>.json ["iPad Pro 13-inch (M5)"]`。
+  它按可见文字或归一化坐标点击，不需要辅助功能权限。
+- **macOS**：`_tools/capture_mac.sh <进程名> <输出.png>`。它先激活窗口再全屏截图裁切
+  （`screencapture -l` 在本机权限下不可用）。
+
+**两个必须知道的坑**：
+
+1. **iOS 终端类 app 的软键盘去不掉。** OpenTerminal 用 `UIKeyInput` 抓输入，没有收起按钮，
+   连 Escape 都会被当成字符送进终端。解法是 `_tools/strip_keyboard.py` 把键盘区域裁掉、
+   用终端背景色补足到全高。
+2. **macOS 沙盒 app 读不到外面放的文件。** 容器里的 `Pictures`/`Desktop` 等是符号链接，
+   指向真实的家目录，沙盒会拒绝。要预置素材得放进 `Data/Documents/` 这类真实目录。
+   MuyunImage 和 WeEdit 各留了一个 DEBUG-only 的截图钩子（环境变量触发），
+   发布版不含这些代码。
+
+**检查尺寸**（每次导出后都跑）：
+
+```bash
+python3 ~/.claude/skills/apple-app-screenshots/scripts/compose.py --verify <app>/screenshots
+```
 
 ---
 

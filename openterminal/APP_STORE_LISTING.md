@@ -255,22 +255,31 @@ https://openterminal.app
 
 ---
 
-## 💡 截图建议(也是审核常拒原因)
+## 7. 截图
 
-需要展示 App **真实功能**,不能纯文字大字宣传。建议:
+成品在 `openterminal/screenshots/`，已按 App Store 规格导出，可直接上传。
 
-1. **服务器列表** — 显示几张精致卡片(可用模拟服务器名,如 "Web Server" / "Database" / "Dev Box")
-2. **终端 + ll 输出** — 用 Dracula 主题,展示彩色 ANSI 输出 + 提示符
-3. **命令面板** — 展示自定义命令列表
-4. **主题选择** — 8 张主题卡片预览页
-5. **设置页** — 个性化 / 连接 section 展开
-6. **空状态** — "立即添加"渐变按钮(突出引导)
+### iPhone 6.9 寸 / 1320x2868
 
----
+共 3 张，顺序即展示顺序：
 
-> ⚠️ **首次上架重要提醒**
->
-> 1. 苹果对 "SSH 客户端" 类 App 审核较严,**Demo 账号** 字段务必提供一个真实可登录的 SSH 测试服务器(用户名 + 密码 + 主机),否则会拒。建议自己开一台廉价 VPS,创建只读权限账号专供审核。
-> 2. 描述里**不要**出现 "Termius / Prompt 3 / Blink Shell" 等竞品名称,会被拒。
-> 3. 描述/关键词不要承诺"无限"、"最快"、"最好"等绝对化表述。
-> 4. 网络相关 App 需要在 Info.plist 留 `NSLocalNetworkUsageDescription`(虽然 SSH 是 inet 不强制,但若做局域网扫描会需要)。
+- 01-terminal 随时随地连上服务器
+- 02-servers 服务器集中管理
+- 03-settings 字体主题随你挑
+
+### iPad 13 寸 / 2064x2752
+
+共 3 张，顺序即展示顺序：
+
+- 01-servers 服务器集中管理
+- 02-settings 字体主题随你挑
+- 03-terminal 大屏跑命令更舒服
+
+所有图都用真实界面截图加设备外框与标题，符合 Apple 对截图的真实性要求。
+
+重新生成：
+
+```bash
+cd ../            # 回到 apps 目录
+python3 tools/compose_all.py openterminal
+```

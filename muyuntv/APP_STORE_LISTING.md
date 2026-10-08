@@ -206,6 +206,32 @@ live,player,playlist,stream,channel,hls,import,favorite,group,camera,monitor
 
 ---
 
-## 7️⃣ 截图
+## 7. 截图
 
-iPhone 6.7 寸和 iPad 12.9 寸各 3-10 张真实界面。至少包含：空状态导入引导、频道列表、播放页、监控墙分屏、导入页、设置/关于（免责声明可见）。
+成品在 `muyuntv/screenshots/`，已按 App Store 规格导出，可直接上传。
+
+### iPhone 6.9 寸 / 1320x2868
+
+共 4 张，顺序即展示顺序：
+
+- 01-empty 导入你自己的直播源
+- 02-channels 频道列表一目了然
+- 03-browse 按分组浏览
+- 04-settings 播放行为随你调
+
+### iPad 13 寸 / 2064x2752
+
+共 3 张，顺序即展示顺序：
+
+- 01-empty 导入你自己的直播源
+- 02-channels 频道列表一目了然
+- 03-browse 按分组浏览
+
+所有图都用真实界面截图加设备外框与标题，符合 Apple 对截图的真实性要求。
+
+重新生成：
+
+```bash
+cd ../            # 回到 apps 目录
+python3 tools/compose_all.py muyuntv
+```

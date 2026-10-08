@@ -195,4 +195,29 @@ radio,station,stream,ambient,noise,sleep,focus,favorite,playlist,import
 
 ## 7. 截图
 
-iPhone 6.9 寸与 iPad 13 寸各 3-10 张真实界面。至少包含：搜索页、收藏列表、播放中（含锁屏控制）、白噪声、导入页、设置页。
+成品在 `gwave/screenshots/`，已按 App Store 规格导出，可直接上传。
+
+### iPhone 6.9 寸 / 1320x2868
+
+共 3 张，顺序即展示顺序：
+
+- 01-player 雨声、海浪，按下就有
+- 02-list 自建电台列表
+- 03-list2 收藏常听的台
+
+### iPad 13 寸 / 2064x2752
+
+共 3 张，顺序即展示顺序：
+
+- 01-player 雨声、海浪，按下就有
+- 02-list 自建电台列表
+- 03-list2 收藏常听的台
+
+所有图都用真实界面截图加设备外框与标题，符合 Apple 对截图的真实性要求。
+
+重新生成：
+
+```bash
+cd ../            # 回到 apps 目录
+python3 tools/compose_all.py gwave
+```
