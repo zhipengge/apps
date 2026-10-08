@@ -48,3 +48,20 @@
 ## 反馈
 
 问题与建议请提交到 <https://github.com/zhipengge/apps/issues>。
+
+## 模型清单托管在哪
+
+afu 的模型清单**不在本仓库发布**，也不在 `m3_apps/apps/` 下。它托管在一个独立的公开仓库：
+
+```
+https://raw.githubusercontent.com/zhipengge/afu/master/models.json
+```
+
+对应的仓库是 <https://github.com/zhipengge/afu>，里面只有 `models.json` 和隐私政策两个文件。
+
+**为什么必须公开**：应用在运行时直接拉这个地址，未认证请求访问私有仓库会返回 404。
+这个仓库曾经是私有的，导致所有用户的模型列表都拉不到——只能靠随包内置的清单兜底。
+2026-10-08 已转为公开并验证匿名可读（HTTP 200）。
+
+**改清单只改那一处**。源码目录里的 `afu/models.json` 是随包内置的兜底副本，
+发版时才会打进 app，两者内容应当保持一致。
