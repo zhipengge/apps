@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>速闻 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #FF3B30;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #FF6961;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>速闻 · 支持</h1>
+<p class="meta">Speed — Support · 最后更新 / Last updated: 2026-10-08</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>看不到今天的内容？</strong>
+<p>先检查网络。每期末尾时间约为当天中午 12 点（东八区），在此之前打开显示的是上一期。也可以下拉手动刷新。</p>
+
+<strong>能离线看吗？</strong>
+<p>已缓存的期次可以离线阅读，收藏的条目会一直保留在本地。</p>
+
+<strong>怎么分享到微信？</strong>
+<p>进入新闻详情页，点分享按钮，选择「微信文稿」。生成的图文可以直接粘贴到微信对话框或公众号后台。</p>
+
+<strong>怎么回看往期？</strong>
+<p>在「速闻」页顶部切换到往期日期即可。已经缓存过的期次打开更快。</p>
+
+<strong>收藏会丢吗？</strong>
+<p>收藏保存在本机，卸载应用或换手机会丢失。请先在「我的」页导出备份，在新设备上导入。</p>
+
+<strong>某条新闻的图片打不开？</strong>
+<p>图片由内容中标注的公开图源提供，源站临时不可用时会显示占位。文字内容不受影响。</p>
+
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上期次日期和具体条目。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>Today's issue is not showing</strong>
+<p>Check your connection first. Each issue is published around noon China time; before that you will see the previous one. Pull to refresh to force a check.</p>
+
+<strong>Can I read offline</strong>
+<p>Cached issues work offline, and bookmarked articles stay on the device.</p>
+
+<strong>How do I share to WeChat</strong>
+<p>Open an article, tap share, and choose the WeChat document option. The generated text can be pasted straight into a chat or an official account editor.</p>
+
+<strong>How do I read past issues</strong>
+<p>Switch the date at the top of the main tab. Issues you already opened load faster.</p>
+
+<strong>Will I lose my bookmarks</strong>
+<p>Bookmarks are stored on the device, so uninstalling or switching phones will lose them. Export a backup from the Profile tab first, then import it on the new device.</p>
+
+<strong>Some images do not load</strong>
+<p>Images come from the public sources cited in each article. If a source is temporarily unavailable you will see a placeholder; the text is unaffected.</p>
+
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with the issue date and the article in question.</p>
+</div>
+
+
+<footer>速闻 Speed · 每日中文新闻精选</footer>
+</body>
+</html>
