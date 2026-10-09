@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>空中绞杀 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #0089A7;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #00E5FF;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>空中绞杀 · 隐私政策</h1>
+<p class="meta">SkyStrike — Privacy Policy · 最后更新 / Last updated: 2026-10-10</p>
+
+<h2 id="zh">中文</h2>
+
+<p class="lead"><strong>空中绞杀不收集任何数据。</strong> 没有账号，没有服务器，App 也不发起任何网络请求。你的星数、金币和每一局的记录只写在这台设备的沙盒里。</p>
+
+<h3>我们处理什么、存在哪</h3>
+<table>
+  <tr><th>数据</th><th>用途</th><th>位置</th></tr>
+  <tr><td>存档：累计星数、金币、各模式的最高分、最远波数、通关状态</td><td>记录进度、解锁机体</td><td>设备沙盒 UserDefaults</td></tr>
+  <tr><td>累计数据：总击杀数、总游玩局数、总时长</td><td>设置页的统计展示</td><td>设备沙盒</td></tr>
+  <tr><td>上次选择的机体、音效开关</td><td>恢复上次的使用状态</td><td>设备沙盒</td></tr>
+  <tr><td>一局的结算数据：分数、星级、击杀、受伤次数、存活时间</td><td>结算页展示、生成战绩卡图片</td><td>仅本机内存；只有你点「分享战绩」时才渲染成图片</td></tr>
+</table>
+
+<p>以上数据全部在本机读写，<strong>不会离开设备</strong>。本 App 不使用 iCloud 或任何云同步。</p>
+
+<h3>网络</h3>
+<p><strong>App 不发起任何网络请求。</strong> 飞行模式下全部功能可用，包括内购的恢复购买（由系统商店进程处理）。</p>
+
+<h3>完整版购买</h3>
+<p>完整版是一次性内购，交易全程由 Apple 通过 App Store 处理。App 只向系统查询「这个 Apple ID 是否已购买」，<strong>拿不到也存不下</strong>你的支付方式、账单信息或 Apple ID。购买记录保存在 Apple 那边，所以换设备后用「恢复购买」就能找回，不需要在本 App 里注册任何账号。</p>
+
+<h3>我们不做的事</h3>
+<ul>
+  <li>不要求注册或登录</li>
+  <li>不收集姓名、邮箱、位置、设备标识符</li>
+  <li>不接入广告、分析或追踪 SDK</li>
+  <li>不把存档上传或同步到任何服务器</li>
+  <li>不读取通讯录、相册、麦克风、摄像头、位置</li>
+  <li>不把你的数据共享给任何第三方</li>
+</ul>
+
+<h3>分享</h3>
+<p>分享完全由你主动触发。点「分享战绩」时，App 在本机把这一局的结果渲染成一张图片，交给系统分享面板，由你选择发给谁。App 不知道也不记录你选了哪个应用。</p>
+
+<h3>数据删除</h3>
+<p>设置页有「重置全部进度」，会清空星数、金币、最高分与已解锁的机体。删除 App 即清除全部数据。</p>
+
+<h2 id="en">English</h2>
+
+<p class="lead"><strong>SkyStrike collects no data.</strong> No account, no server, and the app makes no network requests. Your stars, coins, and run history live only in the sandbox on this device.</p>
+
+<h3>What the app handles, and where</h3>
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
+  <tr><td>Save data: total stars, coins, best score and furthest wave per mode, campaign clear</td><td>Track progress and unlock ships</td><td>App sandbox, UserDefaults</td></tr>
+  <tr><td>Totals: kills, runs played, time played</td><td>Shown on the Settings screen</td><td>App sandbox</td></tr>
+  <tr><td>Last ship selected, sound toggle</td><td>Restore your last state</td><td>App sandbox</td></tr>
+  <tr><td>Per-run results: score, stars, kills, hits taken, survival time</td><td>Result screen and the score card image</td><td>In memory only; rendered into an image when you tap Share</td></tr>
+</table>
+
+<p>All of it is read and written on-device and <strong>never leaves it</strong>. There is no iCloud or cloud sync of any kind.</p>
+
+<h3>Network</h3>
+<p><strong>The app makes no network requests.</strong> Every feature works in Airplane Mode, including Restore Purchases, which the system store process handles.</p>
+
+<h3>The full version purchase</h3>
+<p>The full version is a one-time purchase handled entirely by Apple through the App Store. The app only asks the system whether this Apple ID already owns it, and <strong>never sees or stores</strong> your payment method, billing details, or Apple ID. The purchase record lives with Apple, so Restore Purchases brings it back on a new device with no account to create here.</p>
+
+<h3>What we do not do</h3>
+<ul>
+  <li>No account or sign-in</li>
+  <li>No collection of name, email, location, or device identifiers</li>
+  <li>No ads, analytics, or tracking SDKs</li>
+  <li>No upload or sync of your save data</li>
+  <li>No access to Contacts, Photos, Microphone, Camera, or Location</li>
+  <li>No sharing with third parties</li>
+</ul>
+
+<h3>Sharing</h3>
+<p>Sharing only happens when you trigger it. When you tap Share, the app renders that run into an image on-device and hands it to the system share sheet, where you pick the destination. The app neither knows nor records which app you chose.</p>
+
+<h3>Deletion</h3>
+<p>Settings offers Reset All Progress, which clears stars, coins, best scores, and unlocked ships. Deleting the app clears everything.</p>
+
+
+<footer>空中绞杀 SkyStrike · 竖屏弹幕射击</footer>
+</body>
+</html>
