@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自律勇者 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #F5C451;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #FFD97A;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>自律勇者 · 支持</h1>
+<p class="meta">SelfQuest — Support · 最后更新 / Last updated: 2026-10-09</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>怎么开始？</strong>
+<p>第一次打开会有三个示例习惯（早起 / 背单词 / 运动）。点一下圆圈就打卡，当天全部完成会显示「今天全勤，收工」。</p>
+
+<strong>连击是怎么算的？</strong>
+<p>只数排期内的日子。工作日习惯跳过周末不算断，周末习惯跳过工作日同理。今天还没打卡不会把连击清零——从昨天往前数。</p>
+
+<strong>经验、金币有什么用？</strong>
+<p>经验涨等级，金币在「角色」页买装备。连击越长，单次打卡给的经验金币越多，但加成封顶 2 倍。</p>
+
+<strong>番茄钟中途放弃会怎样？</strong>
+<p>专注满 5 分钟才有收益。中途结束按 40% 折算经验，且不给金币——完成才给全额。</p>
+
+<strong>为什么习惯只能归档不能直接删？</strong>
+<p>两个都能做。归档会保留历史打卡，适合「暂时不做」；彻底删除会连打卡记录一起清掉，统计里也就没有这条了。编辑页里两个按钮都给了。</p>
+
+<strong>换手机怎么迁移？</strong>
+<p>在「设置 → 数据」里导出 JSON 备份，在新设备上用文件导入。数据不会自动上云。</p>
+
+<strong>数据存在哪？</strong>
+<p>只在这台设备上。详见<a href="privacy.html">隐私政策</a>。</p>
+
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>Getting started</strong>
+<p>Three sample habits ship with the first launch (wake early, vocabulary, exercise). Tap the circle to check in. Finish everything due and the header says you are done for the day.</p>
+
+<strong>How are streaks counted</strong>
+<p>Only scheduled days count. A weekday habit skips the weekend without breaking, and vice versa. Not having checked in yet today will not reset your streak; it counts back from yesterday.</p>
+
+<strong>What do XP and gold do</strong>
+<p>XP raises your level, gold buys equipment on the Character tab. Longer streaks increase the reward per check-in, capped at double.</p>
+
+<strong>What if I stop a focus session early</strong>
+<p>You need at least five minutes for any reward. Stopping early pays 40 percent of the XP and no gold. Completing pays in full.</p>
+
+<strong>Why archive instead of delete</strong>
+<p>Both are available. Archiving keeps the check-in history, which suits a habit you are pausing. Deleting removes the history too, so it disappears from statistics. The editor offers both.</p>
+
+<strong>Moving to a new phone</strong>
+<p>Export the JSON backup from Settings, then import it on the new device. Nothing syncs to the cloud automatically.</p>
+
+<strong>Where is my data</strong>
+<p>Only on this device. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a>.</p>
+</div>
+
+
+<footer>自律勇者 SelfQuest · 游戏化自律工具</footer>
+</body>
+</html>
