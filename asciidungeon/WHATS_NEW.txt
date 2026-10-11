@@ -1,0 +1,5 @@
+首次发布：竖屏回合制 roguelike，一屏字符画，点一下走一步。屏幕上方永远有一行读数，打之前就告诉你这一架打不打得过，而且那几个数就是真掷骰子时用的那几个。10 层地牢由一颗随机种子长出，同一颗种子永远长出同一张图。打不过就退回来等，每 12 个回合自动回 1 点血。全程离线，没有账号，没有广告，没有内购。
+
+---
+
+First release: a portrait turn-based roguelike, one screen of ASCII glyphs, one tap per move. A readout above the map says whether a fight is winnable before you take it, and those are the numbers the dice actually use. The 10 floors grow from a random seed, and the same seed always grows the same map. When a fight goes badly, back off and wait: every 12 turns you regain 1 health. Fully offline, no account, no ads, no purchases.

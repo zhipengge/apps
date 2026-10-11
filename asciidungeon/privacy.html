@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>字符地牢 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #5B6BE0;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #8C9BFF;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>字符地牢 · 隐私政策</h1>
+<p class="meta">AsciiDungeon — Privacy Policy · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<p class="lead"><strong>字符地牢不收集任何数据。</strong> 没有账号，没有服务器，App 不发起任何网络请求。「不联网」在这里是一句可核对的话：这个 App 链接进来的系统框架只有 SwiftUI、UIKit、Foundation 和 AVFoundation，没有链接任何网络库，运行时也不建立任何网络连接。你的存档、图鉴和纪录只写在这台设备的沙盒里。</p>
+
+<h3>我们处理什么、存在哪</h3>
+<table>
+  <tr><th>数据</th><th>用途</th><th>位置</th></tr>
+  <tr><td>一局存档：地牢的随机种子、当前层数、生命、等级、经验、金币、背包与身上的装备、地图的探索与视野记忆、这一局的日志</td><td>让你退出后能从这里继续</td><td>设备沙盒 UserDefaults</td></tr>
+  <tr><td>跨局进度：怪物图鉴（见过哪些怪）、遗骸（倒在哪一层、留了什么）、纪录（最深层数、最高分、局数、通关数、击杀数）、上一次的死因</td><td>标题页与图鉴页的展示，以及威胁读数「认不认识」这只怪</td><td>设备沙盒 UserDefaults</td></tr>
+  <tr><td>声音开关、震动开关</td><td>记住你的偏好</td><td>设备沙盒 UserDefaults</td></tr>
+</table>
+
+<p>以上数据全部在本机读写，<strong>不会离开设备</strong>。本 App 不使用 iCloud，也不使用任何云同步。</p>
+
+<p>这些内容里没有任何可以指认到人的东西：没有姓名、邮箱、电话、位置，也没有设备标识符或广告标识符。</p>
+
+<h3>网络</h3>
+<p><strong>App 不发起任何网络请求。</strong> 飞行模式下全部功能可用，包括首次启动、生成地牢、存档和读档。地牢的每一层都是在本机算出来的。</p>
+
+<h3>内购与账号</h3>
+<p><strong>本 App 没有内购，也没有账号系统。</strong> 下载后即是完整内容，不需要注册、登录或付费解锁任何东西。</p>
+
+<h3>权限</h3>
+<p><strong>本 App 不申请任何权限。</strong> 它不读取相机、麦克风、相册、通讯录、位置、日历或提醒事项，也不发送通知。App 的 <code>Info.plist</code> 里没有写任何权限用途描述，所以 iOS 根本不会为它弹出权限询问。</p>
+<p>唯一一处系统交互是音频播放：音效由代码实时合成波形后交给系统播放（<code>AVAudioSession</code>）。这只是播放声音，不涉及麦克风，也不读取或写入任何音频文件。App 里没有任何音频文件。</p>
+
+<h3>震动</h3>
+<p>挨打、暴击、捡东西时的震动由系统的触感引擎产生，只是给手指的反馈，不产生也不读取任何数据。可以在设置里关掉。</p>
+
+<h3>我们不做的事</h3>
+<ul>
+  <li>不要求注册或登录</li>
+  <li>不收集姓名、邮箱、位置、设备标识符或广告标识符</li>
+  <li>不接入广告、分析、崩溃上报或追踪 SDK（本 App 不含任何第三方代码）</li>
+  <li>不把存档上传或同步到任何服务器</li>
+  <li>不读取通讯录、相册、麦克风、摄像头、位置</li>
+  <li>不申请任何系统权限，因此系统也不会弹出任何权限询问</li>
+  <li>不把你的数据共享给任何第三方</li>
+</ul>
+
+<h3>分享与导出</h3>
+<p><strong>本 App 没有分享或导出功能。</strong> 界面上没有分享按钮，也没有系统的分享面板。你的存档、图鉴和纪录没有任何一条路径可以离开这台设备。</p>
+
+<h3>数据删除</h3>
+<p>设置页有「重置全部进度」，会清空图鉴、遗骸、纪录和当前这一局，而且找不回来。声音和震动这两个开关会留着，因为它们是偏好，不是进度。删除 App 即清除全部数据。</p>
+
+<h3>儿童</h3>
+<p>本 App 不收集任何人的数据，当然也不收集儿童的数据。它没有账号、没有聊天、没有用户生成内容，也没有任何形式的联网功能。</p>
+
+<h2 id="en">English</h2>
+
+<p class="lead"><strong>AsciiDungeon collects no data.</strong> No account, no server, and the app makes no network requests. That claim is checkable: the only system frameworks the app links against are SwiftUI, UIKit, Foundation and AVFoundation. No networking library is linked, and no network connection is opened at runtime. Your save, bestiary and records live only in the sandbox on this device.</p>
+
+<h3>What the app handles, and where</h3>
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
+  <tr><td>Run save: the dungeon's random seed, current floor, health, level, experience, gold, inventory and equipped gear, the map's explored and visible memory, and this run's log</td><td>So you can pick the run back up after leaving</td><td>App sandbox, UserDefaults</td></tr>
+  <tr><td>Cross-run progress: the bestiary (which monsters you have seen), bones (which floor you fell on, what you left there), records (deepest floor, best score, runs, clears, kills), and the cause of your last death</td><td>Shown on the title screen and the bestiary, and used to decide whether the threat readout recognises a monster</td><td>App sandbox, UserDefaults</td></tr>
+  <tr><td>Sound and haptics toggles</td><td>Remember your preferences</td><td>App sandbox, UserDefaults</td></tr>
+</table>
+
+<p>All of it is read and written on-device and <strong>never leaves it</strong>. There is no iCloud and no cloud sync of any kind.</p>
+
+<p>None of it can be tied to a person: no name, email, phone number, location, device identifier or advertising identifier.</p>
+
+<h3>Network</h3>
+<p><strong>The app makes no network requests.</strong> Every feature works in Airplane Mode, including first launch, dungeon generation, saving and loading. Every floor of the dungeon is computed on this device.</p>
+
+<h3>Purchases and accounts</h3>
+<p><strong>There are no in-app purchases and no account system.</strong> What you download is the whole game. There is nothing to register, sign in to, or pay to unlock.</p>
+
+<h3>Permissions</h3>
+<p><strong>The app requests no permissions.</strong> It does not touch the camera, microphone, photo library, contacts, location, calendar or reminders, and it sends no notifications. The app's <code>Info.plist</code> declares no usage descriptions, so iOS has nothing to prompt you about.</p>
+<p>The one system interaction is audio playback: sound effects are synthesised in code and handed to the system to play (<code>AVAudioSession</code>). That is playback only. It does not involve the microphone, and it reads and writes no audio files. The app ships no audio files.</p>
+
+<h3>Haptics</h3>
+<p>The taps you feel when you take a hit, land a critical, or pick something up come from the system's haptic engine. They are feedback for your fingers and neither produce nor read any data. They can be switched off in Settings.</p>
+
+<h3>What we do not do</h3>
+<ul>
+  <li>No account or sign-in</li>
+  <li>No collection of name, email, location, device identifiers or advertising identifiers</li>
+  <li>No ads, analytics, crash reporting or tracking SDKs (the app contains no third-party code at all)</li>
+  <li>No upload or sync of your save data</li>
+  <li>No access to Contacts, Photos, Microphone, Camera, or Location</li>
+  <li>No permission requests of any kind, so the system never prompts you</li>
+  <li>No sharing with third parties</li>
+</ul>
+
+<h3>Sharing and export</h3>
+<p><strong>The app has no sharing or export feature.</strong> There is no share button in the interface and no system share sheet. Your save, bestiary and records have no path off this device.</p>
+
+<h3>Deletion</h3>
+<p>Settings offers Reset All Progress, which clears the bestiary, your bones, your records, and the run in progress. It cannot be undone. The sound and haptics toggles are kept, because they are preferences rather than progress. Deleting the app clears everything.</p>
+
+<h3>Children</h3>
+<p>The app collects no one's data, children included. It has no accounts, no chat, no user-generated content, and no networking of any kind.</p>
+
+
+<footer>字符地牢 AsciiDungeon · 一屏字符画的回合制 roguelike</footer>
+</body>
+</html>

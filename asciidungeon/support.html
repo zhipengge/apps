@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>字符地牢 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #5B6BE0;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #8C9BFF;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>字符地牢 · 支持</h1>
+<p class="meta">AsciiDungeon — Support · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>怎么玩？</strong>
+<p>有三种操作。点地图上的任意一格，你会自动走过去，中途看见醒着的怪就停下来把决定权还给你，而且只会走你已经知道的路，不会顺手把没去过的区域试探出来。朝一个方向划一下，就走一步，八方向。走进怪物所在的格子就是攻击它，这一作没有单独的「攻击」键。</p>
+
+<strong>屏幕上方那行读数是什么？</strong>
+<p>那是威胁读数：视野里出现怪物时，它会告诉你这一架「打得过 / 势均力敌 / 打不过 / 它会杀了你」。点一下读数条可以展开，看到双方的命中率和伤害区间，自己核对。这几个数就是用真的掷骰子的那几个，不是另外估的。</p>
+
+<strong>命中率和伤害是怎么算的？</strong>
+<p>命中率等于 55% 加上 5% 乘以（命中减 10 再减对方闪避），夹在 5% 到 95% 之间。伤害是骰子区间加力量加等级加成再减对方护甲，至少 1 点。速度是它每回合能行动几次，分很慢、正常、很快、极快四档，也就是你的 0.5 倍、1 倍、1.5 倍、2 倍。背包页把命中和伤害直接列出来，旁边就写着这条公式。</p>
+
+<strong>为什么对有的怪只说「未知」？</strong>
+<p>因为你还没见过它。见过的怪会记进图鉴，之后它出现在视野里就有完整读数。没见过的怪画成紫色，读数对它只说「未知」——所以第一次遇到它的正确做法是先活下来，看清楚它怎么打人。</p>
+
+<strong>怪会不会偷袭我？</strong>
+<p>不会。你的视野半径是 8 格，怪物的警觉半径是 6 格，所以你总是先看见它。被看不见的东西偷袭在这一作里算设计事故，不算难度。</p>
+
+<strong>打不过怎么办？</strong>
+<p>往回退两步、等一等。每 12 个回合会自动回 1 点血，所以原地等待是正经战术，不是浪费时间。地牢只能往下走，退路是身后的走廊，不是上一层。</p>
+
+<strong>死了会失去什么？</strong>
+<p>等级清零，从第 1 层重新开始。但<strong>装备不会没</strong>：你身上的武器、护甲和包里前 6 件东西会留在你倒下的那一层，画成一个 <code>%</code>。下一局走到那一层踩上去，一次全收回来。同时最多留 5 具遗骸，一层最多一具，最老的那具会被顶掉；通关那一局不留遗骸。</p>
+
+<strong>地牢是随机的吗？同一层会不会每次都不一样？</strong>
+<p>地牢由一颗随机种子长出来，一共 10 层，每层有自己的色调。同一颗种子永远长出同一张图，存档里存的就是那颗种子，所以重开之后「第 5 层还是那一张」。每一层都是「房间加走廊」，连通性从构造上就成立，不会生成走不通的死图。</p>
+
+<strong>「自动」和「下楼」是干什么的？</strong>
+<p>「自动」会自动走到还没探过的区域边界，看见怪就停。「下楼」只在站在 <code>&gt;</code> 上面时才亮起来，地牢只能往下走。第 10 层的深渊之门由 Ω 守着，打赢它、站上楼梯、按「下楼」，这一局就算通关。</p>
+
+<strong>存档存在哪？会不会上传？</strong>
+<p>只在这台设备上，存在 App 自己的沙盒里，不上传也不同步。每次行动之后以及切换到后台时写盘一次。详见<a href="privacy.html">隐私政策</a>。</p>
+
+<strong>数据怎么删？</strong>
+<p>设置页有「重置全部进度」，会清空图鉴、遗骸、纪录和当前这一局，而且找不回来。声音和震动两个开关会留着，它们是偏好不是进度。删除 App 即清除全部数据。</p>
+
+<strong>有声音吗？</strong>
+<p>有。音效由代码实时合成波形，工程里没有任何音频文件。它跟随系统静音键，也不会打断你在听的音乐。设置里可以关，触感反馈也可以单独关。</p>
+
+<strong>需要联网吗？有内购吗？</strong>
+<p>都不需要。整个 App 不发起任何网络请求，飞行模式下全部功能可用；也没有内购和账号，下载后就是完整内容。</p>
+
+<strong>支持哪些设备？</strong>
+<p>需要 iOS 17.0 或更高版本，iPhone 与 iPad 都可以，仅支持竖屏。</p>
+
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上设备型号、系统版本和复现步骤。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>How do I play</strong>
+<p>Three ways to act. Tap any tile on the map and you walk there automatically; you stop short the moment an awake monster comes into view, and you only ever walk paths you already know, so a single tap cannot probe unexplored ground for you. Swipe in a direction to take one step, in any of eight directions. Walking into a monster's tile is how you attack it; there is no separate attack button.</p>
+
+<strong>What is that line at the top of the screen</strong>
+<p>That is the threat readout. Whenever a monster is in view it tells you whether this fight is winnable: you can take it, it is an even match, you cannot take it, or it will kill you. Tap the strip to expand it and see both sides' hit chance and damage range so you can check the numbers yourself. Those are the numbers the dice actually use, not a separate estimate.</p>
+
+<strong>How are hit chance and damage worked out</strong>
+<p>Hit chance is 55 percent plus 5 percent per point of accuracy above 10, minus the target's evasion, clamped between 5 and 95 percent. Damage is the dice range plus strength and level bonus minus the target's armor, with a floor of 1. Speed is how many times it acts per turn, shown as slow, normal, fast or very fast, which work out to 0.5, 1, 1.5 and 2 times your own rate. The bag screen lists your accuracy and damage directly, with the formula printed right beside them.</p>
+
+<strong>Why does the readout say unknown for some monsters</strong>
+<p>Because you have not met it yet. Monsters you have seen go into the bestiary, and from then on the readout gives a full verdict whenever one is in view. Unmet monsters are drawn in purple and the readout will only say unknown, so the right move on a first meeting is to stay alive and watch how it fights.</p>
+
+<strong>Can a monster ambush me</strong>
+<p>No. Your sight radius is 8 tiles and a monster's alert radius is 6, so you always see it first. Being ambushed by something invisible counts as a design fault in this game, not as difficulty.</p>
+
+<strong>What if a fight is going badly</strong>
+<p>Back off a couple of steps and wait it out. Every 12 turns you regain 1 health, so standing still is a real tactic rather than wasted time. The dungeon only goes downward, so your retreat is the corridor behind you, not the floor above.</p>
+
+<strong>What do I lose when I die</strong>
+<p>Your level resets and you start again from floor 1. Your gear does not disappear: the weapon and armor you were carrying, plus the first 6 items in your bag, stay on the floor where you fell, drawn as a <code>%</code>. Walk onto that tile in a later run and you reclaim all of it at once. At most 5 bones are kept, one per floor, and the oldest is pushed out; a run you win leaves no bones.</p>
+
+<strong>Is the dungeon random? Will the same floor differ every time</strong>
+<p>Each dungeon grows from a random seed, 10 floors in all, each with its own palette. The same seed always grows the same map, and the seed is what the save file stores, so floor 5 is the same map after a restart. Every floor is built from rooms and corridors, so it is connected by construction and can never generate a map you cannot finish.</p>
+
+<strong>What are Auto and Descend for</strong>
+<p>Auto walks you to the edge of the unexplored area and stops when a monster shows up. Descend only lights up when you are standing on a <code>&gt;</code> tile; the dungeon only goes down. Floor 10's gate is guarded by the Ω, and beating it, standing on the stairs and descending is how a run is won.</p>
+
+<strong>Where is my save, and is it uploaded</strong>
+<p>On this device only, in the app's own sandbox. Nothing is uploaded or synced. It is written after each action and when you switch away from the app. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<strong>How do I delete my data</strong>
+<p>Settings offers Reset All Progress, which clears the bestiary, your bones, your records and the run in progress, and cannot be undone. The sound and haptics toggles are kept, because they are preferences rather than progress. Deleting the app clears everything.</p>
+
+<strong>Is there sound</strong>
+<p>Yes. Sound effects are synthesised in code at play time and the app ships no audio files. They respect the silent switch and do not interrupt music you are listening to. They can be turned off in Settings, and haptics have their own toggle.</p>
+
+<strong>Does it need a network connection, or have in-app purchases</strong>
+<p>Neither. The app makes no network requests at all and every feature works in Airplane Mode. There are no purchases and no accounts: what you download is the whole game.</p>
+
+<strong>Which devices are supported</strong>
+<p>iOS 17.0 or later. iPhone and iPad, portrait only.</p>
+
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your device model, OS version, and steps to reproduce.</p>
+</div>
+
+
+<footer>字符地牢 AsciiDungeon · 一屏字符画的回合制 roguelike</footer>
+</body>
+</html>
