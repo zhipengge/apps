@@ -288,12 +288,20 @@ iPhone 与 iPad 均为竖屏。
 
 App 是 `TARGETED_DEVICE_FAMILY = "1,2"`，iPhone 与 iPad 两套都要，各 3-10 张。
 
-| 平台 | 尺寸 | 像素 | 状态 |
-|---|---|---|---|
-| iPhone 6.9 寸 | 必填 | 1320 x 2868 | **已导出 6 张**，见下 |
-| iPad 13 寸 | 必填 | 2064 x 2752 | **缺，必须补** |
+按 Apple《截屏规范》（Screenshot specifications，2026-10-12 核对原文），**必填的只有两档**：
 
-iPhone 这批在 `apps/asciidungeon/screenshots/iphone/`，6 张，全部 1320 x 2868：
+- iPhone：**带灵动岛的 iPhone（中等显示屏）**，即 iPhone 17 / 17 Pro / 16 / 16 Pro / 15 / 15 Pro / 14 Pro 这一档，竖屏 1206 x 2622 或 1179 x 2556
+- iPad 13 寸，竖屏 2064 x 2752
+
+6.9 寸（带灵动岛的 iPhone，大显示屏，1320 x 2868）**不是必填**，但已经做了，一并上传。
+
+| 平台 | 必填 | 像素 | 位置 | 状态 |
+|---|---|---|---|---|
+| iPhone 6.3 寸（中等显示屏） | 是 | 1206 x 2622 | `screenshots/iphone-63/` | 6 张 |
+| iPad 13 寸 | 是 | 2064 x 2752 | `screenshots/ipad/` | 6 张 |
+| iPhone 6.9 寸（大显示屏） | 否 | 1320 x 2868 | `screenshots/iphone/` | 6 张 |
+
+三套用的是同一份标题与副标题，只是画面尺寸不同：
 
 | 文件 | 标题 | 副标题 | 对应界面 |
 |---|---|---|---|
@@ -305,7 +313,8 @@ iPhone 这批在 `apps/asciidungeon/screenshots/iphone/`，6 张，全部 1320 x
 | `06-help.png` | 不用查 wiki | 全部规则和图例都写在游戏里 | 玩法与图例 |
 
 竖屏截图，不要裁成横版。空状态、纯海报式截图会被拒。
-**iPad 那套还没有**，而它是必填项，只有 iPhone 一套的话提审会被拦。
+**三套都刻意没有遗骸页**：图鉴跨局继承和遗骸回收这两条的效果量在 `LogicTests/balance.sh` 里量出来是零
+（「地牢记得你」+0.02 层，学习曲线 -1.72 层），所以一个字都没当卖点，标题和副标题只讲界面上真实存在的东西。
 
 > 本作有一处已知的 iPad 配置问题（`UIRequiresFullScreen` 与 ITMS-90474），
-> 正在另一处处理，**截图这一轮不要动它**；等那件事定了再决定 iPad 截图怎么出。
+> 已用声明该键的方式处理（见 `AsciiDungeon/AGENTS.md`），这一轮没有动它。
