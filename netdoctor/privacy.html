@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云网络医生 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #C0392B;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #FF7B6B;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>牧云网络医生 · 隐私政策</h1>
+<p class="meta">NetDoctor — Privacy Policy · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<p class="lead"><strong>这是一个网络诊断工具，它必须碰网络——这一点我们不绕开说。</strong> 它对外只有三种动作，全部是只读探测：DNS 查询、TCP 连接（发个 SYN 就关，<strong>不带任何业务数据</strong>）、ICMP 回声。<strong>它没有 HTTP 客户端，不下载任何网页，不上传任何东西，不向我们的服务器发送任何数据——因为没有我们的服务器。</strong> 它采集什么、发到哪里，下面逐条写清楚。同时，<strong>「只诊断、不修改」不是一句承诺，是结构性的</strong>：整个工程里不允许出现任何写系统网络配置的 API，这条由脚本机械检查，每次跑测试都会验一遍。</p>
+
+<h3>它会往网络上发什么</h3>
+
+<p>App 对外只有下面三种动作。三种都是只读的，都<strong>不携带任何可以指认到你或你这台设备的信息</strong>：没有账号、没有设备标识符、没有安装 ID、没有请求正文、没有表单、没有参数。</p>
+
+<table>
+  <tr><th>动作</th><th>具体做什么</th><th>发给谁</th></tr>
+  <tr><td><strong>DNS 查询</strong></td><td>自己构造一个标准的 DNS 报文（RFC 1035 格式），通过 UDP 53 端口发出，问一个域名解析成什么地址。另发一个新 ID 的查询，不复用缓存结论。</td><td>你系统里配置的 DNS 服务器（从系统网络配置里读出来的那些），同时也会问一次系统解析器做对照</td></tr>
+  <tr><td><strong>TCP 连接</strong></td><td>发起一次 TCP 握手，<strong>连上就立刻关闭</strong>。在应用层<strong>不发送任何一个字节</strong>，没有 HTTP 请求，没有 TLS 协商，没有业务数据。连接被对方拒绝（返回 RST）同样算作「主机是活的」。</td><td>你的局域网网关，以及几个公开的公共服务地址（见下）</td></tr>
+  <tr><td><strong>ICMP 回声</strong></td><td>就是 ping。用<strong>非特权 ICMP</strong> 发（普通用户权限即可，不需要管理员，不装后台守护进程）。</td><td>你的局域网网关</td></tr>
+</table>
+
+<p>被探测的具体目标只有这几类：</p>
+<ul>
+  <li><strong>你自己的网关地址</strong>，以及<strong>你系统里配置的 DNS 服务器</strong>——这两个都是从你的系统网络配置里读出来的，不是写死的。</li>
+  <li><strong>两个公开的公共 DNS 服务地址</strong>（直连 IP，不经过域名解析），用来区分「路由坏了」和「DNS 坏了」。</li>
+  <li><strong>一个公开的强制门户探测域名</strong>，用来验证解析这一层。</li>
+  <li><strong>四个公开的服务域名</strong>，用来回答「我这边通，是不是只有某个服务不通」。</li>
+</ul>
+<p>以上都是公开可访问的地址，不涉及任何需要登录的接口。<strong>完整的目标清单写在源码里</strong>，任何人都可以去核对。目标列表里没有任何一个属于开发者——这个 App 没有自建服务器，也没有遥测端点。</p>
+
+<p class="lead"><strong>所以「连了谁」这件事不构成隐私问题</strong>：这些探测不带任何业务数据、不带任何标识，对端看到的只是一次普通的 DNS 查询或一次握手——和你的系统自己会做的事没有区别。App 也<strong>不会</strong>把「你连过谁」记录下来发往别处。</p>
+
+<h3>菜单栏那个数字</h3>
+<p>App 常驻菜单栏，显示一个延迟数字。它的来源是<strong>每 10 秒一次 TCP 握手</strong>，对象是上面那两个公共 DNS 地址之一，连上就关。<strong>屏幕休眠时这个定时器会被停掉</strong>，醒来才补一次——没人在看的时候它不跑。</p>
+
+<h3>它读你本机的什么</h3>
+<p>为了知道「你的网关是谁、DNS 配的是哪几个、网卡有没有拿到地址」，它会<strong>只读</strong>地查询系统网络配置：当前网络服务、接口列表、IP 地址与掩码、路由器地址、DNS 服务器列表、代理设置、以及系统解析器配置文件。</p>
+<p><strong>这些都是读操作，一个字节都不改。</strong> 这一条不是靠自觉：</p>
+<ul>
+  <li><strong>黑名单</strong>：脚本在全部源文件里搜 23 个写入型 API（改配置、提交变更、改路由、改 DNS、改 hosts 之类），出现任何一个就失败。写在注释里提到某个 API 不算调用——脚本会先去掉注释再看。</li>
+  <li><strong>白名单反查</strong>：所有系统网络配置的调用都必须在 9 个只读接口的名单里，防止有人调了一个黑名单里没想到的写接口。</li>
+  <li>这个检查<strong>每次跑测试都会执行</strong>，不是一次性的人工核对。</li>
+</ul>
+<p>换句话说：<strong>App 里连「顺手帮你改一下 DNS」的入口都不存在</strong>，不是「有但不建议用」。你装的是一个只看不动的工具。</p>
+
+<h3>我们处理什么、存在哪</h3>
+<table>
+  <tr><th>数据</th><th>用途</th><th>位置</th></tr>
+  <tr><td>诊断历史：最近 50 次的<strong>轻量记录</strong>（时间、每层的结论、关键耗时）。<strong>不保存完整报告正文</strong>，那份几十行原始数据只在导出时生成。</td><td>回答「上次什么时候出的问题」</td><td>本机的 UserDefaults，单键 <code>netdoctor.history.v1</code>；可单条删除，也可一键清空</td></tr>
+  <tr><td>界面偏好（刷新节奏等设置）</td><td>记住你的偏好</td><td>本机 UserDefaults</td></tr>
+  <tr><td>你导出的报告</td><td>给你一份可以发给别人的纯文本</td><td>由你在系统保存面板里选位置，写成一个 <code>.txt</code> 文件。<strong>除此之外 App 不写任何文件</strong></td></tr>
+</table>
+<p>历史记录里有时间、有你这次测出来的网络质量——这些数据<strong>只在本机</strong>，不会同步、不会上传、不会分享给任何人。删除即消失，别处没有副本。</p>
+
+<h3>我们不做什么</h3>
+<ul>
+  <li><strong>不修改你的任何系统网络设置</strong>：不改代理、不改 DNS、不改路由、不改 hosts、不开关网卡。工程里连这类 API 都不允许出现。</li>
+  <li><strong>不发送任何业务数据</strong>：探测就是一次 DNS 查询或一次 TCP 握手，没有请求正文。</li>
+  <li><strong>不向任何服务器回传数据</strong>：没有我们的服务器，没有遥测，没有统计，没有广告，没有崩溃上报，没有检查更新。</li>
+  <li>不要求注册或登录，没有账号系统。</li>
+  <li>不读取你的文件、照片、通讯录、日历、位置、麦克风、摄像头。</li>
+  <li>不申请任何系统权限，系统不会为它弹出授权框（详见下节）。</li>
+</ul>
+
+<h3>权限</h3>
+<p><strong>App 不申请任何系统权限，也不会弹出授权框。</strong></p>
+<ul>
+  <li>沙盒授权<strong>一共只有两条</strong>：沙盒本身，和出站网络客户端。没有别的。</li>
+  <li><strong>不写文件</strong>——导出报告走系统保存面板，那是你主动选的一次动作。</li>
+  <li><strong>不读你的用户目录</strong>，不申请完全磁盘访问。</li>
+  <li>没有 App Group，没有扩展，没有共享容器。</li>
+  <li>它<strong>不需要辅助功能，也不需要输入监控</strong>：它不模拟点击、不监听键盘、不控制其它应用。面板里的按键都是普通的界面按键。</li>
+  <li>ICMP 用的是非特权模式，<strong>不需要管理员权限</strong>，也不安装任何后台服务或守护进程。</li>
+</ul>
+
+<h3>第三方</h3>
+<p><strong>App 里没有任何第三方代码。</strong> 没有依赖包、没有内嵌框架，界面图标一律用系统符号。没有广告、没有分析统计、没有崩溃上报、没有追踪 SDK。</p>
+<p>本 App 在设计时读过几个开源同类项目（系统监视器、DNS 诊断工具、菜单栏 ping 工具）的<strong>文档与源码用于借鉴设计思路</strong>，但<strong>一行代码都没有复制，一个素材都没有取用</strong>。其中有一个项目带了 GPL 许可，它的代码完全没有被接触。</p>
+
+<h3>加密</h3>
+<p>App 不做任何加密、哈希或密钥运算，也没有链接密码学框架。它本身不发起 HTTPS 连接，因此不涉及传输加密。出口合规申报为不使用非豁免加密。</p>
+
+<h3>数据删除</h3>
+<p>历史记录可以单条删除，也可以在界面上一次清空。因为数据只在这台电脑上，删掉之后别处没有副本可以残留。<strong>删除 App 即清除全部数据。</strong></p>
+
+<h3>儿童</h3>
+<p>本 App 不收集任何人的数据，当然也不收集儿童的数据。它没有账号、没有聊天、没有用户生成内容，也不向任何服务器回传信息。</p>
+
+<h3>这份政策和代码的对应关系</h3>
+<p>上面每一条声明都对应到工程里的具体实现，而不是一份套用的模板。如果你要核对：探测的判定逻辑集中在一个纯函数里（可离线跑测试），三种探针各占一个文件，只读检查是一个可以随时自己跑的脚本。App 里显示的「只读模式：不修改你的任何系统网络设置」这句话，和这份政策说的是同一件事。</p>
+
+<h2 id="en">English</h2>
+
+<p class="lead"><strong>This is a network diagnostic tool, so it does touch the network, and we will not dance around that.</strong> It has exactly three outbound actions, all read-only: a DNS query, a TCP connection (send a SYN and close immediately, <strong>carrying no application data whatsoever</strong>), and an ICMP echo. <strong>It contains no HTTP client, downloads no pages, uploads nothing, and sends nothing to a server of ours, because there is no server of ours.</strong> What it collects and where it goes is set out below. And <strong>"diagnose only, never modify" is not a promise, it is structural</strong>: the project does not permit any API that writes system network configuration, and a script checks that mechanically on every test run.</p>
+
+<h3>What it sends onto the network</h3>
+
+<p>The app has exactly three outbound actions. All three are read-only, and <strong>none of them carries anything that identifies you or this machine</strong>: no account, no device identifier, no installation ID, no request body, no form, no parameters.</p>
+
+<table>
+  <tr><th>Action</th><th>What it does</th><th>Where it goes</th></tr>
+  <tr><td><strong>DNS query</strong></td><td>Builds a standard DNS message itself (RFC 1035 format) and sends it over UDP port 53 asking what address a name resolves to. Each diagnostic sends a fresh query with a new ID rather than reusing a cached answer.</td><td>The DNS servers configured in your system, read out of your network settings, plus one comparison query through the system resolver</td></tr>
+  <tr><td><strong>TCP connection</strong></td><td>Opens a TCP handshake and <strong>closes it immediately on success</strong>. At the application layer it <strong>sends not a single byte</strong>: no HTTP request, no TLS negotiation, no application data. A connection refused with RST also proves the host is alive.</td><td>Your local gateway, and a few public service addresses (below)</td></tr>
+  <tr><td><strong>ICMP echo</strong></td><td>An ordinary ping, sent using <strong>unprivileged ICMP</strong>, which needs no administrator rights and installs no background service.</td><td>Your local gateway</td></tr>
+</table>
+
+<p>The targets it probes fall into just these categories:</p>
+<ul>
+  <li><strong>Your own gateway</strong> and <strong>the DNS servers configured in your system</strong>. Both are read out of your network configuration rather than hard-coded.</li>
+  <li><strong>Two public DNS service addresses</strong> (connected by IP, bypassing name resolution), used to tell "the route is broken" apart from "DNS is broken".</li>
+  <li><strong>One public captive-portal detection domain</strong>, used to verify the resolution layer.</li>
+  <li><strong>Four public service domains</strong>, used to answer "my side is fine, is it just one service that is down".</li>
+</ul>
+<p>All of them are publicly reachable and none requires a login. <strong>The complete target list is in the source</strong>, where anyone can check it. None of the targets belongs to the developer: this app has no server of its own and no telemetry endpoint.</p>
+
+<p class="lead"><strong>So "who did it connect to" is not a privacy question here.</strong> These probes carry no application data and no identifier; the other end sees an ordinary DNS query or handshake, indistinguishable from what your system does on its own. The app also <strong>does not</strong> record who you connected to and send it anywhere.</p>
+
+<h3>The number in the menu bar</h3>
+<p>The app sits in the menu bar showing a latency figure. It comes from <strong>one TCP handshake every ten seconds</strong> to one of the two public DNS addresses, closed as soon as it connects. <strong>That timer stops when the screen sleeps</strong> and catches up on wake, so it does not run while nobody is looking.</p>
+
+<h3>What it reads from your machine</h3>
+<p>To know who your gateway is, which DNS servers are configured, and whether the interface has an address at all, it <strong>read-only</strong> queries your system network configuration: the active network service, the interface list, IP addresses and netmasks, the router address, the DNS server list, proxy settings, and the resolver configuration file.</p>
+<p><strong>All of these are reads. Not one byte is modified.</strong> That is not left to good intentions:</p>
+<ul>
+  <li><strong>A blacklist:</strong> a script searches every source file for 23 write-type APIs (changing configuration, committing changes, altering routes, DNS or hosts) and fails if any appears. An API merely mentioned in a comment does not count, because the script strips comments first.</li>
+  <li><strong>A whitelist cross-check:</strong> every system network configuration call must be one of nine read-only functions, which catches anyone reaching for a write API the blacklist did not anticipate.</li>
+  <li>That check <strong>runs on every test run</strong>, not once by hand.</li>
+</ul>
+<p>In other words, <strong>the app does not even contain an entry point for "just quietly change your DNS"</strong>. It is not that the feature exists and is discouraged; it does not exist. What you install is a tool that only looks.</p>
+
+<h3>What the app handles, and where</h3>
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
+  <tr><td>Diagnostic history: a <strong>lightweight record</strong> of the last 50 runs (timestamp, the verdict per layer, key timings). <strong>The full report text is not stored</strong>; that several-dozen-line document is generated only when you export it.</td><td>To answer "when did it last go wrong"</td><td>Local UserDefaults, under one key, <code>netdoctor.history.v1</code>. Individual entries can be deleted, or all of them at once</td></tr>
+  <tr><td>Interface preferences (refresh settings and similar)</td><td>To remember your preferences</td><td>Local UserDefaults</td></tr>
+  <tr><td>The report you export</td><td>To give you plain text you can send to someone</td><td>A <code>.txt</code> file at a location you choose in a system save panel. <strong>The app writes no other file</strong></td></tr>
+</table>
+<p>The history contains timestamps and the network quality you measured. It exists <strong>only on this computer</strong>: it is not synced, not uploaded, and not shared with anyone. Delete it and it is gone, with no copy elsewhere.</p>
+
+<h3>What we do not do</h3>
+<ul>
+  <li><strong>We do not modify any of your system network settings</strong>: no proxy changes, no DNS changes, no route changes, no hosts edits, no toggling interfaces. Such APIs are not even permitted to appear in the project.</li>
+  <li><strong>We send no application data</strong>: a probe is a DNS query or a TCP handshake, with no request body.</li>
+  <li><strong>We report nothing back to any server</strong>: no server of ours, no telemetry, no analytics, no ads, no crash reporting, no update check.</li>
+  <li>No registration or sign-in and no account system.</li>
+  <li>No reading of your files, photos, contacts, calendar, location, microphone or camera.</li>
+  <li>No system permissions are requested, so the system never prompts you (see below).</li>
+</ul>
+
+<h3>Permissions</h3>
+<p><strong>The app requests no permissions and never shows a permission prompt.</strong></p>
+<ul>
+  <li>The sandbox declares <strong>exactly two things</strong>: the sandbox itself and the outbound network client. Nothing else.</li>
+  <li><strong>No file writes</strong>; exporting a report goes through a system save panel, which is an action you take.</li>
+  <li><strong>No access to your home folder</strong> and no Full Disk Access.</li>
+  <li>No App Group, no extensions, no shared container.</li>
+  <li>It needs <strong>no Accessibility and no Input Monitoring</strong>: it does not simulate clicks, does not listen to the keyboard, and does not control other apps. The keys in its panel are ordinary interface keys.</li>
+  <li>ICMP is used in unprivileged mode, so <strong>no administrator rights are needed</strong> and no background service or daemon is installed.</li>
+</ul>
+
+<h3>Third parties</h3>
+<p><strong>The app contains no third-party code.</strong> No dependencies, no embedded frameworks; interface icons are all system symbols. No ads, no analytics, no crash reporting, no tracking SDKs.</p>
+<p>While designing this app we read the <strong>documentation and source of several open-source peers</strong> (a system monitor, a DNS diagnostic toolkit, a menu bar ping tool) to learn from their design decisions. <strong>Not one line of code was copied and not one asset was taken.</strong> One of them carries a GPL licence; none of its code was touched at all.</p>
+
+<h3>Encryption</h3>
+<p>The app performs no encryption, hashing or key handling and links no cryptography framework. It does not itself make HTTPS connections, so no transport encryption is involved. Export compliance is declared as using no non-exempt encryption.</p>
+
+<h3>Deletion</h3>
+<p>History entries can be deleted individually or cleared entirely from the interface. Because the data is only on this computer, there is no copy elsewhere to linger. <strong>Deleting the app removes everything.</strong></p>
+
+<h3>Children</h3>
+<p>The app collects no one's data, children included. It has no accounts, no chat, no user-generated content, and reports nothing to any server.</p>
+
+<h3>How this policy maps to the code</h3>
+<p>Every statement above corresponds to something specific in the project rather than being adapted from a template. If you want to check: the diagnostic verdicts live in one pure function that can be tested offline, the three probe types each occupy a file, and the read-only check is a script you can run yourself at any time. The line the app displays, that it is read-only and will not modify your system network settings, says the same thing this policy does.</p>
+
+
+<footer>牧云网络医生 NetDoctor · 只诊断，不修改 · <a href="./support.html">帮助与支持</a></footer>
+</body>
+</html>

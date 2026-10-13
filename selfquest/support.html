@@ -8,14 +8,14 @@
   :root {
     color-scheme: light dark;
     --fg: #1c1c1e; --fg-dim: #6e6e73;
-    --bg: #ffffff; --bg-soft: #f5f5f7;
-    --accent: #F5C451;
+    --bg: #ffffff; --bg-soft: #f7f5ee;
+    --accent: #8a6a12;
     --border: rgba(0,0,0,.08);
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --fg: #f5f5f7; --fg-dim: #98989d;
-      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --bg: #14110b; --bg-soft: #241f14;
       --accent: #FFD97A;
       --border: rgba(255,255,255,.1);
     }
@@ -33,12 +33,14 @@
   .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
   .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
           border-left: 4px solid var(--accent); margin: 20px 0; }
+  .warn { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid #c0392b; margin: 20px 0; }
   table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
   th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
   th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
   ul li { margin: 6px 0; }
   code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
-         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; word-break: break-all; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
@@ -58,62 +60,148 @@
 
 
 <h1>自律勇者 · 支持</h1>
-<p class="meta">SelfQuest — Support · 最后更新 / Last updated: 2026-10-09</p>
+<p class="meta">SelfQuest — Support · 最后更新 / Last updated: 2026-10-12</p>
 
 <h2 id="zh">中文</h2>
 
 <div class="faq">
 <strong>怎么开始？</strong>
-<p>第一次打开会有三个示例习惯（早起 / 背单词 / 运动）。点一下圆圈就打卡，当天全部完成会显示「今天全勤，收工」。</p>
+<p>第一次打开会有三个示例习惯（早起 / 背单词 / 运动）。点一下圆圈就打卡，再点一下撤销；长按某一项可以编辑、补卡。当天该做的全部完成，顶部会显示「今天全勤，收工」；一条都没排上时显示的是「休息也是自律的一部分。」</p>
 
 <strong>连击是怎么算的？</strong>
-<p>只数排期内的日子。工作日习惯跳过周末不算断，周末习惯跳过工作日同理。今天还没打卡不会把连击清零——从昨天往前数。</p>
+<p>只数排期内的日子。工作日习惯跳过周末不算断，周末习惯跳过工作日同理。今天还没打卡也不会把连击清零，它从昨天往前数。</p>
 
 <strong>经验、金币有什么用？</strong>
-<p>经验涨等级，金币在「角色」页买装备。连击越长，单次打卡给的经验金币越多，但加成封顶 2 倍。</p>
+<p>经验涨等级，金币在「角色」页买装备。连击越长，单次打卡给的经验和金币越多，加成封顶 2 倍（连击数超过 10 天不再增加）。</p>
+
+<strong>装备会改变玩法吗？</strong>
+<p><strong>基本不会，这一点我们直说。</strong> 九件装备里，只有「铃」（60 金币）会真的影响行为——番茄钟开始时响一声系统提示音。另一件「微光」会让连击越长时角色的武器越亮，那是纯视觉的。其余七件在代码里只有一个图标、一个名字和一行描述文字，买与不买，玩法一模一样。所以金币的用途更像是收藏和装饰，不是变强。</p>
+
+<strong>等级怎么升？</strong>
+<p>经验够了自动升级，升级时会弹一条提示。等级还有一个称号显示在角色页上，那是纯文字，不影响任何东西。</p>
 
 <strong>番茄钟中途放弃会怎样？</strong>
-<p>专注满 5 分钟才有收益。中途结束按 40% 折算经验，且不给金币——完成才给全额。</p>
+<p>专注满 5 分钟才有任何收益。中途结束按 40% 折算<strong>经验</strong>，<strong>金币是 0</strong>，一点都没有。完成才给全额：全额经验，加上时长一半的金币（至少 1）。所以「开了又关」什么也拿不到。</p>
+
+<strong>番茄钟有哪些时长？</strong>
+<p>15 / 25 / 45 / 60 分钟四个预设，另外角落里有一个正计时（不限时）开关。<strong>正计时时进度圈到 90 分钟就满了</strong>，再往上时间照记，圈不再增长。</p>
+
+<strong>可以补卡吗？</strong>
+<p>可以，往回最多 7 天。补卡按从早到晚的顺序补，每天都会重新算连击和加成；界面上的「补卡」在长按菜单里。</p>
 
 <strong>为什么习惯只能归档不能直接删？</strong>
-<p>两个都能做。归档会保留历史打卡，适合「暂时不做」；彻底删除会连打卡记录一起清掉，统计里也就没有这条了。编辑页里两个按钮都给了。</p>
+<p>两个都能做。归档会保留历史打卡，适合「暂时不做」；彻底删除会连打卡记录一起清掉，统计里也就没有这条了。编辑页里两个按钮都给了，归档的条目可以在设置页里恢复。</p>
+
+<strong>打卡点错了怎么办？</strong>
+<p>当天再点一下就撤销，撤销会把当次给的经验和金币<strong>原额退回</strong>，不是估算值。</p>
+
+<strong>统计数据是怎么算的？</strong>
+<p>三个时间范围（本周 / 近 30 天 / 近 90 天）驱动打卡率、打卡次数和热力图。<strong>有两处不受范围影响，说清楚比较好：</strong></p>
+<ul>
+  <li><strong>专注柱状图最多显示最近 14 天</strong>，选 30 天或 90 天时它也只画 14 根柱子</li>
+  <li><strong>习惯排行忽略所选范围</strong>，数的是全部历史打卡次数</li>
+</ul>
+<p>还有一处要提醒：顶部那张写着「最长连击」的卡片，显示的是<strong>当前</strong>连击里最大的那条，不是历史最长的那条。</p>
 
 <strong>换手机怎么迁移？</strong>
-<p>在「设置 → 数据」里导出 JSON 备份，在新设备上用文件导入。数据不会自动上云。</p>
+<p><strong>这个版本搬不了，我们不想让你以为能搬。</strong> 设置里能导出 JSON 完整存档和 CSV 打卡明细，但<strong>没有导入功能</strong>：导出的文件不能被读回 App，App 里没有「从文件恢复」，也没有在系统里注册成 JSON 的打开方式。存档留好，它能在电脑上打开查看；换机后需要重新添加习惯。</p>
+
+<div class="warn">
+<strong>为什么设置页里写着「换手机时用它恢复」？</strong>
+<p>那是 App 内的一句旧文案，<strong>与本版本的实际行为不符</strong>，也和这里的说法不一致。它是已知问题，会在上架前改掉。在这之前，请以本页为准：导出是单向的。</p>
+</div>
+
+<strong>导出的文件在哪？</strong>
+<p>导出时会写一份到 App 的临时目录，然后弹系统分享面板，你选发到哪就发到哪。分享完成后<strong>那份临时副本不会被自动删掉</strong>，会留到系统回收或你删除 App。App 不知道也不记录你发给了谁。</p>
 
 <strong>数据存在哪？</strong>
-<p>只在这台设备上。详见<a href="privacy.html">隐私政策</a>。</p>
+<p>一个文件：沙盒里的 <code>Application Support/SelfQuest/database.json</code>，未加密的纯文本 JSON。不写系统设置，不用钥匙串，不同步到 iCloud。详见<a href="privacy.html">隐私政策</a>。</p>
+
+<strong>会上云吗？会同步到别的设备吗？</strong>
+<p>都不会。没有账号、没有服务器，App 也不发起任何网络请求。换设备不会自动带过去任何东西。</p>
+
+<strong>它会提醒我打卡吗？</strong>
+<p><strong>不会。</strong> 这个 App 从来没有请求过通知权限，一条通知都不会发，也不会在后台唤起。这是一个习惯打卡 App，很多人默认它一定会催你，所以这一句单独写出来：它不会。全部提醒请交给系统「提醒事项」或日历。</p>
+
+<strong>要点什么权限吗？</strong>
+<p>一个都不要。没有通知、相机、麦克风、相册、通讯录、位置、健康数据、运动与健身，也没有 Face ID。工程里连一个权限说明字段都没写。</p>
+
+<strong>支持哪些设备？</strong>
+<p>需要 iOS 17.0 或更高版本。iPhone 上仅竖屏；iPad 上四个方向都支持。界面是中文的。</p>
 
 <strong>怎么反馈问题？</strong>
-<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交。</p>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上设备型号、系统版本和复现步骤。如果是统计数字看着不对，请说明你看的是哪个时间范围——上面说的那两处不随范围变化的地方，很可能就是原因。</p>
 </div>
 
 <h2 id="en">English</h2>
 
 <div class="faq">
 <strong>Getting started</strong>
-<p>Three sample habits ship with the first launch (wake early, vocabulary, exercise). Tap the circle to check in. Finish everything due and the header says you are done for the day.</p>
+<p>Three sample habits ship with the first launch (wake early, vocabulary, exercise). Tap the circle to check in and tap again to undo; long-press an item to edit it or backfill. Finish everything due and the header says you are done for the day; with nothing scheduled it says that rest is part of it too.</p>
 
 <strong>How are streaks counted</strong>
 <p>Only scheduled days count. A weekday habit skips the weekend without breaking, and vice versa. Not having checked in yet today will not reset your streak; it counts back from yesterday.</p>
 
 <strong>What do XP and gold do</strong>
-<p>XP raises your level, gold buys equipment on the Character tab. Longer streaks increase the reward per check-in, capped at double.</p>
+<p>XP raises your level, gold buys equipment on the Character tab. Longer streaks increase the reward per check-in, capped at double, which is reached at a 10-day streak.</p>
+
+<strong>Does equipment change how the app works</strong>
+<p><strong>Mostly no, and we would rather say so.</strong> Of the nine items, only the Bell (60 gold) affects behaviour: it plays a system tone when a focus session starts. The Glow makes your weapon brighter as your streak grows, which is purely visual. The other seven are an icon, a name and a line of description in the code; buying them changes nothing about how the app plays. Gold is a collection, not a power-up.</p>
+
+<strong>How does levelling work</strong>
+<p>Enough XP levels you up and shows a toast. Your rank is also displayed on the Character tab as text; it has no mechanical effect.</p>
 
 <strong>What if I stop a focus session early</strong>
-<p>You need at least five minutes for any reward. Stopping early pays 40 percent of the XP and no gold. Completing pays in full.</p>
+<p>You need at least five minutes for any reward at all. Stopping early pays 40 percent of the <strong>XP</strong> and <strong>zero gold</strong>. Completing pays in full: all the XP plus half the minutes in gold, at least 1. So starting and immediately stopping earns nothing.</p>
+
+<strong>What focus lengths are there</strong>
+<p>Four presets: 15, 25, 45 and 60 minutes, plus a count-up (no limit) toggle in the corner. <strong>In count-up mode the ring is full at 90 minutes</strong>; time keeps counting past that, but the ring does not grow.</p>
+
+<strong>Can I backfill a day</strong>
+<p>Yes, up to 7 days back. Backfilling runs earliest-first, and each day recalculates its own streak and multiplier. The option is in the long-press menu.</p>
 
 <strong>Why archive instead of delete</strong>
-<p>Both are available. Archiving keeps the check-in history, which suits a habit you are pausing. Deleting removes the history too, so it disappears from statistics. The editor offers both.</p>
+<p>Both are available. Archiving keeps the check-in history, which suits a habit you are pausing. Deleting removes the history too, so it disappears from statistics. The editor offers both, and archived items can be restored from Settings.</p>
+
+<strong>I checked in by mistake</strong>
+<p>Tap it again the same day to undo. Undo restores the exact XP and gold that were awarded, not an estimate.</p>
+
+<strong>How are the statistics calculated</strong>
+<p>The three ranges (this week, 30 days, 90 days) drive completion rate, total check-ins and the heatmap. <strong>Two things do not follow the range, and you should know which:</strong></p>
+<ul>
+  <li><strong>The focus bar chart shows at most the last 14 days</strong>: choose 30 or 90 and it still draws 14 bars</li>
+  <li><strong>The habit ranking ignores the selected range</strong> and counts every check-in you have ever made</li>
+</ul>
+<p>One more to flag: the card labelled longest streak shows the largest <strong>current</strong> streak among your active habits, not the longest one you have ever had.</p>
 
 <strong>Moving to a new phone</strong>
-<p>Export the JSON backup from Settings, then import it on the new device. Nothing syncs to the cloud automatically.</p>
+<p><strong>This version cannot do it, and we would rather not imply otherwise.</strong> Settings exports a full JSON save and a CSV of check-ins, but there is <strong>no import</strong>: the exported file cannot be read back into the app, there is no restore-from-file button, and the app is not registered as a handler for the file it exports. Keep the save, since it opens on a computer, but you will need to re-add your habits on the new phone.</p>
+
+<div class="warn">
+<strong>Why does Settings say it is for restoring on a new phone?</strong>
+<p>That is an old line inside the app, <strong>it does not match what this version actually does</strong>, and it disagrees with this page. It is a known defect and will be fixed before release. Until then, this page is the accurate one: export is one-way.</p>
+</div>
+
+<strong>Where do the exported files go</strong>
+<p>Export writes a copy into the app's temporary directory and then opens the system share sheet, so it goes wherever you send it. <strong>That temporary copy is not deleted afterwards</strong>; it stays until the system reclaims it or you delete the app. The app neither knows nor records where you sent it.</p>
 
 <strong>Where is my data</strong>
-<p>Only on this device. See the <a href="privacy.html">Privacy Policy</a>.</p>
+<p>One file: <code>Application Support/SelfQuest/database.json</code> in the sandbox, unencrypted plain-text JSON. No system settings store, no keychain, no iCloud sync. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<strong>Does it sync anywhere</strong>
+<p>No. No account, no server, no network requests of any kind, and nothing carries over automatically when you change devices.</p>
+
+<strong>Will it remind me to check in</strong>
+<p><strong>No.</strong> The app has never requested notification permission, sends no notifications, and never wakes in the background. This is a habit tracker, so most people assume otherwise, which is why it gets its own line. Use Reminders or Calendar for prompts.</p>
+
+<strong>What permissions does it need</strong>
+<p>None at all. No notifications, camera, microphone, photos, contacts, location, health or motion data, and no Face ID. The project declares no usage description of any kind.</p>
+
+<strong>Which devices are supported</strong>
+<p>iOS 17.0 or later. Portrait only on iPhone; all four orientations on iPad. The interface is in Chinese.</p>
 
 <strong>Reporting a problem</strong>
-<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a>.</p>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your device model, OS version and steps to reproduce. If a statistic looks wrong, say which range you are looking at; the two items above that ignore the range are the usual cause.</p>
 </div>
 
 

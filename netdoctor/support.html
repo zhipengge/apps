@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云网络医生 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #C0392B;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #FF7B6B;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>牧云网络医生 · 支持</h1>
+<p class="meta">NetDoctor — Support · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>它是干什么的？</strong>
+<p>菜单栏常驻的网络诊断工具。随时显示一个延迟数字，一键分层排查「到底断在哪一层」，并导出一份能直接发给别人的纯文本报告。<strong>只诊断，不修改</strong>——它不会改你的代理、DNS、路由或任何系统设置。</p>
+
+<strong>怎么用？</strong>
+<p>左键点菜单栏图标开面板，右键出菜单。面板有三个页签：诊断、历史、关于。按 Esc 关掉面板。菜单栏图标的位置会被记住，拖到哪下次就在哪。</p>
+
+<strong>菜单栏那个圆点和数字是什么？</strong>
+<p>圆点是当前状态，颜色就是「一眼看出通不通」。数字是延迟，等宽字体，<strong>每 10 秒更新一次</strong>。屏幕休眠时这个刷新会停掉，醒来立刻补一次。</p>
+
+<strong>五层分别是什么？</strong>
+<table>
+  <tr><th>层</th><th>它回答的问题</th></tr>
+  <tr><td>物理连接</td><td>网卡拿到地址了吗？还是只有 169.254 这种「没拿到 DHCP」的地址？</td></tr>
+  <tr><td>局域网网关</td><td>路由器和本机之间通不通？</td></tr>
+  <tr><td>DNS 解析</td><td>域名能不能解析成地址？是你配的 DNS 服务器没答，还是它答了但答错了？</td></tr>
+  <tr><td>公网出口</td><td>不经过 DNS、直连一个公网 IP，通不通？</td></tr>
+  <tr><td>关键节点</td><td>我这边是通的，那是不是只有某个服务不通？</td></tr>
+</table>
+
+<strong>为什么叫「分层」？直接说通不通不就行了？</strong>
+<p>因为「网断了」这三个字对排查没有用。分层之后结论是具体的：断在网关说明是 Wi-Fi 或路由器的问题；<strong>DNS 层断但公网层通</strong>说明是 DNS 服务器的问题；只有关键节点不通而公网层是通的，说明问题不在你这边，是那个服务自己挂了。这三种情况的处理方式完全不同。</p>
+
+<strong>它会不会冤枉我的路由器？</strong>
+<p>不会，这是专门处理过的一条。中间路由器经常不回应或限速 ICMP，所以<strong>「网关不搭理我」不等于「网关坏了」</strong>。如果网关没回 ICMP，但公网直连是通的，那网关会被判为「通」并附一句说明。反过来不成立：「只有 DNS 通、公网直连不通」时不会因此改判网关。</p>
+<p>同一条道理的另一个用法：<strong>丢包和延迟只有持续到目标才算数</strong>，所以它不测中间跳，只测两端。去掉这条推理，你会看到「断在网关」而实际是运营商的问题——那是这个工具最不能犯的错。</p>
+
+<strong>某一层显示「未检测」是什么意思？</strong>
+<p>意思是<strong>没测</strong>，不是<strong>断了</strong>。层与层之间会截断：物理层不通的话，后面四层就没有意义了，会标成「未检测」而不是「不通」。</p>
+<p>这两件事必须分开——「没测」和「测出来是坏的」是完全不同的结论，混在一起会把人引向错误的排查方向。</p>
+
+<strong>ICMP 被屏蔽了怎么办？</strong>
+<p>网关那一层会改用 TCP 兜底：如果 ICMP 没回应，会再试几个常用端口。<strong>连接被拒绝（RST）同样证明主机是活的</strong>，所以「对方拒绝了我」也会被正确地判成「通」。</p>
+
+<strong>判定慢和快的分界线在哪？</strong>
+<table>
+  <tr><th>层</th><th>超过这个值算偏慢</th><th>为什么是这个数</th></tr>
+  <tr><td>局域网网关</td><td>30 毫秒</td><td>再高说明 Wi-Fi 信号或交换机已经在拖后腿</td></tr>
+  <tr><td>DNS 解析</td><td>300 毫秒</td><td>再高，网页会明显「卡一下才开始加载」</td></tr>
+  <tr><td>公网出口</td><td>200 毫秒</td><td>再高，视频会议就会开始丢字</td></tr>
+</table>
+<p>菜单栏那个数字的变色点比整层判定更严一点（150 和 400 毫秒），因为菜单栏是常驻的，颜色老在变会让人分心，所以要真的差了才变色。</p>
+
+<strong>报告能直接发给别人吗？</strong>
+<p>能，两种形式：</p>
+<ul>
+  <li><strong>完整报告</strong>：一份纯文本 <code>.txt</code>，由你在系统保存面板里选位置，几十行，给 IT 或运维看。</li>
+  <li><strong>状态卡</strong>：一段排版过的短文本，可以直接发在聊天里。</li>
+</ul>
+<p>两种都是给人看的排版，不是给机器解析的日志。</p>
+
+<strong>历史里存了什么？</strong>
+<p>最近 50 次的<strong>轻量记录</strong>：时间、每一层的结论、关键耗时。<strong>不保存完整报告正文</strong>——一份报告几十行，50 条就是几百 KB，对常驻应用是负担。可以单条删除，也可以一次清空。</p>
+
+<strong>抬头那个徽章为什么有时候显示「未测」？</strong>
+<p>因为它<strong>只反映这个进程里跑过的诊断</strong>，不从历史里捞最近一条充当「当前状态」。历史里那条可能是三天前的，把过期结论当成现在的状态显示，比老实说「未测」糟得多。<strong>这不是 bug，是刻意的。</strong></p>
+<p>「未测」和「检测中」都不是测出来的结论，所以措辞上也不会写成「未知」——那会让人以为坏了。</p>
+<p>历史页回答的是另一个问题：「上次什么时候出的问题」。它和抬头徽章是两套数据，不要混着看。</p>
+
+<strong>徽章下面那行小字是什么？</strong>
+<p>是<strong>结论的新鲜度</strong>（「刚刚测完」「5 分钟前测完」），不是诊断耗时。诊断耗时在结论卡里（「总用时 172ms」）。这两个数字长得像，但一个说的是「多久以前测的」，一个说的是「花了多久」。要发报告给别人时，别把这两个说反了。</p>
+
+<strong>它会不会改我的网络设置？</strong>
+<p>不会，而且这一条是<strong>结构性</strong>的，不是承诺：整个工程里不允许出现任何写系统网络配置的 API——没有代理开关、没有 DNS 切换、没有 hosts 编辑，连「顺手改一下」的入口都不存在。这条由一个脚本机械检查：在全部源文件里搜 23 个写入型 API，再反查所有系统网络配置调用是否都在 9 个只读接口的名单里。这个检查每次跑测试都会执行。</p>
+
+<strong>它联网吗？会不会把我的数据传走？</strong>
+<p>会联网，但方式很有限：对外只有三种动作，全部只读——DNS 查询、TCP 连接（发个 SYN 就关，应用层一个字节都不发）、ICMP 回声。<strong>它没有 HTTP 客户端，不下载任何网页，不上传任何东西，也没有我们的服务器。</strong> 探测不带账号、不带设备标识符、不带任何业务数据，所以「连了谁」不构成隐私问题。详细的目标清单和读取范围见<a href="privacy.html">隐私政策</a>。</p>
+
+<strong>需要什么权限吗？</strong>
+<p><strong>不需要任何系统权限，也不会弹出授权框。</strong> 沙盒授权一共只有两条：沙盒本身，和出站网络。不写文件（导出走系统的保存面板）、不读你的用户目录、不要完全磁盘访问、没有 App Group。ICMP 用的是非特权模式，<strong>不需要管理员权限</strong>，也不装任何后台服务。它不需要辅助功能，也不需要输入监控。</p>
+
+<strong>它占资源吗？</strong>
+<p>菜单栏应用常年不退出，所以占用是设计的一部分：<strong>10 秒一次 TCP 握手</strong>（每天几千个 SYN，CPU 占用测不出来），屏幕休眠时停跑，探测永远不在主线程，关键节点并发上限 4 个，历史有 50 条的硬上限。</p>
+
+<strong>支持哪些系统？</strong>
+<p>需要 macOS 13.0 或更高版本。它是菜单栏应用，不占 Dock 图标。</p>
+</div>
+
+<h3>已知不足</h3>
+<p>以下几条是作者自己标注的，写在这里而不是藏起来：</p>
+<ul>
+  <li><strong>真实的断网场景没有人工过一遍。</strong> 这是最该补的一条：拔网线、关 Wi-Fi、路由器断电、只在信号差的地方待着——这几种情况下五层的结论是否都说得通，<strong>目前还没有人手工验过。现有的结论都来自网络正常时的几次真跑。</strong> 如果你正好遇到断网，用它跑一次然后把报告发出来，会非常有价值。</li>
+  <li><strong>右键菜单和 Esc 关面板没有做过自动化核对</strong>（那需要辅助功能授权，本 App 刻意不申请），只人工点过。</li>
+  <li><strong>长跑内存曲线没有观察过</strong>：菜单栏应用连着跑一周之后的表现，是这类应用的老问题，还没有数据。</li>
+</ul>
+<p>App 的功能是完整的，没有半成品；上面说的是「没有被验证到的部分」，不是「没做完的部分」。</p>
+
+<div class="faq">
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交。如果方便，把导出的报告贴上来（它本来就是给人看的排版），并说明当时是 Wi-Fi 还是有线、有没有连 VPN。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>What is it for</strong>
+<p>A network diagnostic tool that lives in the menu bar. It shows a latency figure at all times, works out <strong>which layer is broken</strong> in one action, and exports a plain-text report you can send to someone. <strong>It diagnoses and never modifies</strong>: it will not change your proxy, DNS, routes or any other system setting.</p>
+
+<strong>How do I use it</strong>
+<p>Left-click the menu bar icon to open the panel, right-click for the menu. The panel has three tabs: diagnosis, history and about. Escape closes it. The icon's position is remembered, so it stays where you put it.</p>
+
+<strong>What are the dot and the number in the menu bar</strong>
+<p>The dot is the current state, and its colour is how you tell at a glance whether things are working. The number is latency, in a monospaced face, <strong>updated every ten seconds</strong>. That refresh stops while the screen sleeps and catches up on wake.</p>
+
+<strong>What are the five layers</strong>
+<table>
+  <tr><th>Layer</th><th>The question it answers</th></tr>
+  <tr><td>Physical link</td><td>Does the interface have an address, or only a 169.254 address meaning DHCP never completed?</td></tr>
+  <tr><td>Local gateway</td><td>Is the router reachable from this machine?</td></tr>
+  <tr><td>DNS resolution</td><td>Does the name resolve, and if not, was it that your DNS server did not answer, or that it answered wrongly?</td></tr>
+  <tr><td>Public internet</td><td>Connecting directly to a public IP without DNS, does it work?</td></tr>
+  <tr><td>Key nodes</td><td>My side is fine, so is it just one particular service that is down?</td></tr>
+</table>
+
+<strong>Why layers? Why not just say whether it works</strong>
+<p>Because "the network is down" is useless for working out what to do. With layers the answer is specific: a break at the gateway means Wi-Fi or the router; <strong>a break at DNS while the public layer works</strong> means the DNS servers; only a key node failing while the public layer works means the problem is not on your side at all, and that service is down. Those three call for completely different responses.</p>
+
+<strong>Will it wrongly blame my router</strong>
+<p>No, and that case was handled deliberately. Intermediate routers often ignore or rate-limit ICMP, so <strong>"the gateway ignored me" is not the same as "the gateway is broken"</strong>. If the gateway does not answer ICMP but the direct public connection works, the gateway is reported as healthy with an explanatory note. The reverse does not hold: if only DNS works and the direct public connection does not, that does not change the gateway's verdict.</p>
+<p>The same principle applies elsewhere: <strong>packet loss and latency only count if they persist all the way to the target</strong>, so it does not probe intermediate hops, only the two ends. Drop that reasoning and you would see "broken at the gateway" when the fault is really with your provider, which is the worst mistake this tool could make.</p>
+
+<strong>What does "not tested" on a layer mean</strong>
+<p>It means <strong>not tested</strong>, not <strong>broken</strong>. Layers truncate: if the physical link is down, the four layers after it are meaningless and are marked "not tested" rather than "failed".</p>
+<p>Those two must stay distinct. "Not tested" and "tested and broken" lead you to different places, and conflating them sends people down the wrong path.</p>
+
+<strong>What if ICMP is blocked</strong>
+<p>The gateway layer falls back to TCP: if ICMP gets no answer, it tries a few common ports. <strong>A refused connection (RST) also proves the host is alive</strong>, so "the other end rejected me" is still correctly reported as reachable.</p>
+
+<strong>Where is the line between slow and fine</strong>
+<table>
+  <tr><th>Layer</th><th>Slow above</th><th>Why that number</th></tr>
+  <tr><td>Local gateway</td><td>30 ms</td><td>Beyond that, Wi-Fi signal or a switch is already dragging</td></tr>
+  <tr><td>DNS resolution</td><td>300 ms</td><td>Beyond that, pages visibly stall before they start loading</td></tr>
+  <tr><td>Public internet</td><td>200 ms</td><td>Beyond that, video calls start dropping syllables</td></tr>
+</table>
+<p>The menu bar figure changes colour at stricter points (150 and 400 ms), because the menu bar is always visible and a colour that keeps flipping is a distraction: it should only change when things really changed.</p>
+
+<strong>Can I send the report to someone</strong>
+<p>Yes, in two forms:</p>
+<ul>
+  <li><strong>The full report</strong>: a plain-text <code>.txt</code> file at a location you choose in a system save panel, a few dozen lines, intended for IT or operations.</li>
+  <li><strong>A status card</strong>: a short formatted block of text you can paste straight into a chat.</li>
+</ul>
+<p>Both are laid out for people to read, not as machine-parsed logs.</p>
+
+<strong>What does the history store</strong>
+<p>A <strong>lightweight record</strong> of the last 50 runs: timestamp, the verdict for each layer, and key timings. <strong>The full report text is not stored</strong>, because at a few dozen lines each, 50 of them would run to hundreds of kilobytes, which is a burden for something that never quits. Entries can be deleted individually or cleared at once.</p>
+
+<strong>Why does the badge sometimes say "not tested"</strong>
+<p>Because it <strong>reflects only the diagnostics run in this process</strong> and does not reach into history for the most recent one to present as "current state". That stored entry might be three days old, and showing a stale conclusion as the present state is far worse than honestly saying nothing has been tested. <strong>This is deliberate, not a bug.</strong></p>
+<p>Neither "not tested" nor "testing" is a measured conclusion, so the wording avoids "unknown" as well, which would suggest something is broken.</p>
+<p>The history tab answers a different question: when did it last go wrong. It and the badge are two separate sets of data and should not be read as one.</p>
+
+<strong>What is the small line under the badge</strong>
+<p>It is the <strong>freshness of the conclusion</strong> ("just finished", "finished 5 minutes ago"), not how long the diagnostic took. The duration is in the result card ("total 172 ms"). The two numbers look alike, but one says how long ago and the other says how long it took. Before sending a report to someone, do not mix them up.</p>
+
+<strong>Will it change my network settings</strong>
+<p>No, and this is <strong>structural</strong> rather than a promise: no API that writes system network configuration is permitted anywhere in the project. There is no proxy switch, no DNS switcher, no hosts editor, and no "while I am here, let me just fix that" entry point. A script checks this mechanically, searching every source file for 23 write-type APIs and then verifying that every system network configuration call is one of nine read-only functions. That check runs on every test run.</p>
+
+<strong>Does it go online, and can my data leak</strong>
+<p>It does go online, in a very limited way: three outbound actions, all read-only, being a DNS query, a TCP connection (send a SYN and close, with not one byte at the application layer) and an ICMP echo. <strong>It has no HTTP client, downloads no pages, uploads nothing, and there is no server of ours.</strong> The probes carry no account, no device identifier and no application data, so who it connected to is not a privacy question. The full target list and everything it reads are in the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<strong>What permissions does it need</strong>
+<p><strong>None, and it never shows a permission prompt.</strong> The sandbox declares exactly two things: the sandbox itself and outbound networking. It writes no files (export goes through a system save panel), does not touch your home folder, does not ask for Full Disk Access, and has no App Group. ICMP is unprivileged, so <strong>no administrator rights are needed</strong> and no background service is installed. It needs no Accessibility and no Input Monitoring.</p>
+
+<strong>Does it use many resources</strong>
+<p>A menu bar app never quits, so its footprint is part of the design: <strong>one TCP handshake every ten seconds</strong> (a few thousand SYNs a day, with no measurable CPU cost), stopped while the screen sleeps, probes never on the main thread, key-node concurrency capped at four, and a hard limit of 50 history records.</p>
+
+<strong>Which systems are supported</strong>
+<p>macOS 13.0 or later. It is a menu bar app with no Dock icon.</p>
+</div>
+
+<h3>Known gaps</h3>
+<p>These are the author's own notes, listed here rather than hidden:</p>
+<ul>
+  <li><strong>Real disconnection scenarios have not been walked through by hand.</strong> This is the most important gap: whether the five layers all reach sensible conclusions when you unplug the cable, switch off Wi-Fi, power down the router, or sit somewhere with a weak signal <strong>has not been verified manually. Every current conclusion comes from a handful of real runs on a working network.</strong> If you happen to be having connection trouble, running this and sending the report would be genuinely useful.</li>
+  <li><strong>The right-click menu and closing the panel with Escape have no automated check</strong>, since that would need Accessibility permission, which this app deliberately does not request. They have only been clicked by hand.</li>
+  <li><strong>No long-run memory curve has been observed.</strong> How a menu bar app behaves after a week of continuous running is the classic weak point for this kind of app, and there is no data yet.</li>
+</ul>
+<p>The app is feature complete with nothing half-finished; the above describes what has not been verified, not what has not been built.</p>
+
+<div class="faq">
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a>. If you can, paste the exported report (it is laid out for people anyway) and mention whether you were on Wi-Fi or Ethernet and whether a VPN was connected.</p>
+</div>
+
+
+<footer>牧云网络医生 NetDoctor · 只诊断，不修改</footer>
+</body>
+</html>

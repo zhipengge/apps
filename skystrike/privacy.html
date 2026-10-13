@@ -8,15 +8,15 @@
   :root {
     color-scheme: light dark;
     --fg: #1c1c1e; --fg-dim: #6e6e73;
-    --bg: #ffffff; --bg-soft: #f5f5f7;
-    --accent: #0089A7;
+    --bg: #ffffff; --bg-soft: #eef7f9;
+    --accent: #0b6f86;
     --border: rgba(0,0,0,.08);
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --fg: #f5f5f7; --fg-dim: #98989d;
-      --bg: #1c1c1e; --bg-soft: #2c2c2e;
-      --accent: #00E5FF;
+      --bg: #0a1416; --bg-soft: #12242a;
+      --accent: #4fd8f0;
       --border: rgba(255,255,255,.1);
     }
   }
@@ -58,83 +58,153 @@
 
 
 <h1>空中绞杀 · 隐私政策</h1>
-<p class="meta">SkyStrike — Privacy Policy · 最后更新 / Last updated: 2026-10-10</p>
+<p class="meta">SkyStrike — Privacy Policy · 最后更新 / Last updated: 2026-10-12</p>
 
 <h2 id="zh">中文</h2>
 
-<p class="lead"><strong>空中绞杀不收集任何数据。</strong> 没有账号，没有服务器，App 也不发起任何网络请求。你的星数、金币和每一局的记录只写在这台设备的沙盒里。</p>
+<p class="lead"><strong>空中绞杀不收集任何数据，代码里也没有一行网络代码。</strong> 这句话是可核对的：全部 30 个源文件只 import 了 Foundation、SwiftUI、UIKit、AVFoundation、StoreKit 和 Observation 六个系统框架，没有链接任何网络库；工程里没有 SPM 包、没有第三方库，框架构建阶段是空的。构建产物里搜不到 CFNetwork、Network.framework、WebKit、GameKit，未定义符号里也搜不到 URLSession 或 socket。你的星数、金币和每一局的记录只写在这台设备上。</p>
 
 <h3>我们处理什么、存在哪</h3>
+<p>四个键，全部在设备沙盒的偏好设置里，全部在本机读写：</p>
 <table>
-  <tr><th>数据</th><th>用途</th><th>位置</th></tr>
-  <tr><td>存档：累计星数、金币、各模式的最高分、最远波数、通关状态</td><td>记录进度、解锁机体</td><td>设备沙盒 UserDefaults</td></tr>
-  <tr><td>累计数据：总击杀数、总游玩局数、总时长</td><td>设置页的统计展示</td><td>设备沙盒</td></tr>
-  <tr><td>上次选择的机体、音效开关</td><td>恢复上次的使用状态</td><td>设备沙盒</td></tr>
-  <tr><td>一局的结算数据：分数、星级、击杀、受伤次数、存活时间</td><td>结算页展示、生成战绩卡图片</td><td>仅本机内存；只有你点「分享战绩」时才渲染成图片</td></tr>
+  <tr><th>键</th><th>里面是什么</th></tr>
+  <tr><td><code>skystrike.save.v1</code></td><td>进度：累计星数、金币、总击杀、总局数、总游玩时长；战役 / 无尽 / Boss Rush 三个模式各自的最高分、最远波数、最高星数、局数与通关标记；上次选的机体</td></tr>
+  <tr><td><code>skystrike.run.v1</code></td><td><strong>一局没打完的现场</strong>：分数、波次、用时、击杀、受伤次数、还剩的命数与火力等级、场上余下的子弹 / 敌人 / 障碍 / 道具，连随机数状态都在里面。留最多 3 天，之后失效</td></tr>
+  <tr><td><code>skystrike.sound.enabled</code></td><td>音效开关</td></tr>
+  <tr><td><code>skystrike.intro.seen.v1</code></td><td>开场演出看过没有</td></tr>
 </table>
 
-<p>以上数据全部在本机读写，<strong>不会离开设备</strong>。本 App 不使用 iCloud 或任何云同步。</p>
+<p>就这四个。<strong>没有别的键，也没有别的存储。</strong> 以上内容全部<strong>不会离开设备</strong>：本 App 不使用 iCloud，也不使用任何云同步。</p>
+
+<p>这些内容里没有任何可以指认到人的东西：没有姓名、邮箱、电话、位置、设备标识符或广告标识符，也没有账号 ID——因为这个 App 根本没有账号。App 里没有让你输入文字的地方。</p>
+
+<p><strong>关于那份「没打完的现场」要多说一句：</strong> 它不是只活在内存里的。每次 App 退到后台都会把它写进上面那个键，所以它确实落到了磁盘上，最多留 3 天。它仍然只在这台设备上，但它比「当前这一局的临时数据」要结实一点，这里如实写出来。它也会在你打完一局、或者开新一局时被清掉。</p>
+
+<h3>没有文件，也没有数据库</h3>
+<p>工程里没有 <code>FileManager</code> 的任何调用，App 不往磁盘上写任何文件。没有 SwiftData、CoreData、Keychain、iCloud、CloudKit，也没有偏好设置之外的任何存储方式。</p>
 
 <h3>网络</h3>
-<p><strong>App 不发起任何网络请求。</strong> 飞行模式下全部功能可用，包括内购的恢复购买（由系统商店进程处理）。</p>
+<p><strong>App 进程里没有任何网络代码，它自己也从不发起网络请求。</strong> 飞行模式下全部内容可用：40 波战役、三种模式、四种机体、全部音效，都是从 App 包内读的，没有一处需要下载。</p>
+<p>有一处必须说准：<strong>购买完整版时，App 会调用系统的 StoreKit 接口去问一句「这个 Apple ID 买过没有」。</strong> 这一问会由系统的商店进程去连 Apple 的服务器，不是由本 App 的进程去连的——App 里没有 URLSession，也没有 CFNetwork。所以准确的说法是「没有网络代码」，而不是「设备上永远不会发生网络通信」。恢复购买同理：那一步必须联网，离线时它会失败。</p>
 
 <h3>完整版购买</h3>
-<p>完整版是一次性内购，交易全程由 Apple 通过 App Store 处理。App 只向系统查询「这个 Apple ID 是否已购买」，<strong>拿不到也存不下</strong>你的支付方式、账单信息或 Apple ID。购买记录保存在 Apple 那边，所以换设备后用「恢复购买」就能找回，不需要在本 App 里注册任何账号。</p>
+<p>完整版是一次性内购（非消耗型），交易全程由 Apple 通过 App Store 处理。App 只向系统查询这个 Apple ID 是否已经购买，<strong>拿不到也存不下</strong>你的支付方式、账单信息或 Apple ID。购买记录保存在 Apple 那边，所以换设备后用「恢复购买」就能找回，不需要在本 App 里注册任何账号。</p>
+<p>还有一件事要如实说明：<strong>如果商品信息拉不到（包括离线、或者商品还没在 App Store Connect 里配好），App 会临时开放全部内容。</strong> 这是刻意这么写的——宁可暂时收不到钱，也不让玩家打开是个残废版。</p>
+
+<h3>权限</h3>
+<p><strong>本 App 不申请任何权限。</strong> 它不读取麦克风、相机、相册、通讯录、位置、健康数据或日历，不发送通知，也不申请任何追踪许可。App 的属性列表里没有任何权限用途描述，代码里也没有 <code>UNUserNotificationCenter</code> 或相册相关的调用，所以 iOS 根本不会为它弹出权限询问。</p>
+
+<h3>声音</h3>
+<p><strong>9 种音效全部是运行时用代码算出波形合成的，App 里没有一个音频文件。</strong> 音频会话的模式是环境音（<code>.ambient</code>）并明确打开了「与其他音频混合」，所以它<strong>既跟随系统静音键，也不会打断你正在听的音乐</strong>；被打断后会自动恢复。静音键拨到静音时，游戏默认不出声。<strong>它不录音，也不使用麦克风。</strong></p>
+
+<h3>震动</h3>
+<p><strong>本 App 没有任何震动反馈。</strong> 工程里 <code>CoreHaptics</code>、<code>UIImpactFeedbackGenerator</code>、<code>UINotificationFeedbackGenerator</code> 全部零命中。</p>
+
+<h3>分享：唯一一条数据出口，而且由你按下去</h3>
+<p>结算页有一个「分享战绩」按钮。点下去时，App 在本机把这一局的成绩画成一张图，连同下面这句话，一起交给系统的分享面板：</p>
+<p><code>我在《空中绞杀》打出 N 分，第 M 波。</code></p>
+<p>图片内容就是结算页上那几项：通关或战败、分数、模式与波次、机体、三星、击杀、受伤、存活时间、金币，页脚一行「空中绞杀 · 竖屏弹幕射击 · 完全离线」。</p>
+<p>交给系统之后，App 就不知道也不记录你选了哪个应用。<strong>不点这个按钮，什么都不会离开设备。</strong></p>
+<p>另外：App 不申请相册权限，代码里也没有任何相册相关的调用。如果你在系统分享面板里选了「存储图像」，那一步是系统自己完成的，不由本 App 完成。</p>
+
+<h3>关于页的两个链接</h3>
+<p>设置里的「隐私政策」和「技术支持」是两条链接，点下去是把网址交给系统去用 Safari 打开，<strong>开网页的是 Safari，不是本 App</strong>。App 自己不会去取这两个页面。工程里字面上的网址就这两个。</p>
+
+<h3>数据删除</h3>
+<p>设置页有「重置全部进度」，点下去会清空星数、金币、最高分、累计统计与已解锁的机体，也就是把 <code>skystrike.save.v1</code> 删掉。</p>
+<p>要说准的是：<strong>它不会顺手清掉另外三个键。</strong> 音效开关、开场演出标记会留着，那份「没打完的现场」也可能还在——所以重置之后，菜单里的「继续」有时还能点。这不是隐私问题（都还在这台设备上），但它跟按钮的名字不完全一致，这里如实写明。想连这三个一起清掉，删除 App 是最干净的做法。</p>
+<p><strong>删除 App 会清空全部四个键。</strong></p>
+
+<h3>设备备份</h3>
+<p>说白了：那四个键就在 App 的偏好设置里。如果你在系统里开了 iCloud 备份或电脑备份，那份备份会包含它们，和它包含你其他 App 的数据一样。那份备份由 Apple 保管，<strong>我们碰不到它</strong>；本 App 自己不会把任何东西传到任何地方。</p>
 
 <h3>我们不做的事</h3>
 <ul>
   <li>不要求注册或登录</li>
-  <li>不收集姓名、邮箱、位置、设备标识符</li>
-  <li>不接入广告、分析或追踪 SDK</li>
-  <li>不把存档上传或同步到任何服务器</li>
-  <li>不读取通讯录、相册、麦克风、摄像头、位置</li>
+  <li>不收集姓名、邮箱、位置、设备标识符或广告标识符</li>
+  <li>不接入广告、分析、崩溃上报或追踪 SDK（本 App 不含任何第三方代码，工程里没有任何依赖包）</li>
+  <li>不录音，不读取麦克风、相册、通讯录、位置</li>
+  <li>不发送通知，也不申请任何系统权限</li>
+  <li>不使用 GameKit：没有排行榜、没有成就上报、没有云端存档</li>
   <li>不把你的数据共享给任何第三方</li>
 </ul>
 
-<h3>分享</h3>
-<p>分享完全由你主动触发。点「分享战绩」时，App 在本机把这一局的结果渲染成一张图片，交给系统分享面板，由你选择发给谁。App 不知道也不记录你选了哪个应用。</p>
-
-<h3>数据删除</h3>
-<p>设置页有「重置全部进度」，会清空星数、金币、最高分与已解锁的机体。删除 App 即清除全部数据。</p>
+<h3>儿童</h3>
+<p>本 App 不收集任何人的数据，当然也不收集儿童的数据。它没有账号、没有聊天、没有用户生成内容，也没有任何在 App 内浏览网页的功能。游戏内容是虚构的太空空战，不涉及任何真实人物或真实事件。</p>
 
 <h2 id="en">English</h2>
 
-<p class="lead"><strong>SkyStrike collects no data.</strong> No account, no server, and the app makes no network requests. Your stars, coins, and run history live only in the sandbox on this device.</p>
+<p class="lead"><strong>SkyStrike collects no data, and there is no networking code in it.</strong> That claim is checkable: all 30 source files import six system frameworks only (Foundation, SwiftUI, UIKit, AVFoundation, StoreKit and Observation), no networking library is linked, the project has no Swift packages and no third-party libraries and its frameworks build phase is empty. The built app links no CFNetwork, no Network.framework, no WebKit and no GameKit, and its undefined symbols contain no URLSession and no socket. Your stars, coins and run history are written on this device and nowhere else.</p>
 
 <h3>What the app handles, and where</h3>
+<p>Four keys, all in the app sandbox's preferences, all read and written on-device:</p>
 <table>
-  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
-  <tr><td>Save data: total stars, coins, best score and furthest wave per mode, campaign clear</td><td>Track progress and unlock ships</td><td>App sandbox, UserDefaults</td></tr>
-  <tr><td>Totals: kills, runs played, time played</td><td>Shown on the Settings screen</td><td>App sandbox</td></tr>
-  <tr><td>Last ship selected, sound toggle</td><td>Restore your last state</td><td>App sandbox</td></tr>
-  <tr><td>Per-run results: score, stars, kills, hits taken, survival time</td><td>Result screen and the score card image</td><td>In memory only; rendered into an image when you tap Share</td></tr>
+  <tr><th>Key</th><th>What is in it</th></tr>
+  <tr><td><code>skystrike.save.v1</code></td><td>Progress: total stars, coins, total kills, total runs, total play time; best score, furthest wave, best stars, runs and cleared flag for each of Campaign, Endless and Boss Rush; the last ship you picked</td></tr>
+  <tr><td><code>skystrike.run.v1</code></td><td><strong>A run in progress</strong>: score, wave, elapsed time, kills, hits taken, remaining lives and firepower level, the bullets, enemies, barriers and power-ups still on the field, and the random-number state. Kept for up to 3 days, then it expires</td></tr>
+  <tr><td><code>skystrike.sound.enabled</code></td><td>Your sound setting</td></tr>
+  <tr><td><code>skystrike.intro.seen.v1</code></td><td>Whether you have watched the intro</td></tr>
 </table>
 
-<p>All of it is read and written on-device and <strong>never leaves it</strong>. There is no iCloud or cloud sync of any kind.</p>
+<p>That is all four. <strong>No other keys, and no other storage.</strong> None of it <strong>ever leaves the device</strong>: there is no iCloud and no cloud sync of any kind.</p>
+
+<p>None of it can be tied to a person: no name, email, phone number, location, device identifier or advertising identifier, and no account ID, because the app has no accounts. There is nowhere in the app to type anything.</p>
+
+<p><strong>One clarification about that run in progress:</strong> it does not live only in memory. Every time the app goes to the background it is written to the key above, so it does reach the disk, and it stays for up to 3 days. It is still on this device alone, but it is more durable than "temporary data for the current run", so it is spelled out here. It is cleared when you finish a run or start a new one.</p>
+
+<h3>No files, and no database</h3>
+<p>The project makes no use of <code>FileManager</code> at all and the app writes no files to disk. There is no SwiftData, CoreData, Keychain, iCloud or CloudKit, and no storage mechanism beyond preferences.</p>
 
 <h3>Network</h3>
-<p><strong>The app makes no network requests.</strong> Every feature works in Airplane Mode, including Restore Purchases, which the system store process handles.</p>
+<p><strong>There is no networking code in the app process, and the app itself never makes a network request.</strong> Everything works in Airplane Mode: all 40 campaign waves, all three modes, all four ships and every sound are read from inside the app bundle; nothing is ever downloaded.</p>
+<p>One thing has to be stated precisely: <strong>when you buy the full version, the app calls the system's StoreKit interface to ask whether this Apple ID already owns it.</strong> That question is put to Apple's servers by the system's store process, not by this app's process, which has no URLSession and no CFNetwork. So the accurate claim is "no networking code", not "no network traffic can ever occur on the device". Restore Purchases is the same: it requires a connection, and it fails when you are offline.</p>
 
 <h3>The full version purchase</h3>
-<p>The full version is a one-time purchase handled entirely by Apple through the App Store. The app only asks the system whether this Apple ID already owns it, and <strong>never sees or stores</strong> your payment method, billing details, or Apple ID. The purchase record lives with Apple, so Restore Purchases brings it back on a new device with no account to create here.</p>
+<p>The full version is a one-time, non-consumable purchase handled entirely by Apple through the App Store. The app only asks the system whether this Apple ID already owns it, and <strong>never sees or stores</strong> your payment method, billing details or Apple ID. The purchase record lives with Apple, so Restore Purchases brings it back on a new device with no account to create here.</p>
+<p>One more thing, stated plainly: <strong>if the product information cannot be loaded, including offline or before the product is configured, the app temporarily unlocks everything.</strong> That is deliberate: better to briefly give the game away than to hand a player a broken demo.</p>
+
+<h3>Permissions</h3>
+<p><strong>The app requests no permissions.</strong> It does not touch the microphone, camera, photo library, contacts, location, health data or calendar, it sends no notifications, and it asks for no tracking permission. The app's property list declares no usage descriptions, and there are no notification or photo-library calls in the code, so iOS has nothing to prompt you about.</p>
+
+<h3>Sound</h3>
+<p><strong>All 9 sound effects are synthesized from waveforms computed in code at runtime; the app contains no audio files.</strong> The audio session runs in ambient mode with mixing with other audio explicitly enabled, so it <strong>respects the silent switch and will not interrupt music you are listening to</strong>; it also recovers after an interruption. <strong>It does not record and does not use the microphone.</strong></p>
+
+<h3>Haptics</h3>
+<p><strong>The app has no haptics at all.</strong> There are zero references to <code>CoreHaptics</code>, <code>UIImpactFeedbackGenerator</code> or <code>UINotificationFeedbackGenerator</code> anywhere in the project.</p>
+
+<h3>Sharing: the one exit, and you press the button</h3>
+<p>The result screen has a Share button. When you tap it, the app draws that run into an image on-device and hands it, along with this line, to the system share sheet:</p>
+<p><code>I scored N in SkyStrike, wave M.</code></p>
+<p>The image carries what the result screen carries: win or loss, score, mode and wave, ship, three stars, kills, hits taken, survival time, coins, and a footer reading "空中绞杀 · 竖屏弹幕射击 · 完全离线".</p>
+<p>Once it is handed over, the app neither knows nor records which destination you picked. <strong>If you never tap that button, nothing leaves the device.</strong></p>
+<p>One more note: the app requests no photo-library permission and contains no photo-library calls. If you choose "Save Image" in the system share sheet, that step is performed by the system, not by this app.</p>
+
+<h3>The two links on the About card</h3>
+<p>The Privacy Policy and Support rows in Settings are links: tapping one hands the address to the system, which opens it in Safari. <strong>Safari fetches that page, not this app.</strong> The app never retrieves them itself. Those two addresses are the only literal URLs in the project.</p>
+
+<h3>Deletion</h3>
+<p>Settings offers Reset All Progress. It clears stars, coins, best scores, accumulated totals and unlocked ships, which means deleting <code>skystrike.save.v1</code>.</p>
+<p>To be precise: <strong>it does not clear the other three keys.</strong> The sound setting and the intro flag stay, and the run in progress may stay too, so the Continue button in the menu can still work after a reset. That is not a privacy matter (all of it is still on this device), but it does not match the button's name exactly, so it is stated here. Deleting the app is the clean way to clear all three as well.</p>
+<p><strong>Deleting the app clears all four keys.</strong></p>
+
+<h3>Device backups</h3>
+<p>Plainly: those four keys live in the app's preferences. If you have iCloud Backup or computer backups enabled, that backup includes them, the same way it includes data from your other apps. That backup is held by Apple and <strong>we cannot reach it</strong>; the app itself sends nothing anywhere.</p>
 
 <h3>What we do not do</h3>
 <ul>
   <li>No account or sign-in</li>
-  <li>No collection of name, email, location, or device identifiers</li>
-  <li>No ads, analytics, or tracking SDKs</li>
-  <li>No upload or sync of your save data</li>
-  <li>No access to Contacts, Photos, Microphone, Camera, or Location</li>
+  <li>No collection of name, email, location, device identifiers or advertising identifiers</li>
+  <li>No ads, analytics, crash reporting or tracking SDKs (the app contains no third-party code at all, and the project has no package dependencies)</li>
+  <li>No recording and no microphone, photos, contacts or location access</li>
+  <li>No notifications, and no permission requests of any kind</li>
+  <li>No GameKit: no leaderboards, no achievement reporting, no cloud saves</li>
   <li>No sharing with third parties</li>
 </ul>
 
-<h3>Sharing</h3>
-<p>Sharing only happens when you trigger it. When you tap Share, the app renders that run into an image on-device and hands it to the system share sheet, where you pick the destination. The app neither knows nor records which app you chose.</p>
-
-<h3>Deletion</h3>
-<p>Settings offers Reset All Progress, which clears stars, coins, best scores, and unlocked ships. Deleting the app clears everything.</p>
+<h3>Children</h3>
+<p>The app collects no one's data, children included. It has no accounts, no chat, no user-generated content and no in-app web browsing. The game is fictional space combat and refers to no real person or event.</p>
 
 
-<footer>空中绞杀 SkyStrike · 竖屏弹幕射击</footer>
+<footer>空中绞杀 SkyStrike · 竖屏单手弹幕射击</footer>
 </body>
 </html>

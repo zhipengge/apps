@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云工作台 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #C77A2E;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #E9A961;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>牧云工作台 · 支持</h1>
+<p class="meta">Workbench — Support · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>它是干什么的？</strong>
+<p>把一组要一起打开的东西（应用、本地文件或文件夹、网址）存成一个<strong>场景</strong>。进入之前它先探一遍这些地址通不通，离开的时候你留一句话当<strong>断点</strong>，下次进来第一眼就告诉你上次停在哪。</p>
+
+<strong>怎么用？</strong>
+<p>点菜单栏图标开面板。面板里是场景列表，点一下就进入。设置里可以给场景配上快捷键，最多九个，对应场景列表的前九个。</p>
+
+<strong>「进入场景」具体做了什么？</strong>
+<p>按固定顺序来：<strong>先应用、再文件、最后网页</strong>。先让应用起来，再把文件交给它，最后开网页，这样浏览器不会抢在前面把焦点占掉。<strong>已经在运行的应用不会再拉起一次</strong>，所以重复进入同一个场景是安全的。</p>
+
+<strong>进入前那个体检是什么？</strong>
+<p>对场景里的每个网址发一个探测请求，<strong>只拿响应头就断开，正文一个字节都不收</strong>（不是把整个页面下下来再丢掉）。然后按失败原因告诉你下一步该做什么：</p>
+<table>
+  <tr><th>结果</th><th>通常意味着</th><th>会不会拦住你</th></tr>
+  <tr><td>正常</td><td>服务是通的</td><td>不拦</td></tr>
+  <tr><td>要登录（401 / 403 / 407）</td><td><strong>服务是通的，只是需要登录</strong></td><td><strong>不拦</strong>，照常进入</td></tr>
+  <tr><td>限流（429）</td><td>请求太频繁，但服务在</td><td>不拦</td></tr>
+  <tr><td>地址失效（404 / 410）</td><td>路径变了</td><td>不拦，只提示</td></tr>
+  <tr><td>被拒（其它 4xx）</td><td>对方拒绝了这次请求</td><td>不拦，只提示</td></tr>
+  <tr><td>服务报错（5xx）</td><td>服务在，但它自己出问题了</td><td>不拦，只提示</td></tr>
+  <tr><td>解析失败</td><td>域名解析不了，最常见的原因是没连上内网或 VPN</td><td><strong>拦</strong></td></tr>
+  <tr><td>连不上</td><td>服务没起来，或者地址写错了</td><td><strong>拦</strong></td></tr>
+  <tr><td>证书没通过</td><td>中间有代理在拦</td><td><strong>拦</strong></td></tr>
+  <tr><td>超时</td><td>对方没在 6 秒内回应</td><td><strong>拦</strong></td></tr>
+  <tr><td>没有网络</td><td>这台机器本身没联网</td><td><strong>拦</strong></td></tr>
+</table>
+<p>只有<strong>明确打不开</strong>的才拦，而且默认不打开它——因为它在浏览器里也只会是个错误页。其余情况一律放行，只是把结果标出来。</p>
+<p><strong>「要登录」被当作正常，这一条是刻意的。</strong> 把「需要登录」误判成「打不开」，用户就不会再信任这个功能了。</p>
+
+<strong>断点是什么？</strong>
+<p>你离开场景时留的一句话，加上那一刻的现场快照。快照只记一件事：这个场景里的哪些应用还在跑、哪些已经退了。<strong>它不记浏览器标签页</strong>——那是它看不到的东西，不假装看得到。每个场景保留最近 5 条断点。</p>
+
+<strong>可以放多少个场景、每个场景多少条？</strong>
+<p>场景总数上限 60，单个场景的条目上限 40。一次进入超过 12 条会先提醒你一次，但仍然可以继续。这些限制防的是「一键打开 60 个标签页」这种自伤操作。</p>
+
+<strong>我的数据存在哪？换台机器怎么办？</strong>
+<p>整份文档以一个 JSON 存在本机，没有云端，没有同步，没有 iCloud。所以「备份与迁移」页把<strong>导出</strong>放在最显眼的位置：导出的是一份纯文本 JSON，你可以自己看、自己改。<strong>导入只合并不清空</strong>——不会拿导入的文件把你现有的场景盖掉。</p>
+
+<strong>卸载 App 数据会没吗？</strong>
+<p>会。数据只在这台电脑上，卸载即清除，别处没有副本。想留就先导出。</p>
+
+<strong>它需要什么权限？</strong>
+<p><strong>不需要任何系统权限，也不会弹授权框。</strong> 特别说明一条：它<strong>不需要辅助功能，也不需要输入监控</strong>——全局快捷键走系统的热键注册，由系统代管。它也不会去控制其它应用的窗口：不做窗口布局，不摆窗口位置，不模拟点击。详见<a href="privacy.html">隐私政策</a>。</p>
+
+<strong>它联网吗？</strong>
+<p>只在一个地方：<strong>连通性巡检</strong>，也就是进入场景前的自动体检和你手动按下的「体检」。这个请求只发给你自己场景里填的地址，App 里没有我们的服务器，没有统计，没有检查更新，也没有崩溃上报。请求是 GET 加一个只取 1 字节的 Range 头，拿到响应头就断开；会话是无痕的，cookie 和磁盘缓存都关着，所以巡检过哪些地址不会在本机留下痕迹。</p>
+
+<strong>我选了本地文件，它会不会去读我的文件内容？</strong>
+<p>不会。选文件这件事<strong>由你在系统面板里完成</strong>，App 不会自己去翻磁盘，也没有「扫描目录」这类功能。存下来的访问凭证是<strong>只读</strong>的，用途只有一个：下次进入场景时把它交给系统打开，相当于帮你双击一下。</p>
+
+<strong>为什么它会在我点到别处的时候收起来？</strong>
+<p>因为面板是临时弹出式（transient）的，这是菜单栏应用的正常行为。代价是<strong>没有为「需要长时间停留」的场景做优化</strong>——比如你想一边看体检结果一边去别处复制点什么，面板会先收起来。这一条如实说明。</p>
+
+<strong>支持哪些系统？</strong>
+<p>需要 macOS 14.0 或更高版本。它是菜单栏应用，不占 Dock 图标。</p>
+</div>
+
+<h3>已知不足</h3>
+<p>以下几条是作者自己标注的，写在这里而不是藏起来：</p>
+<ul>
+  <li><strong>没有做鼠标点击级别的端到端验证。</strong> 演示钩子走的是真实代码路径（真实的探测、真实的进入逻辑），但「用手点那个按钮」这一步没有验过。</li>
+  <li><strong>带系统弹窗的路径完全没有验过</strong>：选文件、选应用、导出、导入——因为这四个都会弹授权面板。如果你在这几条路径上遇到问题，那很可能就是还没被覆盖到的地方，请务必反馈。</li>
+  <li><strong>位置写错的表现</strong>：面板是临时弹出式的，点到别处就收，长时间停留在面板上的用法没有被专门照顾。</li>
+</ul>
+<p>App 本身的功能是完整的，没有半成品；上面说的是「没有被验证到的部分」，不是「没做完的部分」。</p>
+
+<h3>设计取舍</h3>
+<p>这个 App 的差异很窄，如实说：它对<strong>「每次开工前要先确认一组内网或线上服务通不通」</strong>的人有意义——运维、后端、要连 VPN 的人、同时维护好几套环境的人。如果你只是「想快点打开几个网页」，那么通用的启动器和快捷启动工具更合适，工作台在这方面没有优势。</p>
+<p>它的另一个取舍是<strong>功能更少</strong>：不做账号、不做同步、不做插件系统、不做脚本引擎。每一个都会把「一个下午能配好」变成「一个周末」。</p>
+
+<div class="faq">
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上系统版本、哪个场景、以及体检结果里显示的那一行字。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>What is it for</strong>
+<p>It stores a set of things you want to open together (apps, local files or folders, and web addresses) as a <strong>scene</strong>. Before entering, it checks whether those addresses are reachable; when you leave, you leave a sentence behind as a <strong>handoff note</strong>, and the next time you come in the first thing you see is where you stopped.</p>
+
+<strong>How do I use it</strong>
+<p>Click the menu bar icon to open the panel. It lists your scenes, and clicking one enters it. In Settings you can assign hotkeys to scenes, up to nine, matching the first nine in the list.</p>
+
+<strong>What does entering a scene actually do</strong>
+<p>It works in a fixed order: <strong>apps first, then files, then web pages</strong>. Starting the apps first means files can be handed to them, and pages open last so the browser does not steal focus earlier. <strong>Apps that are already running are not launched again</strong>, so entering the same scene repeatedly is safe.</p>
+
+<strong>What is the check that runs before entering</strong>
+<p>It sends one probe request per address in the scene and <strong>disconnects as soon as the response headers arrive, reading none of the body</strong> (this is not a full page download that gets discarded). It then tells you what to do next based on why something failed:</p>
+<table>
+  <tr><th>Result</th><th>Usually means</th><th>Blocks you</th></tr>
+  <tr><td>Up</td><td>The service is reachable</td><td>No</td></tr>
+  <tr><td>Needs sign-in (401 / 403 / 407)</td><td><strong>The service is reachable; it just requires a login</strong></td><td><strong>No</strong>, entry proceeds</td></tr>
+  <tr><td>Rate limited (429)</td><td>Too many requests, but the service is there</td><td>No</td></tr>
+  <tr><td>Gone (404 / 410)</td><td>The path changed</td><td>No, warned only</td></tr>
+  <tr><td>Rejected (other 4xx)</td><td>The other end refused this request</td><td>No, warned only</td></tr>
+  <tr><td>Server error (5xx)</td><td>The service is there but something is broken on its side</td><td>No, warned only</td></tr>
+  <tr><td>DNS failure</td><td>The name will not resolve, most often because you are off the intranet or VPN</td><td><strong>Yes</strong></td></tr>
+  <tr><td>Cannot connect</td><td>The service is down, or the address is wrong</td><td><strong>Yes</strong></td></tr>
+  <tr><td>Certificate failure</td><td>A proxy is intercepting the connection</td><td><strong>Yes</strong></td></tr>
+  <tr><td>Timed out</td><td>No answer within six seconds</td><td><strong>Yes</strong></td></tr>
+  <tr><td>Offline</td><td>This computer has no network connection</td><td><strong>Yes</strong></td></tr>
+</table>
+<p>Only the <strong>definitively unreachable</strong> cases block, and by default the item is not opened in those cases either, because it would only be an error page in the browser. Everything else goes through with the result marked.</p>
+<p><strong>Treating "needs sign-in" as healthy is deliberate.</strong> Mistaking a login wall for an outage is exactly what makes people stop trusting the feature.</p>
+
+<strong>What is a handoff note</strong>
+<p>The sentence you leave when you exit a scene, plus a snapshot of the state at that moment. The snapshot records exactly one thing: which of the scene's apps were still running and which had quit. <strong>It does not record browser tabs</strong>, because it cannot see them and does not pretend to. Each scene keeps its five most recent notes.</p>
+
+<strong>How many scenes and items can I have</strong>
+<p>Up to 60 scenes, and up to 40 items in a scene. Entering more than 12 items at once warns you first, though you can still continue. These limits exist to prevent the self-inflicted wound of opening 60 tabs with one click.</p>
+
+<strong>Where is my data, and what if I change computers</strong>
+<p>The whole document is a single JSON stored locally. There is no cloud, no sync, no iCloud. That is why the backup page puts <strong>export</strong> front and centre: it produces a plain-text JSON you can read and edit yourself. <strong>Import only merges, never clears</strong>, so importing a file will not wipe the scenes you already have.</p>
+
+<strong>Will I lose my data if I uninstall</strong>
+<p>Yes. The data exists only on this computer, uninstalling removes it, and there is no copy elsewhere. Export first if you want to keep it.</p>
+
+<strong>What permissions does it need</strong>
+<p><strong>None, and it never shows a permission prompt.</strong> One point worth calling out: it needs <strong>no Accessibility and no Input Monitoring</strong>, because the global hotkeys go through the system's hotkey registration. It also does not control other apps' windows: no window layout, no moving windows, no synthetic clicks. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<strong>Does it go online</strong>
+<p>In one place only: the <strong>connectivity check</strong>, meaning the automatic check before entering a scene and the one you trigger yourself. That request goes only to addresses you typed into your own scenes. The app contains no server of ours, no analytics, no update check and no crash reporting. It is a GET with a Range header asking for a single byte, disconnected at the response headers; the session is ephemeral with cookies and the disk cache off, so which addresses you checked leaves nothing behind on this computer.</p>
+
+<strong>If I pick a local file, does it read the contents</strong>
+<p>No. Choosing the file happens <strong>in a system panel, done by you</strong>; the app does not go looking through your disk and has no directory-scanning feature. The credential it stores is <strong>read-only</strong> and exists for one purpose: handing the item to the system to open next time, the equivalent of you double-clicking it.</p>
+
+<strong>Why does it close when I click elsewhere</strong>
+<p>Because the panel is a transient popover, which is normal behaviour for a menu bar app. The cost is that <strong>long-lived uses were not optimised for</strong>: if you want to read the check results while copying something from elsewhere, the panel will close first. Stated plainly rather than glossed over.</p>
+
+<strong>Which systems are supported</strong>
+<p>macOS 14.0 or later. It is a menu bar app with no Dock icon.</p>
+</div>
+
+<h3>Known gaps</h3>
+<p>These are the author's own notes, listed here rather than hidden:</p>
+<ul>
+  <li><strong>There is no click-level end-to-end verification.</strong> The demonstration hooks exercise the real code paths (real probes, real entry logic), but the act of physically clicking the button has not been verified.</li>
+  <li><strong>The paths with system dialogs are entirely unverified</strong>: choosing a file, choosing an app, exporting, importing, because all four raise a permission panel. If you hit trouble on one of those, it is very likely an uncovered path, and reporting it would help.</li>
+  <li><strong>Long stays in the panel</strong> are not accommodated, since it closes as soon as you click elsewhere.</li>
+</ul>
+<p>The app itself is feature complete with nothing half-finished; the above describes what has not been verified, not what has not been built.</p>
+
+<h3>Positioning, stated honestly</h3>
+<p>The difference this app makes is narrow. It matters to people who <strong>have to confirm a set of intranet or online services before starting work</strong>: operations, backend developers, anyone on a VPN, anyone maintaining several environments at once. If all you want is to open a few pages quickly, a general-purpose launcher is the better tool and Workbench offers no advantage there.</p>
+<p>The other trade-off is <strong>fewer features</strong>: no account, no sync, no plugin system, no scripting engine. Each of those would turn an afternoon of setup into a weekend of it.</p>
+
+<div class="faq">
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your system version, which scene, and the line the check reported.</p>
+</div>
+
+
+<footer>牧云工作台 Workbench · 进入之前先体检，离开之前留一句断点</footer>
+</body>
+</html>

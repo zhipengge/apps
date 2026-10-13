@@ -1,0 +1,5 @@
+首次发布。俯视角单机搜打撤，一局 6 分钟：从外圈进场，往里搜，在时间耗尽之前找到撤离点活着出去。撤离不是走到出口就结束，是站住 6 秒，而且充能中的撤离点会把半径 280 单位以内的敌人全叫过来。撤离窗口从外圈往中心收，什么时机走是一个可以说出来的答案。地图由种子长出来，按距中心的距离分成外圈、中圈和库区，越往里越肥也越危险。拾荒者是唯一会赢的敌人：它不主动打你，它开你的箱子，然后带着东西离开这张地图。全程离线，没有账号，没有广告，没有内购，不申请任何系统权限。
+
+---
+
+First release. A top-down single-player extraction shooter where one raid is six minutes: insert on the outer ring, push inward, and reach an exit alive before the clock runs out. Extraction is not reaching the exit, it is standing still for six seconds while the charging pad calls every enemy within 280 units down on you. The windows close from the outside inward, so when to leave has an answer you can say out loud. Maps grow from a seed and split by distance from the centre into an outer ring, a mid ring and a vault: deeper is richer and deadlier. The scavenger is the only enemy that can win, because it does not fight you, it opens your containers and walks your loot off the map. Fully offline: no account, no ads, no purchases, no permission prompts.

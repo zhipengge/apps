@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>速查抽屉 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #0A84FF;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #64B5FF;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>速查抽屉 · 隐私政策</h1>
+<p class="meta">DevDrawer — Privacy Policy · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<p class="lead"><strong>速查抽屉不联网，也不保存你复制过的内容。</strong> 这两句话都是可以自己去核的：这个 App 的沙盒权限里<strong>根本不含网络权限</strong>（<code>Config/DevDrawer.entitlements</code> 里只有 <code>com.apple.security.app-sandbox</code> 这一条，没有 <code>network.client</code>），内核层面就不会让它发出网络请求；全部源码里也没有任何网络 API。剪贴板历史<strong>只存在内存里</strong>，App 一退出就全部消失，磁盘上不留任何东西。</p>
+
+<h3>我们处理什么、存在哪</h3>
+<table>
+  <tr><th>数据</th><th>用途</th><th>位置</th></tr>
+  <tr><td>你复制到剪贴板里的<strong>纯文本</strong>（App 只读文本这一种类型，不读图片、文件、富文本）</td><td>识别它是什么（JSON / JWT / 时间戳 / 颜色 / 正则 等 21 类），在右侧排出下一步能做什么，并按 ⌘1 把它交给对应工具</td><td><strong>仅在内存</strong>，最多 40 条，单条超过 1 MB 不入历史，App 退出即清空</td></tr>
+  <tr><td>配置：快捷键、历史上限、面板尺寸、被禁用和被置顶的工具、是否在菜单栏显示类型角标</td><td>记住你的偏好</td><td>App 沙盒内的 UserDefaults，只有一个键 <code>devdrawer.config.v1</code></td></tr>
+  <tr><td>工具参数：正则表达式、HMAC 密钥</td><td>执行你当下选的那个工具</td><td><strong>仅在内存</strong>，不会被写进配置，也不落盘</td></tr>
+</table>
+
+<p>上面那份配置里<strong>没有任何一条是你复制过的内容</strong>，也没有任何一条是工具的输出。这是结构性的：写盘的入口只有一个，写的就是上面那张表第二行那几个字段。</p>
+
+<h3>网络</h3>
+<p><strong>App 不发起任何网络请求。</strong> 断网、飞行模式、没有 Wi-Fi 的情况下，全部 48 个工具都能正常用。这一条有两道保证：</p>
+<ul>
+  <li><strong>沙盒配置里没有网络权限。</strong> 没有 <code>com.apple.security.network.client</code>，App 就发不出网络请求，代码里即便写了也发不出去。</li>
+  <li><strong>源码里没有任何网络 API</strong>，而且 <code>LogicTests/run.sh</code> 每次跑测试都会扫一遍，扫到 <code>URLSession</code> / <code>CFNetwork</code> / <code>NWConnection</code> 之类就直接让测试失败。</li>
+</ul>
+<p>所以「完全离线」在这里不是一句承诺，是沙盒里根本不存在的能力。</p>
+
+<h3>剪贴板</h3>
+<p>App 会读系统剪贴板，这是它工作的前提。具体是：</p>
+<ul>
+  <li>每秒检查一次剪贴板的<strong>变更计数</strong>，计数变了才去读内容，不是一直在读。</li>
+  <li>只读<strong>纯文本</strong>（<code>NSPasteboard.general</code> 的 <code>.string</code> 类型），不读图片、不读文件、不读富文本。</li>
+  <li>读到的文本进入内存里的历史列表，用于类型识别、推荐排序和工具取数。</li>
+  <li>写回剪贴板<strong>只在你按 ⏎ 或 ⌘⇧C 时发生</strong>，把当前结果交还给系统。</li>
+</ul>
+<p>历史<strong>没有任何写盘路径</strong>：进程一退，历史全没。代价是重启后看不到昨天复制的东西；换来的是「这个 App 不可能泄露它没有的东西」。右上角菜单和 ⌘K 都可以立即清空历史。</p>
+
+<h3>权限</h3>
+<p><strong>App 不申请任何系统权限，也不会弹出任何授权框。</strong></p>
+<ul>
+  <li><strong>不需要辅助功能，也不需要输入监控。</strong> 全局快捷键用 Carbon 的 <code>RegisterEventHotKey</code> 注册，由系统代管，不需要用户去「系统设置 → 隐私与安全性」里打勾。</li>
+  <li>面板内部的 ⌘1 到 ⌘9、Esc 等按键走的是<strong>本地</strong>事件监听，只看得见发给本 App 的按键。App 从不注册全局监听器。</li>
+  <li>不读屏幕内容，不读其它 App 的窗口，不做任何自动化控制。</li>
+  <li>不读通讯录、日历、位置、麦克风、摄像头，不读你的文件目录，不申请完全磁盘访问。</li>
+</ul>
+
+<h3>第三方</h3>
+<p><strong>App 里没有任何第三方代码。</strong> 工程没有 SPM 依赖、没有 CocoaPods、没有内嵌框架，界面图标是系统符号，图标是自绘的。没有广告、没有分析统计、没有崩溃上报、没有追踪 SDK，也没有检查更新的联网行为。</p>
+
+<h3>加密</h3>
+<p>App 提供哈希与 HMAC 工具（SHA-256、SHA-512、SHA-1、MD5、CRC-32、HMAC-SHA256），用的是系统的 CryptoKit，<strong>纯粹是本地计算</strong>：输入是你当下粘贴的文本，输出显示在面板上，两者都不落盘、不联网。App 不实现自己的加密算法，不做端到端加密，不存密钥。出口合规申报为 <code>ITSAppUsesNonExemptEncryption = NO</code>。</p>
+
+<h3>我们不做的事</h3>
+<ul>
+  <li>不要求注册或登录，没有账号</li>
+  <li>不发起任何网络请求，没有自建服务器，也不上传任何东西</li>
+  <li>不把剪贴板内容写进磁盘、UserDefaults 或任何日志</li>
+  <li>不接入广告、分析、崩溃上报或追踪 SDK</li>
+  <li>不申请任何系统权限，系统不会为它弹出授权框</li>
+  <li>不把你的数据共享给任何第三方（因为没有数据可以共享）</li>
+</ul>
+
+<h3>数据删除</h3>
+<p>剪贴板历史在 App 退出的那一刻就没了，不需要额外操作；也可以在菜单里选「清空历史」或按 ⌘K 立即清掉。设置页有「恢复默认设置」，会把配置恢复成初始值。删除 App 即清除全部数据，包括那份配置文件。</p>
+
+<h3>儿童</h3>
+<p>本 App 不收集任何人的数据，当然也不收集儿童的数据。它没有账号、没有聊天、没有用户生成内容，也没有任何联网功能。</p>
+
+<h2 id="en">English</h2>
+
+<p class="lead"><strong>DevDrawer never goes online, and it does not save what you copy.</strong> Both statements are checkable: the app's sandbox entitlements contain <strong>no network entitlement at all</strong> (<code>Config/DevDrawer.entitlements</code> holds only <code>com.apple.security.app-sandbox</code>, with no <code>network.client</code>), so the kernel will not let it open a connection even if the code tried; and no networking API appears anywhere in the source. Clipboard history lives <strong>in memory only</strong> and is gone the moment the app quits. Nothing about it reaches the disk.</p>
+
+<h3>What the app handles, and where</h3>
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
+  <tr><td>The <strong>plain text</strong> you copy to the clipboard (the app reads only the text type, never images, files or rich text)</td><td>To identify what it is (JSON, JWT, timestamp, colour, regex and 17 more), rank what you can do with it on the right, and hand it to a tool when you press a shortcut</td><td><strong>In memory only</strong>, at most 40 entries, anything over 1 MB is not kept, cleared when the app quits</td></tr>
+  <tr><td>Settings: hotkey, history limit, panel size, disabled and pinned tools, whether the menu bar shows a type badge</td><td>To remember your preferences</td><td>UserDefaults in the app sandbox, under a single key <code>devdrawer.config.v1</code></td></tr>
+  <tr><td>Tool parameters: regular expressions and HMAC keys</td><td>To run the tool you just chose</td><td><strong>In memory only</strong>; never written into the settings file, never saved to disk</td></tr>
+</table>
+
+<p>Nothing in that settings file is anything you copied, and nothing in it is tool output. That is structural: there is exactly one place that writes to disk, and it writes only the fields in the second row above.</p>
+
+<h3>Network</h3>
+<p><strong>The app makes no network requests.</strong> All 48 tools work with no Wi-Fi, offline, in Airplane Mode. Two things guarantee it:</p>
+<ul>
+  <li><strong>The sandbox grants no network access.</strong> Without <code>com.apple.security.network.client</code> the app cannot open a connection, even if the code contained a request.</li>
+  <li><strong>There is no networking API in the source</strong>, and <code>LogicTests/run.sh</code> scans for one on every test run, failing outright if it finds <code>URLSession</code>, <code>CFNetwork</code>, <code>NWConnection</code> or similar.</li>
+</ul>
+<p>So "fully offline" is not a promise here. It is a capability the sandbox does not have.</p>
+
+<h3>Clipboard</h3>
+<p>The app reads the system clipboard, because that is what it is for. Specifically:</p>
+<ul>
+  <li>It checks the clipboard's <strong>change counter</strong> once a second, and reads the contents only when the counter moved.</li>
+  <li>It reads <strong>plain text only</strong> (the <code>.string</code> type on <code>NSPasteboard.general</code>). No images, no files, no rich text.</li>
+  <li>What it reads goes into an in-memory history used for type detection, ranking and tool input.</li>
+  <li>It writes to the clipboard <strong>only when you press Return or the copy shortcut</strong>, to hand a result back to the system.</li>
+</ul>
+<p>The history has <strong>no path to disk at all</strong>: quit the app and it is gone. The cost is that yesterday's copies are not there after a restart; what you get in exchange is that the app cannot leak what it does not have. You can also clear the history immediately from the menu, or with the keyboard shortcut.</p>
+
+<h3>Permissions</h3>
+<p><strong>The app requests no system permissions and never shows a permission prompt.</strong></p>
+<ul>
+  <li><strong>No Accessibility and no Input Monitoring.</strong> The global hotkey is registered through Carbon <code>RegisterEventHotKey</code>, which the system brokers, so there is nothing to tick in System Settings.</li>
+  <li>Keys such as the in-panel shortcuts and Escape go through a <strong>local</strong> event monitor that only sees events addressed to this app. The app never registers a global monitor.</li>
+  <li>It does not read the screen, does not inspect other apps' windows, and performs no automation.</li>
+  <li>It does not touch Contacts, Calendar, Location, Microphone or Camera, does not browse your file system, and does not ask for Full Disk Access.</li>
+</ul>
+
+<h3>Third parties</h3>
+<p><strong>The app contains no third-party code.</strong> No SPM dependencies, no CocoaPods, no embedded frameworks; interface icons are system symbols and the app icon is drawn in code. There are no ads, no analytics, no crash reporting, no tracking SDKs, and no update check that would go online.</p>
+
+<h3>Encryption</h3>
+<p>The app offers hashing and HMAC tools (SHA-256, SHA-512, SHA-1, MD5, CRC-32, HMAC-SHA256) built on the system's CryptoKit. These are <strong>purely local computations</strong>: the input is the text you just pasted and the output is shown in the panel, and neither is written to disk or sent anywhere. The app implements no cryptography of its own, does no end-to-end encryption, and stores no keys. Export compliance is declared as <code>ITSAppUsesNonExemptEncryption = NO</code>.</p>
+
+<h3>What we do not do</h3>
+<ul>
+  <li>No account or sign-in</li>
+  <li>No network requests, no server of ours, no uploads of any kind</li>
+  <li>No clipboard content written to disk, to UserDefaults, or to any log</li>
+  <li>No ads, analytics, crash reporting or tracking SDKs</li>
+  <li>No permission requests of any kind, so the system never prompts you</li>
+  <li>No sharing with third parties, because there is nothing to share</li>
+</ul>
+
+<h3>Deletion</h3>
+<p>Clipboard history is gone the moment the app quits, with nothing to do; you can also clear it right away from the menu or with the keyboard shortcut. Settings offer a reset that returns the configuration to its defaults. Deleting the app removes everything, the settings file included.</p>
+
+<h3>Children</h3>
+<p>The app collects no one's data, children included. It has no accounts, no chat, no user-generated content, and no networking of any kind.</p>
+
+
+<footer>速查抽屉 DevDrawer · 复制什么就识别什么，右侧排出下一步 · <a href="./support.html">帮助与支持</a></footer>
+</body>
+</html>

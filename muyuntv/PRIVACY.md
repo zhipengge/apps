@@ -1,6 +1,8 @@
 # 牧云电视 (Muyun TV) — 隐私政策 / Privacy Policy
 
-**最后更新 / Last updated: 2026-08-29**
+**最后更新 / Last updated: 2026-10-12**
+
+> 本文件是 `privacy.html` 的 Markdown 存底，内容以 `privacy.html` 为准。App Store Connect 里填的是 HTML 那一份。
 
 ---
 
@@ -8,56 +10,91 @@
 
 ### 总览
 
-**牧云电视不收集、不上传、不把你的频道列表发到任何自有服务器。** 频道名称、地址、分组、收藏和语言/主题偏好全部只在这台 iPhone 或 iPad 本地保存。本 App 没有账号系统，没有后端，不内嵌广告、分析或追踪 SDK。
+**牧云电视不收集你的数据，也没有任何属于我们的服务器。但它确实会联网**——联网是它的全部用途。
 
-本应用是播放工具，不提供、不托管任何第三方电视或视频内容。你导入或输入的直播源由你自己选择。
+它保护隐私的方式不是「不联网」，而是两件事：**所有请求都发往你自己选的地址**，以及**发出去的东西里没有一样能指认到你**。没有账号，没有登录，没有后端，没有广告、分析或崩溃上报 SDK，工程里零第三方依赖。
 
-### 我们处理什么、在哪处理
+这个 App 是播放工具，不提供、不托管、不审核任何电视节目。源由你选择。
 
-| 数据 | 用途 | 处理/存储位置 |
+### 联网发生在哪五处
+
+| 场景 | 什么时候发 | 发往哪里 |
 |---|---|---|
-| 频道名称、地址、分组、台标地址 | 列表、搜索、播放 | 本机 UserDefaults |
-| 收藏的频道地址 | 收藏分组 | 同上 |
-| 上次播放、最近观看地址 | 继续播放、最近分组 | 同上 |
-| 监控墙钉选（最多 4 路） | 分屏同时看你钉的源 | 同上 |
-| 播放时长统计 | 设置里查看今日/累计 | 同上 |
-| 常亮、重连、静音、铺满、低延迟、时移回放 | 播放偏好 | 同上 |
-| 时移临时分片 | 同一源看满约 1 分钟后，把刚才的画面暂存在本机，供拖回重看 | 系统临时目录；退出播放即删除。不上云。监控墙不缓存 |
-| 语言、主题 | 界面 | 同上 |
-| 你主动导出的 JSON 播放列表 | 备份或换机 | 经系统分享面板送到你选择的位置；App 不上传 |
-| 你导入的播放列表文件或网址 | 解析出频道 | 文件只读一次；网址请求只发往你粘贴的那个地址 |
-| 一键导入的公开列表 | 测试播放、播出方公开的国际频道，以及央视网公开音频 | 向 GitHub raw 上的 public_channels.m3u 发一次 GET，在本机解析 |
+| 导入播放列表 | 你粘贴网址并点「导入」 | 你粘贴的那个地址 |
+| 一键导入 | 你点「一键导入源」 | 本仓库 GitHub raw 上的 `public_channels.m3u` |
+| **线路测速** | **自动，列表一出现就发** | **你列表里每条线路的地址** |
+| 播放 | 你点一个频道 | 该频道的流地址（时移开启时会持续拉分片） |
+| 加载台标 | 自动，列表渲染到该行时 | 播放列表里带的台标地址 |
+
+写死的网址一共只有五个：一键导入那份公开表、演示频道用的 Apple 公开测试流、导入框里的示例占位符，以及关于页的两个链接（后两个交给系统浏览器打开，App 自己不请求）。除此之外所有地址都来自你自己导入的列表。
+
+### 主动测速这一条要单独说
+
+**它不需要你点。** 列表一出现，App 就会对你列表里的每条线路各发一次探测，用来排序、决定打开时走哪一路。
+
+边界是明确的：最多同时 5 条、每条 6 秒超时、**最多下 64 KB 就主动断开**，并刻意绕开本机缓存以测真实速度。结果只写在本机。可以关掉「按测速排序」「失败自动换线」「打开时用最快线路」，但**探测本身目前没有单独的开关**。
+
+### 伪装成 Safari 的 User-Agent
+
+拉取播放列表时，请求头里的 User-Agent 是写死的：
+
+```
+Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1
+```
+
+这么做是因为不少源站对「不像浏览器」的请求直接拒绝。它**不携带你的设备型号、系统版本或任何标识**，每次请求都是同一个固定字符串。
+
+### 明文 HTTP
+
+传输层放开了任意加载（`NSAllowsArbitraryLoads = true`），因为很多公开直播源只提供 http，关掉等于让用户的列表大半播不了。
+
+**后果是：对接明文 http 的源时，你和那台源站之间的流量不加密**，同一网络下的第三方可以看到你请求了哪个地址。想避免就只导入 https 的地址。
+
+### 本机存了什么
+
+19 个键，全在这台设备的沙盒里，不上传、不同步：
+
+- 频道列表、收藏、最近观看、监控墙钉选
+- 播放偏好（常亮、自动重连、默认静音、铺满画面、低延迟、时移开关、切台保留时移）、界面语言与主题
+- 测速结果、播放时长统计
+
+### Cookie、缓存与时移临时文件
+
+- **Cookie 不做清理**：如果源站下发了 Cookie，它会留在这个 App 的容器里直到你删除 App。
+- **URLCache 会写盘**：台标图片和播放列表响应体会进入系统的 URLCache，占用是有上限的，但不提供「清除缓存」按钮。
+- **时移临时文件**：同一源连续播放满 60 秒后开始暂存分片，最多 30 分钟 / 400 MB / 3 路，离开播放页即删。**强制退出 App 可能留下没有清掉的临时目录**，它们会一直占用空间直到系统回收或你删除 App。
+
+### 权限
+
+**App 不申请任何权限**：没有摄像头、麦克风、相册、通讯录、位置、通知。`Info.plist` 里一个 `*UsageDescription` 都没有。监控墙只是把几个地址分屏播放，不调用摄像头。
+
+关于局域网地址（`http://192.168.x.x/...`）有一条**目前无法静态确认**：iOS 14 之后访问本地网络有独立权限，而本 App 没有声明本地网络用途描述。填了之后会不会弹窗或被系统拦下，需要真机验证。
+
+### 播放行为
+
+- 退到后台时音频继续播放（`UIBackgroundModes: audio`）。
+- AirPlay 投屏时，流的地址会交给接收设备，由那台设备去拉流。
+- 截图抓的是当前暂停帧，交给系统分享面板，不写相册、不需要相册权限。
+- 导出播放列表生成 JSON，同样经系统分享面板发出，发到哪由你决定。
 
 ### 我们不做的事
 
 - 不把频道列表上传到开发者服务器
-- 不接入广告网络或分析平台
+- 不接入广告网络、分析平台或崩溃上报
 - 不读取通讯录、位置、麦克风、摄像头、相册
-- 不录像、不识别人脸、不把监控墙画面传到任何服务器
-- 不要求登录账号
-- 不追踪你
+- 不录像、不识别画面里的人、不把监控墙画面传到任何服务器
+- 不要求登录账号，不追踪你
 - 不内置电视节目列表
-
-### 网络通信
-
-联网只发生在你主动操作时：
-
-1. **导入播放列表网址**：向你粘贴的 http 或 https 地址发请求，下载文本并在本机解析。
-2. **一键导入**：向 `raw.githubusercontent.com/zhipengge/apps/main/muyuntv/public_channels.m3u` 发一次 GET，下载公开列表并在本机解析。该文件含厂商测试流、播出方自己公开的国际频道视频 HLS，以及央视网 VDN 自己公开的音频 HLS。不是盗链 IPTV，本仓库不托管音视频。
-3. **播放直播源**：向该频道的流媒体地址请求音视频数据。许多直播源使用明文 HTTP，因此 App 允许非 HTTPS 连接。请求发往源站，不经过开发者服务器。开启时移后，可能向同一地址再拉媒体分片做本机回放缓存。
-4. **加载台标**：若播放列表里带有台标网址，列表会向该地址请求图片。
-
-打开关于页里的隐私政策或支持页链接时，由系统浏览器访问 GitHub Pages，不经过 App 自己的接口。
 
 ### 数据删除
 
-- 在列表左滑可删除单个频道；设置里可清空全部频道。清空后不会自动填回。
-- 退出全屏播放时，时移临时分片会从本机删除。
-- 从主屏幕删除 App，本机容器内的频道数据一并消失。换机前请先导出播放列表。
+- 列表里左滑删除单个频道；设置里可清空全部，清空后不会自动填回示例。
+- 离开播放页即删除时移临时分片（强制退出可能残留，见上）。
+- 从主屏幕删除 App，容器内全部数据一并消失，找不回来。**换机前先导出播放列表。**
 
-### 联系方式
+### 内容与举报
 
-如对本政策有疑问，请通过支持页反馈。
+App 不携带任何内容。一键导入那份表只含播出方自己公开发布的流（央视网公开音频，无画面；国际频道官方直播；厂商测试流），可能随时失效或按地区受限。关于页提供免责声明与举报入口，也可以发邮件到 gezhipeng0201@163.com。
 
 ---
 
@@ -65,53 +102,88 @@
 
 ### Summary
 
-**Muyun TV does not collect, upload, or send your channel list to any server we operate.** Channel names, URLs, groups, favorites, and language/theme preferences stay on this iPhone or iPad. There is no account, no backend, and no ads, analytics, or tracking SDK.
+**Muyun TV collects no data from you, and there is no server of ours anywhere. It does use the network**: that is what it is for.
 
-This app is a playback tool. It does not provide or host third-party TV or video. Streams you import or type are chosen by you.
+It protects your privacy not by staying offline, but by two things: **every request goes to an address you chose**, and **nothing it sends can be tied to you**. No account, no sign-in, no backend, no ads, analytics or crash-reporting SDK, and zero third-party dependencies.
 
-### What we process and where
+This app is a player. It does not provide, host or review any TV channel. You choose the sources.
 
-| Data | Purpose | Where |
+### The five places the network is used
+
+| What | When it fires | Where it goes |
 |---|---|---|
-| Channel name, URL, group, logo URL | List, search, playback | On-device UserDefaults |
-| Favorite channel URLs | Favorites group | Same |
-| Last played and recent URLs | Resume and Recents | Same |
-| Monitor wall pins (up to 4) | Multi-view of feeds you pin | Same |
-| Playback duration stats | Today / total in Settings | Same |
-| Keep-awake, reconnect, mute, fill, low latency, timeshift | Playback preferences | Same |
-| Timeshift media segments | After about a minute on the same source, rewind what you just watched | On-device temp files; deleted when you leave the player. Not uploaded. The monitor wall does not cache |
-| Language and theme | UI | Same |
-| JSON playlist you export | Backup or move devices | System share sheet; the app does not upload it |
-| Playlist file or URL you import | Parse channels | File is read once; the HTTP request goes only to the URL you pasted |
-| Public playlist from Quick Import | Verify playback, official international channels, and official CCTV audio | One GET to public_channels.m3u on GitHub raw, parsed on device |
+| Import a playlist | You paste a URL and tap Import | The address you pasted |
+| Quick Import | You tap Quick Import | `public_channels.m3u` on GitHub raw |
+| **Line speed test** | **Automatically, as soon as the list appears** | **Every line address in your list** |
+| Playback | You tap a channel | That channel's stream URL, and its segments while timeshift is on |
+| Logos | Automatically, when the row is rendered | Logo URLs in your playlist |
+
+Exactly five URLs are hard-coded: the public playlist, the Apple test stream used by the demo channel, the example placeholder in the import field, and the two About links, which are handed to the system browser rather than fetched here. Every other address comes from the list you imported.
+
+### The speed test, on its own
+
+**It does not wait for a tap.** As soon as the list appears, the app sends one probe to every line in your list, to sort them and to decide which to open with.
+
+The limits are explicit: at most 5 at a time, a 6-second timeout each, **at most 64 KB before disconnecting**, deliberately bypassing the local cache so the measurement is real. Results stay on the device. Sort-by-speed, auto-switch-on-failure and prefer-fastest can be turned off, but **probing itself has no separate switch at present**.
+
+### A Safari User-Agent
+
+When fetching playlists the request carries this fixed User-Agent:
+
+```
+Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1
+```
+
+Many sources reject requests that do not look like a browser. It carries **no device model, OS version or identifier**, and it is the same string on every request.
+
+### Plain HTTP
+
+The transport layer permits arbitrary loads (`NSAllowsArbitraryLoads = true`) because many public live sources are http only, and disabling it would stop a large share of users' lists from playing.
+
+**The consequence: with a plain-http source, traffic between you and that source is not encrypted**, and a third party on the same network can see which address you requested. Import https addresses only if you want to avoid that.
+
+### Stored on this device
+
+Nineteen keys, all inside this device's sandbox, never uploaded and never synced:
+
+- Channel list, favourites, recents, monitor-wall pins
+- Playback preferences (keep awake, auto reconnect, start muted, fill screen, low latency, timeshift, keep timeshift on switch), interface language and theme
+- Speed results and playback duration records
+
+### Cookies, caches and timeshift temp files
+
+- **Cookies are not cleared**: if a source sets one, it stays in this app's container until you delete the app.
+- **URLCache writes to disk**: logo images and playlist responses go into the system URLCache. It is bounded, but there is no Clear Cache button.
+- **Timeshift temp files**: after 60 seconds of continuous playback on one source the app starts storing segments, up to 30 minutes, 400 MB and 3 lines, deleted when you leave the player. **A force-quit can leave those directories behind**, taking up space until the system reclaims them or you delete the app.
+
+### Permissions
+
+**The app requests no permissions at all**: no camera, microphone, photos, contacts, location or notifications. `Info.plist` declares no usage description of any kind. The monitor wall plays several addresses side by side and never touches the camera.
+
+One open question about LAN addresses (`http://192.168.x.x/...`): local network access has had its own permission since iOS 14, and this app declares no local network usage description. Whether entering one triggers a prompt or is blocked **cannot be determined statically** and needs a real-device test.
+
+### Playback behaviour
+
+- Audio continues when the app goes to the background (`UIBackgroundModes: audio`).
+- With AirPlay the stream address is handed to the receiving device, which fetches it.
+- Screenshots capture the paused frame and hand it to the system share sheet; they are not written to the photo library and need no photo permission.
+- Exporting the playlist produces JSON, also handed to the system share sheet, going wherever you send it.
 
 ### What we do not do
 
-- No upload of your channel list to developer servers
-- No ads or analytics
-- No contacts, location, microphone, camera, or photos access
-- No recording, face detection, or upload of monitor-wall video
-- No account
-- No tracking
-- No built-in TV program list
-
-### Network
-
-Network use happens only when you act:
-
-1. **Import playlist URL**: request the http or https address you paste, then parse on device.
-2. **Quick import**: one GET to `raw.githubusercontent.com/zhipengge/apps/main/muyuntv/public_channels.m3u` for a public list, parsed on device. It includes vendor test streams, official international video HLS, and official CCTV audio HLS from CNTV VDN. Not pirate IPTV; this repo does not host audio or video.
-3. **Play a stream**: request audio/video from that channel URL. Many live sources use plain HTTP, so the app allows non-HTTPS connections. Traffic goes to the source, not through our servers. With timeshift on, the app may also fetch media segments from that same URL for a local replay cache.
-4. **Logos**: if a playlist includes a logo URL, the list may fetch that image.
-
-Privacy and support links in About open in the system browser to GitHub Pages.
+- No uploading your channel list to a developer server
+- No ad networks, analytics or crash reporting
+- No contacts, location, microphone, camera or photos access
+- No recording, no detection of people in the video, no upload of monitor-wall video
+- No account, no sign-in, no tracking
+- No built-in TV channel list
 
 ### Deletion
 
-- Swipe to delete one channel; Settings can clear all. A cleared list is not filled back in.
-- Timeshift temp files are deleted when you leave the player.
-- Deleting the app removes the sandbox data. Export a playlist before switching phones.
+- Swipe to delete one channel; Settings can clear the whole list, and a cleared list is not filled back in.
+- Timeshift temp files are deleted when you leave the player (a force-quit may leave some behind; see above).
+- Deleting the app removes everything in its container, unrecoverably. **Export your playlist before switching phones.**
 
-### Contact
+### Content and reporting
 
-Use the support page if you have questions about this policy.
+The app ships with no content. The Quick Import list contains only streams published by the broadcasters themselves (official CCTV audio, with no picture; official international channels; vendor test streams), and it can break or become region-restricted at any time. The About card carries a disclaimer and a report path, or write to gezhipeng0201@163.com.

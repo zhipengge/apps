@@ -1,0 +1,5 @@
+首次发布。24 段职场对话，分成 10 个分类，共 193 个决策点、579 个可选回应、72 个结局。核心是三步不可跳过的循环：先读对方说的话，再选一个回应，然后才出现反馈卡，告诉你这一选在对方听来是什么效果、动了哪几个维度、以及为什么。分数是算出来的不是估出来的，同一个选择序列永远得到同一条反馈和同一个分数。共情、边界感、表达清晰、情绪管理、策略性五个维度汇成一条能力画像，没练过的维度显示「未练到」而不是 0 分。风格测试 12 道题、48 个选项，给出五个原型之一。579 个回应全部人工写。全程离线，没有账号，没有广告，没有内购，不申请任何系统权限。
+
+---
+
+First release. 24 workplace conversations across 10 categories, with 193 decision points, 579 selectable replies and 72 endings. The core is a three-step loop that cannot be skipped: read the other person's line, choose a reply, and only then does the feedback card appear, telling you how the choice landed, which axes it moved and why. The score is calculated rather than estimated, so the same sequence of choices always produces the same feedback and the same score. Five axes, empathy, boundaries, clarity, emotional regulation and strategy, form one skill profile, and an axis you have never practised reads "not practised yet" rather than 0 percent. The style test is 12 questions with 48 options and returns one of five archetypes. All 579 replies are written by hand. Fully offline: no account, no ads, no in-app purchases, no permission prompts.

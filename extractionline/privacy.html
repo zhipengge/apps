@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撤离线 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #1f8a3c;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #0a100e; --bg-soft: #14201a;
+      --accent: #39FF14;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>撤离线 · 隐私政策</h1>
+<p class="meta">ExtractionLine — Privacy Policy · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<p class="lead"><strong>撤离线不收集任何数据。</strong> 没有账号，没有服务器，App 不发起任何网络请求。「不联网」在这里是一句可核对的话：这个 App 只 import 了 Foundation、SwiftUI、UIKit、Combine 和 AVFoundation 五个系统框架，没有链接任何网络库；Swift 代码里不存在任何一个网址字符串，也没有一行发出请求的代码。你的仓库、记录和设置写在设备沙盒里的一个存档文件里，不上传也不同步。</p>
+
+<h3>我们处理什么、存在哪</h3>
+<table>
+  <tr><th>数据</th><th>用途</th><th>位置</th></tr>
+  <tr><td>跨局档案：仓库里有什么装备和物品、生涯记录（出击次数、撤离次数、阵亡次数、最高带出价值、累计带出价值、最高击杀、最大损失、从拾荒者手里抢回来的累计价值、最快撤离时间）、设置（音效、触感、屏幕震动、摇杆位置、是否显示小地图）、上一次出击带了什么</td><td>让你下次打开时仓库、记录和偏好都还在</td><td>设备沙盒 <code>Application Support/ExtractionLine/</code> 下的一个存档文件</td></tr>
+  <tr><td>一局之内的战局状态（这一局的地图、你的位置、血量、敌人、子弹）</td><td><strong>刻意不存</strong>——中途退出即视为弃局。存的东西少一半，出错的地方也少一半</td><td>只在运行内存里，不落盘</td></tr>
+</table>
+
+<p>以上数据全部在本机读写，<strong>不会离开设备</strong>。本 App 不使用 iCloud，也不使用任何云同步。存档没有使用 <code>UserDefaults</code>。</p>
+
+<p>这些内容里没有任何可以指认到人的东西：没有姓名、邮箱、电话、位置、设备标识符或广告标识符，也没有账号 ID——因为这个 App 根本没有账号。</p>
+
+<h3>存档是怎么写的</h3>
+<p>新内容先写进一个临时文件，读回来校验一遍，再把正式档降级为备份、原子替换上去。所以哪怕写到一半断电或者被系统杀掉，最坏的结果是回到上一次成功的存档，<strong>不会出现「存档坏了，仓库没了」</strong>。存档也永远不会因为一次失败而变小。</p>
+
+<h3>网络</h3>
+<p><strong>App 不发起任何网络请求。</strong> 飞行模式下全部功能可用，包括首次启动、开一局、撤离、结算和查看仓库。每一局的地图、敌人和物品都是在本机算出来的。</p>
+
+<h3>购买与账号</h3>
+<p><strong>本 App 没有账号系统，不需要注册或登录，App 里没有任何读取你身份的功能。</strong> 如果你是通过 App Store 取得本 App 的，这笔交易由 Apple 处理：我们不接触你的支付信息，也拿不到你的 Apple ID。</p>
+
+<h3>权限</h3>
+<p><strong>本 App 不申请任何权限。</strong> 它不读取相机、麦克风、相册、通讯录、位置、日历或提醒事项，也不发送通知。App 的 <code>Info.plist</code> 里没有任何权限用途描述，所以 iOS 根本不会为它弹出权限询问。</p>
+<p>唯一一处系统交互是音频播放：音效由代码实时合成波形后交给系统播放（<code>AVAudioSession</code>）。这只是播放声音，不涉及麦克风，也不读取或写入任何音频文件。App 里没有任何音频文件。音频会话不在启动时激活，所以它不会打断你正在听的音乐。</p>
+
+<h3>触感与屏幕震动</h3>
+<p>开枪、命中、受伤和撤离成功时的触感由系统的触感引擎产生，只是给手指的反馈，不产生也不读取任何数据。触感和屏幕震动都可以在设置里分别关掉。</p>
+
+<h3>分享</h3>
+<p>结算面板上有一个「分享」按钮，<strong>它只在你亲手点它的时候才做一件事</strong>：App 在本机把这一局的结果画成一张图（撤离或阵亡、评级、带出来的价值、最值钱的几件东西、生涯出击次数与撤离率），然后把这张图交给 iOS 的系统分享面板。</p>
+<p>图里没有任何可以指认到人的东西：没有账号名，没有设备标识，没有位置，没有时间戳之外的任何元数据。发到哪、发给谁，由你在系统分享面板里自己选；<strong>App 自己不发送任何东西，也不知道你发给了谁。</strong> 本 App 没有接入任何社交平台的 SDK，这张卡片底部也没有二维码或下载链接。</p>
+
+<h3>设备备份</h3>
+<p>说白了：存档就在 App 的沙盒里。如果你在系统里开了 iCloud 备份或电脑备份，那份备份会包含这个存档，和它包含你其他 App 的数据一样。那份备份由 Apple 保管，<strong>我们碰不到它</strong>；本 App 自己不会把任何东西传到任何地方。</p>
+
+<h3>我们不做的事</h3>
+<ul>
+  <li>不要求注册或登录</li>
+  <li>不收集姓名、邮箱、位置、设备标识符或广告标识符</li>
+  <li>不接入广告、分析、崩溃上报或追踪 SDK（本 App 不含任何第三方代码，工程里没有任何依赖包）</li>
+  <li>不把存档上传或同步到任何服务器</li>
+  <li>不读取通讯录、相册、麦克风、摄像头、位置</li>
+  <li>不申请任何系统权限，因此系统也不会弹出任何权限询问</li>
+  <li>不把你的数据共享给任何第三方</li>
+</ul>
+
+<h3>数据删除</h3>
+<p>设置页有「重置全部进度」，会清空仓库、生涯记录和上次配装，回到第一次打开的状态，而且找不回来。三个反馈开关和两个操作开关会保留，因为它们是偏好不是进度。删除 App 即清除全部数据。</p>
+
+<h3>儿童</h3>
+<p>本 App 不收集任何人的数据，当然也不收集儿童的数据。它没有账号、没有聊天、没有用户生成内容，也没有任何形式的联网功能。</p>
+
+<h2 id="en">English</h2>
+
+<p class="lead"><strong>ExtractionLine collects no data.</strong> No account, no server, and the app makes no network requests. That claim is checkable: the app imports five system frameworks only — Foundation, SwiftUI, UIKit, Combine and AVFoundation. No networking library is linked, there is not a single URL string in the Swift code, and no line of code issues a request. Your stash, records and settings live in one save file inside the app's sandbox, and are never uploaded or synced.</p>
+
+<h3>What the app handles, and where</h3>
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
+  <tr><td>Cross-raid profile: what is in your stash, career records (raids, extractions, deaths, best and total extracted value, best kills, worst loss, lifetime value reclaimed from scavengers, fastest extraction), settings (sound, haptics, screen shake, stick side, minimap), and what you carried last time</td><td>So your stash, records and preferences are still there next time you open it</td><td>One save file under <code>Application Support/ExtractionLine/</code> in the app sandbox</td></tr>
+  <tr><td>The state of a raid in progress (this raid's map, your position, health, enemies, bullets)</td><td><strong>Deliberately not saved</strong> — leaving mid-raid abandons the raid. Half as much stored means half as much to go wrong</td><td>Memory only, never written to disk</td></tr>
+</table>
+
+<p>All of it is read and written on-device and <strong>never leaves it</strong>. There is no iCloud and no cloud sync of any kind. The save file does not use <code>UserDefaults</code>.</p>
+
+<p>None of it can be tied to a person: no name, email, phone number, location, device identifier or advertising identifier — and no account ID, because the app has no accounts.</p>
+
+<h3>How the save file is written</h3>
+<p>New content goes to a temporary file first, is read back and verified, and only then does the old save become a backup and get atomically replaced. So even if power is lost halfway through a write, the worst case is that you are back at the last successful save — <strong>a corrupt save can never cost you your stash</strong>. A failed write can never shrink it either.</p>
+
+<h3>Network</h3>
+<p><strong>The app makes no network requests.</strong> Every feature works in Airplane Mode, including first launch, starting a raid, extracting, the settlement screen and browsing your stash. Every map, enemy and item is generated on this device.</p>
+
+<h3>Purchases and accounts</h3>
+<p><strong>There is no account system, nothing to register or sign in to, and no part of the app reads your identity.</strong> If you obtained the app through the App Store, that transaction was handled by Apple: we never see your payment details and we do not receive your Apple ID.</p>
+
+<h3>Permissions</h3>
+<p><strong>The app requests no permissions.</strong> It does not touch the camera, microphone, photo library, contacts, location, calendar or reminders, and it sends no notifications. The app's <code>Info.plist</code> declares no usage descriptions, so iOS has nothing to prompt you about.</p>
+<p>The one system interaction is audio playback: sound effects are synthesised in code and handed to the system to play (<code>AVAudioSession</code>). That is playback only. It does not involve the microphone, and it reads and writes no audio files. The app ships no audio files. The audio session is not activated at launch, so it will not interrupt music you are listening to.</p>
+
+<h3>Haptics and screen shake</h3>
+<p>The taps you feel when you fire, land a hit, take damage or extract come from the system's haptic engine. They are feedback for your fingers and neither produce nor read any data. Haptics and screen shake each have their own toggle in Settings.</p>
+
+<h3>Sharing</h3>
+<p>The settlement screen has a Share button, and <strong>it does exactly one thing, only when you tap it</strong>: the app draws this raid's result into an image on this device (extracted or died, rating, value brought out, your most valuable finds, career raid count and survival rate) and hands that image to the iOS share sheet.</p>
+<p>The image contains nothing that could identify you: no account name, no device identifier, no location, and no metadata beyond the card's own contents. Where it goes and who receives it is your choice in the system share sheet; <strong>the app sends nothing itself and does not know who you sent it to.</strong> No social platform SDK is integrated, and there is no QR code or download link on the card.</p>
+
+<h3>Device backups</h3>
+<p>Plainly: the save file sits in the app's sandbox. If you have iCloud Backup or computer backups enabled, that backup includes this save file, the same way it includes data from your other apps. That backup is held by Apple and <strong>we cannot reach it</strong>; the app itself sends nothing anywhere.</p>
+
+<h3>What we do not do</h3>
+<ul>
+  <li>No account or sign-in</li>
+  <li>No collection of name, email, location, device identifiers or advertising identifiers</li>
+  <li>No ads, analytics, crash reporting or tracking SDKs (the app contains no third-party code at all, and the project has no package dependencies)</li>
+  <li>No upload or sync of your save data</li>
+  <li>No access to Contacts, Photos, Microphone, Camera, or Location</li>
+  <li>No permission requests of any kind, so the system never prompts you</li>
+  <li>No sharing with third parties</li>
+</ul>
+
+<h3>Deletion</h3>
+<p>Settings offers Reset All Progress, which clears your stash, your career records and your last loadout, returning the app to how it looked the first time you opened it. It cannot be undone. The three feedback toggles and the two control toggles are kept, because they are preferences rather than progress. Deleting the app clears everything.</p>
+
+<h3>Children</h3>
+<p>The app collects no one's data, children included. It has no accounts, no chat, no user-generated content, and no networking of any kind.</p>
+
+
+<footer>撤离线 ExtractionLine · 进去，拿到，活着出来</footer>
+</body>
+</html>

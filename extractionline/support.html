@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撤离线 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #1f8a3c;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #0a100e; --bg-soft: #14201a;
+      --accent: #39FF14;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>撤离线 · 支持</h1>
+<p class="meta">ExtractionLine — Support · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>这是个什么游戏？</strong>
+<p>俯视角的单机搜打撤。一局 6 分钟：从外圈进场，往里搜，能拿多少拿多少，然后在时间耗尽之前找到撤离点活着出去。没出去，身上带的一切就全留在里面。第一次出击会给一把制式手枪和一个小挎包；活着出来，才有第二次。</p>
+
+<strong>怎么操作？</strong>
+<p>左手边（可以改成右手边）是一根浮动摇杆：手指落在屏幕哪里，杆心就在哪里。开火是自动的——准星里有敌人就打，你负责的是站位和走位，不是瞄准。右下角有一个按住持续开火的按钮、一个消耗品按钮和一个背包按钮。换弹也是自动的，因为自动开火之下换弹时机根本不是玩家的决策。</p>
+
+<strong>撤离是怎么做的？</strong>
+<p><strong>站住 6 秒</strong>，不是走过去就结束。这是本作和同类最大的不同：撤离动作本身就是全场最紧张的战斗。而且充能中的撤离点会「叫」——半径 280 单位以内的敌人会全部朝它过来（这一条比一屏还远，所以你总是能看见人是被你自己叫来的）。已经在跟你交火的敌人不会被吸走，但一个正在开走的人会把附近所有人都拉过来。</p>
+
+<strong>撤离点什么时候开？</strong>
+<p>三个窗口，分别在第 60 秒、第 150 秒和第 240 秒打开，每个持续 80 秒。走法是<strong>由内向外关门</strong>：0 到 60 秒只有最外圈那个常开的出口；60 到 140 秒中圈两个加库区正中一个——那是唯一一次能带着货从最深处走出去的机会；之后只剩中圈，再之后只剩外圈。<strong>任何时刻整张图至少有一个撤离点是开的</strong>，所以永远不会出现「此刻完全没有出口」。只是那个常开的口离得很远。</p>
+
+<strong>死了会失去什么？</strong>
+<p>身上带的全部。<strong>仓库里的东西不会丢</strong>——武器、护甲、背包和消耗品在出发那一刻就已经从仓库里拿出来了，不是死的那一刻才没的。所以死亡结算是一次纯记录，它不可能弄丢你的仓库；最坏的情况是被系统杀掉进程，那样你会回到出击前。这个设计由测试守着，不是「大概不会出事」。</p>
+
+<strong>存档会不会坏掉？仓库会不会因为我删了 App 就没了？</strong>
+<p>存档每次都是「写临时文件，读回来校验，再把正式档降级为备份、原子替换上去」。正式档坏了会自动退回备份，两个都坏了才当新档。任何一步失败都会把临时文件清掉。<strong>没有任何一条路径会因为「存档坏了」而让你失去仓库。</strong> 删掉 App 就真的全没了，这一点没有例外。</p>
+
+<strong>拾荒者是什么？</strong>
+<p>它是这个游戏里<strong>唯一会「赢」的敌人</strong>。它不主动打你：它开你的箱子，把东西背在身上，然后走向撤离点<strong>离开这张地图</strong>。单机游戏没有别的玩家，也就没有「别人先到一步」这件事，拾荒者把它补回来了——你慢了一步，箱子就是空的；你看见它背着东西往外走而没能拦住，那件东西你再也没机会拿到。</p>
+
+<strong>噪音是怎么回事？</strong>
+<p>开枪加噪音，噪音决定敌人能听见你多远。噪音超过阈值会<strong>派一次猎杀队</strong>——一局只派一次，因为能反复派的话玩家就永远无法靠「安静下来」摆脱追兵，那这条机制就从「后果」变成了「惩罚」。</p>
+<p>所以「低语冲锋枪」——全游戏唯一一把天生消音的枪——它是唯一能让你打完了噪音还是 0 的武器，数值上并不是最高的。<strong>这是本作里唯一一条可以完全绕开战斗的路线</strong>，代价是你得主动放弃更好的枪。屏幕上的噪音表因此不是装饰。</p>
+
+<strong>地图是随机的吗？会不会生成走不通的图？</strong>
+<p>每一张图由一颗随机种子长出来，91 x 91 格、100 个房间。生成方式是房间网格加随机 Prim 生成树，再加上 30% 的额外连接——有环才有绕后和撤退的路线。<strong>可解性是构造上成立的</strong>，不是「测出来大概能走通」：生成树这一步就保证了每个房间都连通，测试只是在 40 张种子图上再验一遍连不连通。同一颗种子永远长出同一张图。</p>
+
+<strong>地图分区域吗？</strong>
+<p>分。按距中心的距离分成外圈、中圈和库区，<strong>容器档次和敌人强度都跟着这个梯度走</strong>——越往里越肥，也越危险。撤离窗口又是从外圈往中心收的。所以「什么时候走」有一个可以说出来的答案：要么趁早从里面走，要么认了，把路走回来。这条规则一局之内就能学会，而每一局都要重新付一次代价。</p>
+
+<strong>有多少种敌人和物品？</strong>
+<p>11 种敌人（游荡者、哨兵、拾荒者、猎犬、步枪手、霰弹兵、狙击手、重甲兵、工兵、医护兵、猎杀队员）和 37 种物品底子，物品有五个稀有度（普通、精良、稀有、史诗、传说）和十几种词条（威力、射速、弹匣、射程、精准、护甲、减伤、轻量、容量、消音、脱战回血、移速）。</p>
+<p>11 种敌人共用同一台状态机，靠各自的参数开关决定行为转移。<strong>好处是「所有敌人遵守同一套感知规则」成为结构上的事实</strong>——你学会的「躲视野锥」对 11 种都成立，不会有哪一种莫名其妙地例外。</p>
+
+<strong>会不会有屏幕外飞来的子弹？</strong>
+<p>不会，这是本作的一条可读性红线：<strong>任何能打中你的东西都在半个屏幕以内</strong>，由测试守着。同理，噪音半径和撤离吸引半径都<strong>必须大于一屏</strong>——感知不到的机制等于不存在，你得亲眼看见人是被你自己叫过来的。</p>
+
+<strong>存档存在哪？会不会上传？</strong>
+<p>只在这台设备上，存在 App 自己沙盒里的一个存档文件里，不上传也不同步。App 不发起任何网络请求。<strong>如果你在系统里开了设备备份，那份备份会包含这个存档，和它包含你其他 App 的数据一样——那份备份由 Apple 保管，我们碰不到。</strong> 详见<a href="privacy.html">隐私政策</a>。</p>
+
+<strong>数据怎么删？</strong>
+<p>设置页有「重置全部进度」，会清空仓库、生涯记录和上次配装，回到第一次打开的状态，而且找不回来。反馈和操作那几个开关会保留，它们是偏好不是进度。删除 App 即清除全部数据。</p>
+
+<strong>有声音吗？</strong>
+<p>有，15 个音效。它们全部由代码实时合成波形，工程里没有任何音频文件。音频会话不在启动时激活，所以它不会打断你正在听的音乐。设置里可以关，触感和屏幕震动也可以分别关。</p>
+
+<strong>需要联网吗？</strong>
+<p>不需要。整个 App 不发起任何网络请求，飞行模式下全部功能可用，包括第一次启动。</p>
+
+<strong>支持哪些设备？</strong>
+<p>需要 iOS 17.0 或更高版本，iPhone 与 iPad 都可以。iPhone 上仅支持竖屏，iPad 上支持竖屏和上下颠倒。</p>
+
+<strong>分享按钮发出去的是什么？</strong>
+<p>点它之前什么都不会发生。点它之后，App 在本机把这一局画成一张 1080 像素宽的卡片（结果、评级、带出的价值、最值钱的几件东西、生涯出击次数与撤离率），交给 iOS 的系统分享面板，发到哪由你自己选。卡片上只有这一局的战果，没有账号名、没有设备标识、没有位置，底部也没有二维码。</p>
+
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上设备型号、系统版本和复现步骤。如果能说清当时在地图的哪个区域、带的是什么装备，会更好定位。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>What kind of game is this</strong>
+<p>A top-down, single-player extraction shooter. One raid is six minutes: insert on the outer ring, push inward, take as much as you can carry, then find an exit and get out alive before the clock runs out. Fail, and everything you were carrying stays behind. Your first raid hands you a standard pistol and a small pack; coming out alive is what earns you a second one.</p>
+
+<strong>How do I control it</strong>
+<p>A floating stick on the left (movable to the right): the stick centres wherever your thumb lands. Firing is automatic — if an enemy is in the reticle, you shoot, so your job is positioning and movement rather than aiming. The bottom right holds a hold-to-fire button, a consumable button and a backpack button. Reloading is automatic too, because under auto-fire the timing of a reload was never the player's decision.</p>
+
+<strong>How does extraction work</strong>
+<p><strong>You stand still for six seconds.</strong> Walking onto the pad does not finish the job, and that is this game's biggest departure from its genre: the act of extracting is the tensest fight in the raid. A charging pad also calls out — every enemy within 280 units heads for it (that is more than a screen away, so you always see who you brought down on yourself). Enemies already trading fire with you are not pulled away, but a player who starts an extraction pulls in everyone nearby.</p>
+
+<strong>When are the exits open</strong>
+<p>Three windows open at 60, 150 and 240 seconds and each lasts 80 seconds. They close <strong>from the inside out</strong>. From 0 to 60 seconds only the far outer ring pad is open; from 60 to 140 two mid-ring pads open along with the one dead centre in the vault, and that is your only chance to walk out of the deepest part of the map with cargo; after that only the mid ring, then only the outer ring. <strong>At every moment at least one pad on the map is open</strong>, so there is never a point where no exit exists at all. That always-open pad is simply a very long walk away.</p>
+
+<strong>What do I lose when I die</strong>
+<p>Everything you were carrying. <strong>Your stash is safe</strong> — weapons, armour, packs and consumables leave the stash the moment you deploy, not the moment you die. That makes the death settlement a pure record-keeping step that cannot lose your stash; the worst case is being killed by the OS mid-raid, which puts you back before you deployed. Tests guard this, so it is not a hope.</p>
+
+<strong>Can the save file be corrupted, or lost</strong>
+<p>Every save writes to a temporary file, reads it back to verify, then demotes the old save to a backup and atomically replaces it. A bad primary save falls back to the backup, and only if both are bad does the app start fresh. Any failed step cleans up the temporary file. <strong>There is no path where a corrupt save costs you your stash.</strong> Deleting the app does lose everything, and that has no exception.</p>
+
+<strong>What is a scavenger</strong>
+<p>It is <strong>the only enemy in the game that can win</strong>. It does not attack you: it opens your containers, shoulders what it finds, and walks to an exit to <strong>leave the map</strong>. A single-player game has no other players, so it has no "someone got there first" — the scavenger puts that back. If you are slow, the container is already empty; if you watch it carry your loot toward the exit and fail to stop it, that loot is gone for good.</p>
+
+<strong>How does noise work</strong>
+<p>Firing adds noise, and noise decides how far away enemies can hear you. Cross a threshold and the map <strong>sends a hunter squad after you once</strong> — once per raid only, because if it could come again and again there would be no way to shake pursuit by going quiet, and the mechanic would stop being a consequence and start being a punishment.</p>
+<p>That is why the Whisper SMG — the one weapon in the game that is suppressed from the start — is the only gun that lets you finish a fight still at zero noise, and its numbers are not the best in the game. <strong>It is the one route through a raid that can avoid combat entirely</strong>, and the price is giving up a better gun on purpose. The noise meter on the HUD is there for a reason.</p>
+
+<strong>Is the map random? Can it generate an unsolvable layout</strong>
+<p>Every map grows from a random seed: 91 by 91 tiles, 100 rooms, built as a room grid plus a randomised Prim spanning tree with 30 percent extra connections, since you need loops to flank and to retreat. <strong>Solvability holds by construction</strong> rather than by testing: the spanning tree step already guarantees every room is connected, and the tests simply confirm that across 40 seeded maps. The same seed always grows the same map.</p>
+
+<strong>Is the map divided into areas</strong>
+<p>Yes. Distance from the centre separates the outer ring, the mid ring and the vault, and <strong>both container quality and enemy strength follow that gradient</strong> — deeper is richer and deadlier. The extraction windows close from the outside inward. So "when do I leave" has an answer you can put into words: either get out from deep early, or accept it and walk the whole way back. That rule takes one raid to learn, and every raid charges you for it again.</p>
+
+<strong>How many enemies and items are there</strong>
+<p>Eleven enemy types (drifter, sentry, scavenger, hound, rifleman, breacher, marksman, juggernaut, sapper, medic, hunter) and 37 item bases, with five rarities (common, uncommon, rare, epic, legendary) and a dozen-plus affixes covering damage, fire rate, magazine, range, accuracy, armour, mitigation, weight, capacity, suppression, out-of-combat regeneration and move speed.</p>
+<p>All eleven share one state machine, with each type's parameters deciding which transitions it takes. <strong>The payoff is that every enemy obeying the same perception rules is a structural fact</strong> — the sightline play you learn works against all eleven, with no arbitrary exceptions.</p>
+
+<strong>Can I be shot from off-screen</strong>
+<p>No, and that is a hard readability rule here: <strong>anything that can hit you is inside half a screen</strong>, and a test guards it. For the same reason the noise radius and the extraction attract radius <strong>must both be larger than one screen</strong> — a mechanic you cannot perceive does not exist, and you should see for yourself who you called down on yourself.</p>
+
+<strong>Where is my save, and is it uploaded</strong>
+<p>On this device only, in a single save file inside the app's sandbox. Nothing is uploaded or synced, and the app makes no network requests. <strong>If you have device backups enabled, that backup includes this save, the same way it includes data from your other apps — and that backup is held by Apple, not by us.</strong> See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<strong>How do I delete my data</strong>
+<p>Settings offers Reset All Progress, which clears your stash, your career records and your last loadout, returning the app to how it looked the first time you opened it. It cannot be undone. The feedback and control toggles are kept, because they are preferences rather than progress. Deleting the app clears everything.</p>
+
+<strong>Is there sound</strong>
+<p>Yes, 15 sound effects. All of them are synthesised in code at play time and the project ships no audio files. The audio session is not activated at launch, so it will not interrupt music you are listening to. Sound can be turned off in Settings, and haptics and screen shake have their own toggles.</p>
+
+<strong>Does it need a network connection</strong>
+<p>No. The app makes no network requests at all and every feature works in Airplane Mode, including first launch.</p>
+
+<strong>Which devices are supported</strong>
+<p>iOS 17.0 or later. iPhone and iPad. Portrait only on iPhone; portrait and upside down on iPad.</p>
+
+<strong>What does the Share button send</strong>
+<p>Nothing happens until you tap it. When you do, the app draws this raid into a 1080-pixel-wide card on this device (result, rating, extracted value, your most valuable finds, career raid count and survival rate) and hands it to the iOS share sheet, where the destination is your choice. The card carries this raid's outcome only — no account name, no device identifier, no location, and no QR code at the bottom.</p>
+
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your device model, OS version, and steps to reproduce. If you can say which part of the map you were in and what you were carrying, that usually makes it much easier to pin down.</p>
+</div>
+
+
+<footer>撤离线 ExtractionLine · 进去，拿到，活着出来</footer>
+</body>
+</html>

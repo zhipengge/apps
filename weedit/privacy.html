@@ -75,70 +75,224 @@
 </div>
 
 <h1>文辑 · 隐私政策</h1>
-<p class="meta">WeEdit — Privacy Policy · 最后更新 / Last updated: 2026-09-15</p>
+<p class="meta">WeEdit — Privacy Policy · 最后更新 / Last updated: 2026-10-12</p>
 
 <h2 id="zh">中文</h2>
 
-<p class="lead"><strong>文辑不收集、不上传、不分享你的文稿。</strong> 正文、图片、音视频和偏好都只在这台 Mac 的沙盒容器里处理。没有账号，没有自建服务器，不内嵌分析、追踪或广告 SDK。</p>
+<p class="lead"><strong>文辑没有服务器。</strong>稿件、图片、音视频都只写在这台电脑的沙盒容器里，没有账号，没有自建后端，不内嵌分析、追踪、崩溃上报或广告 SDK。它确实会联网，但只有三处，且每一处都不是把稿件发给我们——下面逐条写清楚。</p>
 
-<h3>我们处理什么、在哪处理</h3>
+<h3>它和网络的关系</h3>
+
+<p>文辑申请了「出站网络」这一条权限，因为文稿里可能已经有别人的图片。除此之外它不需要网络：断网也能写稿、保存、切换平台、复制适配稿。断网时看不到的只有远程图片（显示成空白），以及「打开后台」会打不开。</p>
+
+<p>三处会碰到网络的地方：</p>
+
 <table>
-  <tr><th>数据</th><th>用途</th><th>位置</th></tr>
-  <tr><td>文稿 HTML 与标题</td><td>编辑与本地保存</td><td>沙盒 Application Support</td></tr>
-  <tr><td>你插入的图片 / 视频 / 音频</td><td>显示在文稿中，复制时写入剪贴板</td><td>容器 media 目录；复制由你点按钮触发</td></tr>
-  <tr><td>剪贴板</td><td>把适配后的 HTML 和纯文本交给系统剪贴板</td><td>仅在你点「复制」时写入</td></tr>
-  <tr><td>远程图片 URL</td><td>文稿里已有 https 图片时，WebKit 拉取以便显示</td><td>设备内存，不上传正文</td></tr>
+  <tr><th>动作</th><th>连到哪</th><th>发生什么</th></tr>
+  <tr>
+    <td>打开一篇含有远程图片的稿子</td>
+    <td>图片自己原本所在的站点</td>
+    <td>编辑器与右侧预览会按图片的原始地址去取，否则显示不出来。请求由系统的 WebKit 发出，只取那张图，不带你的正文，也不带文稿标题。</td>
+  </tr>
+  <tr>
+    <td>点「复制并打开后台」</td>
+    <td>对应平台的创作页</td>
+    <td>复制完成后，把平台地址交给系统默认浏览器打开。此后浏览器里发生的一切（登录、上传、平台自己的统计）由该平台和你的浏览器负责，文辑既不参与也拿不到结果。</td>
+  </tr>
+  <tr>
+    <td>在编辑器里点一个链接</td>
+    <td>链接指向的地方</td>
+    <td>交给系统打开（通常是浏览器）。地址就是文稿里写的那个，文辑不改写也不检查它去哪。</td>
+  </tr>
 </table>
 
-<h3>我们不做的事</h3>
+<p><strong>一个必须说清楚的点：</strong>如果文稿里的图片是网上的图，打开这篇稿就会向那个图的站点暴露你的 IP 地址，以及「这台机器取过这张图」。这和本站无关，但它是真实发生的网络行为，我们不写成「完全离线」。想避免的话，把图插成本地文件即可——本地图片不走网络。</p>
+
+<p>另外，复制出去的 HTML 里，本地图片会被嵌成内联数据（data URI），而<strong>远程图片的地址会原样留着</strong>。所以粘到平台后台之后，是那边的编辑器去取这张图，不是文辑。</p>
+
+<h3>我们处理什么、放在哪</h3>
+
+<table>
+  <tr><th>数据</th><th>用途</th><th>位置</th></tr>
+  <tr>
+    <td>文稿标题、正文 HTML、文稿列表</td>
+    <td>编辑与本地保存</td>
+    <td>沙盒容器内的 <code>Application Support/WeEdit/Documents/&lt;文稿 id&gt;/article.json</code></td>
+  </tr>
+  <tr>
+    <td>你插入的图片 / 视频 / 音频</td>
+    <td>在文稿里显示；导出时嵌进 HTML；小红书和微博还会写入剪贴板</td>
+    <td>同一文稿目录下的 <code>media/</code>。插入时是<strong>复制</strong>进来的，不保留对原文件的引用</td>
+  </tr>
+  <tr>
+    <td>剪贴板（写）</td>
+    <td>你点「复制适配稿」时，写入适配后的 HTML、纯文本，小红书和微博还包括图片数据</td>
+    <td>系统剪贴板。只有你点按钮才会写</td>
+  </tr>
+  <tr>
+    <td>剪贴板（读）</td>
+    <td>你点「链接」时，取你刚才复制的那个网址，填进文稿</td>
+    <td>内存，用一次即弃</td>
+  </tr>
+  <tr>
+    <td>导出的 HTML 文件</td>
+    <td>你点「导出」时写出</td>
+    <td>你在保存面板里选的位置</td>
+  </tr>
+</table>
+
+<p>文辑<strong>不使用偏好设置存储</strong>，因此没有额外的一份「使用痕迹」留在系统里；也没有安全作用域书签，所以它不会在你不用的文件上保持长期访问权——图片是拷进来的，拷完就和原文件无关了。</p>
+
+<h3>权限</h3>
+
+<p>文辑的沙盒授权只有三类，全部列在这里，没有别的：</p>
+
 <ul>
-  <li>不把文稿发到任何自建服务器</li>
-  <li>不登录公众号、小红书、知乎、微博</li>
-  <li>不接入广告网络或分析平台</li>
-  <li>不读取通讯录、位置、麦克风、摄像头</li>
-  <li>不要求账号</li>
+  <li><strong>App 沙盒</strong>——限定文稿只能写进自己的容器。</li>
+  <li><strong>你选定的文件（读与写）</strong>——插入图片/视频/音频、导出 HTML 时，通过系统的打开与保存面板拿文件。</li>
+  <li><strong>出站网络</strong>——只用于上面那三种情况。没有「接受入站连接」的授权，所以文辑在结构上无法作为服务器被连入。</li>
 </ul>
 
-<h3>网络通信</h3>
-<p>出站网络只用于：显示文稿里已经存在的远程图片；以及你点「打开后台」时由系统浏览器访问平台站点。请求里不含你的文稿正文。可以断网写稿。</p>
+<p>不申请、也不需要：辅助功能、输入监控、完全磁盘访问、屏幕录制、通知、自动化控制其他 App、通讯录、日历、位置、麦克风、摄像头。文辑不是菜单栏常驻程序，是普通窗口程序，关掉最后一扇窗口就退出。</p>
 
-<h3>文件访问</h3>
-<p>App Sandbox。只能读写你在打开/保存面板里选的文件，以及容器内自己的文稿。不申请完全磁盘访问。</p>
+<h3>我们不做的</h3>
 
-<h3>数据删除</h3>
-<p>删除 App，并移除 <code>~/Library/Containers/com.gezhipeng0201.WeEdit</code>，即无残留。</p>
+<ul>
+  <li>不把文稿发到任何自建服务器——文辑没有服务器</li>
+  <li>不登录你的公众号、小红书、知乎、微博账号，不代你发布</li>
+  <li>不接入广告、分析、崩溃上报或任何第三方 SDK</li>
+  <li>不读取通讯录、位置、麦克风、摄像头</li>
+  <li>不生成设备标识符，不做跨 App 追踪，不向第三方出售或分享任何数据</li>
+  <li>不要求注册、登录或绑定邮箱</li>
+</ul>
+
+<h3>第三方</h3>
+
+<p>文辑没有引入任何第三方库（工程里没有包管理器依赖），也没有内置任何第三方素材——图标是用代码和矢量绘制的。除系统框架外没有别人的代码在跑。</p>
+
+<h3>数据留存与删除</h3>
+
+<p>数据一直留在这台电脑上，直到你删掉。删除方法：退出文辑，从「应用程序」里删除它，再移除 <code>~/Library/Containers/com.gezhipeng0201.WeEdit</code>（文稿就在这个容器里）。容器删掉即无残留，我们这边没有任何副本，因为没有可以存副本的地方。</p>
+
+<h3>加密与出境</h3>
+
+<p>文辑不自研加密，也不用加密做存储或同步。用到的加密只有系统在 HTTPS 里的标准实现（取远程图片、浏览器打开平台站点时）。对应的出口合规申报为「不使用非豁免加密」。</p>
+
+<h3>儿童</h3>
+
+<p>文辑不收集任何人的数据，自然也不收集儿童的数据。它没有账号体系，也没有可供提交信息的地方。</p>
+
+<h3>这份政策和代码的对应关系</h3>
+
+<p>上面每一条都不是照模板写的，是从工程里核对出来的：沙盒授权文件里只有那三项，所以「不申请辅助功能」是结构性的而不是承诺；全工程搜索不到任何偏好设置读写，所以「不额外留使用痕迹」成立；导出时的图片来源替换只认 <code>weedit-media://</code> 与 <code>file:</code> 两种前缀，其余一律原样放行，所以「远程图地址会保留、并且会向原站取图」是这个实现的必然结果，而不是我们选择的说法。政策与实现不一致时，以工程为准。</p>
 
 <h2 id="en">English</h2>
 
-<p class="lead"><strong>WeEdit does not collect, upload, or share your drafts.</strong> Articles, media, and preferences stay in the Mac sandbox. No account, no backend, no analytics, tracking, or ads.</p>
+<p class="lead"><strong>WeEdit has no server.</strong> Drafts, images, video and audio are written to this computer's sandbox container only. No account, no backend, no analytics, tracking, crash reporting or ad SDK. It does go online, in exactly three places, and none of them sends your draft to us. Each is spelled out below.</p>
 
-<h3>What we process</h3>
+<h3>How it relates to the network</h3>
+
+<p>WeEdit is granted outbound network access because a draft may already contain someone else's image. Nothing else needs the network: writing, saving, switching platforms and copying the adapted draft all work offline. What does not work offline is remote images (they show blank) and opening a platform editor.</p>
+
 <table>
-  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
-  <tr><td>Draft HTML and titles</td><td>Editing and local save</td><td>Sandbox Application Support</td></tr>
-  <tr><td>Images / video / audio you insert</td><td>Display and optional clipboard copy</td><td>Container media folder</td></tr>
-  <tr><td>Clipboard</td><td>Adapted HTML and plain text</td><td>Only when you press Copy</td></tr>
-  <tr><td>Remote image URLs already in a draft</td><td>WebKit fetch for display</td><td>Memory; draft body is not uploaded</td></tr>
+  <tr><th>Action</th><th>Connects to</th><th>What happens</th></tr>
+  <tr>
+    <td>Opening a draft that contains remote images</td>
+    <td>The site that image came from</td>
+    <td>The editor and the preview pane fetch each image from its original address, or it cannot be shown. The request comes from the system WebView, asks for that image, and carries neither your text nor your title.</td>
+  </tr>
+  <tr>
+    <td>Pressing Copy and Open Editor</td>
+    <td>That platform's compose page</td>
+    <td>After copying, the platform's address is handed to your default browser. Everything after that (sign-in, upload, the platform's own analytics) belongs to that platform and your browser; WeEdit neither takes part nor receives the result.</td>
+  </tr>
+  <tr>
+    <td>Clicking a link inside the editor</td>
+    <td>Wherever the link points</td>
+    <td>Handed to the system to open, usually the browser. The address is the one written in the draft; WeEdit does not rewrite it or check where it goes.</td>
+  </tr>
 </table>
 
-<h3>What we do not do</h3>
+<p><strong>One thing worth stating plainly:</strong> if an image in your draft lives on the web, opening that draft reveals your IP address to that image's host, along with the fact that this machine fetched it. That has nothing to do with us, but it is a real network event, so we do not describe the app as fully offline. Insert the image as a local file and no network is involved.</p>
+
+<p>In the copied HTML, images stored locally are inlined as data URIs, while <strong>remote image addresses are left exactly as they are</strong>. So after you paste, it is the platform's own editor that fetches those images, not WeEdit.</p>
+
+<h3>What we process, and where</h3>
+
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
+  <tr>
+    <td>Draft title, body HTML, draft list</td>
+    <td>Editing and local save</td>
+    <td><code>Application Support/WeEdit/Documents/&lt;draft id&gt;/article.json</code> inside the sandbox container</td>
+  </tr>
+  <tr>
+    <td>Images / video / audio you insert</td>
+    <td>Shown in the draft; inlined on export; also written to the clipboard for Xiaohongshu and Weibo</td>
+    <td><code>media/</code> in the same draft folder. The file is <strong>copied</strong> in; no reference to your original is kept</td>
+  </tr>
+  <tr>
+    <td>Clipboard (write)</td>
+    <td>When you press Copy, the adapted HTML and plain text are written, plus image data for Xiaohongshu and Weibo</td>
+    <td>The system clipboard, and only when you press the button</td>
+  </tr>
+  <tr>
+    <td>Clipboard (read)</td>
+    <td>When you press Link, the URL you just copied is read and inserted into the draft</td>
+    <td>In memory, used once</td>
+  </tr>
+  <tr>
+    <td>Exported HTML file</td>
+    <td>Written when you press Export</td>
+    <td>Wherever you choose in the save panel</td>
+  </tr>
+</table>
+
+<p>WeEdit <strong>does not use preferences storage</strong>, so no extra record of use is left in the system, and it holds no security-scoped bookmarks: media is copied in, and once copied it has nothing to do with the original file.</p>
+
+<h3>Permissions</h3>
+
+<p>The sandbox grants exactly three things; there are no others:</p>
+
 <ul>
-  <li>No upload of drafts to our servers</li>
-  <li>No login to WeChat, Xiaohongshu, Zhihu, or Weibo</li>
-  <li>No ads or analytics</li>
-  <li>No Contacts, Location, Microphone, or Camera</li>
-  <li>No account</li>
+  <li><strong>App Sandbox</strong>, so drafts can only be written into the app's own container.</li>
+  <li><strong>User-selected files (read and write)</strong>, used through the system open and save panels when you insert media or export HTML.</li>
+  <li><strong>Outbound network</strong>, used only for the three cases above. There is no incoming-connections entitlement, so WeEdit cannot be connected to as a server.</li>
 </ul>
 
-<h3>Network</h3>
-<p>Outbound network is used to display remote images already in a draft, and when you ask the system browser to open a platform editor. Draft text is not sent to us. Writing works offline.</p>
+<p>Not requested and not needed: Accessibility, Input Monitoring, Full Disk Access, Screen Recording, notifications, automation of other apps, Contacts, Calendar, Location, Microphone or Camera. WeEdit is an ordinary windowed app, not a menu bar agent, and it quits when you close its last window.</p>
 
-<h3>File access</h3>
-<p>App Sandbox. Only files you pick in Open/Save, plus the app container. No Full Disk Access.</p>
+<h3>What we do not do</h3>
 
-<h3>Deletion</h3>
-<p>Remove the app and <code>~/Library/Containers/com.gezhipeng0201.WeEdit</code>.</p>
+<ul>
+  <li>No upload of drafts to a server of ours, because there is no server of ours</li>
+  <li>No sign-in to your WeChat, Xiaohongshu, Zhihu or Weibo account, and no posting on your behalf</li>
+  <li>No ads, analytics, crash reporting or any third-party SDK</li>
+  <li>No Contacts, Location, Microphone or Camera</li>
+  <li>No device identifiers, no cross-app tracking, no selling or sharing of data</li>
+  <li>No sign-up, sign-in or email required</li>
+</ul>
 
-<footer>文辑 WeEdit · 本地图文编辑器</footer>
+<h3>Third parties</h3>
+
+<p>WeEdit links no third-party libraries (the project has no package manager dependencies) and bundles no third-party assets; the icon is drawn in code and vectors. Apart from system frameworks, no one else's code runs here.</p>
+
+<h3>Retention and deletion</h3>
+
+<p>Everything stays on this computer until you delete it. Quit WeEdit, remove it from Applications, then remove <code>~/Library/Containers/com.gezhipeng0201.WeEdit</code>, where the drafts live. Removing the container leaves nothing behind, and we hold no copy, because there is nowhere for us to hold one.</p>
+
+<h3>Encryption and export</h3>
+
+<p>WeEdit implements no encryption of its own and uses none for storage or sync. The only cryptography involved is the system's standard HTTPS, used when fetching remote images and when the browser opens a platform site. The matching export compliance declaration is that the app uses no non-exempt encryption.</p>
+
+<h3>Children</h3>
+
+<p>WeEdit collects no one's data, children's included. There is no account system and nowhere to submit information.</p>
+
+<h3>How this policy maps to the code</h3>
+
+<p>Nothing above was written from a template; each claim was checked against the project. The entitlements file contains exactly those three entries, which makes "no Accessibility" structural rather than a promise. A search across the whole project finds no preferences read or write, which is what makes "no extra usage record" true. The export-time source replacement only accepts the <code>weedit-media://</code> and <code>file:</code> prefixes and passes everything else through untouched, which makes "remote addresses are kept and fetched from their own host" a consequence of the implementation rather than a phrasing choice. Where this policy and the implementation disagree, the implementation is what ships.</p>
+
+<footer>文辑 WeEdit · 本地图文编辑器 · <a href="./support.html">帮助与支持</a></footer>
 </body>
 </html>

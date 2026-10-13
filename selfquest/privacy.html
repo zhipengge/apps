@@ -8,14 +8,14 @@
   :root {
     color-scheme: light dark;
     --fg: #1c1c1e; --fg-dim: #6e6e73;
-    --bg: #ffffff; --bg-soft: #f5f5f7;
-    --accent: #F5C451;
+    --bg: #ffffff; --bg-soft: #f7f5ee;
+    --accent: #8a6a12;
     --border: rgba(0,0,0,.08);
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --fg: #f5f5f7; --fg-dim: #98989d;
-      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --bg: #14110b; --bg-soft: #241f14;
       --accent: #FFD97A;
       --border: rgba(255,255,255,.1);
     }
@@ -33,20 +33,20 @@
   .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
   .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
           border-left: 4px solid var(--accent); margin: 20px 0; }
+  .warn { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid #c0392b; margin: 20px 0; }
   table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
   th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
   th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
   ul li { margin: 6px 0; }
   code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
-         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; word-break: break-all; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
   .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
   footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
            color: var(--fg-dim); font-size: 0.85rem; }
-  .faq { margin: 18px 0; }
-  .faq strong { display: block; margin-top: 20px; }
 </style>
 </head>
 <body>
@@ -58,11 +58,13 @@
 
 
 <h1>自律勇者 · 隐私政策</h1>
-<p class="meta">SelfQuest — Privacy Policy · 最后更新 / Last updated: 2026-10-09</p>
+<p class="meta">SelfQuest — Privacy Policy · 最后更新 / Last updated: 2026-10-12</p>
 
 <h2 id="zh">中文</h2>
 
 <p class="lead"><strong>自律勇者不收集任何数据。</strong> 没有账号，没有服务器，App 也不发起任何网络请求。你的习惯、打卡、专注记录只写在这台设备的沙盒里。</p>
+
+<p>这一句是可核对的：工程里没有链接任何网络框架，二进制里没有任何网络符号，代码里字面写死的网址一共只有三个——关于页里的隐私政策、使用帮助和反馈入口，它们是交给系统浏览器打开的，App 自己不会去请求。飞行模式下全部功能可用，包括第一次启动。</p>
 
 <h3>我们处理什么、存在哪</h3>
 <table>
@@ -76,8 +78,32 @@
 
 <p>以上数据全部在本机读写，<strong>不会离开设备</strong>。</p>
 
+<p>具体来说，全部内容放在一个文件里：<code>Application Support/SelfQuest/database.json</code>。它是<strong>未加密的纯文本 JSON</strong>，任何能读到这台设备文件系统的人都能直接看懂。App 不使用系统设置（UserDefaults）、钥匙串，也不使用 iCloud 或任何云同步。</p>
+
+<h3>你亲手写的文字</h3>
+<p>习惯名称和专注任务名是<strong>你自己输入的原文</strong>，会原样存进上面那个文件。打卡的日期、专注的时长与时间点也一并保存。这些是这台设备上唯一与你有关的个人内容。</p>
+
 <h3>网络</h3>
 <p><strong>App 不发起任何网络请求。</strong> 飞行模式下全部功能可用。</p>
+<p>需要说明一处：设置里的「关于」卡片有三个链接（隐私政策、使用帮助、反馈问题）。点它们时，App 把网址交给系统，由 Safari 打开——<strong>请求由 Safari 发出，不是这个 App 发出的</strong>。不点就不会有任何网络行为。</p>
+
+<h3>权限</h3>
+<p><strong>App 不申请任何权限。</strong> 没有通知、没有相机、麦克风、相册、通讯录、位置、健康数据、运动与健身，也没有 Face ID。工程里一个权限说明字段都没有写。</p>
+<p>其中「没有通知权限」值得单独说一句：这是一个习惯打卡 App，很多人会默认它会提醒你打卡。<strong>它不会。</strong> 它从来没有请求过通知权限，也不会在后台唤起。</p>
+
+<h3>你对自己的数据有完全控制</h3>
+<p>设置页提供两种导出：JSON 是完整存档，CSV 是打卡明细，可用 Excel 打开。两种都通过系统分享面板交给你选择的目标应用，<strong>只有你主动点导出才会发生</strong>，App 不知道也不记录你发给了谁。</p>
+
+<div class="warn">
+<strong>导出是单向的，请务必读完这一段。</strong>
+<p><strong>这个版本没有导入功能。</strong> 导出的 JSON 不能被读回 App 里，App 里也没有「从文件恢复」的按钮，也没有在系统里注册成 JSON 文件的打开方式。<strong>换手机时请按下面的办法手动搬。</strong></p>
+</div>
+
+<h3>换手机怎么办</h3>
+<p>把导出的 JSON 存档留好，它是完整的记录，能在电脑上或任何文本编辑器里查看；但<strong>带着这份文件并不能在新手机上把 App 的记录变回原样</strong>。新手机上重新添加习惯、重新开始，是目前唯一可行的做法。上架前这条会改；在那之前，这句就是它的真实状态。</p>
+
+<h3>导出文件留在哪</h3>
+<p>导出的 JSON 和 CSV 先写进 App 的临时目录，再交给系统分享面板。<strong>分享完成后 App 不会删掉这份副本</strong>，它会留在临时目录里直到系统回收。想立刻清掉，删除 App 最干净。</p>
 
 <h3>我们不做的事</h3>
 <ul>
@@ -88,15 +114,15 @@
   <li>不把你的数据共享给任何第三方</li>
 </ul>
 
-<h3>你对自己的数据有完全控制</h3>
-<p>设置页提供两种导出：JSON 是完整存档，换手机时导入即可恢复；CSV 是打卡明细，可用 Excel 打开。分享功能完全由你主动触发，内容通过系统分享面板交给你选择的目标应用。</p>
-
 <h3>数据删除</h3>
 <p>删除 App 即可清除全部数据。也可以在 App 内逐个删除习惯——删除时会一并清掉它的打卡记录。</p>
+<p>还有一处要知道：如果存档文件损坏、读不出来，App 不会删掉它，而是把它改名留一份在旁边（<code>database.json.corrupt-</code> 加一个时间戳）。<strong>这些副本不会被 App 里的任何操作清除，只有删除 App 才会一起消失。</strong></p>
 
 <h2 id="en">English</h2>
 
 <p class="lead"><strong>SelfQuest collects no data.</strong> No account, no server, and the app makes no network requests. Your habits, check-ins, and focus sessions stay in the sandbox on this device.</p>
+
+<p>That is checkable: the project links no networking framework, the binary contains no network symbols, and exactly three URLs are hard-coded anywhere in the source: the privacy policy, support page and feedback links on the About card, which are handed to the system browser rather than fetched by this app. Every feature works in Airplane Mode, first launch included.</p>
 
 <h3>What the app handles, and where</h3>
 <table>
@@ -110,8 +136,32 @@
 
 <p>All of it is read and written on-device and <strong>never leaves it</strong>.</p>
 
+<p>Concretely, everything lives in one file: <code>Application Support/SelfQuest/database.json</code>. It is <strong>unencrypted plain-text JSON</strong>, readable by anyone who can reach the device's file system. The app uses no system settings store (UserDefaults), no keychain, and no iCloud or other sync.</p>
+
+<h3>Text you typed yourself</h3>
+<p>Habit names and focus task names are <strong>your own words</strong>, stored verbatim in that file, along with the dates you checked in and how long you focused and when. That is the only personal content on this device.</p>
+
 <h3>Network</h3>
 <p><strong>The app makes no network requests.</strong> Every feature works in Airplane Mode.</p>
+<p>One thing worth spelling out: the About card in Settings has three links (privacy policy, support, feedback). Tapping one hands the URL to the system, and Safari opens it; <strong>the request is made by Safari, not by this app</strong>. Never tap them and no network activity occurs at all.</p>
+
+<h3>Permissions</h3>
+<p><strong>The app requests no permissions of any kind.</strong> No notifications, no camera, microphone, photos, contacts, location, health or motion data, and no Face ID. The project declares no usage description whatsoever.</p>
+<p>The notification point deserves its own sentence: this is a habit tracker, and most people assume it will remind them. <strong>It will not.</strong> It has never asked for notification permission and never wakes in the background.</p>
+
+<h3>You control your data</h3>
+<p>Settings offers two exports: JSON is the complete save, CSV is the check-in detail for a spreadsheet. Both go through the system share sheet to a destination you choose, and <strong>only when you tap export</strong>. The app neither knows nor records where you sent it.</p>
+
+<div class="warn">
+<strong>Export is one-way. Please read this paragraph.</strong>
+<p><strong>There is no import in this version.</strong> An exported JSON cannot be read back into the app: there is no restore-from-file button, and the app does not register itself as a handler for the file it exports. <strong>See below for what to do when you change phones.</strong></p>
+</div>
+
+<h3>Changing phones</h3>
+<p>Keep the exported JSON; it is a complete record and readable on a computer or in any text editor. But <strong>that file will not put your records back into the app on a new phone</strong>. Re-adding habits and starting fresh is the only thing that works today. This is due to change before release; until then, this is the honest description of it.</p>
+
+<h3>Where exported files end up</h3>
+<p>Both exports are written to the app's temporary directory before being handed to the share sheet. <strong>The app does not delete that copy afterwards</strong>; it stays there until the system reclaims it. Deleting the app is the clean way to remove it now.</p>
 
 <h3>What we do not do</h3>
 <ul>
@@ -122,11 +172,9 @@
   <li>No sharing with third parties</li>
 </ul>
 
-<h3>You control your data</h3>
-<p>Settings offers two exports: JSON is a full backup you can restore on a new phone; CSV is the check-in detail for a spreadsheet. Sharing only happens when you trigger it, and the content goes through the system share sheet to a destination you pick.</p>
-
 <h3>Deletion</h3>
 <p>Deleting the app clears everything. You can also delete habits individually in-app, which removes their check-in history with them.</p>
+<p>One more thing to know: if the save file is ever corrupt and cannot be read, the app does not delete it. It renames it and keeps a copy alongside (<code>database.json.corrupt-</code> plus a timestamp). <strong>Nothing in the app removes those copies; only deleting the app does.</strong></p>
 
 
 <footer>自律勇者 SelfQuest · 游戏化自律工具</footer>

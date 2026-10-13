@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>暗区枪线 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #fbf1f4;
+    --accent: #a82f5a;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #120b0e; --bg-soft: #1e1216;
+      --accent: #e8618f;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>暗区枪线 · 支持</h1>
+<p class="meta">DarkZone — Support · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>这是个什么 App？</strong>
+<p>一个俯视角的单机战术射击游戏。10 个关卡，一张图就是一关，一枪就能把你打死。关卡名是：冷启动、多一双眼睛、不必清场、他会冲过来、三枪才倒、把它带回来、一条路、交叉火力、密集院区、暗区终点。单人、离线，一个关卡大概几十秒到一分多钟。</p>
+
+<strong>怎么操作？</strong>
+<p>两个摇杆同时用：左摇杆走路，右摇杆瞄准并且开枪。右下角还有五个按钮，都是点一下就切换或者触发一次，不用按住——按住会跟摇杆抢手指：</p>
+<ul>
+<li>疾跑：是开关不是推到底，因为它有代价（脚步声会传得更远）</li>
+<li>换弹</li>
+<li>侦察</li>
+<li>换枪</li>
+<li>刀：近身解法，没有声音</li>
+</ul>
+
+<strong>为什么轻推不开枪？</strong>
+<p>因为那样你就没法「先瞄着他，等他探出头再打」。所以右摇杆上画了一圈虚线：<strong>在圈内只瞄准，推过那条线才开火。</strong> 这条线是看得见的，不是让你凭感觉猜。</p>
+
+<strong>「一枪就死」是什么意思？</strong>
+<p>字面意思：<strong>玩家身上没有血量这个字段</strong>，被打中就是死。唯一的缓冲不是血条，而是敌人发现你之后举枪的那一下——不同性格的敌人这段延迟不一样，最快的 0.40 秒，最慢的 0.80 秒。所以「被发现」的后果不是掉血，是立刻变成一道二选一：先手打死他，还是退出这个视野锥。</p>
+
+<strong>侦察是怎么算的？</strong>
+<p>按住侦察键，世界会慢下来（降到 0.12 倍速），<strong>但真实时间照走，那 9 秒配额是按真实秒扣的</strong>。买到的是全图情报：每个敌人的视野锥和巡逻路线。另外还能在地图上下最多 3 个标记，标记只是你自己的备忘纸，不额外扣配额，真正花时间的是「看」这个动作。</p>
+<p>要注意的是：三颗星里有一颗是「用时 ≤ 基准」，而侦察花掉的正是用时。所以<strong>「看」从来不是免费的</strong>，值不值得由你自己判断。</p>
+
+<strong>我必须把所有人都清掉吗？</strong>
+<p>不必。目标有三种：清除区域内全部敌人、抵达撤离点、取得情报并带回出发点。有些关卡是「过去再回来」，全程可以一个人都不杀——只要你能不被发现地走过去。这也是噪音为什么重要：它既会给你惹麻烦，也可以被你用来把人引开。</p>
+
+<strong>敌人有几种？</strong>
+<p>四种，性格完全不同：巡逻兵会走来走去，哨兵站着不动但视野最远、枪法最准，突击兵会朝你冲过来，重甲兵要三枪才倒。</p>
+
+<strong>武器怎么解锁？</strong>
+<p>用攒下来的星星换：冲锋枪 4 星，霰弹枪 9 星，步枪 16 星。关卡解锁看的是「上一关过没过」，跟星星无关——所以你不会因为星不够而被卡在门外。</p>
+
+<strong>为什么最安静的枪射程最短？</strong>
+<p>这是刻意的取舍：<strong>「安静」和「安全距离」只能选一个。</strong> 消音手枪几乎没有声音，但你得走到别人脸上才打得到；步枪能在对方视野外开枪，但一响就把附近所有人叫过来。四把枪的定位由噪音、伤害、射速、射程四个轴一起决定，所以选枪是一个真的决定，不是谁比谁强。</p>
+
+<strong>木箱能打碎吗？</strong>
+<p>能。掩体是双面的：既挡视线也挡子弹。<strong>木箱可以被打碎，碎掉以后视线就通了、敌人绕路的算法也会重算</strong>；水泥墙打不碎。所以「打穿它」和「绕过去」是两个真实选项——而打箱子会发出声音，声音又可能把人叫过来。</p>
+
+<strong>三颗星怎么拿？</strong>
+<p>三条互相独立的线，结算页会逐条告诉你是过还是没过、为什么：</p>
+<ul>
+<li>第一颗：通关</li>
+<li>第二颗：用时不超过基准</li>
+<li>第三颗：被发现次数不超过基准，而且命中率不低于 40%（或者一枪没开）</li>
+</ul>
+<p>结算页最后还会给一条提示，只给一条。</p>
+
+<strong>地图每次都一样吗？</strong>
+<p>一样。十关的地形是固定的，同一关重打多少次都是那张图。<strong>所以你记住路线是有用的</strong>，这也是为什么第一关被设计成教学关——它的地形固定，可以反复练。</p>
+
+<strong>死了会怎样？</strong>
+<p>这一关重来。已经拿到的星星和最好成绩不会被抹掉，只会被更好的成绩替换。</p>
+
+<strong>需要联网吗？</strong>
+<p>不需要。整个 App 不发起任何网络请求，飞行模式下全部功能可用，包括第一次启动。10 关的数据全部写死在代码里随 App 打包，没有排行榜，也没有云存档。</p>
+
+<strong>有账号吗？有内购和广告吗？</strong>
+<p>都没有。没有登录注册，没有内购，没有广告，也没有任何分析或崩溃上报的 SDK。关卡和武器都靠通关和星星在本机解锁。</p>
+
+<strong>我的数据存在哪？</strong>
+<p>一个键，<code>darkzone.progress.v1</code>，就在这台设备上：关卡记录（是否通关、几颗星、最好用时、尝试次数）、当前选的武器、三个开关、有没有看过教学。不上传、不同步、不写文件，也没有数据库。详见<a href="privacy.html">隐私政策</a>。</p>
+
+<strong>能导出或者分享吗？</strong>
+<p><strong>不能，而且这个 App 里根本没有分享和导出按钮。</strong> 数据没有任何出口，连「你点了才发」这条路径都不存在。设置里唯一的破坏性操作是「重置进度」，它做的事就是把本机那个键删掉。</p>
+
+<strong>有声音吗？会打断我正在听的音乐吗？</strong>
+<p>有声音，19 种音效全部是运行时用代码算出波形合成的，仓库里一个音频文件都没有。音频会话是播放模式并且<strong>明确打开了混音</strong>，所以你边听歌边打它不会把音乐掐掉。它也不是一启动就占住音频，而是你第一次开始行动时才起，切到后台就停。它不录音，也不用麦克风。</p>
+
+<strong>支持哪些设备？</strong>
+<p>需要 iOS 17.0 或更高版本。iPhone 上<strong>仅竖屏</strong>，iPad 上支持四个方向。界面是中文的。</p>
+
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上设备型号、系统版本和复现步骤。如果是某一关的敌人卡在奇怪的位置、或者你确信自己被不可能的角度打死了，说清楚关卡名和大概位置会快很多。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>What is this app</strong>
+<p>A top-down single-player tactical shooter. Ten levels, one map each, and a single bullet kills you. The levels are Cold Start, A Second Pair of Eyes, No Need to Clear It, He Will Charge, Three Shots to Drop, Bring It Back, One Road, Crossfire, Dense Compound and the Dark Zone Terminus. Single-player and offline, and a level runs from tens of seconds to a bit over a minute.</p>
+
+<strong>How do I control it</strong>
+<p>Both sticks at once: the left stick moves, the right stick aims and fires. There are also five buttons in the lower right, and each is a toggle or a one-shot rather than a hold, because holding would fight the stick for your finger:</p>
+<ul>
+<li>Sprint: a toggle rather than push-to-max, because it carries a cost (your footsteps carry further)</li>
+<li>Reload</li>
+<li>Scout</li>
+<li>Swap weapon</li>
+<li>Knife: the close-quarters answer, and silent</li>
+</ul>
+
+<strong>Why does a light push not fire</strong>
+<p>Because if it did, you could not "aim at him now and shoot when he steps out". So the right stick has a dashed circle drawn on it: <strong>inside the circle you only aim, and pushing past that line fires.</strong> The line is visible rather than something you have to feel out.</p>
+
+<strong>What does "one bullet kills you" mean</strong>
+<p>Exactly that: <strong>the player has no health field at all</strong>, and being hit means dying. The only buffer is not a health bar but the moment an enemy raises their gun after noticing you, and that delay differs by temperament, from 0.40 seconds at the fastest to 0.80 at the slowest. So the consequence of being spotted is not losing health, it is an immediate either-or: shoot first, or leave that cone of vision.</p>
+
+<strong>How does scouting work</strong>
+<p>Hold the scout button and the world slows down (to 0.12 speed), <strong>but real time keeps running and the nine-second budget is charged in real seconds</strong>. What you buy is full-map intel: every enemy's vision cone and patrol route. You can also place up to three marks, which are only your own scratch paper and cost no extra budget; the thing that costs time is the looking itself.</p>
+<p>Worth knowing: one of the three stars is for finishing within par time, and scouting is paid for in exactly that currency. So <strong>looking is never free</strong>, and whether it is worth it is your call.</p>
+
+<strong>Do I have to kill everyone</strong>
+<p>No. There are three objectives: clear all enemies in the area, reach the extraction point, or take the intel and bring it back to the start. Some levels are there-and-back and can be finished without killing a single person, as long as you can walk it unnoticed. That is also why noise matters: it can get you into trouble, and it can be used to pull people out of your way.</p>
+
+<strong>How many enemy types are there</strong>
+<p>Four, and they behave nothing alike: patrols walk their route, sentries stand still with the longest vision and the best aim, rushers charge you, and heavies take three shots to drop.</p>
+
+<strong>How do weapons unlock</strong>
+<p>With stars you have accumulated: the SMG at 4 stars, the shotgun at 9 and the rifle at 16. Levels unlock by clearing the previous one, not by stars, so you are never locked out for being short of them.</p>
+
+<strong>Why is the quietest gun the shortest-ranged</strong>
+<p>That trade-off is deliberate: <strong>you can have quiet, or you can have safe distance, not both.</strong> The suppressed pistol is nearly silent but you have to get in someone's face to use it; the rifle can shoot from outside their vision but wakes up everyone nearby. Each weapon is positioned by noise, damage, rate of fire and range together, so picking one is a real decision rather than a strict upgrade.</p>
+
+<strong>Can crates be destroyed</strong>
+<p>Yes. Cover cuts both ways: it blocks sightlines and bullets alike. <strong>Wooden crates can be shot apart, and breaking one opens the sightline and forces the enemies' routing to be recomputed</strong>; concrete walls cannot be broken. So shooting through and going around are both real options, and shooting a crate makes noise, which may bring someone over.</p>
+
+<strong>How do I earn the three stars</strong>
+<p>Three independent lines, and the result screen tells you pass or fail on each and why:</p>
+<ul>
+<li>First star: clear the level</li>
+<li>Second star: finish within par time</li>
+<li>Third star: alerts within par, and accuracy at or above 40 percent, or no shots fired at all</li>
+</ul>
+<p>The result screen then gives you one hint, and only one.</p>
+
+<strong>Is the map the same every time</strong>
+<p>Yes. The terrain of all ten levels is fixed, and replaying a level always gives you the same map. <strong>So memorising a route pays off</strong>, and that is why level one is built as the tutorial: its layout is fixed and can be practised.</p>
+
+<strong>What happens when I die</strong>
+<p>You restart the level. Stars and best times you already earned are not erased, only replaced by better ones.</p>
+
+<strong>Does it need a network connection</strong>
+<p>No. The app makes no network requests at all and every feature works in Airplane Mode, including first launch. All ten levels are defined in code and ship inside the app, and there is no leaderboard and no cloud save.</p>
+
+<strong>Is there an account? Are there purchases or ads</strong>
+<p>None of the three. No sign-in, no in-app purchases, no ads, and no analytics or crash-reporting SDK. Levels and weapons unlock on the device through clearing levels and earning stars.</p>
+
+<strong>Where is my data stored</strong>
+<p>In one key, <code>darkzone.progress.v1</code>, on this device: level records (cleared, stars, best time, attempts), your selected weapon, three toggles, and whether you have seen the tutorial. Nothing is uploaded, nothing is synced, no files are written and there is no database. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<strong>Can I export or share it</strong>
+<p><strong>No, and the app contains no share or export button at all.</strong> The data has no exit, not even the tap-to-send kind. The only destructive action in settings is reset progress, and all it does is delete that key on this device.</p>
+
+<strong>Is there sound? Will it interrupt my music</strong>
+<p>Yes, and all 19 sound effects are synthesized from waveforms computed in code at runtime; there is not a single audio file in the project. The audio session runs in playback mode with mixing explicitly enabled, so playing while listening to music will not cut the music off. It also does not seize audio at launch: the session starts when you first begin a mission and stops when you background the app. It does not record and does not use the microphone.</p>
+
+<strong>Which devices are supported</strong>
+<p>iOS 17.0 or later. <strong>Portrait only on iPhone</strong>; all four orientations on iPad. The interface is in Chinese.</p>
+
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your device model, OS version and steps to reproduce. If an enemy is stuck somewhere odd, or you are certain you were shot from an impossible angle, naming the level and roughly where you were will make it much faster to track down.</p>
+</div>
+
+
+<footer>暗区枪线 DarkZone · 一步一步走进去，一枪一枪退出来</footer>
+</body>
+</html>

@@ -1,0 +1,5 @@
+首次发布。导入你自己的 M3U、JSON 或 TXT 播放列表，或手填一条直播地址，就能在 iPhone 和 iPad 上播放。同一频道的多条线路会合成一条，播不动自动换线，打开时默认用最快的那路。直播可以往回拖最多 30 分钟，切台回来接着看。监控墙最多四路分屏，默认静音，断线时震动。支持画中画、AirPlay 和后台音频。不内置任何频道，没有账号，没有内购，没有广告。
+
+---
+
+First release. Import your own M3U, JSON or TXT playlist, or type in a stream address, and play it on iPhone and iPad. Lines for one channel merge into a single entry that switches automatically when one fails, starting on the fastest. Live TV rewinds up to 30 minutes and stays put when you switch channels. The monitor wall holds four feeds at once, muted by default, with a vibration when a feed drops. Picture in Picture, AirPlay and background audio are supported. No built-in channels, no account, no in-app purchases, no ads.

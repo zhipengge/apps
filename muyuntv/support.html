@@ -3,128 +3,234 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>牧云电视 · 帮助与支持 / Support</title>
+<title>牧云电视 · 支持 / Support</title>
 <style>
   :root {
     color-scheme: light dark;
     --fg: #1c1c1e; --fg-dim: #6e6e73;
-    --bg: #ffffff; --bg-soft: #f5f5f7;
-    --accent: #dc3340;
+    --bg: #ffffff; --bg-soft: #fdf0f1;
+    --accent: #c0202d;
     --border: rgba(0,0,0,.08);
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --fg: #f5f5f7; --fg-dim: #98989d;
-      --bg: #1c1c1e; --bg-soft: #2c2c2e;
-      --accent: #e85a64;
+      --bg: #14090b; --bg-soft: #241114;
+      --accent: #f2788a;
       --border: rgba(255,255,255,.1);
     }
   }
   * { box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
-    color: var(--fg);
-    background: var(--bg);
-    line-height: 1.6;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 32px 24px 80px;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
     -webkit-font-smoothing: antialiased;
   }
-  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 4px; }
-  h2 {
-    font-size: 1.35rem; font-weight: 600;
-    margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
-  }
-  h3 { font-size: 1.05rem; font-weight: 600; margin-top: 24px; }
-  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 24px; }
-  .lead {
-    background: var(--bg-soft);
-    padding: 18px 20px;
-    border-radius: 12px;
-    border-left: 4px solid var(--accent);
-    margin: 20px 0;
-  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  .warn { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; word-break: break-all; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  ul li, ol li { margin: 6px 0; }
-  footer {
-    margin-top: 56px; padding-top: 20px;
-    border-top: 1px solid var(--border);
-    color: var(--fg-dim); font-size: 0.85rem;
-  }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
 </style>
 </head>
 <body>
 
-<h1>牧云电视 — 帮助与支持</h1>
-<p class="meta">Muyun TV · Support · 2026-08-28</p>
-
-<div class="lead">
-  牧云电视是直播流播放工具。导入你自己的 M3U、JSON 或 TXT 播放列表，或手动添加地址后播放。
-  本应用不提供、不托管任何电视节目。源的合法性由你负责。
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
 </div>
 
-<h2>能做什么</h2>
+
+<h1>牧云电视 · 支持</h1>
+<p class="meta">Muyun TV — Support · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>这是个什么 App？打开怎么是空的？</strong>
+<p>牧云电视是一个<strong>直播流播放工具</strong>。它不提供、不托管、也不内置任何电视节目或节目表，所以<strong>你不导入任何东西，打开它就是一张空列表</strong>——这不是故障，是设计。它不假装自己是内容平台，这一点从第一屏就是诚实的。</p>
+
+<strong>怎么把源加进来？</strong>
+<p>四个入口，随便用哪个：</p>
 <ul>
-  <li>从文件或网址导入 M3U / M3U8 / JSON / TXT 播放列表。</li>
-  <li>手动添加单条直播源；按分组浏览、搜索、收藏、编辑、删除。</li>
-  <li>全屏播放 HLS 和常见 HTTP 视频流；支持画中画和 AirPlay。</li>
-  <li>最多 4 路监控墙分屏，适合看你自己的摄像头源。默认静音、可常亮、断线重连。不录像、不上云。</li>
-  <li>中文 / English；深色、浅色或跟随系统。</li>
-  <li>导出 JSON 备份。清空列表后不会自动填回。</li>
+  <li>一键导入：导入我们那份公开测试表（见下面「一键导入里有什么」）</li>
+  <li>从网址：粘贴一个播放列表地址</li>
+  <li>从文件：从「文件」里选一个已经存好的列表</li>
+  <li>手填：直接粘一条直播地址，加进列表</li>
 </ul>
+<p>默认是<strong>合并导入、按地址去重</strong>；也可以选覆盖现有列表。也可以把列表导出成 JSON。</p>
 
-<h2>怎么开始</h2>
-<ol>
-  <li>打开 App。首次是空列表，这是正常的。</li>
-  <li>点右上角加号，进入「导入直播源」。</li>
-  <li>可点「一键导入源」，从本页同目录的 <a href="public_channels.m3u">public_channels.m3u</a> 拉取公开列表：央视网公开音频（无画面）、CGTN / France 24 / DW / Al Jazeera 等播出方公开的国际频道，以及苹果等厂商测试流。不是盗链 IPTV，源可能随时失效。</li>
-  <li>也可以粘贴播放列表网址，或从「文件」选择 M3U / JSON / TXT。还可以只填名称和地址添加一条。</li>
-  <li>在列表里点频道即可播放。左滑编辑或删除；右滑收藏或钉到监控墙。</li>
-</ol>
-<p>空状态里的「一键导入公开源」与导入页的一键导入是同一份列表。</p>
-
-<h2>监控墙（人员值守）</h2>
-<ol>
-  <li>在频道上右滑或长按，选择「钉到监控墙」，最多 4 路。</li>
-  <li>点右上角九宫格图标进入监控墙。屏幕保持常亮，默认静音。</li>
-  <li>点格子全屏看这一路；失败的格子点一下会重连。长按菜单可开声或移出。</li>
-  <li>在「监控」分组里可点「排序」调整格子顺序。</li>
-</ol>
-<p>监控墙只是同时播放你添加的流，不录像、不识别人脸、不把画面传到任何服务器。离线时只有本机震动，没有推送。</p>
-
-<h2>导入格式</h2>
+<strong>什么样的文件能导入？</strong>
+<p>真实的播放列表文件不是教科书样例，所以这一层做得比较宽容：</p>
 <ul>
-  <li>M3U：标准 <code>#EXTINF</code> 行，可带 <code>group-title</code> 和 <code>tvg-logo</code>。</li>
-  <li>JSON：对象数组，字段为 <code>name</code>、<code>url</code>，可选 <code>group</code>、<code>logo</code>。</li>
-  <li>TXT：每行 <code>名称,地址</code>，也可用竖线或制表符分隔。</li>
+  <li>M3U / M3U8，读分组（<code>#EXTGRP</code> 与 <code>group-title</code> 都认）和台标</li>
+  <li>JSON，三种外壳都认（裸数组、<code>channels</code>、<code>stations</code>、<code>items</code>），<code>urls</code> 字段的多线路会展开</li>
+  <li>TXT / CSV，逗号、制表符、竖线三种分隔都认，四列时第四列当台标</li>
+  <li>UTF-8 BOM、UTF-16、CRLF 换行都能读</li>
+  <li><strong>后缀说谎时按内容嗅探</strong>——从浏览器另存下来的文件常常是 <code>.txt</code> 甚至 <code>.mp4</code></li>
 </ul>
-<p>默认合并导入，按地址去重，不覆盖已有频道的名称。打开「覆盖现有列表」则会整份替换。</p>
+<p>有一条要说清楚：<strong>非绝对地址（没有 http 或 https 开头的）条目会被整条丢掉</strong>，而不是硬解析成垃圾地址。所以如果你发现导入后少了条目，多半是这个原因。</p>
 
-<h2>常见问题</h2>
-<h3>为什么打开是空的？</h3>
-<p>本应用不内置频道。需要先导入播放列表或手动添加源。</p>
-<h3>清空后再打开，会不会自动恢复示例？</h3>
-<p>不会。空列表会保持为空。</p>
-<h3>某个源无法播放</h3>
-<p>常见原因：地址失效、源站限制客户端、当前网络访问不到、或格式不受系统播放器支持。请检查地址，或换一条源。监控墙里点离线格子可立刻重连。</p>
-<h3>监控墙会不会录像或用到手机摄像头？</h3>
-<p>不会。不申请本机摄像头权限，也不保存画面。只播放你导入的流地址。</p>
-<h3>为什么允许非 HTTPS？</h3>
-<p>不少直播源仍使用明文 HTTP。流量发往你添加的源站，不经过我们的服务器。详见 <a href="privacy.html">隐私政策</a>。</p>
-<h3>这是 IPTV 运营或节目提供方吗？</h3>
-<p>不是。只是播放工具。请只导入你有权使用的源。侵权或违规可通过 App 内关于页举报。</p>
+<strong>同一个频道有好几条线路，会显示成好几行吗？</strong>
+<p>不会。列表会把同名的源折成<strong>一条内容</strong>——「CCTV1」和「CCTV1 线路2」「CCTV1 备用3」会合成一条。所以你看到的列表长度，是你<strong>想看的频道数</strong>，而不是你手上地址的条数。</p>
 
-<h2>隐私</h2>
-<p>完整政策见 <a href="privacy.html">privacy.html</a>。</p>
+<strong>列表里那个「延迟 32 ms」是哪来的？</strong>
+<p>是 App <strong>主动测速</strong>测出来的。这件事要特别说明：<strong>它不需要你点，列表一出现，App 就会对你列表里的每条线路各发一次探测。</strong></p>
+<p>边界是明确的：最多同时 5 条、每条 6 秒超时、<strong>最多下 64 KB 就主动断开</strong>，而且刻意绕开本机缓存去测真实速度。结果只写在你自己的手机上，用来把能用的排前面。你可以在设置里关掉「按测速排序」「失败自动换线」「打开时用最快线路」，但<strong>探测本身没有单独的开关</strong>——这是当前版本的限制，我们不假装设置里有。</p>
 
-<h2>反馈</h2>
-<p>请通过 App Store 产品页的支持入口留言。</p>
+<strong>播放失败了怎么办？</strong>
+<p>可以直接重试。开了「失败自动换线」的话，App 会自己切到同频道的下一条线路，不用你退出来手动挑；开了「打开时用最快线路」，进频道时会直接用测速最快的那一路。</p>
 
-<footer>
-  © 2026 牧云电视 (Muyun TV)
-</footer>
+<strong>直播能往回拖吗？</strong>
+<p>能，这叫时移。同一个源连续播放约 1 分钟后，App 会把刚播过的分片暂存在本机，然后你就能拖回去看，最多 30 分钟；点「直播」追上最新。<strong>切台时缓存会按源暂留（最多 3 路），切回去还能接着看。</strong></p>
+<p>上限是硬的：30 分钟 / 400 MB / 3 路。不支持的流不预取（低延迟 HLS、加密流、按字节范围切片的那几种）。<strong>监控墙不缓存</strong>——4 路同时缓存就是 4 倍内存，那是在给自己造内存泄漏。</p>
 
+<strong>能录像、能截图吗？</strong>
+<p><strong>不能录像，App 里没有录像功能</strong>，也没有任何把画面写进相册的路径。可以截图：播放页有截图按钮，它抓的是当前暂停帧，然后交给系统分享面板，<strong>不写相册，也不需要相册权限</strong>。</p>
+
+<strong>监控墙是什么？最多几路？</strong>
+<p>把摄像头或其他源钉到一格一格里同时看，<strong>最多 4 路</strong>。默认全部静音，长按某一格可以单独给它开声。每格有颜色状态：绿是在线、橙是重连中、红是离线，直播断掉时手机会震一下。子画面里不支持画中画，另外有睡眠定时可以到点停掉。</p>
+<p>要强调一句：<strong>监控墙不录像、不识别画面里的人、也不把画面传到任何服务器。</strong> 它做的事就是把几个地址同时播出来。</p>
+
+<strong>支持画中画、AirPlay 和后台播放吗？</strong>
+<p>都支持。画中画在全屏播放时会自动接上；切到后台声音继续；AirPlay 可以把画面投到电视上——<strong>投屏时流的地址会交给接收设备，由那台设备去拉流</strong>，这是系统行为。</p>
+
+<strong>换手机怎么把列表带过去？</strong>
+<p>设置里导出 JSON，然后在新手机上用「从文件」把它导进来。<strong>这就是备份与恢复的路径</strong>，App 里没有单独的「恢复备份」按钮，因为导入本身就是恢复。换手机前记得先导出：删除 App 会清空本机全部数据，找不回来。</p>
+
+<strong>需要联网吗？</strong>
+<p>需要。<strong>这个 App 的全部用途就是在网上拉流</strong>，所以它跟「全程离线」的工具不是一类东西。联网只发生在这几处：导入你给的地址、拉那份公开表、给你列表里的线路测速、播放你点的频道、以及加载列表里的台标。</p>
+<p>有一点值得知道：<strong>测速是自动的</strong>，列表一出现就发，不需要你点。如果你用的是按流量计费的网络，而列表又很长，这一点值得留意。</p>
+
+<strong>为什么有些源是 http，而不是 https？</strong>
+<p>因为很多公开直播源本身就只提供 http。App 的传输安全设置里放开了任意加载，否则列表里会有相当一部分直接播不了。<strong>后果是：对接明文 http 的源时，你和那台源站之间的流量是不加密的。</strong> 想只在 https 下用，就只导入 https 的地址。</p>
+
+<strong>一键导入里有什么？</strong>
+<p>三类，全部是<strong>播出方自己公开发布的地址</strong>：央视网公开的音频流（<strong>没有画面</strong>）、国际频道自己公开的直播（CGTN、France 24、DW、Al Jazeera、CNA、Bloomberg、Arirang、NASA TV 等），以及几路公开的测试流。</p>
+<p>这份表里没有盗链 IPTV，本仓库不托管任何音视频。逻辑测试里有十几条断言守着它：全部 https、不含已知的盗链域名、不含未授权的国内电视台转播。<strong>它可能随时失效或按地区受限</strong>，这是公开源的常态。</p>
+
+<strong>有账号吗？收费吗？有广告吗？</strong>
+<p>都没有。没有登录注册，没有内购，没有订阅，没有广告，也没有任何分析或崩溃上报的 SDK。这个 App 是免费的，而且<strong>不应该收费</strong>——它是一个播放工具，收钱等于把「卖内容」的嫌疑坐实。</p>
+
+<strong>我的数据存在哪？</strong>
+<p>19 个键，全在这台设备的沙盒里：频道列表、收藏、最近观看、监控墙钉选、各种播放偏好、测速结果、播放时长统计、语言和主题。<strong>不上传、不同步，App 里也没有「上传列表」这个功能。</strong> 详见<a href="privacy.html">隐私政策</a>。</p>
+
+<div class="warn">
+<strong>⚠️ 能填局域网摄像头地址吗？（这一条需要真机确认）</strong>
+<p>App 支持填局域网地址，比如 <code>http://192.168.x.x/...</code>。但 iOS 14 之后访问本地网络有独立权限，而这个 App <strong>没有声明本地网络用途描述</strong>。静态读代码<strong>判断不出</strong>填了之后会不会弹窗、或者会不会被系统拦下。</p>
+<p><strong>上架前必须在真机上试一次。</strong> 在那之前，「这个 App 不申请任何权限」这句话只对公网地址成立，局域网这一条我们不敢替系统回答。</p>
+</div>
+
+<strong>支持哪些设备？界面能换英文吗？</strong>
+<p>需要 iOS 17.0 或更高版本，iPhone 与 iPad 都可以。支持画中画、后台音频和 AirPlay。界面有中文和 English 两套，在设置里手动切，第一次打开时会按系统地区自动选一个。</p>
+
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上设备型号、系统版本和复现步骤。如果是某个源播不动，请说明它是 http 还是 https、以及是导入来的还是手填的——这两条决定了问题出在哪一层。App 的关于页里也有一个举报入口，用于反馈不该出现在公开表里的源。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>What is this, and why is it empty when I open it</strong>
+<p>Muyun TV is a <strong>live-stream player</strong>. It does not provide, host or bundle any TV channel or programme guide, so <strong>with nothing imported it opens to an empty list</strong>, which is the design rather than a fault. It does not pretend to be a content platform, and that is honest from the first screen.</p>
+
+<strong>How do I add sources</strong>
+<p>Four entry points, whichever suits you:</p>
+<ul>
+  <li>Quick Import: bring in our public test playlist (see "What is in Quick Import" below)</li>
+  <li>From a URL: paste a playlist address</li>
+  <li>From a file: pick a playlist you already have in Files</li>
+  <li>By hand: paste a single stream address into the list</li>
+</ul>
+<p>The default is <strong>merge and de-duplicate by address</strong>, with an option to replace the list instead. You can also export the list as JSON.</p>
+
+<strong>What kinds of file can I import</strong>
+<p>Real playlist files are not textbook samples, so this layer is deliberately forgiving:</p>
+<ul>
+  <li>M3U / M3U8, reading groups (<code>#EXTGRP</code> and <code>group-title</code> both work) and logos</li>
+  <li>JSON in all three common shells (a bare array, <code>channels</code>, <code>stations</code>, <code>items</code>), with <code>urls</code> arrays expanded into multiple lines</li>
+  <li>TXT / CSV with commas, tabs or pipes as separators; with four columns, the fourth is the logo</li>
+  <li>UTF-8 BOM, UTF-16 and CRLF line endings all read correctly</li>
+  <li><strong>Content sniffing when the extension lies</strong>, which matters because files saved from a browser are often named <code>.txt</code> or even <code>.mp4</code></li>
+</ul>
+<p>One thing to know: <strong>entries whose address is not absolute (not starting with http or https) are dropped entirely</strong> rather than turned into a broken address. So if entries go missing after an import, that is usually why.</p>
+
+<strong>One channel with several lines: does it show up several times</strong>
+<p>No. Same-named sources are folded into <strong>one entry</strong>, so "CCTV1" and "CCTV1 line 2" and "CCTV1 backup 3" become a single item. The length of the list is the number of channels you want, not the number of addresses you have.</p>
+
+<strong>Where does that "32 ms" figure come from</strong>
+<p>The app measures it. This needs saying clearly: <strong>it does not wait for a tap. As soon as the list appears, the app sends one probe to every line in your list.</strong></p>
+<p>The limits are explicit: at most 5 at a time, a 6-second timeout each, and <strong>at most 64 KB before it disconnects</strong>, deliberately bypassing the local cache so the measurement is real. The results stay on your phone and are used to sort the working lines first. You can turn off sort-by-speed, auto-switch-on-failure and prefer-fastest in Settings, but <strong>probing itself has no separate switch</strong>. That is a limitation of this version, and the settings screen does not pretend otherwise.</p>
+
+<strong>What if playback fails</strong>
+<p>You can retry. With auto-switch-on-failure enabled, the app moves to the next line of the same channel on its own, so you do not have to back out and pick manually. With prefer-fastest enabled, entering a channel starts on its fastest measured line.</p>
+
+<strong>Can I rewind a live stream</strong>
+<p>Yes, that is timeshift. After about a minute of continuous playback on one source, the app stores the segments you just watched on-device, and you can drag back up to 30 minutes; tap Live to catch up. <strong>Switching channels keeps the cache per source, for up to 3 lines</strong>, so switching back resumes where you were.</p>
+<p>The caps are hard: 30 minutes, 400 MB, 3 lines. Unsupported streams are not prefetched (low-latency HLS, encrypted streams, byte-range segments). <strong>The monitor wall does not cache</strong>: four simultaneous caches would be four times the memory, which is another way of writing a memory leak.</p>
+
+<strong>Can it record, or take screenshots</strong>
+<p><strong>It cannot record; there is no recording feature</strong>, and no path that writes video into your photo library. Screenshots work: the player has a capture button that grabs the paused frame and hands it to the system share sheet. It <strong>does not write to the photo library</strong> and needs no photo permission.</p>
+
+<strong>What is the monitor wall, and how many feeds</strong>
+<p>Pin cameras or other sources into tiles and watch them together, <strong>up to 4 at once</strong>. All muted by default; long-press a tile to unmute just that one. Each tile shows a colour: green live, orange reconnecting, red offline, and the phone vibrates when a live feed drops. Picture in Picture is not available inside tiles, and there is a sleep timer to stop playback at a set time.</p>
+<p>Worth underlining: <strong>the monitor wall does not record, does not detect people in the video, and does not upload the picture anywhere.</strong> All it does is play several addresses at once.</p>
+
+<strong>Does it support Picture in Picture, AirPlay and background audio</strong>
+<p>All three. Picture in Picture attaches automatically when you go full screen; audio continues when you leave the app; AirPlay sends the picture to a TV. <strong>With AirPlay the stream address is handed to the receiving device, which fetches it</strong>; that is system behaviour.</p>
+
+<strong>How do I move my list to a new phone</strong>
+<p>Export the JSON in Settings, then import it on the new phone with "From a file". <strong>That is the backup and restore path</strong>; there is no separate "restore backup" button, because importing is restoring. Export before you switch: deleting the app clears everything on the device, and it cannot be recovered.</p>
+
+<strong>Does it need a network connection</strong>
+<p>Yes. <strong>The entire purpose of this app is to pull streams over the network</strong>, so it is not in the same category as an offline tool. The network is used only for: importing an address you supply, fetching the public playlist, probing the lines in your list, playing the channel you tap, and loading logos in the list.</p>
+<p>One thing worth knowing: <strong>the probing is automatic</strong> and starts as soon as the list appears, with no tap from you. On a metered connection with a long list, that is worth remembering.</p>
+
+<strong>Why are some sources http rather than https</strong>
+<p>Because many public live sources are served over http only. The app permits arbitrary loads, without which a good share of them would not play at all. <strong>The consequence is that with a plain-http source, the traffic between you and that source is not encrypted.</strong> If you want to stay on https only, import only https addresses.</p>
+
+<strong>What is in Quick Import</strong>
+<p>Three kinds, all of them addresses <strong>published by the broadcasters themselves</strong>: official CCTV audio streams (with <strong>no picture</strong>), officially published international live channels (CGTN, France 24, DW, Al Jazeera, CNA, Bloomberg, Arirang, NASA TV and others), and a few public test streams.</p>
+<p>There is no pirate IPTV in that file, and this repository hosts no audio or video. Logic tests guard it with a group of assertions: everything https, no known pirate domains, no unauthorised rebroadcast of domestic channels. <strong>It can break or become region-restricted at any time</strong>; that is the normal state of public sources.</p>
+
+<strong>Is there an account? Does it cost anything? Are there ads</strong>
+<p>None of the three. No sign-in, no in-app purchases, no subscription, no ads, and no analytics or crash-reporting SDK. The app is free, and it <strong>should</strong> be: it is a player, and charging for it would amount to admitting it sells content.</p>
+
+<strong>Where is my data stored</strong>
+<p>Nineteen keys, all in this device's sandbox: the channel list, favourites, recents, monitor-wall pins, playback preferences, speed results, playback duration records, language and theme. <strong>Nothing is uploaded and nothing is synced, and there is no "upload list" feature.</strong> See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<div class="warn">
+<strong>⚠️ Can I use LAN camera addresses? (needs a real-device check)</strong>
+<p>The app accepts LAN addresses such as <code>http://192.168.x.x/...</code>. But local network access has had its own permission since iOS 14, and this app <strong>declares no local network usage description</strong>. Reading the code <strong>cannot</strong> tell you whether entering one triggers a prompt or is blocked by the system.</p>
+<p><strong>Try it on a real device before submitting.</strong> Until then, "this app requests no permissions" holds for public addresses only; for LAN addresses we will not answer on the system's behalf.</p>
+</div>
+
+<strong>Which devices are supported? Can I switch the interface to English</strong>
+<p>iOS 17.0 or later, on iPhone and iPad. Picture in Picture, background audio and AirPlay are supported. The interface ships in Chinese and English, switched manually in Settings; on first launch it picks one from your system region.</p>
+
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your device model, OS version and steps to reproduce. If a particular source will not play, say whether it is http or https and whether it came from an import or was typed by hand, because those two facts decide which layer the problem is in. The About card also has a report entry point, for sources that should not be in the public playlist.</p>
+</div>
+
+
+<footer>牧云电视 Muyun TV · 导入你自己的源，列表只留在这台设备上</footer>
 </body>
 </html>

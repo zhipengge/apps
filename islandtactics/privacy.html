@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云岛屿 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #2E9E6B;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #5FD39A;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>牧云岛屿 · 隐私政策</h1>
+<p class="meta">IslandTactics — Privacy Policy · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<p class="lead"><strong>牧云岛屿不收集任何数据。</strong> 没有账号，没有服务器，App 不发起任何网络请求。这一句是可以核的：App 链接进来的系统框架只有 SwiftUI、Foundation 和 Combine，没有链接任何网络库；沙盒权限里也只有 <code>com.apple.security.app-sandbox</code> 一条，<strong>没有申请网络权限</strong>，所以即便代码里写了请求也发不出去。你的存档只写在这台 Mac 的沙盒容器里的两个 JSON 文件。</p>
+
+<h3>我们处理什么、存在哪</h3>
+<table>
+  <tr><th>数据</th><th>用途</th><th>位置</th></tr>
+  <tr><td>进行中的一局（<code>auto.json</code>）：当前是哪座岛、难度、岛屿地图、已放置和升级过的建筑、粮食/金币/技能三种资源、人口、民心、部队、已研究的科技、第几天、当前阶段、这一局的日志（最多 80 条）</td><td>让你退出后能从这里继续，以及中途手动存档</td><td>App 沙盒容器的 <code>Application Support/IslandTactics/</code> 目录下</td></tr>
+  <tr><td>手动存档（<code>manual.json</code>）：同上，由你显式保存</td><td>你自己按下的那一次保存</td><td>同一个目录</td></tr>
+  <tr><td>跨局进度：已解锁到第几座岛、上次选的难度、每座岛的纪录（是否通关、用了多少天、最高分）、通关总数</td><td>选岛界面的展示和进度继承</td><td>上面那两个文件里，跟着存档一起存</td></tr>
+</table>
+
+<p>读档时<strong>手动存档优先于自动存档</strong>，因为那是一次明确的操作。读档回来游戏一定是暂停的。</p>
+
+<p>以上数据全部在本机读写，<strong>不会离开这台设备</strong>。本 App 不使用 iCloud，也不使用任何云同步，没有 Game Center，没有排行榜，没有成就系统。</p>
+
+<p>这些内容里没有任何可以指认到人的东西：没有姓名、邮箱、电话、位置，也没有设备标识符或广告标识符。App 里没有任何一处会生成或读取这类标识符。</p>
+
+<h3>网络</h3>
+<p><strong>App 不发起任何网络请求。</strong> 断网、飞行模式、没有 Wi-Fi 的情况下，全部 12 座岛都能正常玩。地图、天气、危机和敌方战力全部是写死在本地数据里的，不是从服务器取的；敌人的行为也全在本机算。</p>
+<p>这是一款<strong>纯单机</strong>游戏：没有多人对战，没有联机，没有排行榜，也没有任何形式的在线内容。</p>
+
+<h3>内购与账号</h3>
+<p><strong>本 App 没有内购，也没有账号系统。</strong> 买断制，下载后即是完整内容，不需要注册、登录或付费解锁任何东西。没有订阅，没有广告。</p>
+
+<h3>权限</h3>
+<p><strong>本 App 不申请任何权限，也不会弹出任何授权框。</strong> 它不读取相机、麦克风、相册、通讯录、位置、日历或提醒事项，不发送通知，不读你的文件目录，不申请完全磁盘访问。它的沙盒权限里只有 <code>app-sandbox</code> 一条，<code>Info.plist</code> 里也没有写任何权限用途描述，所以系统根本不会为它弹出权限询问。</p>
+
+<h3>声音</h3>
+<p><strong>本 App 没有声音。</strong> 它没有链接任何音频框架，工程里也没有任何音频文件，游戏从头到尾是静音的。</p>
+
+<h3>我们不做的事</h3>
+<ul>
+  <li>不要求注册或登录</li>
+  <li>不收集姓名、邮箱、位置、设备标识符或广告标识符</li>
+  <li>不接入广告、分析、崩溃上报或追踪 SDK（本 App 不含任何第三方代码）</li>
+  <li>不发起任何网络请求，也没有自建服务器</li>
+  <li>不把存档上传或同步到任何地方</li>
+  <li>不读取通讯录、相册、麦克风、摄像头、位置</li>
+  <li>不申请任何系统权限，因此系统也不会弹出任何权限询问</li>
+  <li>不把你的数据共享给任何第三方</li>
+</ul>
+
+<h3>第三方素材与代码</h3>
+<p><strong>本 App 不含任何第三方代码，也不含任何第三方素材。</strong> 工程没有 SPM 依赖、没有 CocoaPods、没有内嵌框架。画面全部由代码用系统的绘图原语和系统符号画出来，颜色是代码里写死的数值。工程里没有位图素材、没有音频素材、没有字体文件。</p>
+
+<h3>加密</h3>
+<p>本 App 不做任何加密、哈希或密钥相关运算，也没有链接任何密码学框架。出口合规申报为 <code>ITSAppUsesNonExemptEncryption = NO</code>。</p>
+
+<h3>分享与导出</h3>
+<p><strong>本 App 没有分享或导出功能。</strong> 界面上没有分享按钮，也没有系统的分享面板。你的存档没有任何一条路径可以离开这台设备。</p>
+
+<h3>数据删除</h3>
+<p>游戏内有「重置战役」的入口，会删掉自动存档和手动存档两个文件，同时清空解锁进度和每座岛的纪录，找不回来。另外「新的战役」只结束当前这一局，不删文件，也不会清掉已经解锁的岛。删除 App 即清除全部数据，包括那两份存档文件。</p>
+
+<h3>儿童</h3>
+<p>本 App 不收集任何人的数据，当然也不收集儿童的数据。它没有账号、没有聊天、没有用户生成内容，也没有任何形式的联网功能。</p>
+
+<h2 id="en">English</h2>
+
+<p class="lead"><strong>IslandTactics collects no data.</strong> No account, no server, and the app makes no network requests. That claim is checkable: the only system frameworks the app links against are SwiftUI, Foundation and Combine, with no networking library among them, and its sandbox declares only <code>com.apple.security.app-sandbox</code> with <strong>no network entitlement</strong>, so a request could not leave the process even if the code contained one. Your saves are two JSON files inside this Mac's sandbox container.</p>
+
+<h3>What the app handles, and where</h3>
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
+  <tr><td>The run in progress (<code>auto.json</code>): which island, the difficulty, the island map, the buildings placed and upgraded, the three resources (food, gold, skill), population, morale, troops, researched technologies, the current day and phase, and this run's log (capped at 80 entries)</td><td>So you can pick the run back up, and so an in-progress run survives a crash</td><td>In the app's sandbox container, under <code>Application Support/IslandTactics/</code></td></tr>
+  <tr><td>The manual save (<code>manual.json</code>): the same contents, written when you ask for it</td><td>Your own explicit save</td><td>The same folder</td></tr>
+  <tr><td>Progress across runs: how many islands are unlocked, the last difficulty you chose, your record per island (cleared or not, days taken, best score), and total victories</td><td>Shown on the island select screen and carried between runs</td><td>Inside those same two files</td></tr>
+</table>
+
+<p>When loading, the <strong>manual save takes precedence over the automatic one</strong>, because it is the one you asked for. A loaded game always comes back paused.</p>
+
+<p>All of it is read and written on this Mac and <strong>never leaves it</strong>. There is no iCloud, no cloud sync, no Game Center, no leaderboards and no achievements.</p>
+
+<p>None of it can be tied to a person: no name, email, phone number, location, device identifier or advertising identifier. Nothing in the app generates or reads such an identifier.</p>
+
+<h3>Network</h3>
+<p><strong>The app makes no network requests.</strong> All 12 islands play fine with no Wi-Fi, offline, in Airplane Mode. Maps, weather, crises and enemy strength all come from data written into the app itself rather than from a server, and enemy behaviour is computed on this machine.</p>
+<p>This is a <strong>single-player game</strong>: no multiplayer, no online play, no leaderboards, and no online content of any kind.</p>
+
+<h3>Purchases and accounts</h3>
+<p><strong>There are no in-app purchases and no account system.</strong> It is a one-time purchase: what you download is the whole game. There is nothing to register, sign in to, or pay to unlock. No subscriptions, no ads.</p>
+
+<h3>Permissions</h3>
+<p><strong>The app requests no permissions and never shows a permission prompt.</strong> It does not touch the camera, microphone, photo library, contacts, location, calendar or reminders, sends no notifications, does not browse your files, and does not ask for Full Disk Access. Its sandbox declares only <code>app-sandbox</code>, and the app declares no usage descriptions, so the system has nothing to prompt you about.</p>
+
+<h3>Sound</h3>
+<p><strong>The app has no sound.</strong> It links no audio framework and ships no audio files; the game is silent throughout.</p>
+
+<h3>What we do not do</h3>
+<ul>
+  <li>No account or sign-in</li>
+  <li>No collection of name, email, location, device identifiers or advertising identifiers</li>
+  <li>No ads, analytics, crash reporting or tracking SDKs (the app contains no third-party code at all)</li>
+  <li>No network requests and no server of ours</li>
+  <li>No upload or sync of your saves</li>
+  <li>No access to Contacts, Photos, Microphone, Camera, or Location</li>
+  <li>No permission requests of any kind, so the system never prompts you</li>
+  <li>No sharing with third parties</li>
+</ul>
+
+<h3>Third-party code and assets</h3>
+<p><strong>The app contains no third-party code and no third-party assets.</strong> No SPM dependencies, no CocoaPods, no embedded frameworks. Every visual is drawn in code using the system's drawing primitives and system symbols, with colours written as numbers in the source. There are no bitmaps, no audio and no font files in the project.</p>
+
+<h3>Encryption</h3>
+<p>The app performs no encryption, hashing or key handling, and links no cryptography framework. Export compliance is declared as <code>ITSAppUsesNonExemptEncryption = NO</code>.</p>
+
+<h3>Sharing and export</h3>
+<p><strong>The app has no sharing or export feature.</strong> There is no share button in the interface and no system share sheet. Your saves have no path off this Mac.</p>
+
+<h3>Deletion</h3>
+<p>The game offers a campaign reset, which deletes both save files and clears your unlock progress and per-island records, and cannot be undone. Separately, starting a new campaign only ends the current run; it deletes no files and keeps the islands you have unlocked. Deleting the app removes everything, the two save files included.</p>
+
+<h3>Children</h3>
+<p>The app collects no one's data, children included. It has no accounts, no chat, no user-generated content, and no networking of any kind.</p>
+
+
+<footer>牧云岛屿 IslandTactics · 回合制岛屿经营与防守，单机、纯本地 · <a href="./support.html">帮助与支持</a></footer>
+</body>
+</html>

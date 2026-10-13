@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沟通副本 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f6f2f9;
+    --accent: #8a3fb8;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #100c14; --bg-soft: #1c1523;
+      --accent: #f5c4ff;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>沟通副本 · 隐私政策</h1>
+<p class="meta">TalkQuest — Privacy Policy · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<p class="lead"><strong>沟通副本不收集任何数据。</strong> 没有账号，没有服务器，App 不发起任何网络请求。「不联网」在这里是一句可核对的话：这个 App 只 import 了 Foundation、SwiftUI、Observation 和 UniformTypeIdentifiers 四个系统框架，没有链接任何网络库；Release 真机二进制的字符串里一个网址都没有，工程里也没有任何依赖包。你的进度和画像写在设备沙盒里的一个 JSON 文件里，不上传也不同步。</p>
+
+<h3>我们处理什么、存在哪</h3>
+<table>
+  <tr><th>数据</th><th>用途</th><th>位置</th></tr>
+  <tr><td>进度档案：每段场景玩过几次、最近一次的时间、最好那一次的成绩与选项轨迹（分数、满分、百分比、结局）；风格测试的五个维度得分与测试日期；练过的日子（用于连续天数）</td><td>让你下次打开时进度、能力画像和连续天数都还在</td><td>设备沙盒 <code>Application Support/TalkQuest/talkquest.profile.json</code></td></tr>
+  <tr><td>这一局正在走的对话（当前走到哪一步、已经选了什么）</td><td>决定这一局的结局和分数；结算时只把「最好那一次」写进档案</td><td>运行内存，未结算就退出则不写入</td></tr>
+</table>
+
+<p>以上数据全部在本机读写，<strong>不会离开设备</strong>。本 App 不使用 iCloud，也不使用任何云同步。</p>
+
+<p>这些内容里没有任何可以指认到人的东西：没有姓名、邮箱、电话、位置、设备标识符或广告标识符，也没有账号 ID——因为这个 App 根本没有账号。App 里没有让你输入姓名或个人资料的地方，你写的字只有可能出现在你自己新建的内容里，而这个版本里没有任何输入框。</p>
+
+<h3>没有 UserDefaults，也没有数据库</h3>
+<p>工程里没有 <code>UserDefaults</code>、没有 <code>@AppStorage</code>、没有 SwiftData、CoreData、Keychain、iCloud。全部持久化只有一个文件：上面那个 <code>talkquest.profile.json</code>，明文 JSON，你可以自己打开看里面有什么。</p>
+
+<h3>存档是怎么写的</h3>
+<p>写入是原子的：整套档案先编码成一份完整数据，再一次性覆盖回去，不会写到一半留下半份文件。<strong>如果文件读不出来（比如被外部改坏），App 不会静默删掉它</strong>，而是把它改名保留成 <code>talkquest.profile.json.corrupt-&lt;时间戳&gt;</code>，再从空白档案开始。所以坏掉的档案还躺在那里，没有被销毁。</p>
+
+<h3>网络</h3>
+<p><strong>App 不发起任何网络请求。</strong> 飞行模式下全部功能可用，包括第一次启动。24 段对话、风格测试题库、评分逻辑全部随 App 打包在本机，没有任何一处需要下载。</p>
+
+<h3>购买与账号</h3>
+<p><strong>本 App 没有内购，没有账号系统，不需要注册或登录。</strong> App 内没有任何付费入口，没有解锁码，也没有「免费版 / 完整版」的区分，24 段对话从第一次打开起就全部可用。如果你是通过 App Store 取得本 App 的，那笔交易由 Apple 处理：我们不接触你的支付信息，也拿不到你的 Apple ID。</p>
+
+<h3>权限</h3>
+<p><strong>本 App 不申请任何权限。</strong> 它不读取麦克风、相机、相册、通讯录、位置、健康数据或日历，不发送通知，也不申请任何追踪许可。App 的 <code>Info.plist</code> 里没有任何权限用途描述，所以 iOS 根本不会为它弹出权限询问。</p>
+<p>值得注意的是：<strong>这个 App 没有语音识别，也没有录音。</strong> 它不是你对着手机说话、它来点评的形态——24 段对话全是文字，你在选项里选，它给你反馈。所以它既不需要麦克风权限，也不会上传任何音频。</p>
+
+<h3>触感</h3>
+<p>选中一个回复时手指上会有一下轻震，由系统的触感引擎产生。它只是给手指的反馈，不产生也不读取任何数据。</p>
+
+<h3>声音</h3>
+<p><strong>本 App 没有音效，也没有任何音频文件。</strong> 它不激活音频会话，所以不会打断你正在听的音乐，也不会占用后台音频。</p>
+
+<h3>导出与分享</h3>
+<p>「我的」页有导出功能，<strong>它们只在你亲手点的时候才做事</strong>：</p>
+<table>
+  <tr><th>按钮</th><th>导出内容</th></tr>
+  <tr><td>导出备份（JSON）</td><td>完整档案，包含每段场景的成绩、选项轨迹、风格测试得分和练过的日子</td></tr>
+  <tr><td>导出成绩（CSV）</td><td>日期、场景、分类、分数、满分、百分比、结局、练习次数</td></tr>
+  <tr><td>分享风格测试结果</td><td>一段纯文本，没有图片</td></tr>
+</table>
+<p>导出的内容是 App 当场生成的文本，直接交给 iOS 的系统分享面板，App 自己不写任何文件。发到哪、发给谁，由你在系统面板里自己选；<strong>App 自己不发送任何东西，也不知道你发给了谁。</strong> 本 App 没有接入任何社交平台的 SDK。</p>
+
+<h3>设备备份</h3>
+<p>说白了：档案就在 App 的沙盒里。如果你在系统里开了 iCloud 备份或电脑备份，那份备份会包含这个文件，和它包含你其他 App 的数据一样。那份备份由 Apple 保管，<strong>我们碰不到它</strong>；本 App 自己不会把任何东西传到任何地方。</p>
+
+<h3>我们不做的事</h3>
+<ul>
+  <li>不要求注册或登录</li>
+  <li>不收集姓名、邮箱、位置、设备标识符或广告标识符</li>
+  <li>不接入广告、分析、崩溃上报或追踪 SDK（本 App 不含任何第三方代码，工程里没有任何依赖包）</li>
+  <li>不录音、不做语音识别，不读取麦克风、相册、通讯录、位置</li>
+  <li>不发送通知，也不申请任何系统权限</li>
+  <li>不把你的数据共享给任何第三方</li>
+</ul>
+
+<h3>数据删除</h3>
+<p>「我的」页有清除全部数据的入口，点下去先要确认一次，确认后会删掉进度档案、风格测试结果和练过的日子，回到第一次打开的状态，而且找不回来。<strong>删除 App 即清除全部数据</strong>，包括上面提到的、被改名保留的那份坏档案。</p>
+
+<h3>儿童</h3>
+<p>本 App 不收集任何人的数据，当然也不收集儿童的数据。它没有账号、没有聊天、没有用户生成内容，也没有任何形式的联网功能。内容全部是虚构的职场对话，不涉及任何真实人物。</p>
+
+<h2 id="en">English</h2>
+
+<p class="lead"><strong>TalkQuest collects no data.</strong> No account, no server, and the app makes no network requests. That claim is checkable: the app imports four system frameworks only — Foundation, SwiftUI, Observation and UniformTypeIdentifiers. No networking library is linked, there is not a single URL string in the release binary, and the project has no package dependencies. Your progress and your profile live in one JSON file inside the app's sandbox, and are never uploaded or synced.</p>
+
+<h3>What the app handles, and where</h3>
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
+  <tr><td>Progress profile: how many times you played each scenario, when you last played it, and your best run (score, maximum, percentage, ending, and the trail of options you chose); your five style-test axis scores and the test date; the days you practised, used for the streak</td><td>So your progress, your skill profile and your streak are still there next time you open it</td><td><code>Application Support/TalkQuest/talkquest.profile.json</code> in the app sandbox</td></tr>
+  <tr><td>The conversation you are currently in (which step, what you have chosen so far)</td><td>It decides this run's ending and score; only your best run is written to the profile, and only once you finish</td><td>Memory; leaving mid-run writes nothing</td></tr>
+</table>
+
+<p>All of it is read and written on-device and <strong>never leaves it</strong>. There is no iCloud and no cloud sync of any kind.</p>
+
+<p>None of it can be tied to a person: no name, email, phone number, location, device identifier or advertising identifier — and no account ID, because the app has no accounts. There is nowhere in the app to enter a name or a profile, and this version has no free-text fields at all.</p>
+
+<h3>No UserDefaults, and no database</h3>
+<p>The project contains no <code>UserDefaults</code>, no <code>@AppStorage</code>, no SwiftData, CoreData, Keychain or iCloud. All persistence is the single file above: plain JSON, which you can open and read yourself.</p>
+
+<h3>How the profile is written</h3>
+<p>Writes are atomic: the whole profile is encoded into one complete piece of data and then written over the old file in a single step, so a write cannot leave half a file behind. <strong>If the file cannot be decoded — say something outside the app corrupted it — the app does not silently delete it.</strong> It renames it to <code>talkquest.profile.json.corrupt-&lt;timestamp&gt;</code> and starts from a blank profile. The damaged copy stays on disk rather than being destroyed.</p>
+
+<h3>Network</h3>
+<p><strong>The app makes no network requests.</strong> Every feature works in Airplane Mode, including first launch. All 24 scenarios, the style-test question bank and the scoring logic ship inside the app, and nothing is ever downloaded.</p>
+
+<h3>Purchases and accounts</h3>
+<p><strong>The app has no in-app purchases, no account system, and nothing to register or sign in to.</strong> There is no purchase screen, no unlock code, and no free-versus-full split: all 24 scenarios are available from the first launch. If you obtained the app through the App Store, that transaction was handled by Apple: we never see your payment details and we do not receive your Apple ID.</p>
+
+<h3>Permissions</h3>
+<p><strong>The app requests no permissions.</strong> It does not touch the microphone, camera, photo library, contacts, location, health data or calendar, it sends no notifications, and it asks for no tracking permission. The app's <code>Info.plist</code> declares no usage descriptions, so iOS has nothing to prompt you about.</p>
+<p>Worth stating plainly: <strong>there is no speech recognition and no recording.</strong> This is not an app that listens to you talk and grades you. All 24 scenarios are text, you choose between options, and it explains what your choice sounded like to the other person. So it needs no microphone permission and uploads no audio.</p>
+
+<h3>Haptics</h3>
+<p>Choosing a reply gives a light tap under your finger, produced by the system's haptic engine. It is feedback for your finger and neither produces nor reads any data.</p>
+
+<h3>Sound</h3>
+<p><strong>The app has no sound effects and no audio files at all.</strong> It never activates an audio session, so it will not interrupt music you are listening to and it holds no background audio.</p>
+
+<h3>Export and sharing</h3>
+<p>The Profile tab has export buttons, and <strong>they do exactly one thing, only when you tap them</strong>:</p>
+<table>
+  <tr><th>Button</th><th>What it exports</th></tr>
+  <tr><td>Export backup (JSON)</td><td>The complete profile: every scenario's score and option trail, your style-test scores, and the days you practised</td></tr>
+  <tr><td>Export results (CSV)</td><td>Date, scenario, category, score, maximum, percentage, ending, play count</td></tr>
+  <tr><td>Share style-test result</td><td>A piece of plain text. No image</td></tr>
+</table>
+<p>The export is generated in the app as text and handed straight to the iOS share sheet; the app writes no file of its own. Where it goes and who receives it is your choice in the system sheet; <strong>the app sends nothing itself and does not know who you sent it to.</strong> No social platform SDK is integrated.</p>
+
+<h3>Device backups</h3>
+<p>Plainly: the profile sits in the app's sandbox. If you have iCloud Backup or computer backups enabled, that backup includes this file, the same way it includes data from your other apps. That backup is held by Apple and <strong>we cannot reach it</strong>; the app itself sends nothing anywhere.</p>
+
+<h3>What we do not do</h3>
+<ul>
+  <li>No account or sign-in</li>
+  <li>No collection of name, email, location, device identifiers or advertising identifiers</li>
+  <li>No ads, analytics, crash reporting or tracking SDKs (the app contains no third-party code at all, and the project has no package dependencies)</li>
+  <li>No recording and no speech recognition; no access to Microphone, Photos, Contacts or Location</li>
+  <li>No notifications, and no permission requests of any kind</li>
+  <li>No sharing with third parties</li>
+</ul>
+
+<h3>Deletion</h3>
+<p>The Profile tab has an erase-everything entry point. It asks you to confirm first, and confirming clears your progress profile, your style-test result and the days you practised, returning the app to how it looked the first time you opened it. It cannot be undone. <strong>Deleting the app clears everything</strong>, including the damaged copy mentioned above if one exists.</p>
+
+<h3>Children</h3>
+<p>The app collects no one's data, children included. It has no accounts, no chat, no user-generated content, and no networking of any kind. All content is fictional workplace dialogue and refers to no real person.</p>
+
+
+<footer>沟通副本 TalkQuest · 选一段对话，看你的回应在对方听来是什么感受</footer>
+</body>
+</html>

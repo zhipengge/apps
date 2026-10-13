@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>像素枪火 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #fbf6ea;
+    --accent: #9a6b00;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #14110a; --bg-soft: #201b10;
+      --accent: #ffc732;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>像素枪火 · 支持</h1>
+<p class="meta">PixelGunfire — Support · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>这是个什么 App？</strong>
+<p>一个竖屏、单机、离线的横版跑轰。8 个关卡：丛林前哨、河谷渡口、弹药库、峡谷铁桥、雪原雷达站、熔岩坑、指挥中心、兵工厂。一关大概 6 分钟，全部打完的时间取决于你死几次。一个拇指就能玩，全程不需要横屏。</p>
+
+<strong>怎么操作？</strong>
+<p>只有四个动作，而且全都只管位置：</p>
+<ul>
+<li>按住屏幕任意位置，角色朝你手指所在的水平位置跑</li>
+<li>向上滑动跳跃，按住越久跳得越高</li>
+<li>右下角的按钮是滑铲，滑铲前段是无敌帧</li>
+<li>左上角是暂停</li>
+</ul>
+<p>就这样。没有虚拟摇杆，没有方向键。</p>
+
+<strong>为什么我不用瞄准？</strong>
+<p>因为瞄准不是这个游戏要你做的事。枪会自动锁定射程内的目标并自动开火，换弹也是自动的。你的每一个决策都是站位和时机：什么时候往前压、什么时候跳、什么时候滑铲穿过去。所以这个 App 里也没有开火键。</p>
+
+<strong>要捡枪和子弹吗？</strong>
+<p>不用，也没有东西可捡。关卡里没有武器箱也没有弹药补给，你带进去的那把枪就是全程那把，子弹是无限的。4 把武器是步枪、霰弹枪、冲锋枪和激光，各自有各自的性格。</p>
+
+<strong>命是怎么算的？</strong>
+<p>横版跑轰的老规矩：<strong>挨一下就掉一条命</strong>，没有血条。每一关 5 条命，掉光就得重来。这也是为什么滑铲的无敌帧是这套操作里最重要的一格。</p>
+
+<strong>评级 S / A / B / C 是怎么来的？</strong>
+<p>三项加权：时间占 0.34，存活占 0.30，冲锋槽占 0.36。打完一关看到的分数和字母就是这三项算出来的，不存在随机。另外 S 级还有一个额外的门槛：<strong>本关冲锋槽的平均值不低于上限的 62%</strong>。</p>
+
+<strong>关卡里有 boss 吗？</strong>
+<p>有。一共 7 种敌人，加上一个三阶段的 boss。敌人的种类决定了它们怎么走位、怎么开火，所以每一关的压迫感不完全一样。</p>
+
+<strong>死了会怎样？会丢进度吗？</strong>
+<p>只会丢这一关。每一关的最好评级、最好分数和通关次数是分开记的，所以第 6 关死了不影响你在第 3 关的成绩。关卡是依次解锁的，已经解锁的关卡随时能重打。</p>
+
+<strong>结算页那个「死因」是什么？</strong>
+<p>结算时会把你这一关的死亡按原因归类，然后针对最主要的那一个给一条具体建议——不是「多加练习」这种话，而是指向具体动作的那种。它只有一条，因为一次给三条等于没给。</p>
+
+<strong>演示模式是什么？</strong>
+<p>可以让机器人替你打一局，分 5 个技术档位，从很菜到很稳。想看看某个敌人是怎么出招的，或者想看看这一关长什么样，用这个就行。<strong>演示局不记成绩</strong>，不会污染你自己的记录，这一点是刻意做的。</p>
+
+<strong>需要联网吗？</strong>
+<p>不需要。整个 App 不发起任何网络请求，飞行模式下全部功能可用，包括第一次启动。8 个关卡的数据全部写死在代码里随 App 打包。</p>
+
+<strong>有账号吗？有内购和广告吗？</strong>
+<p>都没有。没有登录注册，没有内购，没有广告，也没有任何分析或崩溃上报的 SDK。8 个关卡从第一次打开起就全部可以打，没有体力、没有解锁码。</p>
+
+<strong>我的进度存在哪？</strong>
+<p>三个偏好设置键，就在这台设备上：关卡进度、触感开关、音效开关。不上传、不同步、不写文件，也没有数据库。详见<a href="privacy.html">隐私政策</a>。</p>
+
+<strong>能导出或者分享吗？</strong>
+<p><strong>不能，而且这个 App 里根本没有分享和导出按钮。</strong> 所以数据没有任何出口，连「你点了才发」这条路径都不存在。如果你要把进度带走，只能靠系统备份。</p>
+
+<strong>重置进度会把我的设置也清掉吗？</strong>
+<p>不会。重置只清关卡进度，触感和音效这两个开关会留着，因为你调的是偏好不是成绩。想彻底清空就删掉 App。</p>
+
+<strong>有声音吗？会打断我正在听的音乐吗？</strong>
+<p>有声音，全部是运行时用代码合成的，仓库里一个音频文件都没有。音频会话是环境音模式并且<strong>明确打开了混音</strong>，所以你边听歌边打它不会把音乐掐掉，也不会在后台占着音频。它不录音，也不用麦克风。</p>
+
+<strong>会一直震吗？</strong>
+<p>不会。受击、过关这类事件会震一下，但震动是有节流的，而且<strong>开火和换武器这两类高频动作被特意设计成不震</strong>——否则一局下来手会麻。觉得吵可以在设置里关掉触感。</p>
+
+<strong>支持哪些设备？</strong>
+<p>需要 iOS 17.0 或更高版本。iPhone 上<strong>仅竖屏</strong>，iPad 上支持竖屏和上下颠倒。界面是中文的。</p>
+
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上设备型号、系统版本和复现步骤。如果是在某一关卡住动不了、或者某个敌人表现不对，说清楚关卡名和大概位置会快很多。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>What is this app</strong>
+<p>A portrait, single-player, offline side-scrolling run-and-gun. Eight levels: Jungle Outpost, River Ford, Ammo Depot, Canyon Iron Bridge, Snowfield Radar, Lava Pit, Command Centre and Arsenal. A level runs about six minutes; how long the whole thing takes depends on how often you die. It plays with one thumb and never asks for landscape.</p>
+
+<strong>How do I control it</strong>
+<p>Four actions, and all of them are about position only:</p>
+<ul>
+<li>Hold anywhere and the character runs toward the horizontal position of your finger</li>
+<li>Swipe up to jump; the longer you hold, the higher you go</li>
+<li>The bottom-right button is a slide, and the first part of the slide has invincibility frames</li>
+<li>Top-left is pause</li>
+</ul>
+<p>That is the whole control scheme. No virtual stick, no direction pad.</p>
+
+<strong>Why am I not aiming</strong>
+<p>Because aiming is not the thing this game asks you to do. The gun acquires targets in range by itself and fires by itself, and reloading is automatic too. Every decision you make is about position and timing: when to push forward, when to jump, when to slide through. There is no fire button either.</p>
+
+<strong>Do I pick up guns and ammo</strong>
+<p>No, and there is nothing to pick up. Levels contain no weapon crates and no ammo pickups; the gun you go in with is the gun you finish with, and ammunition is unlimited. The four weapons are a rifle, a shotgun, an SMG and a laser, and each behaves differently.</p>
+
+<strong>How do lives work</strong>
+<p>The old run-and-gun rule: <strong>one hit costs one life</strong>, and there is no health bar. You get five lives per level, and running out means starting the level again. That is also why the slide's invincibility frames are the most valuable cell in the whole control scheme.</p>
+
+<strong>Where does the S / A / B / C rating come from</strong>
+<p>Three weighted terms: time is 0.34, survival is 0.30 and the charge gauge is 0.36. The score and letter you see when a level ends come straight out of those three, with nothing random. S has one extra gate: your <strong>average charge over the level must be at least 62 percent of the maximum</strong>.</p>
+
+<strong>Is there a boss</strong>
+<p>Yes. Seven enemy types plus a three-phase boss. The type decides how an enemy moves and how it shoots, so the pressure is not the same in every level.</p>
+
+<strong>What happens when I die? Do I lose progress</strong>
+<p>Only that level. Your best rating, best score and clear count are recorded per level, so dying on level six does not touch your result on level three. Levels unlock in order and any unlocked level can be replayed whenever you like.</p>
+
+<strong>What is that cause-of-death thing on the result screen</strong>
+<p>When a level ends, your deaths are grouped by cause and the biggest one gets one concrete piece of advice: not "keep practising", but something pointed at a specific action. There is only one, because three at once is the same as none.</p>
+
+<strong>What is the demo mode</strong>
+<p>A bot can play a level for you, at five skill tiers from clumsy to steady. It is the way to see how a particular enemy behaves, or just to look at a level. <strong>Demo runs deliberately do not record scores</strong>, so they cannot pollute your own results.</p>
+
+<strong>Does it need a network connection</strong>
+<p>No. The app makes no network requests at all and every feature works in Airplane Mode, including first launch. All eight levels are defined in code and ship inside the app.</p>
+
+<strong>Is there an account? Are there purchases or ads</strong>
+<p>None of the three. No sign-in, no in-app purchases, no ads, and no analytics or crash-reporting SDK. All eight levels can be played from the first launch: no energy, no unlock codes.</p>
+
+<strong>Where is my progress stored</strong>
+<p>In three preference keys on this device: level progress, the haptics toggle and the sound toggle. Nothing is uploaded, nothing is synced, no files are written and there is no database. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<strong>Can I export or share it</strong>
+<p><strong>No, and the app contains no share or export button at all.</strong> So the data has no exit, not even the tap-to-send kind. If you want to carry progress to another device, system backup is the only route.</p>
+
+<strong>Does resetting progress clear my settings too</strong>
+<p>It does not. The reset clears level progress only and keeps the haptics and sound toggles, because those are preferences rather than results. To clear everything, delete the app.</p>
+
+<strong>Is there sound? Will it interrupt my music</strong>
+<p>Yes, and every sound effect is synthesized in code at runtime; there is not a single audio file in the project. The audio session runs in ambient mode with mixing explicitly enabled, so playing while listening to music will not cut the music off, and the app holds no background audio. It does not record and does not use the microphone.</p>
+
+<strong>Will it buzz constantly</strong>
+<p>No. Events like taking a hit or clearing a level give a tap, and taps are throttled; firing and switching weapons are <strong>deliberately left silent</strong>, because otherwise your hand would go numb inside one level. Haptics can be switched off in settings.</p>
+
+<strong>Which devices are supported</strong>
+<p>iOS 17.0 or later. <strong>Portrait only on iPhone</strong>; portrait and upside-down on iPad. The interface is in Chinese.</p>
+
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your device model, OS version and steps to reproduce. If you got stuck somewhere, or an enemy behaved oddly, naming the level and roughly where you were will make it much faster to track down.</p>
+</div>
+
+
+<footer>像素枪火 PixelGunfire · 一个拇指，八个关卡，全程离线</footer>
+</body>
+</html>

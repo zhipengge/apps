@@ -34,8 +34,9 @@
   h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 4px; }
   h2 {
     font-size: 1.35rem; font-weight: 600;
-    margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+    margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--border);
   }
+  h3 { font-size: 1.05rem; font-weight: 600; margin-top: 26px; }
   .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 24px; }
   .lead {
     background: var(--bg-soft);
@@ -44,9 +45,24 @@
     border-left: 4px solid var(--accent);
     margin: 20px 0;
   }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-bottom: 4px; }
+  .faq p { margin: 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85em;
+    background: var(--bg-soft);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  ul li { margin: 6px 0; }
+  ul li, ol li { margin: 6px 0; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
   footer {
     margin-top: 56px; padding-top: 20px;
     border-top: 1px solid var(--border);
@@ -56,27 +72,236 @@
 </head>
 <body>
 
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
 <h1>文辑 — 帮助与支持</h1>
-<p class="meta">WeEdit Support</p>
+<p class="meta">WeEdit Support · 需要 macOS 14.0 或更高版本 / Requires macOS 14.0 or later</p>
 
-<p class="lead">一篇稿写给公众号、小红书、知乎、微博。复制适配稿，到对方网页编辑器里粘贴。文辑不登录这些平台，也不代发。</p>
+<h2 id="zh">中文</h2>
 
-<h2>基本用法</h2>
+<p class="lead">一篇稿写给公众号、小红书、知乎、微博。切换平台后按对方的规则改成对应的 HTML 或纯文本，复制，到网页后台粘贴。文辑不登录这些平台的账号，也不代你发布。</p>
+
+<h3>怎么用</h3>
+
 <ol>
-  <li>左边新建文稿，中间写文字、插图片 / 表格 / 音视频</li>
-  <li>顶上选要发的平台，看右侧提示</li>
-  <li>点「复制并打开后台」，在打开的页面里 Command+V</li>
+  <li>左边新建文稿，中间写正文：文字、加粗斜体、颜色、引用、列表、图片、表格、并排图、视频音频占位</li>
+  <li>顶上选要发的平台，右侧会显示适配结果和这个平台吃不下的地方</li>
+  <li>点「复制并打开后台」，系统浏览器会打开对应的创作页</li>
+  <li>在那边的编辑器里粘贴（Command+V）</li>
 </ol>
 
-<h2>常见问题</h2>
-<p><strong>为什么不能一键发布？</strong> 这些平台没有给第三方 App 用的稳定发文接口。打开后台粘贴，才能把格式交到对方编辑器手里。</p>
-<p><strong>粘贴后图片或表格乱了？</strong> 请用工具栏的「复制适配稿」，不要只从纸张里手工选中再复制。公众号需要内联样式；小红书和微博会丢掉表格。</p>
-<p><strong>视频为什么只是一块说明？</strong> 公众号、知乎、微博都不接受随正文粘贴的视频文件，需要你在后台单独插入。文辑故意写成说明块，避免粘贴后出现裂图。</p>
-<p><strong>文稿丢了？</strong> 在本机沙盒容器里。不要清容器目录。删 App 会一起带走本地稿。</p>
+<p>也可以只点「复制适配稿」自己打开后台，或者「导出 HTML」存成文件。文稿在你写的当下就存下来了，不需要手动保存。</p>
 
-<h2>反馈</h2>
-<p>请到 GitHub Issues 说明系统版本、目标平台、以及是复制问题还是编辑器问题。</p>
+<h3>四个平台的规则不一样</h3>
 
-<footer>文辑 WeEdit</footer>
+<p>下面这张表是各平台的实际差异，不是宣传话术。到达上限之前文辑就会提示，不用等粘完才发现被截断。</p>
+
+<table>
+  <tr><th>平台</th><th>标题</th><th>正文</th><th>图片</th><th>标题层级</th><th>表格</th><th>正文并排图</th><th>文字颜色</th></tr>
+  <tr>
+    <td>公众号</td><td>64 字</td><td>不限</td><td>20 张</td>
+    <td>保留，一级标题按二级样式出</td><td>支持，转为带边框样式</td><td>支持</td><td>支持</td>
+  </tr>
+  <tr>
+    <td>小红书</td><td>20 字</td><td>1000 字</td><td>18 张</td>
+    <td>不支持，正文里的标题转成加粗</td><td>不支持，转成纯文字</td><td>不支持，拆成逐张</td><td>不支持</td>
+  </tr>
+  <tr>
+    <td>知乎</td><td>100 字</td><td>不限</td><td>40 张</td>
+    <td>保留，一级标题转为二级</td><td>支持</td><td>支持</td><td>不支持</td>
+  </tr>
+  <tr>
+    <td>微博</td><td>写在正文里</td><td>2000 字</td><td>18 张</td>
+    <td>不支持，只走纯文本</td><td>不支持</td><td>不支持</td><td>不支持</td>
+  </tr>
+</table>
+
+<p>版心宽度也不同：公众号 677 像素，知乎 690，小红书和微博 440。这些数字直接来自代码里的平台定义，不是估计值。</p>
+
+<h3>常见问题</h3>
+
+<div class="faq">
+<strong>为什么不能一键发布？</strong>
+<p>这些平台没有给第三方 App 用的稳定发文接口。文辑不登录你的账号、不代发，换来的是格式由你自己控制、稿件不经过我们的服务器。省下的是重新排版的时间，不是发布的时间。</p>
+</div>
+
+<div class="faq">
+<strong>粘过去图片不见了或变成红叉？</strong>
+<p>请用工具栏的「复制适配稿」，不要只在编辑区里手工选中再复制。文辑复制时会把本地图片嵌进 HTML 里一起带走，这是为了绕开平台对外链图片的拦截；手工选中复制拿不到这一步。小红书和微博还会把图片作为独立的一项放进剪贴板，用来配合它们各自的图片上传框。</p>
+</div>
+
+<div class="faq">
+<strong>表格和并排图为什么在小红书、微博没了？</strong>
+<p>因为那两个平台根本不接受表格。文辑不会假装能带过去：表格会被转成纯文字，并排图会拆成逐张，并在提示里告诉你发生了什么。</p>
+</div>
+
+<div class="faq">
+<strong>视频和音频为什么只是一块说明？</strong>
+<p>这四个平台都不接受随正文粘贴的视频文件，音频更是完全不支持。文辑在这里写一块说明文字，是因为如果做成空的播放器占位，粘贴过去通常就是一块裂图，说明块至少告诉读的人这里本来有什么。</p>
+</div>
+
+<div class="faq">
+<strong>从公众号复制一篇文章粘进来，段落挤在一起了？</strong>
+<p>已知问题。公众号的正文大量使用 <code>section</code> 包段落，而文辑解析 HTML 用的系统组件不认这个标签，会把容器拆掉，里面的文字并到一起。同一条也影响从别的富文本编辑器粘复杂结构。正在考虑怎么修。</p>
+</div>
+
+<div class="faq">
+<strong>微博正文段与段之间空得比原稿多？</strong>
+<p>已知问题。微博导出会把换行写成两个换行，所以每段之间会多出一个空行，只有图没有字的时候开头还会多一个空段落。不影响能不能发，但显示上比原稿松。</p>
+</div>
+
+<div class="faq">
+<strong>文稿存在哪？换电脑怎么办？</strong>
+<p>在沙盒容器的 <code>Application Support/WeEdit/Documents/</code> 里，每篇稿是一个以文稿编号命名的目录，里面是 <code>article.json</code> 和一个 <code>media/</code> 目录。想备份或迁到别的机器，整个 <code>Documents</code> 目录拷走即可，文稿和图片在一起，没有外部依赖。</p>
+</div>
+
+<div class="faq">
+<strong>想彻底删掉？</strong>
+<p>退出文辑，从「应用程序」删除它，再移除 <code>~/Library/Containers/com.gezhipeng0201.WeEdit</code>。稿子就在这个容器里，删掉即无残留。</p>
+</div>
+
+<div class="faq">
+<strong>关掉窗口了，进程还在吗？</strong>
+<p>不在。文辑是单窗口工具，关闭最后一扇窗口时退出。它不是菜单栏常驻程序，不会留在后台。</p>
+</div>
+
+<div class="faq">
+<strong>断网能用吗？</strong>
+<p>能写、能存、能切平台、能复制。断网时唯一受影响的是文稿里那些本来就在网上的图片，它们显示不出来，复制出去的 HTML 里保留的还是原地址；另外「打开后台」需要浏览器联网。</p>
+</div>
+
+<h3>它要什么权限</h3>
+
+<p>沙盒授权一共三条：App 沙盒本身、你选定的文件（读与写）、出站网络。除此之外不需要任何权限，没有辅助功能、没有输入监控、没有完全磁盘访问、没有通知、没有自动化，不碰通讯录和位置，不用麦克风和摄像头。它也不做跨 App 追踪。</p>
+
+<h3>已知不足</h3>
+
+<ul>
+  <li><strong>四个后台的真机粘贴回归还没做过。</strong>格式和图片能不能顺利过，目前是按代码和逻辑测试推出来的，还没有在四个网页后台里各粘一次。这是交付前明确列出的待办，我们不想把它说成「已经验证」。</li>
+  <li><strong>输入侧是空的。</strong>不能导入 markdown、docx，也不能抓网址，稿子只能手打或从浏览器粘贴。文辑不是写作工具，是临发之前那一步的工具。</li>
+  <li><strong>编辑器不是专业排版工具。</strong>它是网页里的可编辑区域，字体、行距、分页、导出 PDF 这些都不如专业写作软件，也没打算做。</li>
+  <li><strong>只发一个平台的人用不上它。</strong>没有第二个平台要适配，收益就是零。这一条我们写在明面上。</li>
+  <li><strong>「同一篇稿子要发多个平台」这个前提还没有被真实用户验证过。</strong>平台规则差异是代码里查得到的，但有多少人愿意为省这一步装一个 App，目前没有证据。</li>
+</ul>
+
+<h3>反馈</h3>
+
+<p>请到项目仓库的 Issues 说明三件事：系统版本、目标平台、问题是出在复制这一侧还是对方编辑器那一侧。有具体的文稿结构（比如某段用了表格还是并排图）会更好定位。</p>
+
+<h2 id="en">English</h2>
+
+<p class="lead">One draft for WeChat Official Accounts, Xiaohongshu, Zhihu and Weibo. Switching platform rewrites it into HTML or plain text that editor accepts, and you paste it into the web editor. WeEdit never signs in to these platforms and never posts for you.</p>
+
+<h3>How to use it</h3>
+
+<ol>
+  <li>Create a draft on the left and write in the middle: text, bold and italic, colour, quotes, lists, images, tables, side-by-side image rows, video and audio placeholders</li>
+  <li>Pick a platform at the top; the right side shows the adapted result and what that platform will not take</li>
+  <li>Press copy and open editor, and the browser opens that platform's compose page</li>
+  <li>Paste there (Command+V)</li>
+</ol>
+
+<p>You can also copy the adapted draft and open the site yourself, or export the HTML to a file. The draft is saved as you type; there is no save button.</p>
+
+<h3>The four platforms really do differ</h3>
+
+<p>These are the actual limits from the app's platform definitions, not marketing numbers, and you are warned before you reach them rather than after the paste gets truncated.</p>
+
+<table>
+  <tr><th>Platform</th><th>Title</th><th>Body</th><th>Images</th><th>Heading levels</th><th>Tables</th><th>Image rows</th><th>Text colour</th></tr>
+  <tr>
+    <td>WeChat Official Accounts</td><td>64</td><td>no limit</td><td>20</td>
+    <td>kept, h1 rendered with h2 styling</td><td>kept, restyled with borders</td><td>kept</td><td>kept</td>
+  </tr>
+  <tr>
+    <td>Xiaohongshu</td><td>20</td><td>1000</td><td>18</td>
+    <td>not accepted, headings become bold</td><td>not accepted, flattened to text</td><td>not accepted, split into separate images</td><td>not accepted</td>
+  </tr>
+  <tr>
+    <td>Zhihu</td><td>100</td><td>no limit</td><td>40</td>
+    <td>kept, h1 mapped to h2</td><td>kept</td><td>kept</td><td>not accepted</td>
+  </tr>
+  <tr>
+    <td>Weibo</td><td>goes in the body</td><td>2000</td><td>18</td>
+    <td>not accepted, plain text only</td><td>not accepted</td><td>not accepted</td><td>not accepted</td>
+  </tr>
+</table>
+
+<p>The column widths differ too: 677 pixels for WeChat, 690 for Zhihu, 440 for Xiaohongshu and Weibo.</p>
+
+<h3>Common questions</h3>
+
+<div class="faq">
+<strong>Why can it not publish in one click?</strong>
+<p>These platforms offer no stable third-party publishing API. WeEdit does not sign in or post on your behalf; in exchange, the formatting stays under your control and the draft never passes through a server of ours. What it saves is reformatting time, not publishing time.</p>
+</div>
+
+<div class="faq">
+<strong>Images are missing or broken after pasting?</strong>
+<p>Use the copy adapted draft button rather than selecting text in the editor by hand. Copying inlines images stored with the draft into the HTML so platform hotlink blocking does not break them, and selecting by hand skips that step. For Xiaohongshu and Weibo the images are also placed on the pasteboard as separate items, to match their upload boxes.</p>
+</div>
+
+<div class="faq">
+<strong>Where did tables and side-by-side images go on Xiaohongshu and Weibo?</strong>
+<p>Those two platforms do not accept tables at all. WeEdit does not pretend otherwise: tables become plain text, side-by-side rows are split into separate images, and a warning tells you what happened.</p>
+</div>
+
+<div class="faq">
+<strong>Why is video just a note?</strong>
+<p>None of the four platforms accepts a video file pasted with the body text, and audio is not supported at all. A note is written instead, because an empty player placeholder usually arrives as a broken image; the note at least tells the reader something was there.</p>
+</div>
+
+<div class="faq">
+<strong>Text pasted from a published WeChat article runs together?</strong>
+<p>Known issue. WeChat articles wrap paragraphs in <code>section</code>, which the system HTML parser does not recognise, so the container is flattened and the text merges. The same applies to complex structures copied from other rich-text editors. A fix is being considered.</p>
+</div>
+
+<div class="faq">
+<strong>Weibo paragraphs have extra blank lines?</strong>
+<p>Known issue. The Weibo export writes each line break as two, so there is an extra blank line between paragraphs, and a draft with images but no text starts with an empty paragraph. It still publishes; it just looks looser than the original.</p>
+</div>
+
+<div class="faq">
+<strong>Where are drafts stored, and how do I move them?</strong>
+<p>In the sandbox container under <code>Application Support/WeEdit/Documents/</code>, one folder per draft, each holding <code>article.json</code> and a <code>media/</code> folder. Copy the whole <code>Documents</code> folder to back up or move machines: text and images travel together with no external dependency.</p>
+</div>
+
+<div class="faq">
+<strong>How do I delete everything?</strong>
+<p>Quit WeEdit, remove it from Applications, then remove <code>~/Library/Containers/com.gezhipeng0201.WeEdit</code>. The drafts live in that container; removing it leaves nothing behind.</p>
+</div>
+
+<div class="faq">
+<strong>Does it keep running after I close the window?</strong>
+<p>No. WeEdit is a single-window tool and quits when you close its last window. It is not a menu bar agent.</p>
+</div>
+
+<div class="faq">
+<strong>Does it work offline?</strong>
+<p>Writing, saving, switching platforms and copying all work offline. The only things that need a connection are remote images already in a draft, which simply will not display, and opening a platform editor.</p>
+</div>
+
+<h3>Permissions</h3>
+
+<p>The sandbox grants exactly three things: the sandbox itself, user-selected files (read and write), and outbound network. Nothing else is requested: no Accessibility, no Input Monitoring, no Full Disk Access, no notifications, no automation, no Contacts or Location, no Microphone or Camera, and no cross-app tracking.</p>
+
+<h3>Known limitations</h3>
+
+<ul>
+  <li><strong>The four web editors have never been round-tripped by hand.</strong> Whether the formatting and images survive is currently derived from the code and the logic tests; they have not been pasted into each of the four real editors yet. It is listed as an open item, and we would rather not call it verified.</li>
+  <li><strong>The input side is empty.</strong> No markdown or docx import and no URL capture, so text is typed here or pasted from a browser. WeEdit is not a writing tool; it covers the step just before publishing.</li>
+  <li><strong>The editor is not a typesetting tool.</strong> It is a web view's editable area, and fonts, line spacing, pagination and PDF export are all well short of a dedicated writing application, by design.</li>
+  <li><strong>If you publish to one platform, this app is not for you.</strong> With no second format to adapt, the gain is zero, and we say so.</li>
+  <li><strong>The premise itself is unvalidated.</strong> The platform differences are verifiable in code, but whether people will install an app to save this step has no evidence behind it yet.</li>
+</ul>
+
+<h3>Feedback</h3>
+
+<p>Please open an issue in the project repository with three things: the system version, the platform you were targeting, and whether the problem is on the copying side or in the other editor. A description of the structure, such as whether the passage had a table or side-by-side images, helps a lot.</p>
+
+<footer>文辑 WeEdit · 本地图文编辑器 · <a href="./privacy.html">隐私政策 / Privacy Policy</a></footer>
 </body>
 </html>

@@ -1,0 +1,5 @@
+首次发布：十二座手写的岛，回合制经营与防守。丘陵不会被大潮淹，但工厂和瞭望塔只能建在丘陵上；农场要有土，而土全在会被淹的低地；最赚钱的码头那一格，也是敌军登陆的那一格。危机日程从第一天起就全部摊在界面上，入侵当天要在固守、出击、避战里选一个。八条科技，五条改的是规则。完全离线，沙盒里连网络权限都没有申请，也不申请任何系统权限。没有内购，没有账号，没有广告。需要 macOS 14.0 或更高版本。
+
+---
+
+First release: twelve hand-authored islands in a turn-based management and defence game. Hills never flood, but factories and watchtowers can only go on hills; farms need soil, and the soil is all on lowland that floods; the most profitable dock tile is also where the enemy lands. The crisis calendar is public from day one, and every raid makes you choose between holding, sortieing and evading. Eight technologies, five of which change the rules. Fully offline: no network entitlement at all, and no system permissions requested. No in-app purchases, no account, no ads. Requires macOS 14.0 or later.

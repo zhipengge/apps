@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云工作台 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #C77A2E;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #E9A961;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>牧云工作台 · 隐私政策</h1>
+<p class="meta">Workbench — Privacy Policy · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<p class="lead"><strong>牧云工作台只在一个地方联网：进入场景前的连通性巡检。</strong> 除此之外没有账号、没有统计、没有检查更新、没有崩溃上报，也没有我们自己的服务器——<strong>全部被探测的地址都来自你自己写的场景条目</strong>，App 里没有任何一个由开发者指定的后端。巡检那一个请求是 GET 加一个只取 1 字节的 Range 头，<strong>在拿到响应头的那一刻就主动断开，正文一个字节都不收</strong>；会话是无痕配置，cookie 和磁盘缓存都是关掉的。你的场景和工作台文档只存在本机，没有云端，没有同步。</p>
+
+<h3>我们处理什么、存在哪</h3>
+<table>
+  <tr><th>数据</th><th>用途</th><th>位置</th></tr>
+  <tr><td>你写的场景：场景名、分组、组内顺序，以及场景里的条目（要一起打开的应用、本地文件或文件夹、网址）</td><td>让「一键进入这个场景」成立</td><td>整份文档以一个 JSON 存在本机的 UserDefaults，单键 <code>workbench.document.v1</code></td></tr>
+  <tr><td>断点：你离开场景时留的那句话、时间，以及那一刻的现场快照</td><td>下次进来第一眼就告诉你上次停在哪</td><td>同一份文档里，每个场景保留最近 5 条</td></tr>
+  <tr><td>现场快照：离开时，这个场景里的哪些应用还在运行、哪些已经退出</td><td>和断点一起展示，让你知道当时是什么状态</td><td>同一份文档里，跟着断点走</td></tr>
+  <tr><td>本地文件与文件夹的访问凭证（系统安全书签，<strong>只读</strong>）</td><td>下次进来不用重新弹面板选一遍文件</td><td>同一份文档里。书签一律以 <code>.securityScopeAllowOnlyReadAccess</code> 创建，只给读，不给写</td></tr>
+  <tr><td>界面偏好：快捷键开关、巡检时是否跳过已在运行的应用、是否显示耗时等</td><td>记住你的偏好</td><td>本机 UserDefaults，<code>workbench.ui.</code> 前缀下</td></tr>
+  <tr><td>巡检结果：每个地址通不通、判定原因、耗时</td><td>告诉你哪一个打不开、为什么打不开</td><td><strong>仅在内存</strong>，不写进文档、不落盘，关掉面板就没了</td></tr>
+</table>
+
+<p><strong>上面没有你的浏览记录、没有屏幕内容、没有按键记录、没有位置。</strong> 工作台不知道你在浏览器里开了什么标签页，也不假装知道——现场快照只记它自己确实看得见的那一件事：场景里的应用还在不在跑。剪贴板只有一处会读到：你按「从剪贴板加一条网址」录入时，读那一次、用完即弃，不落盘，也没有常驻监视。</p>
+
+<h3>网络</h3>
+<p>App 里唯一的联网代码集中在一个文件里，它的用途只有两个：进入场景前的自动体检，和你手动按下的「体检」「巡检全部」。具体行为是：</p>
+<ul>
+  <li><strong>只探测你自己场景里的网址</strong>，一次一个。App 不联系任何开发者服务器，没有遥测端点，也没有默认的远端配置。</li>
+  <li>请求方法是 GET，带一个 <code>Range: bytes=0-0</code> 头<strong>只索取 1 个字节</strong>，另有 <code>no-cache</code>。<strong>没有请求正文，也不上传你机器上的任何东西</strong>——没有表单、没有参数、没有文件内容。</li>
+  <li>请求头里带一个自定义的 User-Agent（<code>Workbench/版本号 (macOS; 巡检)</code>），它只说明这次连接来自本 App；除此之外没有任何设备标识、没有用户 ID、没有统计参数。</li>
+  <li><strong>拿到响应头就断开</strong>：代码在收到响应头的回调里直接取消任务，并且<strong>根本没有实现接收正文的回调</strong>，所以连那 1 个字节都不会真正读进来。常见的做法是把整个页面下下来再丢掉，那是在替用户花流量。</li>
+  <li>会话是<strong>无痕</strong>的：ephemeral 配置，磁盘缓存置空，cookie 存储置空且不接受、不发送 cookie。<strong>巡检过哪些地址不会在本机留下痕迹。</strong></li>
+  <li>并发有上限（默认 4 个），单个请求默认 6 秒超时。全部结束就退出，<strong>没有轮询，没有后台定时器</strong>，你不点它就不发。</li>
+  <li>网址只接受 <code>http</code> 和 <code>https</code> 两种协议。<code>javascript:</code>、<code>file:</code>、<code>data:</code> 这类一律拒绝，不做透传（那会是安全隐患）。</li>
+</ul>
+<p>换句话说：<strong>它发出的请求，收件人是你自己填的那个地址</strong>，对端能看到的是这台机器发起了一次普通 HTTPS 连接——和你在浏览器里打开它的效果一样，只是不要正文。</p>
+
+<h3>本地文件</h3>
+<p>你要在场景里放本地文件或文件夹时，会出现系统选择面板，<strong>由你来选</strong>——App 不会自己去翻你的磁盘，也没有「扫描整个目录」这类功能。选中的东西存的是一个<strong>只读</strong>的访问凭证，用途只有一个：下次进入这个场景时把它交给系统打开（相当于帮你双击一下）。它不会读取文件内容，不会上传，也不会修改。</p>
+<p>App 真正写文件只有一处：<strong>你主动按「导出备份」的时候</strong>，出现保存面板，由你选位置、由你确认，写出一个纯文本的 JSON。除此之外不往任何地方写文件。</p>
+
+<h3>权限</h3>
+<p><strong>App 不申请任何系统权限，也不会弹出授权框。</strong></p>
+<ul>
+  <li><strong>不需要辅助功能，也不需要输入监控。</strong> 全局快捷键走系统的热键注册，由系统代管，你不需要去系统设置里打勾。</li>
+  <li>它<strong>不会</strong>去枚举或控制其它应用的窗口：不做窗口布局，不摆窗口位置，不模拟点击，不读其它 App 的界面。</li>
+  <li>不读屏幕内容，不读通讯录、日历、位置、麦克风、摄像头，不申请完全磁盘访问；剪贴板只在你按「从剪贴板加一条网址」时读一次，用完即弃。</li>
+  <li>沙盒权限一共四条，每一条都按用途取最小：沙盒本身、网络客户端（只给巡检）、用户选中文件的读写（导出备份要写）、跨启动的安全书签。</li>
+</ul>
+
+<h3>第三方</h3>
+<p><strong>App 里没有任何第三方代码。</strong> 没有依赖包、没有内嵌框架，界面图标一律用系统符号，App 图标是自己画的。没有广告、没有分析统计、没有崩溃上报、没有追踪 SDK，也没有检查更新的联网行为。App 里唯一内置的两个示例地址是公开首页，只用来演示，不涉及任何第三方接口。</p>
+
+<h3>加密</h3>
+<p>App 不做任何加密、哈希或密钥运算，也没有链接密码学框架。它与网站之间的通信使用系统 HTTPS 提供的传输加密，这是系统行为，不是 App 自研的。<strong>不联网时不涉及任何加密。</strong> 出口合规申报为不使用非豁免加密。</p>
+
+<h3>我们不做的事</h3>
+<ul>
+  <li>不要求注册或登录，没有账号，没有云同步，没有 iCloud</li>
+  <li>没有我们自己的服务器，没有遥测，没有统计，没有崩溃上报</li>
+  <li>不把场景、断点或任何本机内容上传到任何地方</li>
+  <li>不读浏览器标签页，不读屏幕，不记录按键；不在后台监视剪贴板（只有你按「从剪贴板加一条网址」时才读一次）</li>
+  <li>不接入广告、分析或追踪 SDK（App 里不含任何第三方代码）</li>
+  <li>不申请任何系统权限，系统不会为它弹出授权框</li>
+  <li>不把你的数据共享给任何第三方</li>
+</ul>
+
+<h3>数据删除</h3>
+<p>场景、断点和现场快照都删得掉，界面上有对应的操作；因为数据只在本机，删除之后没有别处的副本可以残留。设置页有恢复默认设置，会把界面偏好清掉。<strong>删除 App 即清除全部数据</strong>——这也是为什么「备份与迁移」页把「导出」放在最显眼的位置：数据只在这台电脑上，卸载就没了。</p>
+
+<h3>儿童</h3>
+<p>本 App 不收集任何人的数据，当然也不收集儿童的数据。它没有账号、没有聊天、没有用户生成内容，也没有面向公众的联网功能。</p>
+
+<h2 id="en">English</h2>
+
+<p class="lead"><strong>Workbench goes online in exactly one place: the connectivity check before it opens a scene.</strong> Other than that there is no account, no analytics, no update check, no crash reporting, and no server of ours. <strong>Every address it probes comes from a scene you wrote yourself</strong>; the app contains no developer-operated backend. That probe is a GET carrying a Range header asking for a single byte, and it <strong>disconnects the moment the response headers arrive, reading none of the body</strong>. The session is ephemeral, with cookies and the disk cache switched off. Your scenes and document live on this computer only, with no cloud and no sync.</p>
+
+<h3>What the app handles, and where</h3>
+<table>
+  <tr><th>Data</th><th>Purpose</th><th>Where</th></tr>
+  <tr><td>The scenes you write: name, group, ordering, and the items inside them (the apps, local files or folders, and web addresses to open together)</td><td>So that opening a scene in one go works</td><td>The whole document as a single JSON in local UserDefaults, under one key, <code>workbench.document.v1</code></td></tr>
+  <tr><td>Handoff notes: the sentence you leave when you exit a scene, its timestamp, and a snapshot of the state at that moment</td><td>So the first thing you see next time is where you left off</td><td>The same document, keeping the five most recent per scene</td></tr>
+  <tr><td>The snapshot: which of the scene's apps were still running and which had quit when you left</td><td>Shown alongside the note so you know what state things were in</td><td>The same document, travelling with the note</td></tr>
+  <tr><td>Access credentials for local files and folders (system security-scoped bookmarks, <strong>read-only</strong>)</td><td>So you do not have to pick the same file again next time</td><td>The same document. Bookmarks are always created with <code>.securityScopeAllowOnlyReadAccess</code>, granting read and never write</td></tr>
+  <tr><td>Interface preferences: whether hotkeys are on, whether the check skips already-running apps, whether latency is shown</td><td>To remember your preferences</td><td>Local UserDefaults, under the <code>workbench.ui.</code> prefix</td></tr>
+  <tr><td>Check results: whether each address responded, why, and how long it took</td><td>To tell you which one will not open and why</td><td><strong>In memory only</strong>; never written into the document, never saved to disk, gone when the panel closes</td></tr>
+</table>
+
+<p><strong>None of the above includes your browsing history, what is on your screen, your keystrokes, or your location.</strong> Workbench does not know what browser tabs you have open and does not pretend to: the snapshot records only the one thing it can actually see, which is whether the scene's own apps are still running. The clipboard is read in exactly one place: when you add a URL from the clipboard by hand, it is read once, used, and discarded, and it is never monitored in the background.</p>
+
+<h3>Network</h3>
+<p>All of the app's networking lives in a single file, and it serves two purposes only: the automatic check before entering a scene, and the check you trigger yourself. Its behaviour is:</p>
+<ul>
+  <li><strong>It probes only the addresses in your own scenes</strong>, one at a time. The app contacts no developer server and has no telemetry endpoint or remote configuration.</li>
+  <li>The request is a GET carrying <code>Range: bytes=0-0</code> to ask for <strong>a single byte</strong>, plus <code>no-cache</code>. <strong>There is no request body and nothing from your machine is uploaded</strong>: no form, no parameters, no file contents.</li>
+  <li>The request carries a custom User-Agent (<code>Workbench/&lt;version&gt; (macOS; 巡检)</code>) that only identifies the app making the connection. There is no device identifier, no user ID and no analytics parameter of any kind.</li>
+  <li><strong>It disconnects once the response headers arrive</strong>: the code cancels the task inside the headers callback and <strong>never implements the body-receiving callback at all</strong>, so not even that one byte is read. The common approach downloads the whole page and discards it, which spends the user's bandwidth.</li>
+  <li>The session is <strong>ephemeral</strong>: disk cache nil, cookie storage nil, cookies neither accepted nor sent. <strong>Which addresses you checked leaves nothing behind on this computer.</strong></li>
+  <li>Concurrency is capped (four by default) and each request times out after six seconds by default. It exits when the batch finishes; there is <strong>no polling and no background timer</strong>, and nothing is sent unless you ask for it.</li>
+  <li>Only <code>http</code> and <code>https</code> are accepted. <code>javascript:</code>, <code>file:</code>, <code>data:</code> and the like are rejected rather than passed through, which would be a security hole.</li>
+</ul>
+<p>In other words, <strong>the recipient of every request it makes is an address you typed in yourself</strong>. All the other end sees is an ordinary HTTPS connection from this computer, exactly as if you had opened it in a browser, except that no body is fetched.</p>
+
+<h3>Local files</h3>
+<p>When you put a local file or folder into a scene, a system picker appears and <strong>you choose it</strong>. The app does not go looking through your disk and has no directory-scanning feature. What it stores for the selection is a <strong>read-only</strong> credential whose only use is handing the item to the system to open next time you enter the scene, equivalent to you double-clicking it. It does not read the contents, does not upload anything, and does not modify it.</p>
+<p>There is exactly one place where the app writes a file: <strong>when you ask it to export a backup</strong>, a save panel appears, you choose the location and confirm, and it writes a plain-text JSON. It writes files nowhere else.</p>
+
+<h3>Permissions</h3>
+<p><strong>The app requests no system permissions and never shows a permission prompt.</strong></p>
+<ul>
+  <li><strong>No Accessibility and no Input Monitoring.</strong> The global hotkeys go through the system's hotkey registration, which the system brokers, so there is nothing to tick in System Settings.</li>
+  <li>It does <strong>not</strong> enumerate or control other apps' windows: no window layout, no moving windows around, no synthetic clicks, no reading other apps' interfaces.</li>
+  <li>It does not read the screen, and does not touch Contacts, Calendar, Location, Microphone or Camera, and does not request Full Disk Access. The clipboard is read once, and only when you add a URL from it by hand; the text is used and discarded.</li>
+  <li>There are four sandbox entitlements, each the minimum for its purpose: the sandbox itself, the network client (for the check only), read-write access to user-selected files (the backup export needs to write), and cross-launch security-scoped bookmarks.</li>
+</ul>
+
+<h3>Third parties</h3>
+<p><strong>The app contains no third-party code.</strong> No dependencies, no embedded frameworks; interface icons are all system symbols and the app icon is drawn by hand. There are no ads, no analytics, no crash reporting, no tracking SDKs, and no update check that would go online. The two sample addresses built into the app are public home pages, included only as a demonstration; they involve no third-party API.</p>
+
+<h3>Encryption</h3>
+<p>The app performs no encryption, hashing or key handling, and links no cryptography framework. Traffic to websites uses the transport encryption the system provides over HTTPS, which is system behaviour rather than anything the app implements. <strong>Nothing involves encryption while offline.</strong> Export compliance is declared as using no non-exempt encryption.</p>
+
+<h3>What we do not do</h3>
+<ul>
+  <li>No account or sign-in, no cloud sync, no iCloud</li>
+  <li>No server of ours, no telemetry, no analytics, no crash reporting</li>
+  <li>No upload of scenes, notes or anything else from this computer</li>
+  <li>No reading of browser tabs, the screen or keystrokes, and no background clipboard monitoring (the clipboard is read once only when you add a URL from it by hand)</li>
+  <li>No ads, analytics or tracking SDKs (the app contains no third-party code)</li>
+  <li>No permission requests of any kind, so the system never prompts you</li>
+  <li>No sharing with third parties</li>
+</ul>
+
+<h3>Deletion</h3>
+<p>Scenes, notes and snapshots can all be deleted from within the app, and because the data is only on this computer there is no copy elsewhere to linger. Settings offer a reset that clears interface preferences. <strong>Deleting the app removes everything</strong>, which is why the backup page puts export front and centre: the data exists only on this computer, and uninstalling takes it with it.</p>
+
+<h3>Children</h3>
+<p>The app collects no one's data, children included. It has no accounts, no chat, no user-generated content, and no public-facing networking.</p>
+
+
+<footer>牧云工作台 Workbench · 进入之前先体检，离开之前留一句断点 · <a href="./support.html">帮助与支持</a></footer>
+</body>
+</html>

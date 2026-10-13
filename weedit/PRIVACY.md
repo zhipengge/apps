@@ -1,6 +1,6 @@
 # 文辑 (WeEdit) — 隐私政策 / Privacy Policy
 
-**最后更新 / Last updated: 2026-09-15**
+**最后更新 / Last updated: 2026-10-12**
 
 ---
 
@@ -29,12 +29,15 @@
 
 ### 网络通信
 
-出站网络只用于两件事：
+出站网络只用于三件事：
 
-1. 显示文稿里已经存在的远程图片（WebKit 按图片自己的地址请求）
+1. 显示文稿里已经存在的远程图片（WebKit 按图片自己的地址请求，编辑器与预览都会取）
 2. 你点「打开后台」时，由系统浏览器访问平台站点
+3. 你在编辑器里点链接时，交给系统打开
 
 请求里不含你的文稿正文。可以断网写稿；只是远程图片会显示不出来，「打开后台」需要浏览器联网。
+复制出去的 HTML 里，本地图片会嵌成 data URI，**远程图片的地址会原样保留**——
+粘到平台后台之后由对方的编辑器去取，不是文辑。
 
 ### 文件访问
 
@@ -75,7 +78,7 @@ App Store 联系页或本项目仓库 Issue。
 
 ### Network
 
-Outbound network is used to display remote images already in a draft, and when you ask the system browser to open a platform editor. Draft text is not sent to us. Writing works offline.
+Outbound network is used in three places: displaying remote images already in a draft (the editor and the preview both fetch them), handing a platform compose page to the system browser, and handing a link you click in the editor to the system. Draft text is not sent to us. Writing works offline. In the copied HTML, local images are inlined as data URIs while remote image addresses are kept as they are, so the platform's own editor fetches those after you paste.
 
 ### File access
 

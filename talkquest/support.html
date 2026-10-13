@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沟通副本 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f6f2f9;
+    --accent: #8a3fb8;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #100c14; --bg-soft: #1c1523;
+      --accent: #f5c4ff;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>沟通副本 · 支持</h1>
+<p class="meta">TalkQuest — Support · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>这是个什么 App？</strong>
+<p>一个离线的对话练习工具。24 段职场沟通场景，分成 10 个分类：面试、谈薪、谈判、拒绝、职场关系、跨团队、社团社交、实习、向上管理、带人。共 193 个决策点、579 个可选回应、72 个结局。四个页签：场景、能力、风格测试、我的。</p>
+
+<strong>怎么玩？</strong>
+<p>三步，而且不能跳过：先读对方说的话，再选一个回应，然后才出现反馈卡——这一选在对方听来是好还是差、它动了哪几个维度、以及为什么。反馈卡就是全部意义所在，所以它不能在你选之前出现，也不能被你划过去。</p>
+
+<strong>分数是怎么算的？</strong>
+<p>确定性算出来的，不是估计的：同一个选择序列永远得到同一条反馈和同一个分数。每一步都已经决定了它对五个维度的加减，走到最后按总分给结局。测试里就是把整局走完，再断言分数和结局。</p>
+
+<strong>五个维度是什么？</strong>
+<p>共情、边界感、表达清晰、情绪管理、策略性。每一步的反馈卡会告诉你它动了哪几个维度、动了多少。能力页把五个维度摊平显示，外加总进度和最好、最弱的那一维。</p>
+
+<strong>能力页的百分比是怎么来的？</strong>
+<p>从每段场景「最好那一次」的成绩推导出来，不额外记录别的东西。没练过的维度显示的是<strong>「未练到」而不是 0%</strong>——没练过和练砸了是两回事，不该长得一样。</p>
+
+<strong>风格测试是什么？</strong>
+<p>12 道题，48 个选项，答完自动保存。结果是五个原型里的一个——暖流型、界碑型、直球型、定海型、棋手型——加上五个维度的百分比拆解。分享出去的是<strong>一段纯文本</strong>，不是图片，也没有卡片和二维码。</p>
+
+<strong>结局是怎么决定的？有分支吗？</strong>
+<p>诚实地说：<strong>现在的 24 段场景都是线性的，不是树状分支。</strong> 每段对话走到最后，结局由你这一局的总分决定，分三档（处理得漂亮 / 过关，但有遗憾 / 这段关系被你推远了）。道具箱里有一套分支剧情的能力，但随 App 打包的内容没有用它——所以你不会因为选错一步而走进一条完全不同的支线，你会在总分上看见代价。</p>
+
+<strong>每一段对话有多长？</strong>
+<p>192 个决策点分摊在 24 段场景上，所以一段平均七八个回合，几分钟能走完。走得快慢不影响分数，只有选择影响分数。</p>
+
+<strong>内容是谁写的？</strong>
+<p>579 个选项全部是人工写的，没有一句是生成的。这一点是刻意的：同品类里因为生成内容里出现角色和台词对不上而被骂的例子不少，人工写是唯一能保证每一句都说得通的办法。</p>
+
+<strong>需要联网吗？</strong>
+<p>不需要。整个 App 不发起任何网络请求，飞行模式下全部功能可用，包括第一次启动。题库、场景和评分逻辑全部随 App 打包。</p>
+
+<strong>有账号吗？有内购吗？</strong>
+<p>都没有。<strong>24 段对话从第一次打开起就全部可用</strong>，没有免费版和完整版的区分，没有解锁，没有广告，也没有广告、分析或崩溃上报 SDK。</p>
+
+<strong>我的数据存在哪？</strong>
+<p>一个文件，App 沙盒里的 <code>Application Support/TalkQuest/talkquest.profile.json</code>，明文 JSON，你可以自己打开看。不上传、不同步，App 里也没有 UserDefaults 和数据库。详见<a href="privacy.html">隐私政策</a>。</p>
+
+<strong>导出的是什么？能导回来吗？</strong>
+<p>导出备份是一个完整的 JSON 档案，导出成绩是 CSV，另外还能把风格测试结果当纯文本分享。<strong>要注意：当前版本只有导出，没有导入。</strong> 导出的文件请自己保管好，换设备时它暂时没法一键恢复——这一条我们宁可写在明处，也不写一句做不到的承诺。</p>
+
+<strong>有声音吗？</strong>
+<p>没有。这个 App 没有音效，也没有任何音频文件，不激活音频会话，所以不会打断你正在听的音乐。唯一的反馈是选中回复时手指上的一下轻震。</p>
+
+<strong>会用麦克风听我说话吗？</strong>
+<p>不会。<strong>没有录音，没有语音识别，也不需要麦克风权限。</strong> 全部是文字：你读对方的话，在选项里选一个，它告诉你这一选听上去是什么效果。App 不申请任何系统权限，系统也不会为它弹出任何询问。</p>
+
+<strong>支持哪些设备？</strong>
+<p>需要 iOS 17.0 或更高版本。iPhone 上仅竖屏，iPad 上四个方向都可以。界面是中文的。</p>
+
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上设备型号、系统版本和复现步骤。如果是对某一段场景的内容有意见（哪一句写得不像人话、哪个反馈不合理），直接说场景名和第几个回合就行。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>What is this app</strong>
+<p>An offline conversation practice tool. 24 workplace scenarios across 10 categories: interviews, raises, negotiation, refusing, workplace relationships, cross-team work, club socialising, internships, managing up, and managing people. 193 decision points, 579 selectable replies and 72 endings in total. Four tabs: Scenarios, Skills, Style Test and Profile.</p>
+
+<strong>How do I play it</strong>
+<p>Three steps, and none of them can be skipped: read what the other person said, choose a reply, and only then does the feedback card appear — whether your choice landed well or badly, which of the five axes it moved, and why. The feedback card is the entire point, so it cannot appear before you choose and it cannot be swiped away.</p>
+
+<strong>How is the score calculated</strong>
+<p>Deterministically, not estimated: the same sequence of choices always produces the same feedback and the same score. Every step already fixes what it adds to or subtracts from the five axes, and the ending is chosen from your total. In the tests, a full run is played out and then the score and the ending are asserted.</p>
+
+<strong>What are the five axes</strong>
+<p>Empathy, boundaries, clarity, emotional regulation and strategy. Each feedback card tells you which axes your choice moved and by how much. The Skills tab lays all five out flat, with overall progress and your strongest and weakest axis.</p>
+
+<strong>Where does the percentage on the Skills tab come from</strong>
+<p>It is derived from your best run of each scenario, and nothing else is recorded to produce it. An axis you have never practised reads <strong>"not practised yet" rather than 0 percent</strong> — never having tried something and having tried it badly are different things and should not look the same.</p>
+
+<strong>What is the style test</strong>
+<p>12 questions with 48 options, saved automatically when you answer the last one. The result is one of five archetypes — Warm Current, Boundary Stone, Straight Ball, Anchor and Strategist — plus a five-axis percentage breakdown. What gets shared is <strong>a piece of plain text</strong>: no image, no card, no QR code.</p>
+
+<strong>How are the endings decided? Is it branching</strong>
+<p>Plainly: <strong>the current 24 scenarios are linear, not a tree.</strong> Each conversation runs to the end and the ending is decided by your total score, in three tiers (handled beautifully / passed, with regrets / you pushed this relationship away). The engine has branching capability, but the content that ships with the app does not use it — so choosing badly does not drop you into a different storyline; you see the cost in your total.</p>
+
+<strong>How long is one conversation</strong>
+<p>The 193 decision points are spread across 24 scenarios, so a scenario runs about seven or eight rounds and takes a few minutes. How fast you go does not affect the score; only your choices do.</p>
+
+<strong>Who wrote the content</strong>
+<p>All 579 replies are written by hand. Not one line is generated. That is deliberate: in this category there are well-known examples of generated content where characters and lines do not match up, and writing by hand is the only way to be sure every line holds together.</p>
+
+<strong>Does it need a network connection</strong>
+<p>No. The app makes no network requests at all and every feature works in Airplane Mode, including first launch. The scenario library, the question bank and the scoring logic all ship inside the app.</p>
+
+<strong>Is there an account? Are there purchases</strong>
+<p>Neither. <strong>All 24 conversations are available from the first launch</strong> — there is no free tier and no full version, nothing to unlock, no ads, and no ad, analytics or crash-reporting SDKs.</p>
+
+<strong>Where is my data stored</strong>
+<p>In one file, <code>Application Support/TalkQuest/talkquest.profile.json</code> inside the app's sandbox. Plain JSON, which you can open and read yourself. It is never uploaded or synced, and the app contains no UserDefaults and no database. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<strong>What does the export contain? Can I import it back</strong>
+<p>The backup export is a complete JSON profile, the results export is a CSV, and the style-test result can be shared as plain text. <strong>Note carefully: this version can export but cannot import.</strong> Keep the exported file somewhere safe — moving to a new device cannot currently restore from it in one step. We would rather say that out loud than write a promise the app cannot keep.</p>
+
+<strong>Is there sound</strong>
+<p>No. There are no sound effects and no audio files at all, and the app never activates an audio session, so it will not interrupt music you are listening to. The only feedback is a light tap under your finger when you choose a reply.</p>
+
+<strong>Does it listen to me through the microphone</strong>
+<p>It does not. <strong>There is no recording, no speech recognition, and no microphone permission.</strong> Everything is text: you read the other person's line, choose one of the replies, and it tells you how that choice sounded. The app requests no permissions at all, so the system never prompts you.</p>
+
+<strong>Which devices are supported</strong>
+<p>iOS 17.0 or later. Portrait only on iPhone; all four orientations on iPad. The interface is in Chinese.</p>
+
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your device model, OS version and steps to reproduce. If your feedback is about the content of a scenario — a line that does not sound like a real person, or a reaction that seems unfair — just name the scenario and the round number.</p>
+</div>
+
+
+<footer>沟通副本 TalkQuest · 选一段对话，看你的回应在对方听来是什么感受</footer>
+</body>
+</html>

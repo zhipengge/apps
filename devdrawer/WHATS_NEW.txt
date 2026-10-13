@@ -1,0 +1,5 @@
+首次发布：菜单栏常驻的开发者速查工具，48 个小工具。复制点什么，面板就告诉你它是什么，右侧排出下一步能做什么，按一下拿走结果。完全离线，沙盒里连网络权限都没有申请，源码里也没有任何网络 API。剪贴板历史只在内存里，最多 40 条，退出即清空，磁盘上不留痕迹。不申请任何系统权限，不需要辅助功能或输入监控，系统不会弹出授权框。
+
+---
+
+First release: a menu bar developer toolkit with 48 small tools. Copy something and the panel tells you what it is, ranks what you can do with it, and takes the result away with one keystroke. Fully offline: no network entitlement at all, and no networking API in the source. Clipboard history lives in memory only, capped at 40 entries and gone the moment you quit. No system permissions are requested, no Accessibility or Input Monitoring, and the system never prompts you.

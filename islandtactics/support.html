@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云岛屿 · 支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #2E9E6B;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #5FD39A;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+  .faq { margin: 18px 0; }
+  .faq strong { display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>牧云岛屿 · 支持</h1>
+<p class="meta">IslandTactics — Support · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<div class="faq">
+<strong>这是什么游戏？</strong>
+<p>回合制的岛屿经营与防守。一座岛，一张 11 乘 8 的格子地图，要在最后期限前达成这座岛的目标，同时扛住大潮、风暴和入侵。十二座岛，每座是一道手写的空间题，不是程序生成的。</p>
+
+<strong>怎么操作？</strong>
+<p>时间默认自己在走，一天 1.2 秒。选岛、建造、伐林、升级、征兵、研究，都是在暂停的时候点。快捷键：空格暂停或继续，回车结束这一天，⌘T 开科技面板，⌘⇧N 开始新的战役。</p>
+
+<strong>三种资源分别干什么？</strong>
+<p><strong>粮食</strong>养人口和军队，断粮会掉民心，连续三天会拆房子。<strong>金币</strong>来自税收、工厂和码头，用来建造、征兵和付维护费。<strong>技能</strong>只有工坊产，只能用来解锁科技，除此之外什么都不能做。</p>
+
+<strong>为什么格子这么紧张？</strong>
+<p>因为地形把「安全」和「肥沃」劈成了两批。丘陵不会被大潮淹，但工厂和瞭望塔<strong>只能</strong>建在丘陵上；农场要有草地或浅滩，而这两样全在低地，低地会被淹。最赚钱的码头要临海的低地——最赚钱的那一格，同时是淹得最狠、也是敌军登陆的那一格。</p>
+<p>建筑之间还有相邻惩罚：工厂挨着农场，农场收成减半；工厂挨着住宅，民心下滑。挤在一起省地，分开摆产量高但要多占格子，这就是你每隔一会儿要做一次的那个决定。</p>
+
+<strong>八种建筑分别是什么？</strong>
+<table>
+  <tr><th>建筑</th><th>说明</th></tr>
+  <tr><td>房屋</td><td>每级 +4 人口上限。人是税基也是兵源，但每天要吃粮。</td></tr>
+  <tr><td>农场</td><td>产粮，临水 ×1.25。挨着工厂只有一半收成。</td></tr>
+  <tr><td>工厂</td><td>产金最多，维护也贵。只能建在丘陵上，挨着住宅会吵得民心下滑。</td></tr>
+  <tr><td>码头</td><td>只能建在临海低地，产金高。但它是低地，大潮会淹，也是敌军登陆点。</td></tr>
+  <tr><td>兵营</td><td>无产出，吃维护。提供防御圈，2 级后能训骑士。</td></tr>
+  <tr><td>工坊</td><td>产技能点，解锁科技。除了科技什么都不给。</td></tr>
+  <tr><td>堤坝</td><td>零产出。保护相邻低地不被大潮淹没，纯粹拿一格和每天的钱换安全。</td></tr>
+  <tr><td>瞭望塔</td><td>零产出。扩防御圈、提前预警入侵，只能建在丘陵。</td></tr>
+</table>
+
+<strong>科技有几条，值不值？</strong>
+<p>八条，全部在科技面板里（⌘T）。工坊产出很慢，2.5 技能一天、造价 60，<strong>一座岛通常只买得起两三条</strong>——所以「选哪三条」才是每一局的主要路线抉择。</p>
+<p>其中五条改的是规则，不是数字：灌溉让工厂旁边的农场不再减半、仓廪让断粮不再打击民心、石工让堤坝便宜四成且半径加一格、卫生让工厂不再掉民心、烽火把入侵预警提前三天。另外三条（市集、弩机、重甲）是纯倍率加成：码头金币加四成、弓箭手攻击加五成、骑士防御加六成。</p>
+
+<strong>入侵来了怎么打？</strong>
+<p>危机日历从开局就把每一次大潮、风暴、入侵的日子摊在界面上，日历上也会写清敌军战力。入侵当天要选一个姿态：</p>
+<table>
+  <tr><th>姿态</th><th>效果</th></tr>
+  <tr><td>固守</td><td>守备 +40%，攻击 -15%，战损 -25%。防御圈内的建筑不会被拆。</td></tr>
+  <tr><td>出击</td><td>攻击 +35%，守备 -20%，战损 +20%，防御圈少一格。赢了缴获更多，输了防御圈也罩不住。</td></tr>
+  <tr><td>避战</td><td>不交战。被拆两座没被防御圈罩着的建筑、抢走两成金币，民心 -12。零兵损。</td></tr>
+</table>
+<p><strong>注意避战也算防线失守。</strong> 防线被突破两次就丢掉这座岛，避战计进这个数。打不过的时候避战依然比溃败便宜，但它不是免死金牌。</p>
+
+<strong>面板上的预测准吗？</strong>
+<p>准，而且是结构性的：预测和结算走的是<strong>同一个函数</strong>，预测只是把结算用的骰子夹到区间两端各算一遍，不是另写一份简化公式。所以面板上写的「最坏预计损失 2 名弓箭手」不会和实际结果打架。</p>
+
+<strong>怎么算输？</strong>
+<p>四种：防线被突破两次；国库连续 5 天付不出维护费；岛上人口归零；到了最后一天目标还没达成。目标进度条取的是更差的那个条件，不会只报好消息。</p>
+
+<strong>难度有什么区别？</strong>
+<table>
+  <tr><th>难度</th><th>开局国库</th><th>开局存粮</th><th>维护费</th><th>危机强度</th><th>民心基线</th></tr>
+  <tr><td>安逸</td><td>300</td><td>60</td><td>×0.85</td><td>×0.80</td><td>62</td></tr>
+  <tr><td>标准</td><td>200</td><td>40</td><td>×1.00</td><td>×1.00</td><td>55</td></tr>
+  <tr><td>严酷</td><td>140</td><td>26</td><td>×1.15</td><td>×1.30</td><td>48</td></tr>
+</table>
+<p>民心基线不只是一个回弹目标，它也决定了「工业化的容忍度」——基线越低，能挨着住宅建的工厂越少。</p>
+
+<strong>存档在哪？重装会丢吗？</strong>
+<p>两个槽位：自动存档和手动存档，都在 App 沙盒容器里。读档时手动存档优先，因为那是你明确按下的那一次；读档回来游戏一定是暂停的。<strong>删除 App 会把两个存档一起删掉。</strong> 游戏里的「重置战役」也会删掉这两个文件并清空解锁进度，找不回来；「新的战役」只结束当前这一局，不删文件、也不会清掉已解锁的岛。</p>
+
+<strong>需要联网吗？需要什么权限吗？</strong>
+<p>都不需要。App 完全不联网，它的沙盒权限里只有一条 <code>app-sandbox</code>，<strong>没有申请网络权限</strong>，源码里也没有任何网络 API，断网或飞行模式下十二座岛都能正常玩。它也不申请任何系统权限，系统不会为它弹出授权框。详见<a href="privacy.html">隐私政策</a>。</p>
+
+<strong>为什么没有声音？</strong>
+<p>因为这一版就是没有做声音。App 没有链接任何音频框架，工程里也没有音频文件，从头到尾是静音的。这一条如实说明，不解释成「沉浸式体验」。</p>
+
+<strong>支持哪些系统？</strong>
+<p>需要 macOS 14.0 或更高版本。它会在 Dock 里出现，是普通的窗口 App，不是菜单栏 App。</p>
+
+<strong>节奏太快了，看不清楚。</strong>
+<p>按空格暂停，慢慢看清楚再继续。</p>
+
+<strong>我照着面板算了，结果却不一样。</strong>
+<p>那是一个 bug，请反馈。预测和结算用的是同一个函数，面板上的数字和实际结果不应该有出入。</p>
+
+<strong>感觉某些打法特别强，某些特别弱。</strong>
+<p>这在当前版本是真实存在的，已知的情况是：机器玩家跑出来的结果里，<strong>军事路线偏弱</strong>——养兵要占人口、占粮、占地，换回来的胜率不如把钱铺在地图上。这一条在待办清单上，要调的是兵的性价比，不是把敌人调弱，所以还没有修完。<strong>工业路线很强</strong>，用机器玩家跑标准难度，十二座岛里赢了十一座。唯一拦住它的是第 11 座岛「孤帆」，那座岛的目标是三项科技，而工坊、工厂、瞭望塔抢的是同一批丘陵，岛上只有三座。</p>
+
+<strong>第一座岛、第二座岛太简单了。</strong>
+<p>它们是教学岛，是刻意放松的。但你的感觉没错：第 2 座岛「绿岬」在标准难度下，机器玩家的 15 局全过，它确实不构成挑战，和第 3 座之间的落差偏大。这一条也已经记在待办里。</p>
+
+<strong>怎么反馈问题？</strong>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上系统版本、是哪座岛、第几天、以及你当时的操作。</p>
+</div>
+
+<h2 id="en">English</h2>
+
+<div class="faq">
+<strong>What kind of game is this</strong>
+<p>A turn-based island management and defence game. One island, an 11 by 8 grid, a deadline to meet the island's objective, and tides, storms and raids to survive along the way. Twelve islands, each a hand-authored spatial puzzle rather than a generated map.</p>
+
+<strong>How do I play it</strong>
+<p>Time runs on its own by default, one day every 1.2 seconds. You place buildings, clear forest, upgrade, recruit and research while paused. Space pauses and resumes, Return ends the day, Command-T opens the tech panel, and Shift-Command-N starts a new campaign.</p>
+
+<strong>What are the three resources for</strong>
+<p><strong>Food</strong> feeds your population and your army; running out costs morale, and three days of it destroys a house. <strong>Gold</strong> comes from taxes, factories and docks, and pays for building, recruiting and upkeep. <strong>Skill</strong> comes only from workshops and buys technologies and nothing else.</p>
+
+<strong>Why is space so tight</strong>
+<p>Because the terrain splits "safe" and "fertile" into two different sets of tiles. Hills never flood, but factories and watchtowers can <strong>only</strong> be built on them. Farms need soil, and soil exists only on lowland, which does flood. The most profitable building, the dock, needs coastal lowland, so the most profitable tile is also the one that floods hardest and the one the enemy lands on.</p>
+<p>Buildings also penalise their neighbours: a factory next to a farm halves the farm's yield, and a factory next to housing costs morale. Packing everything together saves tiles; spreading it out yields more but costs space. That is the decision you make every couple of minutes.</p>
+
+<strong>What are the eight buildings</strong>
+<table>
+  <tr><th>Building</th><th>What it does</th></tr>
+  <tr><td>House</td><td>+4 population cap per level. People are both your tax base and your recruits, and they eat every day.</td></tr>
+  <tr><td>Farm</td><td>Produces food, times 1.25 next to water. Next to a factory it yields only half.</td></tr>
+  <tr><td>Factory</td><td>The best gold producer and the most expensive to maintain. Hills only, and it costs morale when it is next to housing.</td></tr>
+  <tr><td>Dock</td><td>Coastal lowland only, and it produces a lot of gold. But it is lowland: tides flood it and the enemy lands on it.</td></tr>
+  <tr><td>Barracks</td><td>No output, costs upkeep. Provides a defence radius, and at level 2 it can train knights.</td></tr>
+  <tr><td>Workshop</td><td>Produces skill for technologies. It produces nothing else.</td></tr>
+  <tr><td>Dike</td><td>No output. It protects adjacent lowland from flooding, trading one tile and a daily cost for safety.</td></tr>
+  <tr><td>Watchtower</td><td>No output. Extends the defence radius and warns you earlier about raids. Hills only.</td></tr>
+</table>
+
+<strong>How many technologies are there, and are they worth it</strong>
+<p>Eight, all in the tech panel. Workshops produce slowly, 2.5 skill a day at a cost of 60, so <strong>an island usually affords only two or three</strong>, and choosing which three is the run's main strategic decision.</p>
+<p>Five of them change rules rather than numbers: irrigation stops a factory from halving an adjacent farm, granary stops starvation from costing morale, masonry makes dikes 40 percent cheaper with one more tile of reach, sanitation stops factories from costing morale at all, and beacon warns you three days earlier. The other three, market, crossbow and plate armour, are pure multipliers: docks plus 40 percent gold, archers plus 50 percent attack, knights plus 60 percent defence.</p>
+
+<strong>How do raids work</strong>
+<p>The crisis calendar shows every tide, storm and raid from the very first day, along with the enemy's strength. On the day of a raid you pick a stance:</p>
+<table>
+  <tr><th>Stance</th><th>Effect</th></tr>
+  <tr><td>Defend</td><td>Guard plus 40 percent, attack minus 15 percent, losses minus 25 percent. Buildings inside the defence radius survive.</td></tr>
+  <tr><td>Sortie</td><td>Attack plus 35 percent, guard minus 20 percent, losses plus 20 percent, defence radius down one tile. Win bigger, lose harder.</td></tr>
+  <tr><td>Evade</td><td>No battle. Two buildings outside the defence radius are destroyed, a fifth of your gold is taken, morale drops 12. No troops lost.</td></tr>
+</table>
+<p><strong>Evading still counts as the defence failing.</strong> Two breaches and the island is lost, and evading counts toward that number. When you cannot win, evading is still cheaper than being routed, but it is not a free pass.</p>
+
+<strong>Can I trust the numbers on the panel</strong>
+<p>Yes, structurally: the forecast and the resolution call <strong>the same function</strong>. The forecast just runs the resolution's dice at both ends of their range rather than using a separate simplified formula. The worst-case losses shown on the panel will not disagree with what actually happens.</p>
+
+<strong>How do I lose</strong>
+<p>In four ways: two breaches of the defence line; five days in a row unable to pay upkeep; population reaching zero; or the deadline passing with the objective unmet. The objective bar reports the worse of its conditions rather than the better one.</p>
+
+<strong>What do the difficulties change</strong>
+<table>
+  <tr><th>Difficulty</th><th>Starting gold</th><th>Starting food</th><th>Upkeep</th><th>Crisis strength</th><th>Morale baseline</th></tr>
+  <tr><td>Relaxed</td><td>300</td><td>60</td><td>x0.85</td><td>x0.80</td><td>62</td></tr>
+  <tr><td>Standard</td><td>200</td><td>40</td><td>x1.00</td><td>x1.00</td><td>55</td></tr>
+  <tr><td>Harsh</td><td>140</td><td>26</td><td>x1.15</td><td>x1.30</td><td>48</td></tr>
+</table>
+<p>The morale baseline is not just the level morale drifts back toward; it also sets how much industry the island will tolerate, since a lower baseline means fewer factories can sit next to housing.</p>
+
+<strong>Where are my saves, and will I lose them if I reinstall</strong>
+<p>Two slots, automatic and manual, both inside the app's sandbox container. The manual save takes precedence when loading, because it is the one you asked for, and a loaded game always comes back paused. <strong>Deleting the app deletes both saves.</strong> The in-game campaign reset also deletes both files and clears your unlock progress, and cannot be undone; starting a new campaign only ends the current run and deletes nothing.</p>
+
+<strong>Does it need a network connection or any permissions</strong>
+<p>Neither. The app is fully offline: its sandbox declares only <code>app-sandbox</code> with <strong>no network entitlement</strong>, there is no networking API in the source, and all twelve islands play fine offline or in Airplane Mode. It requests no system permissions either, so the system never prompts you. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<strong>Why is there no sound</strong>
+<p>Because this version does not have any. The app links no audio framework and ships no audio files; it is silent throughout. That is a plain statement of the current state, not a design philosophy.</p>
+
+<strong>Which systems are supported</strong>
+<p>macOS 14.0 or later. It is an ordinary windowed app that appears in the Dock, not a menu bar app.</p>
+
+<strong>The pace is too fast for me to follow</strong>
+<p>Press Space to pause and take as long as you like.</p>
+
+<strong>I worked it out from the panel and got a different result</strong>
+<p>That is a bug, please report it. The forecast and the resolution share one function, so the panel's numbers and the actual outcome are not supposed to disagree.</p>
+
+<strong>Some approaches feel much stronger or weaker than others</strong>
+<p>That is genuinely true in this version, and the known cases are these. <strong>Military play is weak</strong>: troops cost population, food and tiles, and in the machine player's runs they return a lower win rate than simply spreading gold across the map. It is on the to-do list, and the fix is to the cost-effectiveness of units rather than to enemy strength, so it is not done yet. <strong>Industry is strong</strong>: the machine player wins eleven of twelve islands on Standard. The one thing that stops it is island 11, "Lone Sail", where the objective is three technologies and the workshops, factories and watchtowers all compete for the same hills, of which the island has three.</p>
+
+<strong>The first two islands are too easy</strong>
+<p>They are teaching islands, deliberately relaxed. Your impression is still correct though: island 2, "Green Cape", passes all 15 of the machine player's runs on Standard, so it offers no challenge at all, and the step up to island 3 is steep. That is on the to-do list as well.</p>
+
+<strong>Reporting a problem</strong>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your system version, which island, which day, and what you did.</p>
+</div>
+
+
+<footer>牧云岛屿 IslandTactics · 十二座手写的岛，格子是唯一真正稀缺的东西</footer>
+</body>
+</html>

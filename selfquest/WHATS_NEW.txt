@@ -1,0 +1,5 @@
+首次发布。打卡和专注都给经验与金币，经验涨等级，金币买装备穿在角色身上。三种重复方式，连续打卡有连击加成，支持往回 7 天补卡，当天点错了可以撤销并退回原额。番茄钟四个预设加一个不限时的正计时。9 件装备、11 个成就、打卡热力图与专注柱状图。全程本地：没有账号，没有服务器，不发起任何网络请求，不申请任何权限，也不会提醒你打卡。可导出 JSON 存档与 CSV 打卡明细；导出是单向的，这个版本没有导入。
+
+---
+
+First release. Check-ins and focus sessions both earn XP and gold: XP raises your level, gold buys gear your hero wears. Three repeat schedules, a streak bonus, backfill up to 7 days back, and an undo that returns the exact reward. Four focus presets plus a count-up mode. Nine pieces of equipment, eleven achievements, a check-in heatmap and a focus bar chart. Fully local: no account, no server, no network requests of any kind, no permissions, and it will not remind you to check in. Export a JSON save or a CSV of check-ins; export is one-way, as this version has no import.

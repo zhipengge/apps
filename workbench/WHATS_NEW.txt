@@ -1,0 +1,5 @@
+首次发布：把一组要一起打开的东西存成一个场景，进入之前先探一遍通不通。解析不了、连不上、证书没过会被拦下；需要登录的判为正常，照常放行。离开时留一句断点，下次进来第一眼就是上次停在哪，每个场景保留最近 5 条。已经在运行的应用不会再拉起一次，打开顺序固定为先应用、再文件、最后网页。唯一联网的地方是巡检，只发给你自己场景里填的地址，带 Range 只取 1 字节，收到响应头就断开，会话无痕。数据只在本机，导出是纯文本 JSON，导入只合并不清空。不申请任何系统权限，不需要辅助功能和输入监控。需要 macOS 14.0 或更高版本。
+
+---
+
+First release: save the things you open together as a scene, and check what is reachable before entering. DNS failures, refused connections and bad certificates are stopped; a login wall is treated as healthy and let through. Leave a handoff note on the way out and the next visit starts with where you stopped, keeping the five most recent per scene. Apps already running are not launched again, and the order is fixed at apps, then files, then web pages. The one place it goes online is the check, which contacts only addresses from your own scenes, asks for a single byte with a Range header, disconnects at the response headers, and leaves no session trace. Data stays on this computer, export is plain-text JSON, and import only merges. No system permissions are requested: no Accessibility and no Input Monitoring. Requires macOS 14.0 or later.

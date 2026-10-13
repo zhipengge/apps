@@ -1,1 +1,5 @@
-首次发布：竖屏单手弹幕射击。战役 40 波、无尽模式、Boss Rush；四种机体按星数解锁；可破坏的障碍挡住双方子弹，道具就藏在后面。免费可玩战役前 8 波，一次买断解锁完整版。全程离线，无广告，无体力，无订阅。
+首次发布：竖屏单手弹幕射击。按住屏幕任意位置拖动，机炮自动开火，你只管走位。可破坏的障碍同时挡住你和敌人的子弹，好东西就藏在后面，躲在障碍后还能回盾。贴着子弹飞有分，还会给蓄力条充电；条攒满了不会自动放，手指点一下才清掉周围一圈弹幕。火力 1 到 5 级，进化 0 到 3 级，升级时机体在画面上会变大。八种道具，其中导弹和激光是限时特殊武器。三种模式：战役 40 波每 10 波一个 Boss、无尽、Boss Rush。四种机体按星数解锁，星数只看走得远近和挨打多少。中途退出可以接着打。全程离线，没有账号，没有广告，没有体力，没有订阅。
+
+---
+
+First release: a portrait, one-thumb bullet-hell shooter. Hold anywhere and drag while the guns fire on their own, so all you manage is where you are. Destructible barriers stop your bullets and the enemy's alike, the best pickups hide behind them, and staying under cover refills your shield. Flying close to bullets scores and charges your meter, and a full meter does not fire by itself: a tap releases it and clears the ring of bullets around you. Weapon level runs 1 to 5 and evolution runs 0 to 3, with the ship visibly growing as it rises. Eight pickups, including two timed special weapons, a missile and a laser. Three modes: a 40-wave campaign with a boss every 10 waves, Endless, and Boss Rush. Four ships unlocked with stars, which are earned by how far you got and how little you were hit. Leave mid-run and you can pick it up later. Fully offline: no account, no ads, no energy, no subscription.

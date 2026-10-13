@@ -8,15 +8,15 @@
   :root {
     color-scheme: light dark;
     --fg: #1c1c1e; --fg-dim: #6e6e73;
-    --bg: #ffffff; --bg-soft: #f5f5f7;
-    --accent: #0089A7;
+    --bg: #ffffff; --bg-soft: #eef7f9;
+    --accent: #0b6f86;
     --border: rgba(0,0,0,.08);
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --fg: #f5f5f7; --fg-dim: #98989d;
-      --bg: #1c1c1e; --bg-soft: #2c2c2e;
-      --accent: #00E5FF;
+      --bg: #0a1416; --bg-soft: #12242a;
+      --accent: #4fd8f0;
       --border: rgba(255,255,255,.1);
     }
   }
@@ -58,89 +58,161 @@
 
 
 <h1>空中绞杀 · 支持</h1>
-<p class="meta">SkyStrike — Support · 最后更新 / Last updated: 2026-10-10</p>
+<p class="meta">SkyStrike — Support · 最后更新 / Last updated: 2026-10-12</p>
 
 <h2 id="zh">中文</h2>
 
 <div class="faq">
-<strong>怎么玩？</strong>
-<p>按住屏幕任意位置拖动，机体跟着你的手指走，机炮自动开火。你不需要瞄准，只需要躲子弹、决定打谁。竖屏，单手就能玩。</p>
+<strong>这是个什么游戏？怎么玩？</strong>
+<p>竖屏弹幕射击。按住屏幕任意位置拖动，机体跟着你的手指走，<strong>机炮自动开火</strong>——你不需要瞄准，只需要走位和决定打谁。单手就能玩，一局几分钟，通勤路上也打得完。</p>
 
 <strong>障碍是干什么用的？</strong>
-<p>可破坏的障碍会同时挡住你和敌人的子弹，而道具常常就藏在障碍后面。继续打敌人还是分火力砸开障碍，是每一波都要做的取舍。障碍有血量，把它打碎，藏在里面的东西才会掉出来，但并非每个障碍都有货。</p>
+<p>可以打碎的障碍同时挡住你和敌人的子弹，而道具常常就藏在障碍后面。继续打敌人、还是分火力砸开障碍，是每一波都要做的取舍。障碍有血量，把它打碎，藏在里面的东西才会掉出来。<strong>并非每个障碍都有货</strong>——这一点是刻意的，否则砸箱子就成了不用想的动作。</p>
+
+<strong>三种模式有什么区别？</strong>
+<p>战役 40 波，每 10 波一个 Boss，打穿算通关；无尽模式难度一路上涨，看你撑到第几波；Boss Rush 跳过杂兵，四个 Boss 连着打。三种模式共用同一套机体和道具，战绩分开记录。</p>
 
 <strong>星级怎么算？</strong>
-<p>只看两件事：走到第几波、总共挨了几下。本作是自动开火，玩家没有瞄准这个动作，所以命中率衡量不了水平。走得远、挨得少就是 3 星。中途阵亡的局也有星，不只是通关才给。</p>
+<p>只看两件事：<strong>走到第几波、总共挨了几下</strong>。本作是自动开火，玩家没有瞄准这个动作，所以命中率衡量不了水平，评分里也没有这一项。中途阵亡的局也有星，不只是通关才给。</p>
 
 <strong>完美波次是什么？</strong>
 <p>一波敌人一个都没漏掉，就是完美波次，回复 1 点生命。已经满血时也照样算完美波次，只是没有血可回。机体初始 5 点生命。</p>
 
 <strong>机体怎么解锁？</strong>
-<p>隼默认可用；扇需要 4 颗星，芒 12 颗，寻 24 颗。星数只用来解锁机体，不卖数值，也没有抽卡。四种机体的弹道和射速都不一样：隼射速快，扇是三向扇形，芒是穿透激光，寻自动追踪最近的敌人。</p>
+<p>隼默认可用；扇需要 4 颗星，芒 12 颗，寻 24 颗。四种机体的弹道和射速都不一样：隼射速最快、弹道直；扇是三向扇形，清杂兵最舒服；芒是穿透激光，单发最疼；寻自动追踪最近的敌人。星数只用来解锁机体，不卖数值，也没有抽卡。</p>
+
+<strong>我的火力会越来越强吗？</strong>
+<p>会，而且有两种叠加的方式。第一种是<strong>火力等级 1 到 5</strong>，靠捡火力道具升。第二种是<strong>进化 0 到 3 级</strong>，是累积的、不会因为挨打掉回去，到阈值就升一级，<strong>机体在画面上会看着变大</strong>。两者是分开的：进化是这一局攒下来的底子，火力是当下的状态。</p>
+
+<strong>贴着子弹飞过去有奖励吗？</strong>
+<p>有，这个机制叫<strong>擦弹</strong>：擦弹的判定半径比被击中的判定半径大得多，从子弹边上蹭过去就得分，同时给蓄力条充电。也就是说「贴着飞」和「躲得远远的」在分数上不是同一件事——但撞上去的后果也不一样，怎么取舍由你。</p>
+
+<strong>蓄力条满了会自动放大招吗？</strong>
+<p><strong>不会，要你自己点。</strong> 蓄力条攒满之后，手指在屏幕上<strong>点一下</strong>（不是拖动）才会放出去，效果是清掉周围一圈的敌人子弹。之所以做成手动，是因为攒条的过程本身是要贴着打的，什么时候放出去是你的决定，不是系统的决定。点按和拖动的区分是屏幕上一个很小的位移阈值，正常操作不会误触。</p>
+
+<strong>护盾怎么回？</strong>
+<p>待在障碍后面，被障碍遮住一段时间，护盾就会自己回满。所以「障碍」这个核心机制不只是挡子弹和藏道具，它还是你回血的地方。</p>
+
+<strong>道具一共几种？</strong>
+<p>八种。六种是捡起来立刻生效或持续一段时间的：火力、护盾、清屏、吸附、金币、修复。另外两种是<strong>限时特殊武器</strong>：导弹（带溅射）和激光（穿透），各自持续几秒，捡到时会在 HUD 上显示名称和一条倒计时条。</p>
+
+<strong>连击是怎么算的？</strong>
+<p>连续击杀会把分数倍率推上去，最高 3 倍，但中间有一个时间窗口，隔太久就掉回去。<strong>漏掉一个敌人不只是少打一个</strong>：它会扣掉分数，并且把连击打断。</p>
+
+<strong>中途退出去，这局还在吗？</strong>
+<p>在。App 退到后台时会把这局的现场存下来，包括分数、波次、用时、场上还剩的子弹和敌人，重新打开可以选择接着打。<strong>但它只保留 3 天</strong>，过期就没了。打完一局或者开新一局，这份现场就会被清掉。</p>
+
+<strong>背景为什么有时候不一样？</strong>
+<p>游戏有五套配色主题，会随着波次推进换。它们只影响颜色和画面上的一行文案，不影响任何数值、敌人或难度。</p>
+
+<strong>有剧情吗？</strong>
+<p>有一层很薄的剧情：开场三段演出，四个 Boss 各自登场时的宣言，波次之间的五段过场，以及通关后的结局。全部由代码绘制的画面和文字构成。想重看开场，主菜单里有重看的入口。</p>
 
 <strong>免费版能玩到什么程度？</strong>
 <p>战役可以玩到第 8 波，够玩懂自动开火、拖拽走位、障碍取舍和机体差异。完整版一次买断，解锁战役全部 40 波、无尽模式与 Boss Rush。没有广告，没有体力，没有订阅。</p>
 
 <strong>换了手机，购买会丢吗？</strong>
-<p>不会。用同一个 Apple ID，在设置页点「恢复购买」即可，不需要重新付费。</p>
+<p>不会。用同一个 Apple ID，在设置页点「恢复购买」即可，不需要重新付费，也不需要在本 App 里注册账号。<strong>恢复购买这一步需要联网</strong>——离线时它会失败。顺带说明一件相关的事：商品信息拉不到的时候（包括离线），App 会临时开放全部内容，所以离线打开时你看到的是完整功能，这是刻意这么写的。</p>
 
 <strong>数据存在哪里？怎么删？</strong>
-<p>全部只在这台设备上，不上传也不同步。设置页有「重置全部进度」，会清空星数、金币、最高分和已解锁的机体；删除 App 即清除全部数据。详见<a href="privacy.html">隐私政策</a>。</p>
+<p>四个键，全在这台设备的沙盒里，不上传也不同步：进度、这局的现场、音效开关、开场演出标记。设置页有「重置全部进度」，会清空星数、金币、最高分、累计统计和已解锁的机体。<strong>要说准的是：它只清进度，音效开关和开场标记会留着，那份「没打完的现场」也可能还在</strong>——所以重置之后菜单里的「继续」有时还能点。想全部清掉，删除 App 最干净。详见<a href="privacy.html">隐私政策</a>。</p>
 
 <strong>战绩卡怎么发出去？</strong>
-<p>结算页点「分享战绩」，App 在本机把这一局渲染成一张竖版图片（分数、星级、击杀、受伤次数、存活时间、金币），交给系统分享面板，你选微信或任何装了的应用。</p>
+<p>结算页点「分享战绩」，App 在本机把这一局渲染成一张竖版图片（分数、星级、击杀、受伤次数、存活时间、金币），连同「我在《空中绞杀》打出 N 分，第 M 波」这句话，一起交给系统分享面板，发到哪由你决定。App 不知道也不记录你选了哪个应用。<strong>不点这个按钮，什么都不会离开设备。</strong></p>
 
-<strong>有声音吗？</strong>
-<p>有，音效由代码实时合成，跟随系统静音键，也不会打断你在听的音乐。设置里可以关。工程里没有任何音频文件。</p>
+<strong>有声音吗？会打断我正在听的音乐吗？</strong>
+<p>有，9 种音效全部由代码实时合成，仓库里一个音频文件都没有。它<strong>跟随系统静音键</strong>，也<strong>不会打断你在听的音乐</strong>，被打断后会自动恢复。设置里可以关。它不录音，也不用麦克风。</p>
+
+<strong>有震动吗？</strong>
+<p>没有。这个 App 一点震动反馈都没有做。</p>
 
 <strong>需要联网吗？</strong>
-<p>不需要。飞行模式下全部功能可用。</p>
+<p>不需要，App 里没有网络代码。飞行模式下全部内容可用，包括第一次启动。唯一的例外是购买和恢复购买，那两步要由系统的商店进程去问 Apple。</p>
+
+<strong>支持哪些设备？</strong>
+<p>需要 iOS 17.0 或更高版本，iPhone 与 iPad 都可以。iPhone 上仅竖屏；iPad 上是竖屏和倒置竖屏两种，不支持横屏。界面是中文的。</p>
 
 <strong>怎么反馈问题？</strong>
-<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上设备型号、系统版本和复现步骤。</p>
+<p>到 <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> 提交，附上设备型号、系统版本和复现步骤。如果是某一波的敌人卡在奇怪的位置、或者 Boss 的弹幕看起来不对，说清楚模式和波次会快很多。</p>
 </div>
 
 <h2 id="en">English</h2>
 
 <div class="faq">
-<strong>How do I play</strong>
-<p>Hold anywhere and drag; your ship follows your finger and the guns fire on their own. There is no aiming to do, only dodging and choosing what to shoot. Portrait, one hand.</p>
+<strong>What is this, and how do I play</strong>
+<p>A portrait bullet-hell shooter. Hold anywhere and drag; your ship follows your finger and <strong>the guns fire on their own</strong>, so there is no aiming to do, only positioning and choosing what to shoot. One hand, a few minutes a run.</p>
 
 <strong>What are the barriers for</strong>
-<p>Destructible barriers stop both your bullets and the enemy's, and power-ups often hide behind them. Keep shooting enemies or divert fire to break a barrier: that trade-off comes up every wave. Barriers have health, and only give up what they hide when destroyed, though not every barrier hides anything.</p>
+<p>Destructible barriers stop both your bullets and the enemy's, and power-ups often hide behind them. Keep shooting enemies or divert fire into a barrier: that trade-off comes up every wave. Barriers have health, and only give up what they hide when destroyed. <strong>Not every barrier hides anything</strong>, which is deliberate: otherwise smashing them would be a decision you never have to make.</p>
+
+<strong>What is the difference between the three modes</strong>
+<p>Campaign is 40 waves with a boss every 10, and clearing it is a win. Endless keeps climbing until you fall. Boss Rush skips the chaff and runs the four bosses back to back. All three share the same ships and pickups, and keep separate records.</p>
 
 <strong>How is the star rating decided</strong>
-<p>By two things only: how far you got and how many hits you took. The guns fire automatically, so accuracy cannot say anything about how you played. Go far and take few hits for three stars. A run that ends in death still earns stars; they are not reserved for clears.</p>
+<p>Two things only: <strong>how far you got and how many hits you took</strong>. The guns fire automatically, so accuracy cannot say anything about how you played, and it is not part of the rating. A run that ends in death still earns stars; they are not reserved for clears.</p>
 
 <strong>What is a perfect wave</strong>
 <p>Clear a wave without letting a single enemy escape and you restore one point of health. It still counts as perfect at full health, where there is nothing to restore. Ships start with five health.</p>
 
 <strong>How do I unlock the ships</strong>
-<p>The Falcon is available from the start; the Spreader needs 4 stars, the Laser 12, and the Homing 24. Stars only unlock ships. Nothing is sold for power and there is no gacha. Each ship fires differently: fast straight shots, a three-way spread, a piercing laser, and homing shots that chase the nearest enemy.</p>
+<p>The Falcon is available from the start; the Spreader needs 4 stars, the Laser 12, and the Homing 24. Each fires differently: the fastest straight shots, a three-way fan that clears packs, a piercing laser that hits hardest per shot, and shots that chase the nearest enemy. Stars only unlock ships. Nothing is sold for power, and there is no gacha.</p>
+
+<strong>Does my firepower grow</strong>
+<p>Yes, in two ways that stack. First, <strong>weapon level 1 to 5</strong>, raised by picking up firepower. Second, <strong>evolution, 0 to 3</strong>, which accumulates and never drops back when you are hit; each threshold raises it a level and <strong>the ship visibly grows on screen</strong>. The two are separate: evolution is what you have built up this run, firepower is your current state.</p>
+
+<strong>Is there a reward for near misses</strong>
+<p>Yes, it is called <strong>grazing</strong>: the graze radius is much larger than the radius that kills you, so slipping past a bullet scores and charges your meter. Flying close and staying far away are therefore not the same thing on the scoreboard, and they are not the same thing for survival either. Which one you pick is up to you.</p>
+
+<strong>Does the charge meter fire by itself when full</strong>
+<p><strong>No, you release it.</strong> Once the meter is full, a <strong>tap</strong> on the screen (not a drag) fires it, clearing enemy bullets in a ring around you. It is manual because charging means flying close in the first place, and when to spend it should be your decision rather than the game's. A tap and a drag are told apart by a small movement threshold, so ordinary play does not trigger it by accident.</p>
+
+<strong>How does the shield come back</strong>
+<p>Stay behind a barrier. Once cover has hidden you for a few seconds, the shield refills on its own. So barriers are not only for blocking bullets and hiding pickups; they are also where you heal.</p>
+
+<strong>How many kinds of pickup are there</strong>
+<p>Eight. Six take effect immediately or for a while: firepower, shield, screen clear, magnet, coins and repair. The other two are <strong>timed special weapons</strong>: a missile with splash damage and a piercing laser, each lasting a few seconds, with its name and a countdown bar shown in the HUD while it runs.</p>
+
+<strong>How does the combo work</strong>
+<p>Consecutive kills push your score multiplier up to 3x, but there is a time window and it slides back if you let it lapse. <strong>Letting an enemy escape is not just one fewer kill</strong>: it costs you points and breaks the combo.</p>
+
+<strong>If I leave mid-run, is the run still there</strong>
+<p>Yes. When the app goes to the background it saves the run, including score, wave, elapsed time and what is still on the field, and you can pick it up when you come back. <strong>It is kept for 3 days</strong>, then it expires. Finishing a run or starting a new one clears it.</p>
+
+<strong>Why does the background change</strong>
+<p>There are five colour themes and they change as the waves progress. They affect colour and one line of text on screen only; nothing about the numbers, the enemies or the difficulty.</p>
+
+<strong>Is there a story</strong>
+<p>A thin layer of one: three intro scenes, a declaration as each of the four bosses arrives, five interludes between waves, and an ending when you clear the campaign. All of it is drawn in code. You can replay the intro from the main menu.</p>
 
 <strong>What does the free version include</strong>
-<p>Campaign waves up to wave 8, which is enough to learn the auto-fire, the drag controls, the barrier trade-off, and the differences between ships. One purchase unlocks all 40 campaign waves, Endless, and Boss Rush. No ads, no energy, no subscription.</p>
+<p>Campaign waves up to wave 8, which is enough to learn the auto-fire, the drag controls, the barrier trade-off and the differences between ships. One purchase unlocks all 40 campaign waves, Endless and Boss Rush. No ads, no energy, no subscription.</p>
 
 <strong>Do I lose my purchase on a new phone</strong>
-<p>No. Sign in with the same Apple ID and tap Restore Purchases in Settings. You will not be charged twice.</p>
+<p>No. Sign in with the same Apple ID and tap Restore Purchases in Settings. You will not be charged twice, and there is no account to create here. <strong>Restore Purchases does require a connection</strong> and fails when you are offline. One related thing, stated plainly: when the product information cannot be loaded, including offline, the app temporarily unlocks everything, so that is what you will see.</p>
 
 <strong>Where is my data, and how do I delete it</strong>
-<p>On this device only; nothing is uploaded or synced. Settings offers Reset All Progress, which clears stars, coins, best scores, and unlocked ships. Deleting the app clears everything. See the <a href="privacy.html">Privacy Policy</a>.</p>
+<p>Four keys, all in this device's sandbox, never uploaded and never synced: progress, the run in progress, the sound setting and the intro flag. Settings offers Reset All Progress, which clears stars, coins, best scores, accumulated totals and unlocked ships. <strong>To be precise, it clears progress only</strong>: the sound setting and intro flag stay, and the run in progress may stay too, so the Continue button can still work after a reset. Deleting the app is the clean way to clear all of it. See the <a href="privacy.html">Privacy Policy</a>.</p>
 
 <strong>How do I share a run</strong>
-<p>Tap Share on the result screen. The app renders the run into a portrait image on-device (score, stars, kills, hits taken, survival time, coins) and hands it to the system share sheet, where you pick any app you have installed.</p>
+<p>Tap Share on the result screen. The app renders the run into a portrait image on-device (score, stars, kills, hits taken, survival time, coins) and hands it to the system share sheet together with the line "I scored N in SkyStrike, wave M". Where it goes is your choice; the app neither knows nor records which destination you picked. <strong>If you never tap that button, nothing leaves the device.</strong></p>
 
-<strong>Is there sound</strong>
-<p>Yes. Sound effects are synthesised in code at play time, respect the silent switch, and do not interrupt music you are listening to. They can be turned off in Settings. The app ships no audio files.</p>
+<strong>Is there sound? Will it interrupt my music</strong>
+<p>Yes, and all 9 sound effects are synthesised in code at play time; there is not a single audio file in the project. It <strong>respects the silent switch</strong> and <strong>does not interrupt music you are listening to</strong>, and it recovers after an interruption. It can be turned off in Settings. It does not record and does not use the microphone.</p>
+
+<strong>Are there haptics</strong>
+<p>No. The app has no vibration feedback at all.</p>
 
 <strong>Does it need a network connection</strong>
-<p>No. Every feature works in Airplane Mode.</p>
+<p>No; there is no networking code in the app. Every feature works in Airplane Mode, including first launch. The one exception is buying and restoring, which the system's store process handles by asking Apple.</p>
+
+<strong>Which devices are supported</strong>
+<p>iOS 17.0 or later, on iPhone and iPad. Portrait only on iPhone; portrait and upside-down portrait on iPad, with no landscape. The interface is in Chinese.</p>
 
 <strong>Reporting a problem</strong>
-<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your device model, OS version, and steps to reproduce.</p>
+<p>File an issue at <a href="https://github.com/zhipengge/apps/issues">GitHub Issues</a> with your device model, OS version and steps to reproduce. If an enemy is stuck somewhere odd in a particular wave, or a boss pattern looks wrong, naming the mode and the wave will make it much faster to track down.</p>
 </div>
 
 
-<footer>空中绞杀 SkyStrike · 竖屏弹幕射击</footer>
+<footer>空中绞杀 SkyStrike · 竖屏单手弹幕射击</footer>
 </body>
 </html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>暗区枪线 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #fbf1f4;
+    --accent: #a82f5a;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #120b0e; --bg-soft: #1e1216;
+      --accent: #e8618f;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg); background: var(--bg); line-height: 1.6;
+    max-width: 760px; margin: 0 auto; padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead { background: var(--bg-soft); padding: 18px 20px; border-radius: 12px;
+          border-left: 4px solid var(--accent); margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg-dim); background: var(--bg-soft); }
+  ul li { margin: 6px 0; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em;
+         background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .lang-switch { display: flex; gap: 6px; margin: 0 0 24px; font-size: 0.85rem; }
+  .lang-switch a { padding: 6px 12px; background: var(--bg-soft); border-radius: 999px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border);
+           color: var(--fg-dim); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="#zh">中文</a>
+  <a href="#en">English</a>
+</div>
+
+
+<h1>暗区枪线 · 隐私政策</h1>
+<p class="meta">DarkZone — Privacy Policy · 最后更新 / Last updated: 2026-10-12</p>
+
+<h2 id="zh">中文</h2>
+
+<p class="lead"><strong>暗区枪线不收集任何数据。</strong> 没有账号，没有服务器，App 不发起任何网络请求。「不联网」在这里是一句可核对的话：全部代码只 import 了 Foundation、SwiftUI、UIKit、AVFoundation 和 Combine 五个系统框架，没有链接任何网络库；工程里没有 SPM 包、没有第三方库，框架构建阶段是空的；构建产物里唯一的网址是 Apple 自己写进每个二进制的属性列表 DTD 标识符，装载真实代码的那份 dylib 里一个网址都没有。你的进度存在设备上的一个键里，不上传也不同步。</p>
+
+<h3>我们处理什么、存在哪</h3>
+<p>只有一个键，名字是 <code>darkzone.progress.v1</code>，里面是一段 JSON。它装这几样东西：</p>
+<table>
+  <tr><th>字段</th><th>是什么</th></tr>
+  <tr><td>关卡记录</td><td>每一关是否已通关、拿过几颗星、最好用时、尝试过几次</td></tr>
+  <tr><td>当前选择的武器</td><td>手枪、冲锋枪、霰弹枪或步枪</td></tr>
+  <tr><td>音效开关</td><td>开或关</td></tr>
+  <tr><td>震动开关</td><td>开或关</td></tr>
+  <tr><td>摇杆手感开关</td><td>开或关</td></tr>
+  <tr><td>是否看过教学</td><td>第一次进游戏时的那张说明卡有没有关掉</td></tr>
+</table>
+
+<p>就这些。<strong>没有别的键，也没有别的存储。</strong> 以上内容全部在本机读写，<strong>不会离开设备</strong>。本 App 不使用 iCloud，也不使用任何云同步。</p>
+
+<p>这些内容里没有任何可以指认到人的东西：没有姓名、邮箱、电话、位置、设备标识符或广告标识符，也没有账号 ID——因为这个 App 根本没有账号。App 里没有让你输入文字的地方。它也不写任何日志：工程里没有一处把信息打到系统日志里。</p>
+
+<h3>没有文件，也没有数据库</h3>
+<p>除了上面那一个键，工程里没有 <code>FileManager</code> 的任何调用，App 不往磁盘上写任何文件。没有 SwiftData、CoreData、Keychain、iCloud、CloudKit，也没有偏好设置之外的任何存储方式。</p>
+
+<h3>网络</h3>
+<p><strong>App 不发起任何网络请求。</strong> 飞行模式下全部功能可用，包括第一次启动。10 个关卡的地形、4 种敌人、5 把武器和全部数值都写死在代码里随 App 打包，没有任何一处需要下载。App 里没有排行榜、没有成就上报、没有云存档，代码里也没有任何 CloudKit 或后台传输的调用。</p>
+
+<h3>购买与账号</h3>
+<p><strong>本 App 没有内购，没有账号系统，不需要注册或登录。</strong> 代码里没有任何支付相关的接口，App 内没有付费入口，也没有解锁码、没有体力、没有广告。10 个关卡随进度解锁，武器用星星换——这两种解锁都在本机算，不经过任何服务器。如果你是通过 App Store 取得本 App 的，那笔交易由 Apple 处理：我们不接触你的支付信息，也拿不到你的 Apple ID。</p>
+
+<h3>权限</h3>
+<p><strong>本 App 不申请任何权限。</strong> 它不读取麦克风、相机、相册、通讯录、位置、健康数据或日历，不发送通知，也不申请任何追踪许可。App 的属性列表里没有任何权限用途描述，所以 iOS 根本不会为它弹出权限询问。</p>
+
+<h3>声音</h3>
+<p><strong>19 种音效全部是运行时用代码算出波形合成的，App 里没有一个音频文件。</strong> 音频会话的模式是播放，并且明确打开了「与其他音频混合」，所以它<strong>不会打断你正在听的音乐</strong>；它也不是在启动时就占住音频，而是你第一次开始行动时才起，切到后台就停。<strong>它不录音，也不使用麦克风。</strong></p>
+
+<h3>触感</h3>
+<p>命中、击倒、换弹、越过开火线、阵亡、过关这些时刻会让你手上震一下，由系统的触感引擎产生。它只是给手指的反馈，不产生也不读取任何数据。震动有节流，不会震个不停。</p>
+
+<h3>不会离开设备的按钮</h3>
+<p>这个 App 里<strong>没有分享、没有导出、没有剪贴板操作</strong>，也没有任何一个能把数据送出去的按钮。设置里唯一的破坏性操作是「重置进度」，它做的是把本机那一个键删掉。也就是说，除了你自己看屏幕，数据没有任何出口——不是「我们不主动发」，是根本没有这条路径。</p>
+
+<h3>设备备份</h3>
+<p>说白了：那个键就在 App 的偏好设置里。如果你在系统里开了 iCloud 备份或电脑备份，那份备份会包含它，和它包含你其他 App 的数据一样。那份备份由 Apple 保管，<strong>我们碰不到它</strong>；本 App 自己不会把任何东西传到任何地方。</p>
+
+<h3>我们不做的事</h3>
+<ul>
+  <li>不要求注册或登录</li>
+  <li>不收集姓名、邮箱、位置、设备标识符或广告标识符</li>
+  <li>不接入广告、分析、崩溃上报或追踪 SDK（本 App 不含任何第三方代码，工程里没有任何依赖包）</li>
+  <li>不录音，不读取麦克风、相册、通讯录、位置</li>
+  <li>不发送通知，也不申请任何系统权限</li>
+  <li>不写日志，不把你的数据共享给任何第三方</li>
+</ul>
+
+<h3>数据删除</h3>
+<p>设置里有「重置进度」的入口，点下去先要确认一次，确认后会删除那一个键里的全部内容：关卡记录、武器选择、三个开关和教学标记，等于回到第一次打开的状态，而且找不回来。<strong>删除 App 同样会清空全部数据。</strong></p>
+
+<h3>儿童</h3>
+<p>本 App 不收集任何人的数据，当然也不收集儿童的数据。它没有账号、没有聊天、没有用户生成内容，也没有任何形式的联网功能。游戏内容是俯视角的虚构战术行动，不涉及任何真实人物或真实事件。</p>
+
+<h2 id="en">English</h2>
+
+<p class="lead"><strong>DarkZone collects no data.</strong> No account, no server, and the app makes no network requests. That claim is checkable: the whole codebase imports five system frameworks only (Foundation, SwiftUI, UIKit, AVFoundation and Combine), no networking library is linked, the project has no Swift packages and no third-party libraries and its frameworks build phase is empty, and the only URL in the built app is the property-list DTD identifier Apple compiles into every binary; the dylib holding the real code contains no URL at all. Your progress lives in one key on this device and is never uploaded or synced.</p>
+
+<h3>What the app handles, and where</h3>
+<p>There is a single key, <code>darkzone.progress.v1</code>, holding a JSON blob with these parts:</p>
+<table>
+  <tr><th>Field</th><th>What it is</th></tr>
+  <tr><td>Level records</td><td>Whether each level is cleared, how many stars you earned, your best time, and how many attempts you have made</td></tr>
+  <tr><td>Selected weapon</td><td>Pistol, SMG, shotgun or rifle</td></tr>
+  <tr><td>Sound on or off</td><td>Your setting</td></tr>
+  <tr><td>Haptics on or off</td><td>Your setting</td></tr>
+  <tr><td>Stick feedback on or off</td><td>Your setting</td></tr>
+  <tr><td>Tutorial seen</td><td>Whether you dismissed the how-to-play card on first run</td></tr>
+</table>
+
+<p>That is all. <strong>No other keys, and no other storage.</strong> Everything is read and written on-device and <strong>never leaves it</strong>. There is no iCloud and no cloud sync of any kind.</p>
+
+<p>None of it can be tied to a person: no name, email, phone number, location, device identifier or advertising identifier, and no account ID, because the app has no accounts. There is nowhere in the app to type anything. It writes no logs either: nothing in the project prints to the system log.</p>
+
+<h3>No files, and no database</h3>
+<p>Beyond that one key, the project makes no use of <code>FileManager</code> at all and the app writes no files to disk. There is no SwiftData, CoreData, Keychain, iCloud or CloudKit, and no storage mechanism beyond preferences.</p>
+
+<h3>Network</h3>
+<p><strong>The app makes no network requests.</strong> Every feature works in Airplane Mode, including first launch. All ten levels' terrain, all four enemy types, all five weapons and every tuning value are defined in code and ship inside the app; nothing is ever downloaded. There is no leaderboard, no achievement reporting and no cloud save, and the code contains no CloudKit or background-transfer calls.</p>
+
+<h3>Purchases and accounts</h3>
+<p><strong>The app has no in-app purchases, no account system, and nothing to register or sign in to.</strong> There is no payment code of any kind, no purchase screen, no unlock codes, no energy and no ads. Levels unlock as you progress and weapons are bought with stars, and both of those happen entirely on the device without touching a server. If you obtained the app through the App Store, that transaction was handled by Apple: we never see your payment details and we do not receive your Apple ID.</p>
+
+<h3>Permissions</h3>
+<p><strong>The app requests no permissions.</strong> It does not touch the microphone, camera, photo library, contacts, location, health data or calendar, it sends no notifications, and it asks for no tracking permission. The app's property list declares no usage descriptions, so iOS has nothing to prompt you about.</p>
+
+<h3>Sound</h3>
+<p><strong>All 19 sound effects are synthesized from waveforms computed in code at runtime; the app contains no audio files.</strong> The audio session runs in playback mode with mixing with other audio explicitly enabled, so it <strong>will not interrupt music you are listening to</strong>. It does not seize audio at launch either: the session starts when you first begin a mission and stops when you background the app. <strong>It does not record and does not use the microphone.</strong></p>
+
+<h3>Haptics</h3>
+<p>Moments like a hit, a kill, a reload, crossing the firing line, dying or clearing a level give your hand a tap, produced by the system's haptic engine. It is feedback for your hand and neither produces nor reads any data. Taps are rate-limited rather than continuous.</p>
+
+<h3>The button that sends data nowhere</h3>
+<p>This app has <strong>no sharing, no export and no clipboard access</strong>, and no button that could send anything out. The only destructive action in settings is reset progress, and all it does is delete that one key on this device. Apart from you looking at the screen, the data has no exit at all: it is not that we choose not to send it, there is no path.</p>
+
+<h3>Device backups</h3>
+<p>Plainly: that key lives in the app's preferences. If you have iCloud Backup or computer backups enabled, that backup includes it, the same way it includes data from your other apps. That backup is held by Apple and <strong>we cannot reach it</strong>; the app itself sends nothing anywhere.</p>
+
+<h3>What we do not do</h3>
+<ul>
+  <li>No account or sign-in</li>
+  <li>No collection of name, email, location, device identifiers or advertising identifiers</li>
+  <li>No ads, analytics, crash reporting or tracking SDKs (the app contains no third-party code at all, and the project has no package dependencies)</li>
+  <li>No recording and no microphone, photos, contacts or location access</li>
+  <li>No notifications, and no permission requests of any kind</li>
+  <li>No logging, and no sharing with third parties</li>
+</ul>
+
+<h3>Deletion</h3>
+<p>Settings has a reset-progress entry point. It asks you to confirm first, and confirming deletes everything in that one key: level records, weapon choice, the three toggles and the tutorial flag. The app then looks the way it did the first time you opened it, and none of it can be recovered. <strong>Deleting the app clears all of it too.</strong></p>
+
+<h3>Children</h3>
+<p>The app collects no one's data, children included. It has no accounts, no chat, no user-generated content, and no networking of any kind. The game is top-down fictional tactical action and refers to no real person or event.</p>
+
+
+<footer>暗区枪线 DarkZone · 一步一步走进去，一枪一枪退出来</footer>
+</body>
+</html>
