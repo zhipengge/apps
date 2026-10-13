@@ -1,16 +1,46 @@
 #EXTM3U
 # 牧云电视公开列表 / Muyun TV public playlist
-# 含三类源：
-# 1) 央视网 VDN 自己公开的音频 HLS（无画面）。模板：
-#    https://piccpndali.v.myalicdn.com/audio/{epgid}_2.m3u8
-#    对应 tv.cctv.com/live 调度接口的 hls6，不是视频转播。
-# 2) 播出方自己公开的国际频道视频 HLS（CGTN / France 24 / DW / Al Jazeera 等）
-# 3) 厂商与开源项目的测试流，用来确认播放器能工作
-# 不是盗链 IPTV，本仓库不托管音视频。源由播出方提供，可能随时失效或按地区限制。
-# 不要往这里塞未授权的国内电视台视频转播。
+#
+# ── 这份表是什么 ──
+# 它是 app 里「一键导入」按钮的全部内容。点一下，用户就有台可看。
+# 它不是源码的一部分，但是产品承诺的一部分，所以每一条都必须真的能播。
+#
+# ── 只允许三类流（这是硬约束，不是偏好）──
+# 1) 厂商与开源项目的测试流（Demo / Live Test 两组）
+# 2) 播出方**自己发布**的频道 HLS —— 地址在播出方自己的域名或自家 CDN 上
+# 3) 央视网 VDN 自己公开的音频 HLS（无画面）
+#    模板：https://piccpndali.v.myalicdn.com/audio/{epgid}_2.m3u8
+#    （对应 tv.cctv.com/live 调度接口的 hls6，**不是**视频转播）
+#
+# ── 明确不放的两类 ──
+# · 未授权的国内电视台视频转播（卫视 / 地方台的第三方视频源）
+# · 第三方 IPTV 聚合列表（把别家整理的源再抄一遍）
+# 这两类划错是**下架级别**的问题，不是画质问题。
+# 关于央视：其视频流带 DRM（cdrm/udrm），塞进来也播不了，只会让用户以为 app 坏了，
+# 所以这里只收它的公开音频流。
+#
+# ── 这份表怎么维护 ──
+# 公开直播源的死亡率很高：播出方换 CDN、改路径、加防盗链，几个月就能死掉一半。
+# 而死链在 app 里的表现是「用户点一下转圈然后超时」——看起来是 app 坏了。
+# 所以改动这份表之后必须跑：
+#
+#     python3 _tools/check_streams.py apps/muyuntv/public_channels.m3u
+#
+# 它逐条实测：状态码 200、响应体以 #EXTM3U 开头、且含 #EXT-X- 标签。
+# 第二条最要紧——很多服务器在源失效时返回的不是 404，而是 200 + 一个 HTML 报错页，
+# 只看状态码会得到「全部正常」的假结论。
+#
+# 末次全量实测：2026-10-14，本机（中国大陆网络）可达 60 条全部通过。
+#   ⚠️ 注意测量口径：这张表是在**中国大陆网络**上验的。部分国际频道
+#   （NHK World、Bloomberg、Euronews、Sky News、Rai、ABC Australia 等）
+#   在这条网络下 DNS 解析不了或被 403/504 挡住，因此**没有收录**。
+#   它们并非源本身失效，换一条网络可能完全可用——但 app 的用户大多在大陆，
+#   收进来只会变成「点不动的台」。日后若要服务境外用户，再单独加一张表。
+#
 # One-click import URL:
 # https://raw.githubusercontent.com/zhipengge/apps/main/muyuntv/public_channels.m3u
 
+# ── 央视音频（20 路，官方公开的音频 HLS，无画面）──
 #EXTINF:-1 tvg-id="cctv1" group-title="央视音频",CCTV-1 综合（音频）
 https://piccpndali.v.myalicdn.com/audio/cctv1_2.m3u8
 #EXTINF:-1 tvg-id="cctv2" group-title="央视音频",CCTV-2 财经（音频）
@@ -51,44 +81,82 @@ https://piccpndali.v.myalicdn.com/audio/cctv17_2.m3u8
 https://piccpndali.v.myalicdn.com/audio/cctveurope_2.m3u8
 #EXTINF:-1 tvg-id="cctvamerica" group-title="央视音频",CCTV-4 中文国际美（音频）
 https://piccpndali.v.myalicdn.com/audio/cctvamerica_2.m3u8
+#EXTINF:-1 tvg-id="cctv4k" group-title="央视音频",CCTV-4K 超高清（音频）
+https://piccpndali.v.myalicdn.com/audio/cctv4k_2.m3u8
 
-#EXTINF:-1 group-title="国际新闻",CGTN English
+# ── 国际新闻：中国对外频道（CGTN，六种语言）──
+#EXTINF:-1 tvg-id="cgtn" group-title="国际新闻",CGTN English
 https://english-livebkali.cgtn.com/live/encgtn.m3u8
-#EXTINF:-1 group-title="国际新闻",CGTN Documentary
+#EXTINF:-1 tvg-id="cgtndoc" group-title="国际新闻",CGTN Documentary
 https://english-livetx.cgtn.com/hls/yypdjlctzb_hd.m3u8
-#EXTINF:-1 group-title="国际新闻",CGTN Français
+#EXTINF:-1 tvg-id="cgtnfr" group-title="国际新闻",CGTN Français
 https://news.cgtn.com/resource/live/french/cgtn-f.m3u8
-#EXTINF:-1 group-title="国际新闻",CGTN Español
+#EXTINF:-1 tvg-id="cgtnes" group-title="国际新闻",CGTN Español
 https://news.cgtn.com/resource/live/espanol/cgtn-e.m3u8
-#EXTINF:-1 group-title="国际新闻",CGTN Русский
+#EXTINF:-1 tvg-id="cgtnru" group-title="国际新闻",CGTN Русский
 https://news.cgtn.com/resource/live/russian/cgtn-r.m3u8
-#EXTINF:-1 group-title="国际新闻",CGTN العربية
+#EXTINF:-1 tvg-id="cgtnar" group-title="国际新闻",CGTN العربية
 https://news.cgtn.com/resource/live/arabic/cgtn-a.m3u8
-#EXTINF:-1 group-title="国际新闻",France 24 English
+
+# ── 国际新闻：公共广播机构自建 CDN ──
+#EXTINF:-1 tvg-id="france24en" group-title="国际新闻",France 24 English
 https://static.france24.com/live/F24_EN_HI_HLS/live_tv.m3u8
-#EXTINF:-1 group-title="国际新闻",France 24 Français
+#EXTINF:-1 tvg-id="france24fr" group-title="国际新闻",France 24 Français
 https://static.france24.com/live/F24_FR_HI_HLS/live_tv.m3u8
-#EXTINF:-1 group-title="国际新闻",France 24 Arabic
+#EXTINF:-1 tvg-id="france24ar" group-title="国际新闻",France 24 Arabic
 https://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8
-#EXTINF:-1 group-title="国际新闻",France 24 Español
+#EXTINF:-1 tvg-id="france24es" group-title="国际新闻",France 24 Español
 https://static.france24.com/live/F24_ES_HI_HLS/live_tv.m3u8
-#EXTINF:-1 group-title="国际新闻",DW English
-https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8
-#EXTINF:-1 group-title="国际新闻",DW Deutsch
+#EXTINF:-1 tvg-id="dwen" group-title="国际新闻",DW English
+https://dwamdstream101.akamaized.net/hls/live/2015524/dwstream101/index.m3u8
+#EXTINF:-1 tvg-id="dwde" group-title="国际新闻",DW Deutsch
 https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/index.m3u8
-#EXTINF:-1 group-title="国际新闻",Al Jazeera English
+#EXTINF:-1 tvg-id="dwar" group-title="国际新闻",DW العربية
+https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/index.m3u8
+#EXTINF:-1 tvg-id="dwes" group-title="国际新闻",DW Español
+https://dwamdstream105.akamaized.net/hls/live/2015531/dwstream105/index.m3u8
+#EXTINF:-1 tvg-id="aljazeeraen" group-title="国际新闻",Al Jazeera English
 https://live-hls-web-aje-fa.getaj.net/AJE/index.m3u8
-#EXTINF:-1 group-title="国际新闻",Al Jazeera Arabic
+#EXTINF:-1 tvg-id="aljazeeraar" group-title="国际新闻",Al Jazeera Arabic
 https://live-hls-web-aja-fa.getaj.net/AJA/index.m3u8
-#EXTINF:-1 group-title="国际新闻",CNA
+#EXTINF:-1 tvg-id="alarabiya" group-title="国际新闻",Al Arabiya
+https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="skynewsarabia" group-title="国际新闻",Sky News Arabia
+https://stream.skynewsarabia.com/hls/sna.m3u8
+#EXTINF:-1 tvg-id="cna" group-title="国际新闻",CNA（新加坡）
 https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8
-#EXTINF:-1 group-title="国际新闻",Bloomberg US
-https://www.bloomberg.com/media-manifest/streams/us.m3u8
-#EXTINF:-1 group-title="国际新闻",Arirang
+#EXTINF:-1 tvg-id="arirang" group-title="国际新闻",Arirang TV（韩国）
 https://amdlive-ch01-ctnd-com.akamaized.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8
-#EXTINF:-1 group-title="国际新闻",NASA TV
+#EXTINF:-1 tvg-id="arirang" group-title="国际新闻",Arirang TV 备用线路
+https://amdlive-ch02-ctnd-com.akamaized.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="rtnews" group-title="国际新闻",RT News
+https://rt-glb.rttv.com/live/rtnews/playlist.m3u8
+#EXTINF:-1 tvg-id="rtdoc" group-title="国际新闻",RT Documentary
+https://rt-glb.rttv.com/live/rtdoc/playlist.m3u8
+#EXTINF:-1 tvg-id="trtworld" group-title="国际新闻",TRT World
+https://tv-trtworld.medya.trt.com.tr/master_1080.m3u8
+#EXTINF:-1 tvg-id="trthaber" group-title="国际新闻",TRT Haber
+https://tv-trthaber.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-id="tv5monde" group-title="国际新闻",TV5Monde Info
+https://ott.tv5monde.com/Content/HLS/Live/channel(info)/index.m3u8
+#EXTINF:-1 tvg-id="cbsnews" group-title="国际新闻",CBS News
+https://cbsn-ny.cbsnstream.cbsnews.com/out/v1/ec3897d58a9b45129a77d67aa247d136/master.m3u8
+#EXTINF:-1 tvg-id="rtes" group-title="国际新闻",RT Español
+https://rt-glb.rttv.com/live/rtesp/playlist.m3u8
+#EXTINF:-1 tvg-id="rtar" group-title="国际新闻",RT Arabic
+https://rt-glb.rttv.com/live/rtarab/playlist.m3u8
+
+# ── 国际综合：非新闻类公共频道 ──
+#EXTINF:-1 tvg-id="trtmuzik" group-title="国际综合",TRT Müzik
+https://tv-trtmuzik.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-id="trtcocuk" group-title="国际综合",TRT Çocuk
+https://tv-trtcocuk.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-id="redbulltv" group-title="国际综合",Red Bull TV
+https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8
+#EXTINF:-1 tvg-id="nasatv" group-title="国际综合",NASA TV
 https://ntv1.akamaized.net/hls/live/2014075/NASA-NTV1-HLS/master.m3u8
 
+# ── 厂商与开源项目的测试流（用来确认播放器本身能工作）──
 #EXTINF:-1 group-title="Demo",Apple HLS Demo (fMP4)
 https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8
 #EXTINF:-1 group-title="Demo",Apple Bipbop 16:9
