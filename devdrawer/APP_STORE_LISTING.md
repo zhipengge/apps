@@ -10,7 +10,7 @@
 | 字段 | 填什么 | 不要填 |
 |---|---|---|
 | 平台 | **macOS** | iOS |
-| 名称（主语言：简体中文） | **速查抽屉** | 开发者工具、DevDrawer 速查（通称易被占） |
+| 名称（主语言：简体中文） | **开发者速查抽屉** | 开发者工具、DevDrawer 速查（通称易被占） |
 | 名称（English 本地化） | **DevDrawer** | Dev Drawer Toolbox |
 | 主要语言 | 简体中文 | — |
 | Bundle ID | `com.gezhipeng0201.DevDrawer` | 任何旧 ID |
