@@ -223,9 +223,14 @@ run and gun,shooter,offline,single player,arcade,pixel,platformer,no ads,retro,a
 
 营销 URL 是可选字段，`apps/pixelgunfire/` 下没有 `index.html`，填了就是 404，所以留空。
 
-**这两个页面现在还是 404。** `apps/` 是独立仓库 `zhipengge/apps`，Pages 已经开着
-（`apps/skystrike/privacy.html` 现在返回 200），但 `apps/pixelgunfire/` 还没进版本库。
-提审前必须先提交并推送这一整个目录，否则 App Store Connect 填的隐私政策链接是空的。
+**这两个页面现在都是 200，URL 可以直接填。** 2026-10-15 实测：
+`privacy.html` 11005 字节、`support.html` 11161 字节。
+
+（这一段原来写的是「这两个页面现在还是 404……提审前必须先提交并推送这一整个目录」。
+那件事已经做完了——`apps/pixelgunfire/` 早就在版本库里，Pages 也早就构建出来了。
+改掉它不是因为读着难看：**一句过时的「还是 404」会让人去修一个已经好的东西**，
+或者不敢把链接填进 App Store Connect。这类过期断言的成本是**它让人做错事**，
+而没人会去核一个「保守」的陈述。）
 
 ---
 
