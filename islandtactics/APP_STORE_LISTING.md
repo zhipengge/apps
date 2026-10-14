@@ -210,9 +210,17 @@ island,strategy,turn-based,city-builder,defense,survival,offline,single-player
 
 ### 类别
 
-主要类别填 **游戏 - 策略 / Games - Strategy**，与工程里的
-`LSApplicationCategoryType = public.app-category.strategy-games` 一致。
-次要类别可以留空；如果要填，**娱乐**比**模拟**更贴，但本作的核心是资源取舍与防线，不是模拟。
+| 字段 | 值 |
+|---|---|
+| 主要类别 | 游戏 / Games，子类 策略 / Strategy |
+
+（依据：工程里的 `LSApplicationCategoryType = public.app-category.strategy-games`。
+次要类别留空：ASC 里它是可选的；要填的话**娱乐**比**模拟**更贴，
+但本作的核心是资源取舍与防线，不是模拟。
+
+**2026-10-14 补**：这三行原来是一段散文，而工具的分类解析器**只扫表格行**——
+读不到，于是一直报「primaryCategory / secondaryCategory 要人来定」。
+内容一个字没改，只是换了个能被读到的形式。）
 
 ### 年龄分级（需要你定）
 

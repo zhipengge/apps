@@ -221,10 +221,17 @@ json,jwt,base64,timestamp,uuid,regex,hash,encode,clipboard,developer,format,offl
 
 ### 类别（需要你定，两个都列出来）
 
-| 选项 | 主要类别 | 次要类别 | 理由 |
-|---|---|---|---|
-| A | 开发者工具 / Developer Tools | 效率 / Productivity | 工程里 `LSApplicationCategoryType` 写的就是 `public.app-category.developer-tools`，工具内容（JWT、正则、哈希、UUID）也全是开发者向的 |
-| B | 效率 / Productivity | 开发者工具 / Developer Tools | 开发者工具的曝光面通常小于效率类；如果目标是让更多非开发者看到这个面板，可以换过来，但内容匹配度会下降 |
+**2026-10-14 定：原方案 A。**
+
+| 字段 | 值 |
+|---|---|
+| 主要类别 | 开发者工具 / Developer Tools |
+| 次要类别 | 效率 / Productivity |
+
+（选 A 的理由：工程里 `LSApplicationCategoryType` 写的就是
+`public.app-category.developer-tools`，工具内容（JWT、正则、哈希、UUID）也全是开发者向的。
+原方案 B「效率 / 开发者工具」见 git 历史——它的卖点是曝光面更大，代价是内容匹配度下降。
+改成这两行是因为工具只认表格行：原来那张「选项 A/B」表它是当**候选题**读的。）
 
 `LSApplicationCategoryType` 已固定为 `public.app-category.developer-tools`，选 A 与工程一致。
 

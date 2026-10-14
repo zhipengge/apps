@@ -233,10 +233,25 @@ run and gun,shooter,offline,single player,arcade,pixel,platformer,no ads,retro,a
 
 ### 类别
 
-| 选项 | 主要类别 | 次要类别 | 理由 |
-|---|---|---|---|
-| A | 游戏 / Games，子类 **动作 / Action** | 游戏 / Games，子类 街机 / Arcade | 自动开火、躲避走位、一碰即死，是标准动作跑轰；同类作品多归在动作 |
-| B | 游戏 / Games，子类 **街机 / Arcade** | 游戏 / Games，子类 动作 / Action | 一关 6 分钟、评分 S/A/B/C、反复刷成绩，街机味儿更重 |
+**2026-10-14 定：原方案 A 的**主要类别**。**
+
+| 字段 | 值 |
+|---|---|
+| 主要类别 | 游戏 / Games，子类 **动作 / Action** |
+
+（选 A 的理由：自动开火、躲避走位、一碰即死，是标准动作跑轰；同类作品多归在动作。）
+
+**次要类别为什么没有写在这一版里**：原方案 A 的次要类别是「街机 / Arcade」，
+而**苹果已经取消了这个类别**。2026-10-14 实测 `/v1/appCategories` 全量 **57** 个
+（`paging.total: 57`、`links.next: None`，**不是翻页截断**），**没有任何含 `ARC` 的 id**；
+17 个 `GAMES_*` 子类里也没有它。
+
+次要类别在 App Store Connect 是**可选**的，留空不影响提交。
+要补的话，从这 17 个里挑一个写进上面的表：
+ACTION / ADVENTURE / BOARD / CARD / CASINO / CASUAL / FAMILY / MUSIC /
+PUZZLE / RACING / ROLE_PLAYING / SIMULATION / SPORTS / STRATEGY / TRIVIA / WORD。
+
+（原方案 B「街机 / 动作」同样受这条影响——它的主要类别也是 Arcade，见 git 历史。）
 
 `TARGETED_DEVICE_FAMILY = "1,2"`，主要类别必须选游戏，子类只能选一个。
 

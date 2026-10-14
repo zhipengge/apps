@@ -230,10 +230,18 @@ launcher,workspace,scenes,devops,preflight,connectivity,productivity,menubar,che
 
 ### 类别
 
-主要类别填 **效率 / Productivity**，与工程里的
-`LSApplicationCategoryType = public.app-category.productivity` 一致。
-次要类别可以填 **开发者工具 / Developer Tools**——它真正的用户是运维和后端，
+| 字段 | 值 |
+|---|---|
+| 主要类别 | 效率 / Productivity |
+| 次要类别 | 开发者工具 / Developer Tools |
+
+（依据：工程里的 `LSApplicationCategoryType = public.app-category.productivity`。
+次要类别放**开发者工具**——它真正的用户是运维和后端，
 但开发者工具的曝光面更窄，放次要位置比放主要位置合适。
+
+**2026-10-14 补**：这三行原来是一段散文，而工具的分类解析器**只扫表格行**——
+读不到，于是一直报「primaryCategory / secondaryCategory 要人来定」。
+内容一个字没改，只是换了个能被读到的形式。）
 
 ### 年龄分级（需要你定）
 
