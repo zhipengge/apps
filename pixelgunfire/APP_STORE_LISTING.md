@@ -41,18 +41,18 @@
 ### 简体中文
 
 ```
-一个拇指就能玩的竖屏跑轰。按住屏幕跑，上滑跳，右下角滑铲。8 个关卡，一关 6 分钟，全程离线，没有账号，没有广告，没有内购。
+一个拇指就能玩的竖屏跑轰。左下拨杆跑和跳，右下角滑铲。8 个关卡，一关 6 分钟，全程离线，没有账号，没有广告，没有内购。
 ```
 
-**字符数：63 / 170**
+**字符数：61 / 170**
 
 ### English
 
 ```
-A portrait run-and-gun you play with one thumb. Hold to run, swipe up to jump, slide with the corner button. Eight levels, offline.
+A portrait run-and-gun you play with one thumb. A stick to run and jump, a corner button to slide. Eight levels, offline.
 ```
 
-**字符数：131 / 170**
+**字符数：121 / 170**
 
 ---
 
@@ -65,13 +65,13 @@ A portrait run-and-gun you play with one thumb. Hold to run, swipe up to jump, s
 ```
 像素枪火是一个竖屏、单机、离线的横版跑轰。8 个关卡：丛林前哨、河谷渡口、弹药库、峡谷铁桥、雪原雷达站、熔岩坑、指挥中心、兵工厂。一关大概 6 分钟，一个拇指就能玩，全程不需要横屏。
 
-【只有四个动作，全都只管位置】
-- 按住屏幕任意位置，角色朝你手指所在的水平位置跑
-- 向上滑动跳跃，按住越久跳得越高
-- 右下角的按钮是滑铲，滑铲前段有无敌帧
-- 左上角是暂停
+【一个拨杆，四个方向】
+- 左右拨：角色朝那边持续跑
+- 上拨：跳；按住不放跳得更高
+- 下拨：滑铲，滑铲前段有无敌帧
+- 斜着拨（左上 / 右上）可以边跑边跳
 
-没有虚拟摇杆，没有方向键，也没有开火键。
+右下角还有单独一个滑铲按钮，暂停在屏幕下方中间。没有方向键，也没有开火键。
 
 【为什么没有开火键】
 因为瞄准不是这个游戏要你做的事。枪会自动锁定射程内的目标并自动开火，换弹也是自动的。
@@ -117,13 +117,13 @@ A portrait run-and-gun you play with one thumb. Hold to run, swipe up to jump, s
 ```
 PixelGunfire is a portrait, single-player, offline run-and-gun. Eight levels: Jungle Outpost, River Ford, Ammo Depot, Canyon Iron Bridge, Snowfield Radar, Lava Pit, Command Centre and Arsenal. A level runs about six minutes, it plays with one thumb, and it never asks for landscape.
 
-[Four actions, and all of them are about position]
-- Hold anywhere and the character runs toward the horizontal position of your finger
-- Swipe up to jump; the longer you hold, the higher you go
-- The bottom-right button is a slide, and the first part of the slide has invincibility frames
-- Top-left is pause
+[One stick, four directions]
+- Left / right: the character runs that way
+- Up: jump; hold it to go higher
+- Down: slide, and the first part of the slide has invincibility frames
+- Diagonally (up-left / up-right) to run and jump at the same time
 
-No virtual stick, no direction pad, and no fire button.
+There is also a separate slide button in the bottom-right, and pause sits at the bottom centre. No direction pad, and no fire button.
 
 [Why there is no fire button]
 Because aiming is not the thing this game asks you to do. The gun acquires targets in range by itself and fires by itself, and reloading is automatic.
