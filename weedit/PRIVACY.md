@@ -1,4 +1,4 @@
-# 文辑 (WeEdit) — 隐私政策 / Privacy Policy
+# 牧云微编辑 (WeEdit) — 隐私政策 / Privacy Policy
 
 **最后更新 / Last updated: 2026-10-12**
 
@@ -8,7 +8,7 @@
 
 ### 总览
 
-**文辑不收集、不上传、不分享你的文稿。** 正文、图片、音视频和偏好都只在这台 Mac 的沙盒容器里处理。没有账号，没有自建服务器，不内嵌分析、追踪或广告 SDK。
+**牧云微编辑不收集、不上传、不分享你的文稿。** 正文、图片、音视频和偏好都只在这台 Mac 的沙盒容器里处理。没有账号，没有自建服务器，不内嵌分析、追踪或广告 SDK。
 
 ### 我们处理什么、在哪处理
 
@@ -37,7 +37,7 @@
 
 请求里不含你的文稿正文。可以断网写稿；只是远程图片会显示不出来，「打开后台」需要浏览器联网。
 复制出去的 HTML 里，本地图片会嵌成 data URI，**远程图片的地址会原样保留**——
-粘到平台后台之后由对方的编辑器去取，不是文辑。
+粘到平台后台之后由对方的编辑器去取，不是牧云微编辑。
 
 ### 文件访问
 
@@ -45,7 +45,7 @@
 
 ### 数据删除
 
-删除 App，并移除 `~/Library/Containers/com.gezhipeng0201.WeEdit`，即无残留。
+删除 App，并移除 `~/Library/Containers/com.gezhipeng0201.WenJi`，即无残留。
 
 ### 联系方式
 
@@ -86,7 +86,7 @@ App Sandbox. Only files you pick in Open/Save, plus the app container. No Full D
 
 ### Deletion
 
-Remove the app and `~/Library/Containers/com.gezhipeng0201.WeEdit`.
+Remove the app and `~/Library/Containers/com.gezhipeng0201.WenJi`.
 
 ### Contact
 
