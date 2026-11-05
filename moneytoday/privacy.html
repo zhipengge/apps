@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日已赚 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #d97706;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #fbbf24;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 {
+    font-size: 1.4rem; font-weight: 600;
+    margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border);
+  }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead {
+    background: var(--bg-soft);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    margin: 24px 0 8px;
+  }
+  code { background: var(--bg-soft); padding: 2px 6px; border-radius: 5px; font-size: 0.9em; }
+  ul { padding-left: 1.25em; }
+  li { margin: 6px 0; }
+  footer { margin-top: 56px; color: var(--fg-dim); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<h1>今日已赚 · 隐私政策</h1>
+<p class="meta">最后更新：2026-11-05　适用版本：1.0 及以后</p>
+
+<div class="lead">
+  <strong>一句话：这个 App 不收集任何数据，也不联网。</strong><br>
+  没有账号，没有统计，没有广告，没有第三方 SDK。你填的工资和所有记录都只在这台手机上。
+</div>
+
+<h2>我们收集什么</h2>
+<p><strong>什么都不收集。</strong>App 没有向任何服务器发送数据的代码路径，也没有集成任何统计、广告或崩溃上报 SDK。</p>
+
+<h2>你的数据存在哪里</h2>
+<p>全部存在这台手机本地的 <code>UserDefaults</code> 里，键名前缀是 <code>com.gezhipeng0201.MoneyToday.</code>。内容包括：</p>
+<ul>
+  <li>你建立的用户档案（姓名、月薪、五险一金比例、税前/税后选择）</li>
+  <li>计数区间的选择（天形式、小时形式、手动排除的日期）</li>
+  <li>界面偏好（当前视图、配色等）</li>
+</ul>
+<p>这些数据不加密地存放在系统为 App 分配的沙盒里，其他 App 无法读取。它们不会离开这台设备。</p>
+
+<h2>网络权限</h2>
+<p>App 不发起任何网络请求，也不申请任何网络相关的权限。你在飞行模式下可以使用全部功能。</p>
+
+<h2>不申请的权限</h2>
+<ul>
+  <li>不申请通讯录、位置、麦克风、摄像头、相册</li>
+  <li>不申请通知权限</li>
+  <li>分享截图或动图时走系统分享面板，由你自己选择发到哪里，App 不接触内容去向</li>
+</ul>
+
+<h2>删除数据</h2>
+<p>卸载 App，数据随沙盒一起删除，我们这边没有任何副本 —— 因为没有可以存副本的地方。</p>
+
+<h2>儿童</h2>
+<p>App 不针对儿童设计，也不收集任何人的数据（包括儿童）。</p>
+
+<h2>免责</h2>
+<p>App 展示的金额由你填入的月薪与本地保存的费率表计算得出，<strong>仅供娱乐与自我激励，不构成税务建议</strong>，也不替代工资条。实际到手以用人单位与当地政策为准。</p>
+
+<h2>政策变更</h2>
+<p>如果将来这份政策有改动，会更新本页顶部的日期。App 本身不收集数据这一点，我们无意改变。</p>
+
+<h2>联系我们</h2>
+<p><a href="mailto:gezhipeng0201@gmail.com">gezhipeng0201@gmail.com</a></p>
+
+<h2 style="margin-top:64px">Privacy Policy (English)</h2>
+
+<p><strong>In one sentence: this app collects nothing and never goes online.</strong>
+No account, no analytics, no ads, no third-party SDKs. Everything you enter stays on this iPhone.</p>
+
+<h3>What we collect</h3>
+<p>Nothing. There is no code path that sends data to any server, and no analytics, advertising or crash-reporting SDK is bundled.</p>
+
+<h3>Where your data lives</h3>
+<p>In local <code>UserDefaults</code> under the key prefix <code>com.gezhipeng0201.MoneyToday.</code> — your profiles (name, monthly salary, contribution rates, pre/post-tax choice), your interval settings, and UI preferences. It stays inside the app sandbox and never leaves the device.</p>
+
+<h3>Network</h3>
+<p>The app makes no network requests and asks for no network-related permissions. Everything works in airplane mode.</p>
+
+<h3>Permissions we do not request</h3>
+<p>Contacts, location, microphone, camera, photos, notifications — none of them. Sharing a screenshot or GIF uses the system share sheet; the app never sees where it goes.</p>
+
+<h3>Deleting your data</h3>
+<p>Delete the app and the data goes with the sandbox. We hold no copy, because there is nowhere for us to hold one.</p>
+
+<h3>Disclaimer</h3>
+<p>Figures shown are computed from the salary you enter and a locally stored rate table. They are <strong>for entertainment only and are not tax advice</strong>.</p>
+
+<h3>Contact</h3>
+<p><a href="mailto:gezhipeng0201@gmail.com">gezhipeng0201@gmail.com</a></p>
+
+<footer>
+  <p><a href="./support.html">技术支持 / Support</a></p>
+</footer>
+
+</body>
+</html>
