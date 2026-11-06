@@ -53,34 +53,45 @@
 <body>
 
 <h1>今日已赚 · 隐私政策</h1>
-<p class="meta">最后更新：2026-11-05　适用版本：1.0 及以后</p>
+<p class="meta">最后更新：2026-11-06　适用版本：1.0 及以后</p>
 
 <div class="lead">
   <strong>一句话：这个 App 不收集任何数据，也不联网。</strong><br>
   没有账号，没有统计，没有广告，没有第三方 SDK。你填的工资和所有记录都只在这台手机上。
+  <br><br>
+  <strong>2026-11-06 修正：</strong>上一版写着「相册…一个都不申请」，这是错的。
+  「存相册」一直在用系统的「添加到相册」权限（只写不读），下面的权限清单已据实重写。
 </div>
 
 <h2>我们收集什么</h2>
-<p><strong>什么都不收集。</strong>App 没有向任何服务器发送数据的代码路径，也没有集成任何统计、广告或崩溃上报 SDK。</p>
+<p><strong>什么都不收集。</strong>App 没有向任何服务器发送数据的代码路径，也没有集成任何统计、广告或崩溃上报 SDK。所谓「收集」指把数据传离你的设备——本 App 没有任何这样的路径。</p>
 
 <h2>你的数据存在哪里</h2>
 <p>全部存在这台手机本地的 <code>UserDefaults</code> 里，键名前缀是 <code>com.gezhipeng0201.MoneyToday.</code>。内容包括：</p>
 <ul>
   <li>你建立的用户档案（姓名、月薪、五险一金比例、税前/税后选择）</li>
   <li>计数区间的选择（天形式、小时形式、手动排除的日期）</li>
-  <li>界面偏好（当前视图、配色等）</li>
+  <li>额外收入记录（金额、日期、税前/到手、备注）</li>
+  <li>音效设置（开关、两处音色选择）</li>
+  <li>界面偏好（当前档案、配色等）</li>
 </ul>
 <p>这些数据不加密地存放在系统为 App 分配的沙盒里，其他 App 无法读取。它们不会离开这台设备。</p>
+<p><strong>锁屏小组件</strong>读的是同一台设备上的另一小块 <code>UserDefaults</code>（App Group <code>group.com.gezhipeng0201.MoneyToday</code>），里面只有「当前档案的今日金额与速率」这一份快照。它和 App 在同一台手机上，不经过任何服务器。</p>
 
 <h2>网络权限</h2>
 <p>App 不发起任何网络请求，也不申请任何网络相关的权限。你在飞行模式下可以使用全部功能。</p>
 
-<h2>不申请的权限</h2>
+<h2>权限：只申请一项</h2>
+<p><strong>「添加到相册」（<code>NSPhotoLibraryAddUsageDescription</code>）。</strong></p>
 <ul>
-  <li>不申请通讯录、位置、麦克风、摄像头、相册</li>
-  <li>不申请通知权限</li>
-  <li>分享截图或动图时走系统分享面板，由你自己选择发到哪里，App 不接触内容去向</li>
+  <li>只在你点「存相册」时询问，用途就是把当天的截图或动图写进相册</li>
+  <li>它<strong>只写不读</strong>：App 拿不到、也不会去读你相册里的任何已有照片</li>
+  <li>拒绝也不影响其它功能，只是存不了相册（分享面板仍然可用）</li>
 </ul>
+<p><strong>不申请</strong>：通讯录、位置、麦克风、摄像头、通知、追踪（ATT）、本地网络。分享截图或动图走系统分享面板，由你自己选择发到哪里，App 不接触内容去向。</p>
+
+<h2>音效</h2>
+<p>App 的音效是<strong>运行时用代码合成的</strong>，不包含任何音频文件，也不下载任何东西。音效默认关闭。</p>
 
 <h2>删除数据</h2>
 <p>卸载 App，数据随沙盒一起删除，我们这边没有任何副本 —— 因为没有可以存副本的地方。</p>
@@ -106,13 +117,16 @@ No account, no analytics, no ads, no third-party SDKs. Everything you enter stay
 <p>Nothing. There is no code path that sends data to any server, and no analytics, advertising or crash-reporting SDK is bundled.</p>
 
 <h3>Where your data lives</h3>
-<p>In local <code>UserDefaults</code> under the key prefix <code>com.gezhipeng0201.MoneyToday.</code> — your profiles (name, monthly salary, contribution rates, pre/post-tax choice), your interval settings, and UI preferences. It stays inside the app sandbox and never leaves the device.</p>
+<p>In local <code>UserDefaults</code> under the key prefix <code>com.gezhipeng0201.MoneyToday.</code> — your profiles (name, monthly salary, contribution rates, pre/post-tax choice), your interval settings, your extra-income entries, sound preferences, and UI preferences. It stays inside the app sandbox and never leaves the device. The lock-screen widget reads a small snapshot of today's amount from a shared App Group container on the same device; no server is involved.</p>
 
 <h3>Network</h3>
 <p>The app makes no network requests and asks for no network-related permissions. Everything works in airplane mode.</p>
 
-<h3>Permissions we do not request</h3>
-<p>Contacts, location, microphone, camera, photos, notifications — none of them. Sharing a screenshot or GIF uses the system share sheet; the app never sees where it goes.</p>
+<h3>Permissions: exactly one</h3>
+<p><strong>Add to Photos</strong> (<code>NSPhotoLibraryAddUsageDescription</code>). It is requested only when you tap "Save to Photos", and it is write-only: the app cannot read your existing photos. Declining it affects nothing else. The app does <strong>not</strong> request Contacts, Location, Microphone, Camera, Notifications, Tracking, or Local Network. Sharing a screenshot or GIF uses the system share sheet; the app never sees where it goes.</p>
+
+<h3>Sound</h3>
+<p>All sound effects are synthesised at runtime in code. There are no audio files and nothing is downloaded. Sound is off by default.</p>
 
 <h3>Deleting your data</h3>
 <p>Delete the app and the data goes with the sandbox. We hold no copy, because there is nowhere for us to hold one.</p>
