@@ -167,10 +167,18 @@ App 隐私问卷：**不收集数据**。与隐私政策一致。
 
 ## 7. 截图
 
-App Store 要求 **6.9 寸 iPhone（1320×2868）** 截图，至少 3 张。
-成品放 `apps/moneytoday/screenshots/iphone/`。
+**两套都要传**：项目的 `TARGETED_DEVICE_FAMILY = "1,2"`，声明支持 iPad，
+所以 ASC 除了 6.9 寸 iPhone，还强制要求 13 寸 iPad 的截图。
 
-四张（按当前界面重拍后）：
+| 档位 | 尺寸 | 目录 | 张数 |
+|---|---|---|---|
+| 6.9" iPhone | 1320×2868 | `screenshots/iphone/` | 4 |
+| 13" iPad | **2064×2752** | `screenshots/ipad/` | 3 |
+
+> iPad 那张必须是 2064×2752（`shots.py` 只认这一组）。12.9" 的 2048×2732 不行——
+> 这两个尺寸对应的是两个不同的 displayType，传错档位 ASC 会拒。
+
+iPhone 四张（标题 / 副标题）：
 
 | 文件 | 画面 | 标题 | 副标题 |
 |---|---|---|---|
@@ -179,7 +187,19 @@ App Store 要求 **6.9 寸 iPhone（1320×2868）** 截图，至少 3 张。
 | `03-curve` | 天/周/月/年 | 天、周、月、年，四条曲线 | 每人一种颜色，一眼分得清 |
 | `04-settings` | 设置页 | 档案、区间、奖金、音效 | 都在一个地方 |
 
-> 截图必须来自真实界面。用模拟器抓图后走 `_tools/make_store_shots.py` 合成。
+iPad 三张（没有爆炸那张——iPad 上爆炸瞬间的抓帧没做）：
+
+| 文件 | 画面 |
+|---|---|
+| `01-home` | 首页数字 |
+| `03-curve` | 天/周/月/年 |
+| `04-settings` | 设置页 |
+
+原始抓图在 `screenshots/raw/` 与 `screenshots/raw-ipad/`，
+合成用的 spec 是同目录的 `iphone-spec.json` / `ipad-spec.json`。
+
+> 截图必须来自真实界面。用模拟器抓图后走 `_tools/make_store_shots.py` 合成，
+> 再用 `_tools/check_store_shots.py` 体检（尺寸 / 亮度 / 标题撞边）。
 
 ---
 

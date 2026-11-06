@@ -1,0 +1,29 @@
+{
+  "canvas": [2064, 2752],
+  "background": ["#121A24", "#05080C"],
+  "accent": "#4C8DFF",
+  "titleColor": "#FFFFFF",
+  "subtitleColor": "#93A7BC",
+  "deviceRadiusRatio": 0.022,
+  "outDir": "/Users/gezhipeng/m3_apps/apps/moneytoday/screenshots/ipad",
+  "shots": [
+    {
+      "src": "/Users/gezhipeng/m3_apps/apps/moneytoday/screenshots/raw-ipad/01-home.png",
+      "name": "01-home",
+      "title": "今天赚了多少，每秒都在跳",
+      "subtitle": "不用心算，也不用等工资条"
+    },
+    {
+      "src": "/Users/gezhipeng/m3_apps/apps/moneytoday/screenshots/raw-ipad/03-curve.png",
+      "name": "03-curve",
+      "title": "天、周、月、年，四条曲线",
+      "subtitle": "每人一种颜色，一眼分得清"
+    },
+    {
+      "src": "/Users/gezhipeng/m3_apps/apps/moneytoday/screenshots/raw-ipad/04-settings.png",
+      "name": "04-settings",
+      "title": "档案、区间、奖金、音效",
+      "subtitle": "都在一个地方"
+    }
+  ]
+}
