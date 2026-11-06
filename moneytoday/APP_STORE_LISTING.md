@@ -187,18 +187,25 @@ App Store 要求 **6.9 寸 iPhone（1320×2868）** 截图，至少 3 张。
 
 | 项 | 状态 |
 |---|---|
-| 文案（本文件 §1–§4） | ✅ 已按当前界面校对 |
-| 隐私政策 / 支持页 | ✅ 本目录，URL 已验可达（`check_pages_urls.py` 全 200） |
+| 文案（本文件 §1–§4） | ✅ **已写入 ASC**（`api.py fill --write`，plan 复查「没有要改的」） |
+| 隐私政策 / 支持页 | ✅ 本目录，URL 已验可达（`check_pages_urls.py` 全 200），线上已是修正后的版本 |
 | 隐私清单 `PrivacyInfo.xcprivacy` | ✅ 已修：原来是 `<integer>0</integer>` + `C617.1`，现在与家族一致为 `NSPrivacyAccessedAPICategoryUserDefaults` + `CA92.1`；**小组件也补了一份** |
 | 出口合规 | ✅ `ITSAppUsesNonExemptEncryption = NO`，产物已验 |
 | 图标 | ✅ 1024×1024 |
-| 截图 | ✅ 四张，2026-11-06 按当前界面重拍，`check_store_shots.py` 全过 |
-| App 隐私问卷 | ⛔ 只能网页填 |
-| 年龄分级 | ⛔ 只能网页填 |
+| 截图 | ✅ 四张已上传（`shots.py --write`，`APP_IPHONE_67`，全部 `UPLOAD_COMPLETE`） |
+| 类别 / 版权 / 年龄分级 / 内容版权 | ✅ **已写入 ASC**（年龄分级读回：全部 NONE / false → 4+） |
+| 价格 | ✅ 已设单一免费价（`pricing.py --free-only`） |
+| App 隐私问卷 | ⛔ 只能网页填（无 REST，Safari 那条路要人先登录） |
 | 审核联系人 | ⛔ 只能网页填 |
+| 构建 | ⛔ 需手动 archive + 上传（按既定规矩，不走自动） |
 
 **注意**：`privacy.html` / `support.html` 这次改正了「不申请相册权限」这条错误说法，
 **必须重新部署到 GitHub Pages 才算生效**——审核看的是线上那一份。
+（2026-11-06 已部署，线上验证通过。）
+
+**SKU 对不上是历史遗留**：ASC 记录里建的时候用的是 `com.gezhipeng0201.MoneyToday`，
+文档和 Fastfile 写的是 `moneytoday-20261105`。SKU 建完不可改，且它只是内部标识、
+不对外可见，**不用去追**。
 
 ---
 
