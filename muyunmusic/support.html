@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云音乐 · 技术支持 / Support</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #2563eb;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #60a5fa;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 {
+    font-size: 1.25rem; font-weight: 600;
+    margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border);
+  }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead {
+    background: var(--bg-soft);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    margin: 24px 0 8px;
+  }
+  code { background: var(--bg-soft); padding: 2px 6px; border-radius: 5px; font-size: 0.9em; }
+  ul { padding-left: 1.25em; }
+  li { margin: 6px 0; }
+  footer { margin-top: 56px; color: var(--fg-dim); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<h1>牧云音乐 · 技术支持</h1>
+<p class="meta">更新日期：2026-11-11</p>
+
+<div class="lead">
+  <strong>遇到问题的可能性最高的三条：</strong><br>
+  ① 「怎么一首歌都没有」——这是设计如此，见下方第一条；
+  ② 歌词不滚动 / 对不齐；
+  ③ Wi-Fi 传歌连不上（多半是两台设备不在同一网络，或开关没开）。
+  下面都有答案，看完还有问题就发邮件。
+</div>
+
+<h2>为什么 App 里没有歌？</h2>
+<p>牧云音乐<strong>不内置、不提供任何曲库</strong>——这是设计决定，不是故障，也没有「解锁曲库」的内购。它只播放你自己导入的音乐：文件、歌单、歌词都要由你自己的设备提供。</p>
+
+<h2>怎么把音乐导进来（六条路，任选一条）</h2>
+<ul>
+  <li><strong>文件 App</strong>：长按音频文件 → 「用此 App 打开」→ 选牧云音乐。</li>
+  <li><strong>分享</strong>：在微信、邮件、文件等任意 App 里点分享，选「牧云音乐」。</li>
+  <li><strong>电脑数据线</strong>：连接电脑，打开 Finder / iTunes → 文件共享 → 把音乐文件夹拖进「牧云音乐」。</li>
+  <li><strong>iCloud Drive</strong>：App 内选择从 iCloud 导入，走系统文件选择器。</li>
+  <li><strong>Wi-Fi 传歌</strong>：见下一条，适合一次传一大坨。</li>
+  <li><strong>直连地址</strong>：粘贴一个你自己的音频文件或歌单清单的 URL，可直接流播或导入。</li>
+</ul>
+
+<h2>Wi-Fi 传歌怎么用？</h2>
+<ul>
+  <li>手机和电脑必须连<strong>同一个 Wi-Fi</strong>（手机流量、隔离访客网络都不行）。</li>
+  <li>在「设置 → Wi-Fi 传歌」里手动打开开关（默认关闭）。</li>
+  <li>设置页会显示一个本机地址（形如 <code>http://192.168.x.x:端口</code>），在电脑浏览器里打开它，拖文件进去上传。</li>
+  <li>传完记得把开关关掉。期间 App 会常驻提示服务已开启。</li>
+</ul>
+
+<h2>歌词不滚动 / 对不齐？</h2>
+<ul>
+  <li>歌词可以是同文件夹下的 <code>.lrc</code> 文件（与音频同名），也可以是音频内嵌歌词。</li>
+  <li>有歌词但不滚动：说明这份 lrc 没有时间戳，App 会把整页歌词显示出来——这是正常降级。</li>
+  <li>整体早了或晚了：播放页歌词面板里有「微调偏移」，按歌曲记住，不用每次调。</li>
+</ul>
+
+<h2>锁屏 / 耳机没反应？</h2>
+<p>锁屏、控制中心、耳机线控的播放/暂停/上下曲都支持。若没反应，先确认没有在其它 App 里同时播放音频（两个 App 抢音频会话时系统会暂停其一）。</p>
+
+<h2>数据安全</h2>
+<p>所有数据都在这台手机上，App 没有账号系统，也不上传任何东西。卸载 App 即全部清除。详见<a href="./privacy.html">隐私政策</a>。</p>
+
+<h2>联系</h2>
+<p>邮件：<a href="mailto:gezhipeng0201@gmail.com">gezhipeng0201@gmail.com</a><br>
+一般 1–2 天内回复。来信请附：iOS 版本、机型、复现步骤。中文英文都可以。</p>
+
+<footer>
+  <p><a href="./privacy.html">隐私政策 / Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>

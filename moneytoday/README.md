@@ -40,5 +40,5 @@
 | 隐私政策 / 支持页 | ✅ 本目录（待确认 Pages 已部署） |
 | 截图 | ✅ `screenshots/iphone/`（2026-11-06 重拍） |
 | 隐私清单 | ✅ App 与小组件各一份，`CA92.1` |
-| App Record | ✅ 已建，`1.0 (PREPARE_FOR_SUBMISSION)` |
+| App Record | ✅ 已建并提审，`1.0 (WAITING_FOR_REVIEW)`（2026-11-11 服务端核） |
 | 商店页手工项（问卷 / 分级 / 审核联系人） | ⛔ 只能网页填，见 `APP_STORE_LISTING.md` §8 |

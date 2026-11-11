@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牧云音乐 · 隐私政策 / Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #1c1c1e; --fg-dim: #6e6e73;
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --accent: #2563eb;
+    --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f5f5f7; --fg-dim: #98989d;
+      --bg: #1c1c1e; --bg-soft: #2c2c2e;
+      --accent: #60a5fa;
+      --border: rgba(255,255,255,.1);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 0; margin-bottom: 4px; }
+  h2 {
+    font-size: 1.4rem; font-weight: 600;
+    margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border);
+  }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; }
+  .meta { color: var(--fg-dim); font-size: 0.9rem; margin-bottom: 32px; }
+  .lead {
+    background: var(--bg-soft);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    margin: 24px 0 8px;
+  }
+  code { background: var(--bg-soft); padding: 2px 6px; border-radius: 5px; font-size: 0.9em; }
+  ul { padding-left: 1.25em; }
+  li { margin: 6px 0; }
+  footer { margin-top: 56px; color: var(--fg-dim); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<h1>牧云音乐 · 隐私政策</h1>
+<p class="meta">最后更新：2026-11-11　适用版本：1.0 及以后</p>
+
+<div class="lead">
+  <strong>一句话：这个 App 不收集任何数据。</strong><br>
+  没有账号，没有统计，没有广告，没有第三方 SDK，不申请任何系统权限。
+  你的音乐、歌词、收藏和设置都只在这台手机上。
+</div>
+
+<h2>我们收集什么</h2>
+<p><strong>什么都不收集。</strong>App 没有向任何服务器发送数据的代码路径，也没有集成任何统计、广告或崩溃上报 SDK。所谓「收集」指把数据传离你的设备——本 App 没有把任何数据「交给我们」的路径：我们没有服务器。</p>
+<p>App 有两处会发生网络流量，性质都是<strong>你让它去取一个文件</strong>，而不是它上报什么：</p>
+<ul>
+  <li><strong>你粘贴的直连地址。</strong>你粘贴一个音频 URL，App 用系统网络栈向那个地址发起普通的 HTTP(S) 文件请求。请求里不带账号、设备标识或任何个人信息，和你在浏览器地址栏输入一个 mp3 链接没有区别。</li>
+  <li><strong>Wi-Fi 传歌（默认关闭）。</strong>只有你在设置里手动开启后，App 才在本机固定端口开启一个上传页面，供<strong>同一局域网</strong>里的电脑或其他手机把文件传进这台手机。纯被动监听、不广播、不连外网；关掉开关即彻底停掉。</li>
+</ul>
+<p>除这两处外，App 没有任何外部请求。飞行模式下除直连地址外全部功能可用。</p>
+
+<h2>你的数据存在哪里</h2>
+<p>全部在这台手机的 App 沙盒里，分三块：</p>
+<ul>
+  <li><strong>音频文件</strong>：导入的音乐在沙盒 <code>Documents/MuYunMusic/</code> 下，按文件夹结构存放（直连导入的流不落盘，只在播放时缓存）</li>
+  <li><strong>曲库与偏好</strong>：<code>UserDefaults</code>，键名前缀 <code>muyunmusic.</code>（曲库索引、收藏、歌单、队列位置、设置、每首歌的歌词偏移等）</li>
+  <li><strong>封面缓存</strong>：沙盒 <code>Application Support/Covers</code></li>
+</ul>
+<p>另有极小一块 App Group 容器（<code>group.com.gezhipeng0201.MuYunMusic</code>），只用作分享扩展到主 App 的文件中转：你在微信里分享一首歌时，系统先把文件放进这块共享区，主 App 处理完即清空。它和 App 在同一台手机上，不经过任何服务器。</p>
+<p>其他 App 读不到这些数据，它们也不会离开这台设备。</p>
+
+<h2>权限：一个都不申请</h2>
+<p>相册、相机、麦克风、通讯录、位置、通知、追踪（ATT）、本地网络——全部不申请。（后台播放音频是后台模式声明，不是需要弹窗同意的权限。）分享走系统分享面板，去哪由你决定，App 不接触内容去向。</p>
+
+<h2>内容边界</h2>
+<p>本 App 是播放工具：不内置、不提供、不抓取、不推荐任何曲库或歌单，界面里没有「发现」「推荐」入口。所有内容只能来自你自己的文件和你自己粘贴的地址。你播放什么内容，由你自己负责。</p>
+
+<h2>删除数据</h2>
+<p>在曲库里删除歌曲/清空曲库即刻生效；卸载 App，沙盒连同所有数据一起删除。我们这边没有任何副本——没有可以存副本的地方。</p>
+
+<h2>儿童</h2>
+<p>App 不针对儿童设计，也不收集任何人的数据（包括儿童）。</p>
+
+<h2>政策变更</h2>
+<p>如果将来这份政策有改动，会更新本页顶部的日期。「不收集数据」这一点，我们无意改变。</p>
+
+<h2>联系我们</h2>
+<p><a href="mailto:gezhipeng0201@gmail.com">gezhipeng0201@gmail.com</a></p>
+
+<h2 style="margin-top:64px">Privacy Policy (English)</h2>
+
+<p><strong>In one sentence: this app collects nothing.</strong>
+No account, no analytics, no ads, no third-party SDKs, and it asks for no system permissions. Your music, lyrics, favorites and settings live only on this iPhone.</p>
+
+<h3>What we collect</h3>
+<p>Nothing. There is no code path that sends data to any developer-controlled server, and no analytics, advertising or crash SDK is bundled. The only network traffic comes from actions you take yourself: (a) when you paste a direct audio URL, the app makes a plain HTTP(S) file request to that address — carrying no account, device identifier or personal information; and (b) the optional Wi-Fi transfer page, which is off by default, listens passively on a fixed local port for uploads from devices on your own LAN only, never reaching the internet.</p>
+
+<h3>Where your data lives</h3>
+<p>Entirely inside the app sandbox on your device: imported audio files under <code>Documents/MuYunMusic/</code>, library index, favorites, playlists, queue, settings and per-song lyric offsets in <code>UserDefaults</code> (key prefix <code>muyunmusic.</code>), and an artwork cache. A tiny App Group container is used only to relay files from the share extension to the main app; it is emptied once handled.</p>
+
+<h3>Permissions</h3>
+<p>None. The app requests no Photos, Camera, Microphone, Contacts, Location, Notifications, Tracking, or Local Network access. Sharing uses the system share sheet; the app never sees where the content goes.</p>
+
+<h3>Content</h3>
+<p>The app ships no catalog and aggregates nothing; everything it plays comes from files you import or addresses you paste.</p>
+
+<h3>Deleting your data</h3>
+<p>Delete the app and everything goes with the sandbox. We hold no copy, because there is nowhere for us to hold one.</p>
+
+<h3>Contact</h3>
+<p><a href="mailto:gezhipeng0201@gmail.com">gezhipeng0201@gmail.com</a></p>
+
+<footer>
+  <p><a href="./support.html">技术支持 / Support</a></p>
+</footer>
+
+</body>
+</html>

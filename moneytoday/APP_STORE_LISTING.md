@@ -14,7 +14,7 @@
 
 | 字段 | 值 |
 |---|---|
-| 记录 | **已建**，当前状态 `1.0 (PREPARE_FOR_SUBMISSION)` |
+| 记录 | **已建并提审**，`1.0 (WAITING_FOR_REVIEW)`（2026-11-11 `fastlane status` 服务端核；此前的 `PREPARE_FOR_SUBMISSION` 已过时） |
 | 平台 | iOS |
 | 名称（主语言：简体中文） | **今日已赚** |
 | 主要语言 | 简体中文 |
