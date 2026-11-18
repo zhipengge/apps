@@ -20,7 +20,7 @@
 | 年龄分级答案 | `APP_STORE_LISTING.md` §12 | ✅ 4+ |
 | 内容版权 | `APP_STORE_LISTING.md` §13 | ✅ 不使用第三方内容 |
 | What's New | `WHATS_NEW.txt` | ✅ |
-| 隐私清单 | `MuYunMusic/PrivacyInfo.xcprivacy` | ✅ 零收集，仅 UserDefaults CA92.1 |
+| 隐私清单 | `MuYunMusic/PrivacyInfo.xcprivacy` | ✅ 零收集；UserDefaults CA92.1 + FileTimestamp C617.1 + SystemBootTime 35F9.1 |
 | 权限 | `Info.plist` | ✅ 相机 + 本地网络，均有用途说明 |
 
 ## 二、真正的阻塞项（按优先级）

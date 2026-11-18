@@ -43,7 +43,7 @@ Wi-Fi 传歌网页 / 自填直连 URL 或家庭影音服务器）、lrc 与内�
 | 商店文案 | ✅ 2026-11-18 按当前界面校对（1.0，#t73 后） |
 | 隐私政策 / 支持页 | ✅ 已部署并验 200（2026-11-18） |
 | 截图 | ✅ 4 张 6.9" iPhone（1320×2868）+ 3 张 13" iPad（2064×2752），尺寸/撞边检查通过 |
-| 隐私清单 | ✅ `PrivacyInfo.xcprivacy` 零收集（仅 UserDefaults `CA92.1`） |
+| 隐私清单 | ✅ `PrivacyInfo.xcprivacy` 零收集（UserDefaults `CA92.1` + FileTimestamp `C617.1` + SystemBootTime `35F9.1`） |
 | 出口合规 | ✅ `ITSAppUsesNonExemptEncryption = NO`（build setting，产物已验） |
 | ATS | ⚠️ `NSAllowsArbitraryLoads` + `NSAllowsArbitraryLoadsForMedia`（仅用户自填 http 源；无内置地址） |
 | 相机 / 本地网络权限 | ✅ Info.plist 两条 usage description + 隐私页同步 |
