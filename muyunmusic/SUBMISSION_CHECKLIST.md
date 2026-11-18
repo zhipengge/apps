@@ -10,8 +10,8 @@
 |---|---|---|
 | 商店文案（推广/描述/副标题/关键词） | `APP_STORE_LISTING.md` §1–§4 | ✅ 可直接复制 |
 | 审核备注（英文/中文） | `APP_STORE_LISTING.md` §9、`review-notes.txt` | ✅ |
-| 4 张 6.9" iPhone 截图 | `screenshots/iphone/` | ✅ 1320×2868，编辑部版式 |
-| 3 张 13" iPad 截图 | `screenshots/ipad/` | ✅ 2064×2752，编辑部版式 |
+| 4 张 6.9" iPhone 截图 | `screenshots/iphone/` | ✅ 1320×2868，手机屏比例拼图 |
+| 3 张 13" iPad 截图 | `screenshots/ipad/` | ✅ 2064×2752，手机屏比例拼图 |
 | 原创演示曲目/歌词 | `screenshots/showcase/` | ✅ 8 首假歌、3 份 LRC、8 张封面 |
 | 隐私政策 | `privacy.html` / `PRIVACY.md` | ✅ 已含相机/本地网络/自填服务器 |
 | 技术支持 | `support.html` | ✅ 已更新 |
