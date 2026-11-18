@@ -172,8 +172,10 @@ App Group 分享中转箱，都不构成「收集」。相机与本地网络是�
 
 > iPad 那张必须是 2064×2752；12.9" 的 2048×2732 会被拒。
 > 每张都是模拟器实拍切片；尺寸/撞边由 `_tools/check_store_shots.py` 全绿。
-> 连续全景预览：`screenshots/panorama-preview.png`（iPhone）、
-> `screenshots/ipad/panorama-preview.png`（iPad）。
+> 连续全景预览：`screenshots/panorama/iphone-preview.png`（iPhone）、
+> `screenshots/panorama/ipad-preview.png`（iPad）；
+> 原尺寸整图：`screenshots/panorama/iphone-full.png`（5280×2868）、
+> `screenshots/panorama/ipad-full.png`（8256×2752），只作预览/营销，不传 ASC。
 
 iPhone 四张（单看是局部，连起来是三屏）：
 
