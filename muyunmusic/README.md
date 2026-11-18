@@ -45,9 +45,11 @@ Wi-Fi 传歌网页 / 自填直连 URL 或家庭影音服务器）、lrc 与内�
 | 截图 | ✅ 4 张 6.9" iPhone（1320×2868）+ 3 张 13" iPad（2064×2752），尺寸/撞边检查通过 |
 | 隐私清单 | ✅ `PrivacyInfo.xcprivacy` 零收集（UserDefaults `CA92.1` + FileTimestamp `C617.1` + SystemBootTime `35F9.1`） |
 | 出口合规 | ✅ `ITSAppUsesNonExemptEncryption = NO`（build setting，产物已验） |
+| 图标 | ✅ 1024×1024；浅色/深色无 alpha（ASC 要求），tinted 透明 |
 | ATS | ⚠️ `NSAllowsArbitraryLoads` + `NSAllowsArbitraryLoadsForMedia`（仅用户自填 http 源；无内置地址） |
 | 相机 / 本地网络权限 | ✅ Info.plist 两条 usage description + 隐私页同步 |
 | 隐私问卷 / 年龄分级 / 内容版权 | ✅ `_tools/asc/answers/muyunmusic.json` + LISTING §11–§13 |
+| CarPlay entitlement | ⚠️ 需确认 Apple 已批准 `com.apple.developer.carplay-music`（未批准则先移除 CarPlay 再 archive） |
 | App Record | ⛔ **未建**；archive 后先建 Record 再上传构建 |
 | 定价 | ⏳ 未定（免费 vs ¥6，LISTING §0） |
 | 真机验收 | ⛔ 后台/锁屏/拔耳机/电话打断/相机/本地网络未做（最大欠账） |

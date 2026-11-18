@@ -21,8 +21,9 @@ Network access happens only from explicit user actions:
 
 Camera is optional and used only to scan the server's QR code; frames are
 decoded on-device, never saved or uploaded.
-Local Network permission is used only to reach the user's own LAN server; the
-app does not scan or discover devices. If denied, local playback still works.
+Local Network permission is used only for the app's local-network features:
+reaching the user's own LAN server and the optional Wi-Fi transfer listener.
+The app does not scan or discover devices. If denied, local playback still works.
 
 ATS: NSAllowsArbitraryLoads and NSAllowsArbitraryLoadsForMedia are enabled
 because the user's own server/audio URLs may be plain HTTP. The app contains no

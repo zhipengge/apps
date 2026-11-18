@@ -91,7 +91,7 @@
 - 音乐、歌词、收藏、设置全部存在这台手机的沙盒里，卸载即清空
 - 只有你主动操作时才联网：扫码或手填你自己的家庭影音服务器、Wi-Fi 传歌、粘贴直连地址
 - 相机只在扫码填服务器地址时使用，画面仅在本机识别，不保存、不上传
-- 本地网络只在你连接局域网里的自填服务器时请求；不扫描、不发现设备
+- 本地网络只在你连接局域网里的自填服务器、或开启 Wi-Fi 传歌时请求；不扫描、不发现设备
 - 除相机与本地网络外，不申请相册、通讯录、位置、通知、追踪等权限
 
 本 App 不内置、不提供、不抓取任何第三方曲库，也不展示任何推荐内容。音乐的全部来源是你自己的文件和你自己填的地址。
@@ -149,7 +149,7 @@ App 内「关于」页有支持邮箱；与家族一致，隐私/支持 URL 主�
 | 内容分级 | 4+ |
 | 年龄 | 不针对儿童，无广告、无追踪、无账号、无公开 UGC 信息流 |
 | 相机 | **可选**，只用于扫码填写家庭影音服务器地址；画面本机识别，不保存/不上传（`NSCameraUsageDescription`） |
-| 本地网络 | **可选**，只用于连接用户自填的局域网家庭影音服务器；不扫描、不发现设备（`NSLocalNetworkUsageDescription`） |
+| 本地网络 | **可选**，只用于连接用户自填的局域网家庭影音服务器，或 Wi-Fi 传歌的本机监听；不扫描、不发现设备（`NSLocalNetworkUsageDescription`） |
 | 其他权限 | 相册、通讯录、位置、通知、追踪、麦克风：不申请 |
 | App 隐私问卷 | **不收集数据**（§11），与隐私政策一致 |
 
@@ -206,10 +206,11 @@ iPad 三张：
 | ATS | ⚠️ **`NSAllowsArbitraryLoads` + `NSAllowsArbitraryLoadsForMedia` 都在**；只服务用户自填的 http 源/服务器，无内置地址。审核口径见 §9，别照旧文档说成只有 media-only |
 | 相机权限 | ✅ `NSCameraUsageDescription` 已在 Info.plist；隐私页已更新 |
 | 本地网络权限 | ✅ `NSLocalNetworkUsageDescription` 已补；隐私页已更新 |
-| 图标 | ✅ 1024×1024（M + 音符，与牧云电台/电视同族） |
+| 图标 | ✅ 1024×1024（M + 音符，与牧云电台/电视同族）；浅色/深色 PNG **无 alpha**（ASC 要求），tinted 保留透明 |
 | 截图 | ✅ 4 iPhone + 3 iPad，尺寸/撞边检查通过（§7） |
 | 类别 / 分级 / 内容版权 / 问卷答案 | ✅ 答案见 §6、§11–§13 + `_tools/asc/answers/muyunmusic.json` |
-| 价格 | ⏳ 未定（§0，二选一） |
+| CarPlay entitlement | ⚠️ **需确认** App ID 的 `com.apple.developer.carplay-music` 已获 Apple 批准；未批准时 archive/上传/审核会失败。若 1.0 不上 CarPlay，先从 Info.plist scene + entitlement 移除 |
+| 价格 | ⏳ 未定（§0，二选一；若收费需先完成 Paid Apps 协议与税务/银行） |
 | **真机验收** | ⛔ **后台/锁屏/拔耳机/电话打断/相机/本地网络未做**——目前最大欠账 |
 | 构建上传 | ⛔ 手动 archive（按既定规矩不走自动） |
 | 提审方式 | **单独提审**。家族媒体播放器已有两个在架（电台/电视），批量或同期提就是给 4.3 递刀 |
@@ -246,8 +247,9 @@ Network access happens only from explicit user actions:
 
 Camera is optional and used only to scan the server's QR code; frames are
 decoded on-device, never saved or uploaded.
-Local Network permission is used only to reach the user's own LAN server; the
-app does not scan or discover devices. If denied, local playback still works.
+Local Network permission is used only for the app's local-network features:
+reaching the user's own LAN server and the optional Wi-Fi transfer listener.
+The app does not scan or discover devices. If denied, local playback still works.
 
 ATS: NSAllowsArbitraryLoads and NSAllowsArbitraryLoadsForMedia are enabled
 because the user's own server/audio URLs may be plain HTTP. The app contains no
@@ -278,8 +280,8 @@ App 不内置任何音频、曲库、推荐或账号系统。所有内容来自�
    不带账号或设备标识。
 
 相机仅用于扫码填服务器地址，画面在本机识别，不保存、不上传。
-本地网络仅用于连接用户自己的局域网服务器；App 不扫描、不发现设备；
-拒绝后本地播放不受影响。
+本地网络仅用于本 App 的局域网功能：连接用户自己的局域网服务器，以及可选的
+Wi-Fi 传歌监听；App 不扫描、不发现设备；拒绝后本地播放不受影响。
 
 ATS 的 NSAllowsArbitraryLoads 与 NSAllowsArbitraryLoadsForMedia 都是为
 用户自填的 http 服务器/音频地址服务；App 没有内置 host，所有 host 来自用户输入。
