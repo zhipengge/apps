@@ -13,13 +13,14 @@
 | 4 张 6.9" iPhone 截图 | `screenshots/iphone/` | ✅ 1320×2868，连续全景切片（统一向右倾、同高） |
 | 4 张 13" iPad 截图 | `screenshots/ipad/` | ✅ 2064×2752，连续全景切片（统一向右倾、同高） |
 | 原创演示曲目/歌词 | `screenshots/showcase/` | ✅ 8 首假歌、3 份 LRC、8 张封面 |
+| 随包曲目/权利 | App 资源 `Resources/BuiltIn/` | ✅ 《冬日之光》（WAV + LRC + 封面）；上架前确认词曲/录音发行权 |
 | 隐私政策 | `privacy.html` / `PRIVACY.md` | ✅ 已含相机/本地网络/自填服务器 |
 | 技术支持 | `support.html` | ✅ 已更新 |
 | 页面部署 | GitHub Pages | ✅ 2026-11-18 两 URL 均 200 |
 | 出口合规 | `EXPORT_COMPLIANCE.md` | ✅ ITSAppUsesNonExemptEncryption = NO |
 | App 隐私答案 | `APP_STORE_LISTING.md` §11 | ✅ 不收集数据 |
 | 年龄分级答案 | `APP_STORE_LISTING.md` §12 | ✅ 4+ |
-| 内容版权 | `APP_STORE_LISTING.md` §13 | ✅ 不使用第三方内容 |
+| 内容版权 | `APP_STORE_LISTING.md` §13 | ✅ 随包《冬日之光》为所有者提供；其余不使用第三方内容 |
 | What's New | `WHATS_NEW.txt` | ✅ |
 | 隐私清单 | `MuYunMusic/PrivacyInfo.xcprivacy` | ✅ 零收集；UserDefaults CA92.1 + FileTimestamp C617.1 + SystemBootTime 35F9.1 |
 | 图标 | `Assets.xcassets/AppIcon.appiconset` | ✅ 1024×1024；浅/深无 alpha，tinted 透明 |
@@ -108,7 +109,7 @@ Xcode Organizer → Archive → Distribute App → App Store Connect → Upload�
 - 网络三类：用户自填家庭影音服务器、Wi-Fi 传歌（默认关）、直连 URL。
 - 相机：可选扫码，画面本机识别，不保存/上传。
 - 本地网络：可选连用户自己的局域网服务器，不扫描/发现设备。
-- 内容：不内置、不抓取、不推荐任何曲库；没有公开 UGC 信息流。
+- 内容：除随包一首所有者提供的《冬日之光》外，不内置、不抓取、不推荐任何第三方曲库；没有公开 UGC 信息流。
 完整英文答案见 `APP_STORE_LISTING.md` §9。
 
 ## 四、提交前真机验收清单

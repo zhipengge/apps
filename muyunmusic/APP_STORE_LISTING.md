@@ -30,7 +30,7 @@
 - 家族 precedent：牧云电台、牧云电视都是免费——媒体播放器收费会坐实
   「卖内容」的嫌疑（`定价策略.md` §三对 MuyunTV 写得很直白）。
 - 但 2026-10-16 的决定是**新 app 走 ¥6 一口价**（对照实验），而本 App
-  与电台/电视最大的不同是**零内置内容源**——它播的每个字节都得用户自己给。
+  与电台/电视最大的不同是**除随包一首《冬日之光》外、零内置内容源**——其余每个字节都得用户自己给。
 - 建 Record 默认免费。**要 ¥6 就在建 Record 当天用 `pricing.py` 设**，
   别上线后再改（改价虽不用过审，但「先免费后收费」在评分上最伤）。
 - **本次不替你拍板**：清单里标了「价格：待定」，archive 后按这一节二选一。
@@ -45,7 +45,7 @@
 > **上限 170 字符**，可在不提交新版本的情况下随时修改。
 
 ```
-一款真正离线的本地音乐播放器：不内置曲库，只播你导入的文件。lrc 与内嵌歌词、收藏与最近播放、歌单与队列、后台与锁屏控制、局域网 Wi-Fi 传歌。0 统计 0 广告 0 账号，数据全本机。
+一款真正离线的本地音乐播放器：除随包一首《冬日之光》外不内置曲库，只播你导入的文件。lrc 与内嵌歌词、收藏与最近播放、歌单与队列、后台与锁屏控制、局域网 Wi-Fi 传歌。0 统计 0 广告 0 账号，数据全本机。
 ```
 
 **字符数：约 104 / 170**
@@ -94,7 +94,7 @@
 - 本地网络只在你连接局域网里的自填服务器、或开启 Wi-Fi 传歌时请求；不扫描、不发现设备
 - 除相机与本地网络外，不申请相册、通讯录、位置、通知、追踪等权限
 
-本 App 不内置、不提供、不抓取任何第三方曲库，也不展示任何推荐内容。音乐的全部来源是你自己的文件和你自己填的地址。
+除随包一曲《冬日之光》外，本 App 不内置、不提供、不抓取任何第三方曲库，也不展示任何推荐内容。其余音乐来源是你自己的文件和你自己填的地址。
 ```
 
 **字符数：约 1100 / 4000**
@@ -233,9 +233,15 @@ iPad 四张：
 No demo account is required. To test: open the system Files app, long-press any
 mp3/m4a/flac file, choose "Open with MuYun Music", then play it.
 
-The app ships no audio content, no catalog, no recommendations, and no account
-system. Everything it plays comes from files the user imports or addresses the
-user enters.
+The app ships one owner-supplied track, "Winter Light" (冬日之光), with its
+lyrics and cover, plus no catalog, no recommendations, and no account system.
+Apart from that one track, everything it plays comes from files the user imports
+or addresses the user enters. The bundled track is original/owner-provided; it
+is not third-party catalog content.
+
+To hear the bundled track: open the Library tab and tap "冬日之光". Its lyrics
+have no timestamps, so they are shown as static text with a note; playback and
+the rest of the app are unaffected.
 
 Network access happens only from explicit user actions:
 1) Optional family media server: the user enters their own server base URL in
@@ -271,8 +277,8 @@ tracking, or third-party SDKs.
 无需演示账号。测试方法：用系统「文件」App 准备任意一个 mp3/m4a/flac 文件，
 长按选「用此 App 打开」导入，即可完整体验。
 
-App 不内置任何音频、曲库、推荐或账号系统。所有内容来自用户导入的文件或
-用户自己填写的地址。
+除随包一曲《冬日之光》外，App 不内置任何音频、曲库、推荐或账号系统。所有其他内容来自用户导入的文件或
+用户自己填写的地址。随包曲目为所有者提供，歌词为无时间轴纯文本，App 内可直接播放。
 
 网络只在用户明确操作时发生：
 1) 可选的家庭影音服务器：用户在设置里填自己的服务器地址（或扫服务器首页
@@ -307,9 +313,10 @@ IPTV / 牧云音乐 · 本地曲库）。「账号 + 概念相似度」这条 4.
 
 被问「和已有 App / 市面播放器有什么区别」，按这几条答，每条能指到代码位置：
 
-1. **零内置内容可静态核验**：`Shared/AppIdentifiers.builtinSourceURLs = []`、
-   `hasBundledSampleSongs = false` 都有 LogicTests 断言守着；清空曲库后
-   不回填任何示例。
+1. **内置内容可静态核验**：`Shared/AppIdentifiers.builtinSourceURLs = []`、
+   `hasBundledSampleSongs = false` 都有 LogicTests 断言守着；bundle 内只有
+   所有者提供的 1 首《冬日之光》（WAV + 无时间轴 LRC + 封面），清空曲库后
+   不回填示例。
 2. **队列引擎是纯函数**：`Shared/QueueEngine.swift` 把 随机×循环(off/all/one)
    全部组合的下一首语义写成真值表，LogicTests 逐项覆盖；
    单曲循环下手动切歌**照常前进**（对齐 Apple Music 语义），
@@ -384,7 +391,7 @@ IPTV / 牧云音乐 · 本地曲库）。「账号 + 概念相似度」这条 4.
 | 审核信息 → 演示账号 | **不需要**，备注里写明导入方法（§9） |
 | 审核信息 → 备注 | 粘贴 §9 英文版 |
 | 版本信息 → 版权 | `2026 Zhipeng Ge` |
-| 内容版权 (Content Rights) | **DOES_NOT_USE_THIRD_PARTY_CONTENT**——App 自身不含、不展示、不访问第三方内容，一切内容均来自用户导入/用户粘贴（与 MuyunTV 答卷同理，若审核对自填地址有异议按 §9 口径答） |
+| 内容版权 (Content Rights) | **DOES_NOT_USE_THIRD_PARTY_CONTENT**——除随包一首所有者提供的《冬日之光》外，App 自身不含、不展示、不访问第三方内容；其余内容均来自用户导入/用户粘贴（与 MuyunTV 答卷同理，若审核对自填地址有异议按 §9 口径答） |
 | 出口合规 | 上传自动跳过（build setting 已 NO；产物已验） |
 | 价格 | §0，建 Record 当天定 |
 | 销售范围 | 所有国家/地区（若 EU 需要 DSA 交易者状态，按账号实际情况填） |
