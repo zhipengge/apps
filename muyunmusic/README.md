@@ -50,7 +50,7 @@ Wi-Fi 传歌网页 / 自填直连 URL 或家庭影音服务器）、lrc 与内�
 | ATS | ⚠️ `NSAllowsArbitraryLoads` + `NSAllowsArbitraryLoadsForMedia`（仅用户自填 http 源；无内置地址） |
 | 相机 / 本地网络权限 | ✅ Info.plist 两条 usage description + 隐私页同步 |
 | 隐私问卷 / 年龄分级 / 内容版权 | ✅ `_tools/asc/answers/muyunmusic.json` + LISTING §11–§13 |
-| CarPlay entitlement | ⚠️ 需确认 Apple 已批准 `com.apple.developer.carplay-music`（未批准则先移除 CarPlay 再 archive） |
+| CarPlay | ⏸ 1.0 未启用：`com.apple.developer.carplay-music` 未获批，Info.plist scene 与 entitlement 已移除；车机代码保留，后续版本再加 |
 | App Record | ⛔ **未建**；archive 后先建 Record 再上传构建 |
 | 定价 | ⏳ 未定（免费 vs ¥6，LISTING §0） |
 | 真机验收 | ⛔ 后台/锁屏/拔耳机/电话打断/相机/本地网络未做（最大欠账） |

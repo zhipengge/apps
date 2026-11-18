@@ -24,7 +24,7 @@
 | What's New | `WHATS_NEW.txt` | ✅ |
 | 隐私清单 | `MuYunMusic/PrivacyInfo.xcprivacy` | ✅ 零收集；UserDefaults CA92.1 + FileTimestamp C617.1 + SystemBootTime 35F9.1 |
 | 图标 | `Assets.xcassets/AppIcon.appiconset` | ✅ 1024×1024；浅/深无 alpha，tinted 透明 |
-| CarPlay entitlement | `MuYunMusic.entitlements` | ⚠️ 需确认 Apple 已批准 `com.apple.developer.carplay-music` |
+| CarPlay | `Info.plist` / `MuYunMusic.entitlements` | ⏸ 1.0 未启用；CarPlay scene 与 entitlement 已移除，不再阻塞 archive |
 | 权限 | `Info.plist` | ✅ 相机 + 本地网络，均有用途说明 |
 
 ## 二、真正的阻塞项（按优先级）
@@ -40,10 +40,7 @@
    - **免费**：跟牧云电台/电视一致，媒体播放器不坐实「卖内容」；推荐。
    - **¥6 一口价**：2026-10-16 新 app 对照实验；要收就建 Record 当天设，别上线后改。
 3. **真机验收**：后台/锁屏/拔耳机/电话打断/相机扫码/本地网络/自填服务器分享，模拟器不能替代。
-4. **CarPlay entitlement**：确认 App ID `com.gezhipeng0201.MuYunMusic` 的
-   `com.apple.developer.carplay-music` 已获 Apple 批准。未批准时 archive/上传/审核会失败；
-   如果 1.0 不打算上 CarPlay，先从 `Info.plist` 的 CarPlay scene 和 `MuYunMusic.entitlements`
-   移除再 archive（别让一个未批准的能力拖住整个上架）。
+4. **CarPlay**：1.0 已移除 scene 与 entitlement（`com.apple.developer.carplay-music` 未获批），不再是归档阻塞项；后续版本获批再加回。
 5. **手动 archive**：Release，版本 1.0/build 1（或自增），自动签名，上传到 App Store Connect。
 
 ## 三、Archive 之后按顺序填

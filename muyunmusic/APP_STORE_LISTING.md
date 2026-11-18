@@ -215,7 +215,7 @@ iPad 四张：
 | 图标 | ✅ 1024×1024（M + 音符，与牧云电台/电视同族）；浅色/深色 PNG **无 alpha**（ASC 要求），tinted 保留透明 |
 | 截图 | ✅ 4 iPhone + 4 iPad 连续全景，尺寸/撞边检查通过（§7） |
 | 类别 / 分级 / 内容版权 / 问卷答案 | ✅ 答案见 §6、§11–§13 + `_tools/asc/answers/muyunmusic.json` |
-| CarPlay entitlement | ⚠️ **需确认** App ID 的 `com.apple.developer.carplay-music` 已获 Apple 批准；未批准时 archive/上传/审核会失败。若 1.0 不上 CarPlay，先从 Info.plist scene + entitlement 移除 |
+| CarPlay | ⏸ 1.0 未启用：`com.apple.developer.carplay-music` 未获批，Info.plist CarPlay scene 与 entitlement 已移除；车机代码保留，后续版本获批再加 |
 | 价格 | ⏳ 未定（§0，二选一；若收费需先完成 Paid Apps 协议与税务/银行） |
 | **真机验收** | ⛔ **后台/锁屏/拔耳机/电话打断/相机/本地网络未做**——目前最大欠账 |
 | 构建上传 | ⛔ 手动 archive（按既定规矩不走自动） |
