@@ -133,8 +133,8 @@
 | 隐私政策 | https://zhipengge.github.io/apps/muyunmusic/privacy.html |
 | 营销（可选） | 留空（不提交死链；目录页没有 index） |
 
-**页面不可达会被审核挡下。** 两个页面已在本仓库更新；提交前必须推到
-`zhipengge/apps` 并跑 `_tools/check_pages_urls.py muyunmusic` 验到 200。
+**页面不可达会被审核挡下。** 两个页面已推 `zhipengge/apps` 并部署，
+2026-11-18 已验 **200**（正文含「本地网络」新段落）。
 
 App 内「关于」页有支持邮箱；与家族一致，隐私/支持 URL 主要存在于 ASC 元数据。
 
@@ -200,7 +200,7 @@ iPad 三张：
 |---|---|
 | App Record | ⛔ 未建（建的时候顺手抢「牧云音乐」店名） |
 | 文案（本文件 §1–§4） | ✅ 本文件，未写入 ASC（Record 还没有） |
-| 隐私政策 / 支持页 | ✅ 本目录已更新；**待推 `apps` 仓库并验 200** |
+| 隐私政策 / 支持页 | ✅ 已推 `apps` 仓库并部署，2026-11-18 验 200 |
 | 隐私清单 | ✅ 零收集，仅 UserDefaults `CA92.1` |
 | 出口合规 | ✅ `ITSAppUsesNonExemptEncryption = NO`，已核验 1.0 产物 |
 | ATS | ⚠️ **`NSAllowsArbitraryLoads` + `NSAllowsArbitraryLoadsForMedia` 都在**；只服务用户自填的 http 源/服务器，无内置地址。审核口径见 §9，别照旧文档说成只有 media-only |

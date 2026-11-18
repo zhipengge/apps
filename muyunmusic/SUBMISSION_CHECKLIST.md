@@ -14,6 +14,7 @@
 | 3 张 13" iPad 截图 | `screenshots/ipad/` | ✅ 2064×2752 |
 | 隐私政策 | `privacy.html` / `PRIVACY.md` | ✅ 已含相机/本地网络/自填服务器 |
 | 技术支持 | `support.html` | ✅ 已更新 |
+| 页面部署 | GitHub Pages | ✅ 2026-11-18 两 URL 均 200 |
 | 出口合规 | `EXPORT_COMPLIANCE.md` | ✅ ITSAppUsesNonExemptEncryption = NO |
 | App 隐私答案 | `APP_STORE_LISTING.md` §11 | ✅ 不收集数据 |
 | 年龄分级答案 | `APP_STORE_LISTING.md` §12 | ✅ 4+ |
@@ -35,10 +36,7 @@
    - **免费**：跟牧云电台/电视一致，媒体播放器不坐实「卖内容」；推荐。
    - **¥6 一口价**：2026-10-16 新 app 对照实验；要收就建 Record 当天设，别上线后改。
 3. **真机验收**：后台/锁屏/拔耳机/电话打断/相机扫码/本地网络/自填服务器分享，模拟器不能替代。
-4. **页面部署**：`privacy.html` / `support.html` 更新后要推 `zhipengge/apps`，并确认：
-   - https://zhipengge.github.io/apps/muyunmusic/privacy.html → 200
-   - https://zhipengge.github.io/apps/muyunmusic/support.html → 200
-5. **手动 archive**：Release，版本 1.0/build 1（或自增），自动签名，上传到 App Store Connect。
+4. **手动 archive**：Release，版本 1.0/build 1（或自增），自动签名，上传到 App Store Connect。
 
 ## 三、Archive 之后按顺序填
 
