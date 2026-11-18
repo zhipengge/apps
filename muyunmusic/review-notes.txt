@@ -1,0 +1,32 @@
+No demo account is required. To test: open the system Files app, long-press any
+mp3/m4a/flac file, choose "Open with MuYun Music", then play it.
+
+The app ships no audio content, no catalog, no recommendations, and no account
+system. Everything it plays comes from files the user imports or addresses the
+user enters.
+
+Network access happens only from explicit user actions:
+1) Optional family media server: the user enters their own server base URL in
+   Settings (or scans a QR code on that server's home page). When the user taps
+   search / test / stream / download / share, the app sends the search keyword,
+   the requested media URL, or the file the user chose to share to THAT server.
+   There is no built-in server URL (builtinSourceURLs = []); leaving the field
+   empty hides all server UI and makes no request. The developer operates no
+   server and receives nothing.
+2) Wi-Fi transfer (default OFF): the user enables it; the app listens on a fixed
+   local port so a browser on the same LAN can upload files. No Bonjour, no
+   discovery, no internet.
+3) Direct URL: the user pastes an audio URL; the app performs a plain HTTP(S)
+   file request to that address, with no account or device identifier.
+
+Camera is optional and used only to scan the server's QR code; frames are
+decoded on-device, never saved or uploaded.
+Local Network permission is used only to reach the user's own LAN server; the
+app does not scan or discover devices. If denied, local playback still works.
+
+ATS: NSAllowsArbitraryLoads and NSAllowsArbitraryLoadsForMedia are enabled
+because the user's own server/audio URLs may be plain HTTP. The app contains no
+built-in hosts; all hosts come from user input.
+
+Background audio is used for playback with the screen off. No analytics, ads,
+tracking, or third-party SDKs.

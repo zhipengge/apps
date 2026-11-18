@@ -3,11 +3,13 @@
 纯本地 iOS 音乐播放器。音乐全部由用户自己导入，App 不内置、不聚合、不推荐任何曲库。
 
 - 商店文案：[`APP_STORE_LISTING.md`](./APP_STORE_LISTING.md)
+- 提交清单：[`SUBMISSION_CHECKLIST.md`](./SUBMISSION_CHECKLIST.md)
 - 隐私政策：[`privacy.html`](./privacy.html) ・ [`PRIVACY.md`](./PRIVACY.md)
 - 技术支持：[`support.html`](./support.html)
 - 出口合规：[`EXPORT_COMPLIANCE.md`](./EXPORT_COMPLIANCE.md)
+- 截图：[`screenshots/iphone`](./screenshots/iphone) ・ [`screenshots/ipad`](./screenshots/ipad)
 
-## 页面地址（部署后在 GitHub Pages 上）
+## 页面地址（已随 apps 仓库部署）
 
 | 页面 | URL |
 |---|---|
@@ -28,20 +30,25 @@
 ## 一句话产品说明
 
 六条导入通道（文件 App 打开 / 分享扩展 / iTunes 文件共享 / iCloud 选择器 /
-Wi-Fi 传歌网页 / 自填直连 URL）、lrc 与内嵌歌词、曲库五视图六排序、自建歌单、
-随机与三态循环（一个按钮循环切）、倍速与定时停止、后台与锁屏控制、
-局域网 Wi-Fi 传歌。0 内置内容、0 统计、0 广告、0 系统权限申请，数据全本机。
+Wi-Fi 传歌网页 / 自填直连 URL 或家庭影音服务器）、lrc 与内嵌歌词、曲库五段
+（歌曲/专辑/艺术家/歌单/已下载）、「我的音乐」收藏与最近播放、歌曲信息编辑、
+自建歌单、随机与三态循环（一个按钮循环切）、定时停止、后台与锁屏控制、
+播放队列管理、局域网 Wi-Fi 传歌。0 内置内容、0 统计、0 广告、0 账号；
+只有相机（可选扫码）与本地网络（可选连自填服务器）两项权限。
 
 ## 素材状态
 
 | 项 | 状态 |
 |---|---|
-| 商店文案 | ✅ 本目录，2026-11-11 按当前界面写成（1.0 实现，模拟器已验收） |
-| 隐私政策 / 支持页 | ✅ 本目录（**尚未部署**，Pages 上是 404） |
-| 截图 | ⛔ 未拍（6.9" iPhone 必传；`TARGETED_DEVICE_FAMILY = "1,2"` 声明了 iPad，13" iPad 也强制要求） |
+| 商店文案 | ✅ 2026-11-18 按当前界面校对（1.0，#t73 后） |
+| 隐私政策 / 支持页 | ✅ 已更新；提交前确认 Pages 已部署、URL 200 |
+| 截图 | ✅ 4 张 6.9" iPhone（1320×2868）+ 3 张 13" iPad（2064×2752），尺寸/撞边检查通过 |
 | 隐私清单 | ✅ `PrivacyInfo.xcprivacy` 零收集（仅 UserDefaults `CA92.1`） |
-| 出口合规 | ✅ `ITSAppUsesNonExemptEncryption = NO`（build setting，发布前按 EXPORT_COMPLIANCE.md 重验产物） |
-| 隐私问卷 / 年龄分级答案 | ✅ `_tools/asc/answers/muyunmusic.json` + LISTING §11/§12 |
-| App Record | ⛔ **未建**，从未进过任何 ASC 流程 |
-| 定价 | ⏳ 未定（家族媒体播放器 precedent 免费 vs 2026-10-16「新 app ¥6」决定，见 LISTING §0） |
-| 真机验收 | ⛔ 后台/锁屏/拔耳机/ATS 实机项未做（清单见源码仓库 README「未验证」节） |
+| 出口合规 | ✅ `ITSAppUsesNonExemptEncryption = NO`（build setting，产物已验） |
+| ATS | ⚠️ `NSAllowsArbitraryLoads` + `NSAllowsArbitraryLoadsForMedia`（仅用户自填 http 源；无内置地址） |
+| 相机 / 本地网络权限 | ✅ Info.plist 两条 usage description + 隐私页同步 |
+| 隐私问卷 / 年龄分级 / 内容版权 | ✅ `_tools/asc/answers/muyunmusic.json` + LISTING §11–§13 |
+| App Record | ⛔ **未建**；archive 后先建 Record 再上传构建 |
+| 定价 | ⏳ 未定（免费 vs ¥6，LISTING §0） |
+| 真机验收 | ⛔ 后台/锁屏/拔耳机/电话打断/相机/本地网络未做（最大欠账） |
+| 构建上传 | ⏳ 手动 archive + 上传 |
