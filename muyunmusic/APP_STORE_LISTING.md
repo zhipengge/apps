@@ -233,8 +233,8 @@ iPad 四张：
 No demo account is required. To test: open the system Files app, long-press any
 mp3/m4a/flac file, choose "Open with MuYun Music", then play it.
 
-The app ships one owner-supplied track, "Winter Light" (冬日之光), written,
-composed and performed by 牧云, with its lyrics and cover, plus no catalog, no recommendations, and no account system.
+The app ships one owner-supplied track, "Winter Light" (冬日之光), with
+lyrics by Deepseek and music/performance by Minimax, plus its cover, plus no catalog, no recommendations, and no account system.
 Apart from that one track, everything it plays comes from files the user imports
 or addresses the user enters. The bundled track is original/owner-provided; it
 is not third-party catalog content.
@@ -278,7 +278,7 @@ tracking, or third-party SDKs.
 长按选「用此 App 打开」导入，即可完整体验。
 
 除随包一曲《冬日之光》外，App 不内置任何音频、曲库、推荐或账号系统。所有其他内容来自用户导入的文件或
-用户自己填写的地址。随包曲目词/曲/演唱均为牧云，歌词带行级时间轴，App 内可逐行同步。
+用户自己填写的地址。随包曲目词：Deepseek、曲/演唱：Minimax，歌词带行级时间轴，App 内可逐行同步。
 
 网络只在用户明确操作时发生：
 1) 可选的家庭影音服务器：用户在设置里填自己的服务器地址（或扫服务器首页
@@ -315,7 +315,7 @@ IPTV / 牧云音乐 · 本地曲库）。「账号 + 概念相似度」这条 4.
 
 1. **内置内容可静态核验**：`Shared/AppIdentifiers.builtinSourceURLs = []`、
    `hasBundledSampleSongs = false` 都有 LogicTests 断言守着；bundle 内只有
-   词/曲/演唱均为牧云的 1 首《冬日之光》（WAV + 带时间轴 LRC + 封面），清空曲库后
+   词：Deepseek、曲/演唱：Minimax 的 1 首《冬日之光》（WAV + 带时间轴 LRC + 封面），清空曲库后
    不回填示例。
 2. **队列引擎是纯函数**：`Shared/QueueEngine.swift` 把 随机×循环(off/all/one)
    全部组合的下一首语义写成真值表，LogicTests 逐项覆盖；
@@ -391,7 +391,7 @@ IPTV / 牧云音乐 · 本地曲库）。「账号 + 概念相似度」这条 4.
 | 审核信息 → 演示账号 | **不需要**，备注里写明导入方法（§9） |
 | 审核信息 → 备注 | 粘贴 §9 英文版 |
 | 版本信息 → 版权 | `2026 Zhipeng Ge` |
-| 内容版权 (Content Rights) | **DOES_NOT_USE_THIRD_PARTY_CONTENT**——除随包一首词/曲/演唱均为牧云的《冬日之光》外，App 自身不含、不展示、不访问第三方内容；其余内容均来自用户导入/用户粘贴（与 MuyunTV 答卷同理，若审核对自填地址有异议按 §9 口径答） |
+| 内容版权 (Content Rights) | **DOES_NOT_USE_THIRD_PARTY_CONTENT**——除随包一首词：Deepseek、曲/演唱：Minimax 的《冬日之光》外，App 自身不含、不展示、不访问第三方内容；其余内容均来自用户导入/用户粘贴（与 MuyunTV 答卷同理，若审核对自填地址有异议按 §9 口径答） |
 | 出口合规 | 上传自动跳过（build setting 已 NO；产物已验） |
 | 价格 | §0，建 Record 当天定 |
 | 销售范围 | 所有国家/地区（若 EU 需要 DSA 交易者状态，按账号实际情况填） |
