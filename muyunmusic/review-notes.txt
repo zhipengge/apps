@@ -1,8 +1,8 @@
 No demo account is required. To test: open the system Files app, long-press any
 mp3/m4a/flac file, choose "Open with MuYun Music", then play it.
 
-The app ships one owner-supplied track, "Winter Light" (冬日之光), with its
-lyrics and cover, plus no catalog, no recommendations, and no account system.
+The app ships one owner-supplied track, "Winter Light" (冬日之光), written,
+composed and performed by 牧云, with its lyrics and cover, plus no catalog, no recommendations, and no account system.
 Apart from that one track, everything it plays comes from files the user imports
 or addresses the user enters. The bundled track is original/owner-provided; it
 is not third-party catalog content.
