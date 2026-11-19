@@ -4,6 +4,7 @@
 
 - 商店文案：[`APP_STORE_LISTING.md`](./APP_STORE_LISTING.md)
 - 提交清单：[`SUBMISSION_CHECKLIST.md`](./SUBMISSION_CHECKLIST.md)
+- 家庭影音服务器搭建详细需求：[`NAS-DEPLOY.md`](./NAS-DEPLOY.md)
 - 隐私政策：[`privacy.html`](./privacy.html) ・ [`PRIVACY.md`](./PRIVACY.md)
 - 技术支持：[`support.html`](./support.html)
 - 出口合规：[`EXPORT_COMPLIANCE.md`](./EXPORT_COMPLIANCE.md)
@@ -15,6 +16,7 @@
 |---|---|
 | 隐私政策 | https://zhipengge.github.io/apps/muyunmusic/privacy.html |
 | 技术支持 | https://zhipengge.github.io/apps/muyunmusic/support.html |
+| NAS 搭建详细需求 | https://github.com/zhipengge/apps/blob/main/muyunmusic/NAS-DEPLOY.md |
 
 ## 标识符
 
