@@ -8,8 +8,8 @@ or addresses the user enters. The bundled track is original/owner-provided; it
 is not third-party catalog content.
 
 To hear the bundled track: open the Library tab and tap "冬日之光". Its lyrics
-have no timestamps, so they are shown as static text with a note; playback and
-the rest of the app are unaffected.
+include line timestamps and scroll in sync with playback; the rest of the app is
+unaffected.
 
 Network access happens only from explicit user actions:
 1) Optional family media server: the user enters their own server base URL in

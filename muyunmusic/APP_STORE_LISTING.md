@@ -240,8 +240,8 @@ or addresses the user enters. The bundled track is original/owner-provided; it
 is not third-party catalog content.
 
 To hear the bundled track: open the Library tab and tap "冬日之光". Its lyrics
-have no timestamps, so they are shown as static text with a note; playback and
-the rest of the app are unaffected.
+include line timestamps and scroll in sync with playback; the rest of the app is
+unaffected.
 
 Network access happens only from explicit user actions:
 1) Optional family media server: the user enters their own server base URL in
@@ -278,7 +278,7 @@ tracking, or third-party SDKs.
 长按选「用此 App 打开」导入，即可完整体验。
 
 除随包一曲《冬日之光》外，App 不内置任何音频、曲库、推荐或账号系统。所有其他内容来自用户导入的文件或
-用户自己填写的地址。随包曲目为所有者提供，歌词为无时间轴纯文本，App 内可直接播放。
+用户自己填写的地址。随包曲目为所有者提供，歌词带行级时间轴，App 内可逐行同步。
 
 网络只在用户明确操作时发生：
 1) 可选的家庭影音服务器：用户在设置里填自己的服务器地址（或扫服务器首页
@@ -315,7 +315,7 @@ IPTV / 牧云音乐 · 本地曲库）。「账号 + 概念相似度」这条 4.
 
 1. **内置内容可静态核验**：`Shared/AppIdentifiers.builtinSourceURLs = []`、
    `hasBundledSampleSongs = false` 都有 LogicTests 断言守着；bundle 内只有
-   所有者提供的 1 首《冬日之光》（WAV + 无时间轴 LRC + 封面），清空曲库后
+   所有者提供的 1 首《冬日之光》（WAV + 带时间轴 LRC + 封面），清空曲库后
    不回填示例。
 2. **队列引擎是纯函数**：`Shared/QueueEngine.swift` 把 随机×循环(off/all/one)
    全部组合的下一首语义写成真值表，LogicTests 逐项覆盖；

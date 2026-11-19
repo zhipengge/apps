@@ -43,7 +43,7 @@ Wi-Fi 传歌网页 / 自填直连 URL 或家庭影音服务器）、lrc 与内�
 | 商店文案 | ✅ 2026-11-18 按当前界面校对（1.0，#t73 后） |
 | 隐私政策 / 支持页 | ✅ 已部署并验 200（2026-11-18） |
 | 截图 | ✅ 4 张 6.9" iPhone（1320×2868）+ 4 张 13" iPad（2064×2752），连续全景（3 个斜置屏统一向右倾且同高、跨 4 张），尺寸/撞边检查通过；旧版在 `screenshots/classic` |
-| 内置曲目 | ✅ 《冬日之光》（所有者提供；WAV + 无时间轴 LRC + 封面）随包，首启落地；需确认词曲/录音发行权 |
+| 内置曲目 | ✅ 《冬日之光》（所有者提供；WAV + 带时间轴 LRC + 封面）随包，首启落地；需确认词曲/录音发行权 |
 | 隐私清单 | ✅ `PrivacyInfo.xcprivacy` 零收集（UserDefaults `CA92.1` + FileTimestamp `C617.1` + SystemBootTime `35F9.1`） |
 | 出口合规 | ✅ `ITSAppUsesNonExemptEncryption = NO`（build setting，产物已验） |
 | 图标 | ✅ 1024×1024；浅色/深色无 alpha（ASC 要求），tinted 透明 |
