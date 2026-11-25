@@ -10,16 +10,11 @@
 香港之声,https://ngcdn001.cnr.cn/live/xgzs/index.m3u8
 中国交通广播,https://ngcdn016.cnr.cn/live/gsgljtgb/index.m3u8
 中国乡村之声,https://ngcdn001.cnr.cn/live/xczs/index.m3u8
-上海新闻广播,http://lhttp.qingting.fm/live/270/64k.mp3
-上海戏剧曲艺广播,http://lhttp.qingting.fm/live/4945/64k.mp3
 环球资讯广播,http://sk.cri.cn/905.m3u8
 中文环球广播,http://sk.cri.cn/hyhq.m3u8
 海峡飞虹,http://sk.cri.cn/hxfh.m3u8
 南海之声,http://sk.cri.cn/nhzs.m3u8
 英语资讯广播,https://sk.cri.cn/am846.m3u8
-北京新闻广播,http://ls.qingting.fm/live/339.m3u8
-北京音乐广播,http://live.xmcdn.com/live/95/64.m3u8
-北京交通广播,http://live.xmcdn.com/live/93/64.m3u8
 美国公共广播,https://npr-ice.streamguys1.com/live.mp3
 Z100 纽约流行电台,https://stream.revma.ihrhls.com/zc1469.mp3
 KIIS-FM 洛杉矶流行电台,https://stream.revma.ihrhls.com/zc185.mp3
